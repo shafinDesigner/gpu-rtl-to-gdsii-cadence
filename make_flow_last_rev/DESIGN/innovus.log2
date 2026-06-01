@@ -1,0 +1,564 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.18-s099_1, built Tue Jul 18 13:03:50 PDT 2023
+Options:	
+Date:		Mon May 25 23:51:52 2026
+Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+OS:		Red Hat Enterprise Linux Server 7.9 (Maipo)
+
+License:
+		[23:51:52.389521] Configured Lic search path (21.01-s002): 5280@vlsi
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+<CMD> define_proc_arguments ViaFillQor -info {This procedure extracts Viafill details from innovus db} -define_args {
+		{-window "window coordinates" "" list optional}
+		{-window_size "window size in microns" "" string optional}
+	
+	}
+[INFO] Loading Pegasus 22.20 fill procedures
+<CMD> define_proc_arguments ProcessFills -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+<CMD> define_proc_arguments FillQor -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+<CMD> define_proc_arguments ProcessFills_fast -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+<CMD> define_proc_arguments FillQor_fast -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+<CMD> define_proc_arguments ProcessFills_fast_stampOnly -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+	
+}
+<CMD> define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+}
+<CMD> win
+<CMD> setEditMode -type regular
+<CMD> restoreDesign place_opt.inn.dat/ gpu
+#% Begin load design ... (date=05/25 23:52:46, mem=758.6M)
+Set Default Input Pin Transition as 0.1 ps.
+INFO: You have enabled new technology 'legacy_fects_final_release' that has been internally qualified at Cadence but has only limited customer testing. You are encouraged to work with Cadence directly to qualify your usage and make sure it meets your needs before deploying it widely. Final production licensing of this feature is subject to change.
+Loading design 'gpu' saved by 'Innovus' '21.18-s099_1' on 'Mon May 25 02:12:55 2026'.
+% Begin Load MMMC data ... (date=05/25 23:52:46, mem=762.6M)
+% End Load MMMC data ... (date=05/25 23:52:46, total cpu=0:00:00.0, real=0:00:00.0, peak res=763.3M, current mem=763.3M)
+typical_rc
+
+Loading LEF file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/libs/lef/gsclib045_tech.lef ...
+
+Loading LEF file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/libs/lef/gsclib045_macro.lef ...
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/viewDefinition.tcl
+Reading slow_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib)
+Read 480 cells in library 'slow_vdd1v0' 
+Reading fast_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib)
+Read 480 cells in library 'fast_vdd1v0' 
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+*** End library_loading (cpu=0.02min, real=0.02min, mem=22.9M, fe_cpu=0.45min, fe_real=0.93min, fe_mem=1044.7M) ***
+% Begin Load netlist data ... (date=05/25 23:52:48, mem=784.3M)
+*** Begin netlist parsing (mem=1044.7M) ***
+Created 480 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/vbin/gpu.v.bin'
+
+*** Memory Usage v#1 (Current mem = 1058.734M, initial mem = 478.109M) ***
+*** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=1058.7M) ***
+% End Load netlist data ... (date=05/25 23:52:48, total cpu=0:00:00.1, real=0:00:00.0, peak res=796.9M, current mem=796.9M)
+Set top cell to gpu.
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+Hooked 960 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell gpu ...
+*** Netlist is unique.
+** info: there are 1055 modules.
+** info: there are 13511 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 1111.660M, initial mem = 478.109M) ***
+*info: set bottom ioPad orient R0
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Set Default Input Pin Transition as 0.1 ps.
+Set Shrink Factor to 0.90000
+Loading preference file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/gui.pref.tcl ...
+Slack adjustment of -0 applied on <default> path group
+**WARN: (IMPOPT-3602):	The specified path group name reg2reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for reg2reg path_group
+Slack adjustment of -0 applied on reg2reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name reg2out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for reg2out path_group
+Slack adjustment of 0 applied on reg2out path_group
+**WARN: (IMPOPT-3602):	The specified path group name in2reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for in2reg path_group
+Slack adjustment of 0 applied on in2reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name in2out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for in2out path_group
+Slack adjustment of -0 applied on in2out path_group
+#WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+**WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+**WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMaxRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -topRoutingLayer' instead.
+Change floorplan default-technical-site to 'CoreSite'.
+*Info: initialize multi-corner CTS.
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+% Begin Load MMMC data post ... (date=05/25 23:52:49, mem=1101.2M)
+% End Load MMMC data post ... (date=05/25 23:52:49, total cpu=0:00:00.0, real=0:00:00.0, peak res=1101.2M, current mem=1101.2M)
+Reading floorplan file - /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/gpu.fp.gz (mem = 1370.2M).
+% Begin Load floorplan data ... (date=05/25 23:52:49, mem=1101.3M)
+*info: reset 13995 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 482000 474620)
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+ ... processed partition successfully.
+Reading binary special route file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/gpu.fp.spr.gz (Created by Innovus v21.18-s099_1 on Mon May 25 02:12:54 2026, version: 1)
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1102.1M, current mem=1102.1M)
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+% End Load floorplan data ... (date=05/25 23:52:50, total cpu=0:00:00.1, real=0:00:01.0, peak res=1103.1M, current mem=1103.0M)
+Reading congestion map file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/gpu.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=05/25 23:52:50, mem=1103.5M)
+Suppress "**WARN ..." messages.
+Un-suppress "**WARN ..." messages.
+% End Load SymbolTable ... (date=05/25 23:52:50, total cpu=0:00:00.1, real=0:00:00.0, peak res=1106.9M, current mem=1106.9M)
+Loading place ...
+% Begin Load placement data ... (date=05/25 23:52:50, mem=1106.9M)
+Reading placement file - /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/gpu.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v21.18-s099_1 on Mon May 25 02:12:54 2026, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Completed restorePlace (cpu=0:00:00.0 real=0:00:00.0 mem=1380.2M) ***
+Total net length = 1.995e+05 (1.063e+05 9.315e+04) (ext = 1.380e+04)
+% End Load placement data ... (date=05/25 23:52:50, total cpu=0:00:00.1, real=0:00:00.0, peak res=1110.6M, current mem=1110.0M)
+% Begin Load routing data ... (date=05/25 23:52:50, mem=1110.0M)
+Reading routing file - /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/gpu.route.gz.
+Reading Innovus routing data (Created by Innovus v21.18-s099_1 on Mon May 25 02:12:54 2026 Format: 20.1) ...
+*** Total 13919 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.1 real=0:00:01.0 mem=1394.2M) ***
+% End Load routing data ... (date=05/25 23:52:51, total cpu=0:00:00.1, real=0:00:01.0, peak res=1128.7M, current mem=1127.5M)
+Loading Drc markers ...
+... 8 markers are loaded ...
+... 0 geometry drc markers are loaded ...
+... 0 antenna drc markers are loaded ...
+TAT_INFO: restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+Reading property file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/gpu.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1397.2M) ***
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Capacitance Table File /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl ...
+Cap table was created using Encounter 10.10-b056_1.
+Process name: cln28hpl_1p10m+alrdl_5x2yu2yz_typical.
+Set Shrink Factor to 0.90000
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: setup_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+ 
+ Analysis View: hold_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Loading rc congestion map /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/gpu.congmap.gz ...
+Start generating vias ..
+#Skip building auto via since it is not turned on.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Via generation completed.
+% Begin Load power constraints ... (date=05/25 23:52:52, mem=1141.0M)
+'set_default_switching_activity' finished successfully.
+% End Load power constraints ... (date=05/25 23:52:52, total cpu=0:00:00.1, real=0:00:00.0, peak res=1147.6M, current mem=1147.6M)
+slow_delay fast_delay
+% Begin load AAE data ... (date=05/25 23:52:52, mem=1195.8M)
+AAE DB initialization (MEM=1498.89 CPU=0:00:00.0 REAL=0:00:00.0) 
+% End load AAE data ... (date=05/25 23:52:53, total cpu=0:00:00.6, real=0:00:01.0, peak res=1203.2M, current mem=1203.2M)
+Restoring CCOpt config...
+  Extracting original clock gating for clk...
+    clock_tree clk contains 1827 sinks and 0 clock gates.
+  Extracting original clock gating for clk done.
+  The skew group clk/func_mode was created. It contains 1827 sinks and 1 sources.
+Restoring CCOpt config done.
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+**WARN: (IMPCTE-107):	The following globals have been obsoleted since version . They will be removed in the next release. 
+timing_enable_separate_device_slew_effect_sensitivities
+#% End load design ... (date=05/25 23:52:53, total cpu=0:00:05.5, real=0:00:07.0, peak res=1226.7M, current mem=1208.1M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+WARNING   IMPPTN-867           1  Found use of %s. This will continue to w...
+WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+WARNING   IMPOPT-3602          4  The specified path group name %s is not ...
+WARNING   NRIF-91              1  Option setNanoRouteMode -routeTopRouting...
+WARNING   IMPCTE-107           1  The following globals have been obsolete...
+WARNING   IMPPSP-1003          1  Found use of '%s'. This will continue to...
+WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+*** Message Summary: 16 warning(s), 0 error(s)
+
+<CMD> setLayerPreference violation -isSelectable 0
+<CMD> setLayerPreference violation -isVisible 0
+<CMD> fit
+<CMD> verifyMetalDensity -report metal.rpt -detailed
+
+******** Start: VERIFY DENSITY ********
+Density calculation ...... Slot :   1 of   1
+
+Densities of non-overlapping windows have been saved in FE DB.
+
+A total of 127 density violation(s).
+Windows < Min. Density = 127
+Windows > Max. Density = 0
+Windows < Min. Union. Density = 0
+Windows > Max. Union. Density = 0
+
+******** End: VERIFY DENSITY ********
+VMD: elapsed time: 2.00
+     (CPU Time: 0:00:02.2  MEM: 16.336M)
+
+<CMD> fit
+<CMD> zoomBox -120.63900 8.40600 269.46800 197.00850
+<CMD> zoomBox -89.14500 23.86350 192.70750 160.12900
+<CMD> fit
+<CMD> verifyMetalDensity -report metal.rpt -detailed
+
+******** Start: VERIFY DENSITY ********
+Density calculation ...... Slot :   1 of   1
+
+Densities of non-overlapping windows have been saved in FE DB.
+
+A total of 127 density violation(s).
+Windows < Min. Density = 127
+Windows > Max. Density = 0
+Windows < Min. Union. Density = 0
+Windows > Max. Union. Density = 0
+
+******** End: VERIFY DENSITY ********
+VMD: elapsed time: 2.00
+     (CPU Time: 0:00:02.3  MEM: 9.078M)
+
+<CMD> zoomBox 13.79350 67.90400 295.64600 204.16950
+<CMD> fit
+<CMD> setMetalFill -layer Metal1 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal2 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal3 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal4 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal5 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal6 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal7 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal8 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal9 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal10 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal11 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> verifyMetalDensity -report gpu.density.rpt -detailed -saveToDB
+
+******** Start: VERIFY DENSITY ********
+Density calculation ...... Slot :   1 of   1
+
+Densities of non-overlapping windows have been saved in FE DB.
+
+A total of 127 density violation(s).
+Windows < Min. Density = 127
+Windows > Max. Density = 0
+Windows < Min. Union. Density = 0
+Windows > Max. Union. Density = 0
+
+******** End: VERIFY DENSITY ********
+VMD: elapsed time: 2.00
+     (CPU Time: 0:00:02.3  MEM: 0.000M)
+
+<CMD> verifyMetalDensity -report metal.rpt -detailed
+
+******** Start: VERIFY DENSITY ********
+Density calculation ...... Slot :   1 of   1
+
+Densities of non-overlapping windows have been saved in FE DB.
+
+A total of 127 density violation(s).
+Windows < Min. Density = 127
+Windows > Max. Density = 0
+Windows < Min. Union. Density = 0
+Windows > Max. Union. Density = 0
+
+******** End: VERIFY DENSITY ********
+VMD: elapsed time: 2.00
+     (CPU Time: 0:00:02.2  MEM: 9.078M)
+
+**ERROR: (IMPSYT-6000):	No Object Selected.
+<CMD> setLayerPreference densityMap -isVisible 1
+<CMD> setDensityMapMode -gridInRow 10 -threshold 0.75
+<CMD> setLayerPreference densityMap -color {#000066 #00006d #000074 #00007b #000082 #000089 #000090 #000097 #00009e #0000a5 #0000ac #0000b3 #0000bb #0000c2 #0000c9 #0000d0 #0000d7 #0000de #0000e5 #0000ec #0000f3 #0000fa #0005ff #0011ff #001eff #002aff #0037ff #0043ff #0050ff #005cff #0069ff #0076ff #0082ff #008fff #009bff #00a8ff #00b4ff #00c1ff #00cdff #00daff #00e7ff #00f3ff #00fefd #00f8f2 #00f2e6 #00ecda #00e6ce #00e0c2 #00dbb7 #00d5ab #00cf9f #00c993 #00c387 #00bd7c #00b770 #00b164 #00ab58 #00a54c #009f40 #009a35 #009429 #008e1d #008811 #008205 #058200 #118800 #1d8e00 #299400 #359a00 #409f00 #4ca500 #58ab00 #64b100 #70b700 #7cbd00 #87c300 #93c900 #9fcf00 #abd500 #b7db00 #c2e000 #cee600 #daec00 #e6f200 #f2f800 #fdfe00 #fff300 #ffe700 #ffda00 #ffcd00 #ffc100 #ffb400 #ffa800 #ff9b00 #ff8f00 #ff8200 #ff7600 #ff6900 #ff5c00 #ff5000 #ff4300 #ff3700 #ff2a00 #ff1e00 #ff1100 #ff0500 #ff0606 #ff1212 #ff1e1e #ff2a2a #ff3636 #ff4242 #ff4d4d #ff5959 #ff6565 #ff7171 #ff7d7d #ff8888 #ff9494 #ffa0a0 #ffacac #ffb8b8 #ffc3c3 #ffcfcf #ffdbdb #ffe7e7 #fff3f3}
+<CMD> reportDensityMap
+Estimated cell power/ground rail width = 0.160 um
+default core: bins with density > 0.750 = 38.46 % ( 65 / 169 )
+bin size: 86 sites by 10 row(s). total 169 bins ( 13 by 13 )
+  density range     #bins    %
+  (0.750 - 0.800]      25  14.79
+  (0.800 - 0.850]      21  12.43
+  (0.850 - 0.900]      15   8.88
+  (0.900 - 0.950]       4   2.37
+  total                65  38.46
+
+Density distribution unevenness ratio = 10.137%
+<CMD> help verifyMetalDensity
+
+Usage: verifyMetalDensity [-help] [-area {x1 y1 x2 y2}] [-detailed] [-ignoreLEFDensity] [-oversize <integer>] [-report <string>] [-layer <string>]
+
+-help                         # Prints out the command usage
+-area {x1 y1 x2 y2}           # Specifies the coordinates of the area to verify (box, optional)
+-detailed                     # Generates a detailed metal density report (bool, optional)
+-ignoreLEFDensity             # Ignore MACRO density table in LEF file (bool, optional)
+-layer <string>               # Specifies the LEF or Encounter layers to verify (string, optional)
+-oversize <integer>           # Specifies an offset value for the area to verify (int, optional)
+-report <string>              # Specifies the report file for the metal density violation information (string, optional)
+
+
+<CMD> setMetalFill -layer Metal1 -opcActiveSpacing 0.060 -borderSpacing -0.001
+<CMD> setMetalFill -layer Metal2 -opcActiveSpacing 0.070 -borderSpacing -0.001
+<CMD> setMetalFill -layer Metal3 -opcActiveSpacing 0.070 -borderSpacing -0.001
+<CMD> setMetalFill -layer Metal4 -opcActiveSpacing 0.070 -borderSpacing -0.001
+<CMD> setMetalFill -layer Metal5 -opcActiveSpacing 0.070 -borderSpacing -0.001
+<CMD> setMetalFill -layer Metal6 -opcActiveSpacing 0.070 -borderSpacing -0.001
+<CMD> setMetalFill -layer Metal7 -opcActiveSpacing 0.070 -borderSpacing -0.001
+<CMD> setMetalFill -layer Metal8 -opcActiveSpacing 0.070 -borderSpacing -0.001
+<CMD> setMetalFill -layer Metal9 -opcActiveSpacing 0.070 -borderSpacing -0.001
+<CMD> setMetalFill -layer Metal10 -opcActiveSpacing 0.200 -borderSpacing -0.001
+<CMD> setMetalFill -layer Metal11 -opcActiveSpacing 0.200 -borderSpacing -0.001
+<CMD> setLayerPreference routeCongest -isVisible 1
+<CMD> setLayerPreference congestH -color {#000066 #0000c9 #0053ff #00fcfa #00a953 #53a900 #f9fc00 #ff5300 #ff5858 #ffffff}
+<CMD> setLayerPreference congestV -color {#000066 #0000c9 #0053ff #00fcfa #00a953 #53a900 #f9fc00 #ff5300 #ff5858 #ffffff}
+<CMD> setLayerPreference timingMap -isVisible 1
+<CMD> setLayerPreference timingMap -color {#ffffff #fff3f3 #ffe7e7 #ffdbdb #ffcfcf #ffc3c3 #ffb8b8 #ffacac #ffa0a0 #ff9494 #ff8888 #ff7d7d #ff7171 #ff6565 #ff5959 #ff4d4d #ff4242 #ff3636 #ff2a2a #ff1e1e #ff1212 #ff0606 #ff0500 #ff1100 #ff1e00 #ff2a00 #ff3700 #ff4300 #ff5000 #ff5c00 #ff6900 #ff7600 #ff8200 #ff8f00 #ff9b00 #ffa800 #ffb400 #ffc100 #ffcd00 #ffda00 #ffe700 #fff300 #fdfe00 #f2f800 #e6f200 #daec00 #cee600 #c2e000 #b7db00 #abd500 #9fcf00 #93c900 #87c300 #7cbd00 #70b700 #64b100 #58ab00 #4ca500 #409f00 #359a00 #299400 #1d8e00 #118800 #058200 #008205 #008811 #008e1d #009429 #009a35 #009f40 #00a54c #00ab58 #00b164 #00b770 #00bd7c #00c387 #00c993 #00cf9f #00d5ab #00dbb7 #00e0c2 #00e6ce #00ecda #00f2e6 #00f8f2 #00fefd #00f3ff #00e7ff #00daff #00cdff #00c1ff #00b4ff #00a8ff #009bff #008fff #0082ff #0076ff #0069ff #005cff #0050ff #0043ff #0037ff #002aff #001eff #0011ff #0005ff #0000fa #0000f3 #0000ec #0000e5 #0000de #0000d7 #0000d0 #0000c9 #0000c2 #0000bb #0000b3 #0000ac #0000a5 #00009e #000097 #000090 #000089 #000082 #00007b #000074 #00006d}
+<CMD> display_timing_map -check_type setup
+AAE_INFO: opIsDesignInPostRouteState() is 0
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: gpu
+# Design Mode: 90nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Extraction called for design 'gpu' of instances=15261 and nets=13995 using extraction engine 'preRoute' .
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+Type 'man IMPEXT-3530' for more detail.
+PreRoute RC Extraction called for design gpu.
+RC Extraction called in multi-corner(1) mode.
+RCMode: PreRoute
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 0.90000
+PreRoute extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+Using capacitance table file ...
+Skipped RC grid update for preRoute extraction.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+PreRoute RC Extraction DONE (CPU Time: 0:00:00.2  Real Time: 0:00:00.0  MEM: 2378.945M)
+Start delay calculation (fullDC) (1 T). (MEM=2400.3)
+Total number of fetched objects 13917
+Total number of fetched objects 13917
+End delay calculation. (MEM=2544.02 CPU=0:00:02.0 REAL=0:00:02.0)
+End delay calculation (fullDC). (MEM=2507.4 CPU=0:00:02.6 REAL=0:00:03.0)
+<CMD> setMetalFill -layer Metal1 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal2 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal3 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal4 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal5 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal6 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal7 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal8 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal9 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal10 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal11 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> verifyMetalDensity -report gpu.density.rpt -detailed -saveToDB
+
+******** Start: VERIFY DENSITY ********
+Density calculation ...... Slot :   1 of   1
+
+Densities of non-overlapping windows have been saved in FE DB.
+
+A total of 127 density violation(s).
+Windows < Min. Density = 127
+Windows > Max. Density = 0
+Windows < Min. Union. Density = 0
+Windows > Max. Union. Density = 0
+
+******** End: VERIFY DENSITY ********
+VMD: elapsed time: 2.00
+     (CPU Time: 0:00:02.2  MEM: 0.000M)
+
+<CMD> setLayerPreference timingMap -color {#ffffff #fff3f3 #ffe7e7 #ffdbdb #ffcfcf #ffc3c3 #ffb8b8 #ffacac #ffa0a0 #ff9494 #ff8888 #ff7d7d #ff7171 #ff6565 #ff5959 #ff4d4d #ff4242 #ff3636 #ff2a2a #ff1e1e #ff1212 #ff0606 #ff0500 #ff1100 #ff1e00 #ff2a00 #ff3700 #ff4300 #ff5000 #ff5c00 #ff6900 #ff7600 #ff8200 #ff8f00 #ff9b00 #ffa800 #ffb400 #ffc100 #ffcd00 #ffda00 #ffe700 #fff300 #fdfe00 #f2f800 #e6f200 #daec00 #cee600 #c2e000 #b7db00 #abd500 #9fcf00 #93c900 #87c300 #7cbd00 #70b700 #64b100 #58ab00 #4ca500 #409f00 #359a00 #299400 #1d8e00 #118800 #058200 #008205 #008811 #008e1d #009429 #009a35 #009f40 #00a54c #00ab58 #00b164 #00b770 #00bd7c #00c387 #00c993 #00cf9f #00d5ab #00dbb7 #00e0c2 #00e6ce #00ecda #00f2e6 #00f8f2 #00fefd #00f3ff #00e7ff #00daff #00cdff #00c1ff #00b4ff #00a8ff #009bff #008fff #0082ff #0076ff #0069ff #005cff #0050ff #0043ff #0037ff #002aff #001eff #0011ff #0005ff #0000fa #0000f3 #0000ec #0000e5 #0000de #0000d7 #0000d0 #0000c9 #0000c2 #0000bb #0000b3 #0000ac #0000a5 #00009e #000097 #000090 #000089 #000082 #00007b #000074 #00006d}
+<CMD> display_timing_map -check_type setup
+<CMD> setLayerPreference densityMap -color {#000066 #00006d #000074 #00007b #000082 #000089 #000090 #000097 #00009e #0000a5 #0000ac #0000b3 #0000bb #0000c2 #0000c9 #0000d0 #0000d7 #0000de #0000e5 #0000ec #0000f3 #0000fa #0005ff #0011ff #001eff #002aff #0037ff #0043ff #0050ff #005cff #0069ff #0076ff #0082ff #008fff #009bff #00a8ff #00b4ff #00c1ff #00cdff #00daff #00e7ff #00f3ff #00fefd #00f8f2 #00f2e6 #00ecda #00e6ce #00e0c2 #00dbb7 #00d5ab #00cf9f #00c993 #00c387 #00bd7c #00b770 #00b164 #00ab58 #00a54c #009f40 #009a35 #009429 #008e1d #008811 #008205 #058200 #118800 #1d8e00 #299400 #359a00 #409f00 #4ca500 #58ab00 #64b100 #70b700 #7cbd00 #87c300 #93c900 #9fcf00 #abd500 #b7db00 #c2e000 #cee600 #daec00 #e6f200 #f2f800 #fdfe00 #fff300 #ffe700 #ffda00 #ffcd00 #ffc100 #ffb400 #ffa800 #ff9b00 #ff8f00 #ff8200 #ff7600 #ff6900 #ff5c00 #ff5000 #ff4300 #ff3700 #ff2a00 #ff1e00 #ff1100 #ff0500 #ff0606 #ff1212 #ff1e1e #ff2a2a #ff3636 #ff4242 #ff4d4d #ff5959 #ff6565 #ff7171 #ff7d7d #ff8888 #ff9494 #ffa0a0 #ffacac #ffb8b8 #ffc3c3 #ffcfcf #ffdbdb #ffe7e7 #fff3f3} -stippleData 8 4 {0xaa 0x55 0xaa 0x55}
+<CMD> setDensityMapMode -gridInRow 10 -threshold 0.75
+<CMD> setLayerPreference densityMap -color {#000066 #00006d #000074 #00007b #000082 #000089 #000090 #000097 #00009e #0000a5 #0000ac #0000b3 #0000bb #0000c2 #0000c9 #0000d0 #0000d7 #0000de #0000e5 #0000ec #0000f3 #0000fa #0005ff #0011ff #001eff #002aff #0037ff #0043ff #0050ff #005cff #0069ff #0076ff #0082ff #008fff #009bff #00a8ff #00b4ff #00c1ff #00cdff #00daff #00e7ff #00f3ff #00fefd #00f8f2 #00f2e6 #00ecda #00e6ce #00e0c2 #00dbb7 #00d5ab #00cf9f #00c993 #00c387 #00bd7c #00b770 #00b164 #00ab58 #00a54c #009f40 #009a35 #009429 #008e1d #008811 #008205 #058200 #118800 #1d8e00 #299400 #359a00 #409f00 #4ca500 #58ab00 #64b100 #70b700 #7cbd00 #87c300 #93c900 #9fcf00 #abd500 #b7db00 #c2e000 #cee600 #daec00 #e6f200 #f2f800 #fdfe00 #fff300 #ffe700 #ffda00 #ffcd00 #ffc100 #ffb400 #ffa800 #ff9b00 #ff8f00 #ff8200 #ff7600 #ff6900 #ff5c00 #ff5000 #ff4300 #ff3700 #ff2a00 #ff1e00 #ff1100 #ff0500 #ff0606 #ff1212 #ff1e1e #ff2a2a #ff3636 #ff4242 #ff4d4d #ff5959 #ff6565 #ff7171 #ff7d7d #ff8888 #ff9494 #ffa0a0 #ffacac #ffb8b8 #ffc3c3 #ffcfcf #ffdbdb #ffe7e7 #fff3f3}
+<CMD> reportDensityMap
+default core: bins with density > 0.750 = 38.46 % ( 65 / 169 )
+bin size: 86 sites by 10 row(s). total 169 bins ( 13 by 13 )
+  density range     #bins    %
+  (0.750 - 0.800]      25  14.79
+  (0.800 - 0.850]      21  12.43
+  (0.850 - 0.900]      15   8.88
+  (0.900 - 0.950]       4   2.37
+  total                65  38.46
+
+Density distribution unevenness ratio = 10.137%
+<CMD> setDensityMapMode -gridInRow 10 -threshold 0.75
+<CMD> setLayerPreference densityMap -color {#000066 #00006d #000074 #00007b #000082 #000089 #000090 #000097 #00009e #0000a5 #0000ac #0000b3 #0000bb #0000c2 #0000c9 #0000d0 #0000d7 #0000de #0000e5 #0000ec #0000f3 #0000fa #0005ff #0011ff #001eff #002aff #0037ff #0043ff #0050ff #005cff #0069ff #0076ff #0082ff #008fff #009bff #00a8ff #00b4ff #00c1ff #00cdff #00daff #00e7ff #00f3ff #00fefd #00f8f2 #00f2e6 #00ecda #00e6ce #00e0c2 #00dbb7 #00d5ab #00cf9f #00c993 #00c387 #00bd7c #00b770 #00b164 #00ab58 #00a54c #009f40 #009a35 #009429 #008e1d #008811 #008205 #058200 #118800 #1d8e00 #299400 #359a00 #409f00 #4ca500 #58ab00 #64b100 #70b700 #7cbd00 #87c300 #93c900 #9fcf00 #abd500 #b7db00 #c2e000 #cee600 #daec00 #e6f200 #f2f800 #fdfe00 #fff300 #ffe700 #ffda00 #ffcd00 #ffc100 #ffb400 #ffa800 #ff9b00 #ff8f00 #ff8200 #ff7600 #ff6900 #ff5c00 #ff5000 #ff4300 #ff3700 #ff2a00 #ff1e00 #ff1100 #ff0500 #ff0606 #ff1212 #ff1e1e #ff2a2a #ff3636 #ff4242 #ff4d4d #ff5959 #ff6565 #ff7171 #ff7d7d #ff8888 #ff9494 #ffa0a0 #ffacac #ffb8b8 #ffc3c3 #ffcfcf #ffdbdb #ffe7e7 #fff3f3}
+<CMD> reportDensityMap
+default core: bins with density > 0.750 = 38.46 % ( 65 / 169 )
+bin size: 86 sites by 10 row(s). total 169 bins ( 13 by 13 )
+  density range     #bins    %
+  (0.750 - 0.800]      25  14.79
+  (0.800 - 0.850]      21  12.43
+  (0.850 - 0.900]      15   8.88
+  (0.900 - 0.950]       4   2.37
+  total                65  38.46
+
+Density distribution unevenness ratio = 10.137%
+<CMD> fit
+<CMD> zoomBox -99.64850 12.82600 359.30000 234.71100
+<CMD> zoomBox 39.21700 61.59950 321.06950 197.86500
+<CMD> fit
+
+*** Memory Usage v#1 (Current mem = 2512.016M, initial mem = 478.109M) ***
+*** Message Summary: 17 warning(s), 2 error(s)
+
+--- Ending "Innovus" (totcpu=0:05:00, real=0:27:14, mem=2512.0M) ---

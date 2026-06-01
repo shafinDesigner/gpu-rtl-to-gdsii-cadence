@@ -1,0 +1,41 @@
+[05/23 04:33:40      0s] 
+[05/23 04:33:40      0s] Cadence Tempus(TM) Timing Solution.
+[05/23 04:33:40      0s] Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/23 04:33:40      0s] 
+[05/23 04:33:40      0s] Version:	v22.11-s001_1, built Fri Sep 16 15:45:21 PDT 2022
+[05/23 04:33:40      0s] Options:	
+[05/23 04:33:40      0s] Date:		Sat May 23 04:33:40 2026
+[05/23 04:33:40      0s] Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+[05/23 04:33:40      0s] OS:		Red Hat Enterprise Linux Server release 7.9 (Maipo)
+[05/23 04:33:40      0s] 
+[05/23 04:33:40      0s] License:
+[05/23 04:33:40      0s] 		[04:33:40.389489] Configured Lic search path (21.01-s002): 5280@vlsi
+
+[05/23 04:33:40      0s] 		tpsxl	Tempus Timing Signoff Solution XL	22.1	checkout succeeded
+[05/23 04:33:40      0s] 		16 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[05/23 04:33:57     14s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Tempus Timing Solution v22.11-s001_1 (64bit) 09/16/2022 15:45 (Linux 3.10.0-693.el7.x86_64)
+[05/23 04:34:04     21s] @(#)CDS: NanoRoute 22.11-s001_1 NR220910-1931/22_11-UB (database version 18.20.592) {superthreading v2.19}
+[05/23 04:34:04     21s] @(#)CDS: AAE 22.11-e006 (64bit) 09/16/2022 (Linux 3.10.0-693.el7.x86_64)
+[05/23 04:34:04     21s] @(#)CDS: CTE 22.11-e010_1 () Sep  5 2022 07:16:46 ( )
+[05/23 04:34:04     21s] @(#)CDS: SYNTECH 22.11-e002_1 () Aug  2 2022 07:54:00 ( )
+[05/23 04:34:04     21s] @(#)CDS: CPE v22.11-e028
+[05/23 04:34:04     21s] @(#)CDS: OA 22.60-p076 Wed May 18 13:45:29 2022
+[05/23 04:34:04     21s] @(#)CDS: SGN 21.20-d001 (11-Feb-2022) (64 bit executable, TkQt5.9.1)
+[05/23 04:34:04     21s] @(#)CDS: RCDB 11.15.0
+[05/23 04:34:04     21s] @(#)CDS: STYLUS 22.10-p002_1 (09/01/2022 08:10 PDT)
+[05/23 04:34:04     21s] Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+[05/23 04:34:04     21s] **INFO: (TMPDIR-1001): The environment variable TMPDIR is not set.
+Create and set the environment variable TMPDIR to '/tmp/ssv_tmpdir_184714_mCEJwF'.
+environment variable TMPDIR is '/tmp/ssv_tmpdir_184714_mCEJwF'.
+[05/23 04:34:10     23s] <CMD> read_lib ./LIB/fast_vdd1v0_basicCells.lib
+[05/23 04:34:18     25s] <CMD> read_lib ./LIB/slow_vdd1v0_basicCells.lib
+[05/23 04:34:23     27s] <CMD> read_verilog gpu_signoff_netlist.v
+[05/23 04:34:30     28s] <CMD> read_sdc gpu_signoff_constraints.sdc
+[05/23 04:34:30     28s] **ERROR: Design must be in memory before running this command.
+[05/23 04:34:30     28s] Design must be in memory before running this command
+[05/23 04:36:16     48s] <CMD> exit
+[05/23 04:36:16     48s] 
+[05/23 04:36:16     48s] *** Memory Usage v#1 (Current mem = 1246.883M, initial mem = 612.184M) ***
+[05/23 04:36:16     48s] *** Message Summary: 0 warning(s), 0 error(s)
+[05/23 04:36:16     48s] 
+[05/23 04:36:16     48s] --- Ending "Tempus Timing Solution" (totcpu=0:00:48.6, real=0:02:36, mem=1246.9M) ---

@@ -1,0 +1,29 @@
+
+Cadence Tempus(TM) Timing Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v22.11-s001_1, built Fri Sep 16 15:45:21 PDT 2022
+Options:	
+Date:		Sat May 23 04:33:40 2026
+Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+OS:		Red Hat Enterprise Linux Server release 7.9 (Maipo)
+
+License:
+		[04:33:40.389489] Configured Lic search path (21.01-s002): 5280@vlsi
+
+		tpsxl	Tempus Timing Signoff Solution XL	22.1	checkout succeeded
+		16 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+environment variable TMPDIR is '/tmp/ssv_tmpdir_184714_mCEJwF'.
+<CMD> read_lib ./LIB/fast_vdd1v0_basicCells.lib
+<CMD> read_lib ./LIB/slow_vdd1v0_basicCells.lib
+<CMD> read_verilog gpu_signoff_netlist.v
+<CMD> read_sdc gpu_signoff_constraints.sdc
+**ERROR: Design must be in memory before running this command.
+Design must be in memory before running this command
+<CMD> exit
+
+*** Memory Usage v#1 (Current mem = 1246.883M, initial mem = 612.184M) ***
+*** Message Summary: 0 warning(s), 0 error(s)
+
+--- Ending "Tempus Timing Solution" (totcpu=0:00:48.6, real=0:02:36, mem=1246.9M) ---

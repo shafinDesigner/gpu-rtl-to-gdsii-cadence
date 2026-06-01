@@ -1,0 +1,457 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.18-s099_1, built Tue Jul 18 13:03:50 PDT 2023
+Options:	-overwrite -init scripts/init_design.tcl -log log/init_design.log 
+Date:		Thu May 21 12:47:36 2026
+Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+OS:		Red Hat Enterprise Linux Server 7.9 (Maipo)
+
+License:
+		[12:47:36.389561] Configured Lic search path (21.01-s002): 5280@vlsi
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_52188_vlsi_user_77_IdJT3h.
+
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+[INFO] Loading Pegasus 22.20 fill procedures
+Sourcing file "scripts/init_design.tcl" ...
+RM-info: Starting time 12:47:59_21/05/26
+RM-info: Starting script.. scripts/soce_setup.tcl
+RM-info: Completed script.. scripts/soce_setup.tcl
+#% Begin Load MMMC data ... (date=05/21 12:47:59, mem=745.0M)
+#% End Load MMMC data ... (date=05/21 12:47:59, total cpu=0:00:00.0, real=0:00:00.0, peak res=746.1M, current mem=746.1M)
+
+Loading LEF file /home/user_77/backup_extract/my_project/project/LEF/gsclib045_tech.lef ...
+
+Loading LEF file /home/user_77/backup_extract/my_project/project/LEF/gsclib045_macro.lef ...
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from input/mmmc.view
+Reading slow_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib)
+Read 480 cells in library 'slow_vdd1v0' 
+Reading fast_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib)
+Read 480 cells in library 'fast_vdd1v0' 
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+*** End library_loading (cpu=0.02min, real=0.02min, mem=22.9M, fe_cpu=0.36min, fe_real=0.43min, fe_mem=1033.7M) ***
+#% Begin Load netlist data ... (date=05/21 12:48:01, mem=766.8M)
+*** Begin netlist parsing (mem=1033.7M) ***
+Created 480 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist './SYN/outputs/gpu_netlist.v'
+
+*** Memory Usage v#1 (Current mem = 1036.664M, initial mem = 478.109M) ***
+*** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=1036.7M) ***
+#% End Load netlist data ... (date=05/21 12:48:01, total cpu=0:00:00.1, real=0:00:00.0, peak res=781.0M, current mem=781.0M)
+Set top cell to gpu.
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+Hooked 960 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell gpu ...
+*** Netlist is unique.
+** info: there are 1055 modules.
+** info: there are 12316 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 1098.590M, initial mem = 478.109M) ***
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Capacitance Table File ../Captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl ...
+Cap table was created using Encounter 10.10-b056_1.
+Process name: cln28hpl_1p10m+alrdl_5x2yu2yz_typical.
+Set Shrink Factor to 0.90000
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: setup_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '../Captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '../QRC_tech/gpdk045.tch'
+ 
+ Analysis View: hold_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '../Captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '../QRC_tech/gpdk045.tch'
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+*Info: initialize multi-corner CTS.
+Reading timing constraints file '../Constraints/constraints_top.sdc' ...
+Current (total cpu=0:00:22.8, real=0:00:26.0, peak res=1093.5M, current mem=1093.5M)
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../Constraints/constraints_top.sdc, Line 1).
+
+INFO (CTE): Reading of timing constraints file ../Constraints/constraints_top.sdc completed, with 1 WARNING
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1134.5M, current mem=1134.5M)
+Current (total cpu=0:00:22.9, real=0:00:26.0, peak res=1134.5M, current mem=1134.5M)
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+WARNING   TCLCMD-1461          1  Skipped unsupported command: %s          
+WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+*** Message Summary: 7 warning(s), 0 error(s)
+
+RM-info: Command init_design completed
+*** Checked 2 GNC rules.
+*** Applying global-net connections...
+*** Applied 2 GNC rules (cpu = 0:00:00.0)
+RM-info: Creating Floorplan from DEF file
+Reading DEF file '/home/user_77/backup_extract/my_project/project/make_flow/def/gpu_floorplan.def', current time is Thu May 21 12:48:02 2026 ...
+--- DIVIDERCHAR '/'
+--- UnitsPerDBU = 1.0000
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+--- DIEAREA (0 0) (482000 474620)
+**WARN: (IMPDF-200):	Instance FE_RC_1986_0 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_RC_1985_0 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_RC_1984_0 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_OCPC3814_n_7313 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_RC_1983_0 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_RC_1982_0 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_OCPC3813_cores_1_core_instance_threads_1_alu_instance_div_43_40_n_54 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_OCPC3812_cores_0_core_instance_n_51510 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_OCPC3811_cores_0_core_instance_threads_0_alu_instance_div_43_40_n_273 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_OCPC3810_n_4304 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_OCPC3809_FE_OFN325_cores_0__core_instance_rs_2 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_OCPC3807_cores_0_core_instance_threads_2_alu_instance_div_43_40_n_119 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_OCPC3806_n_5139 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_OCPC3805_n_7103 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_OCPC3804_cores_0_core_instance_threads_0_alu_instance_div_43_40_n_99 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_OCPC3803_FE_OFN322_cores_0__core_instance_rs_5 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_RC_1981_0 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_RC_1980_0 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_OCPC3802_n_6536 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (IMPDF-200):	Instance FE_OCPC3801_cores_0_core_instance_threads_0_alu_instance_div_43_40_n_161 was not found in the database and was ignored. If this is a physical-only instance, add the '+ SOURCE DIST' (in DEF5.8 or older version file) or '+ PHYSICAL' (in DEF6.0 or later version file) attribute to the instance in the DEF file.
+Type 'man IMPDF-200' for more detail.
+**WARN: (EMS-27):	Message (IMPDF-200) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+defIn read 10000 lines...
+defIn read 20000 lines...
+defIn read 30000 lines...
+DEF file '/home/user_77/backup_extract/my_project/project/make_flow/def/gpu_floorplan.def' is parsed, current time is Thu May 21 12:48:02 2026.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Updating the floorplan ...
+#% Begin checkPinAssignment (date=05/21 12:48:02, mem=1140.1M)
+Checking pins of top cell gpu ... completed
+
+===========================================================================================================================
+                                                checkPinAssignment Summary
+===========================================================================================================================
+Partition   | pads  | pins   | legal  | illegal | internal | internal illegal | FT     | FT illegal | constant | unplaced |
+===========================================================================================================================
+gpu         |     0 |    183 |    175 |       0 |        8 |                0 |      0 |          0 |        0 |        0 |
+===========================================================================================================================
+TOTAL       |     0 |    183 |    175 |       0 |        8 |                0 |      0 |          0 |        0 |        0 |
+===========================================================================================================================
+#% End checkPinAssignment (date=05/21 12:48:03, total cpu=0:00:00.1, real=0:00:00.0, peak res=1152.8M, current mem=1151.9M)
+Processed 183 pins over 1 partitions.
+#% Begin save design ... (date=05/21 12:48:03, mem=1158.8M)
+% Begin Save ccopt configuration ... (date=05/21 12:48:03, mem=1158.8M)
+% End Save ccopt configuration ... (date=05/21 12:48:03, total cpu=0:00:00.0, real=0:00:00.0, peak res=1159.8M, current mem=1159.8M)
+% Begin Save netlist data ... (date=05/21 12:48:03, mem=1159.8M)
+Writing Binary DB to DESIGN/init_design.inn.dat.tmp/gpu.v.bin in single-threaded mode...
+% End Save netlist data ... (date=05/21 12:48:03, total cpu=0:00:00.1, real=0:00:00.0, peak res=1161.6M, current mem=1159.9M)
+Saving symbol-table file ...
+Saving congestion map file DESIGN/init_design.inn.dat.tmp/gpu.route.congmap.gz ...
+% Begin Save AAE data ... (date=05/21 12:48:04, mem=1160.7M)
+Saving AAE Data ...
+% End Save AAE data ... (date=05/21 12:48:04, total cpu=0:00:00.0, real=0:00:00.0, peak res=1160.7M, current mem=1160.7M)
+Saving preference file DESIGN/init_design.inn.dat.tmp/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+% Begin Save floorplan data ... (date=05/21 12:48:04, mem=1164.8M)
+Saving floorplan file ...
+% End Save floorplan data ... (date=05/21 12:48:04, total cpu=0:00:00.0, real=0:00:00.0, peak res=1165.5M, current mem=1165.5M)
+Saving PG file DESIGN/init_design.inn.dat.tmp/gpu.pg.gz, version#2, (Created by Innovus v21.18-s099_1 on Thu May 21 12:48:04 2026)
+*** Completed savePGFile (cpu=0:00:00.0 real=0:00:01.0 mem=1439.4M) ***
+Saving Drc markers ...
+... 8 markers are saved ...
+... 0 geometry drc markers are saved ...
+... 0 antenna drc markers are saved ...
+% Begin Save placement data ... (date=05/21 12:48:05, mem=1166.0M)
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruning View Names to Binary file
+% End Save placement data ... (date=05/21 12:48:05, total cpu=0:00:00.0, real=0:00:00.0, peak res=1166.0M, current mem=1166.0M)
+% Begin Save routing data ... (date=05/21 12:48:05, mem=1166.0M)
+Saving route file ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1439.4M) ***
+% End Save routing data ... (date=05/21 12:48:05, total cpu=0:00:00.0, real=0:00:00.0, peak res=1166.3M, current mem=1166.3M)
+Saving property file DESIGN/init_design.inn.dat.tmp/gpu.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1442.4M) ***
+% Begin Save power constraints data ... (date=05/21 12:48:05, mem=1166.9M)
+% End Save power constraints data ... (date=05/21 12:48:05, total cpu=0:00:00.0, real=0:00:00.0, peak res=1167.0M, current mem=1167.0M)
+Generated self-contained design init_design.inn.dat.tmp
+#% End save design ... (date=05/21 12:48:06, total cpu=0:00:00.8, real=0:00:03.0, peak res=1195.6M, current mem=1167.9M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+**WARN: (IMPREPO-205):	There are 2 Cells with missing PG PIN.
+**WARN: (IMPREPO-207):	There are 1 Cells dimensions not multiple integer of site.
+Begin checking placement ... (start mem=1472.7M, init mem=1607.5M)
+*info: Recommended don't use cell = 0           
+*info: Placed = 1750           (Fixed = 1750)
+*info: Unplaced = 12316       
+Placement Density:63.44%(28938/45614)
+Placement Density (including fixed std cells):64.37%(30135/46811)
+Finished checkPlace (total: cpu=0:00:00.2, real=0:00:00.0; vio checks: cpu=0:00:00.0, real=0:00:00.0; mem=1608.5M)
+Design: gpu
+
+------ Design Summary:
+Total Standard Cell Number   (cells) : 14066
+Total Block Cell Number      (cells) : 0
+Total I/O Pad Cell Number    (cells) : 0
+Total Standard Cell Area     ( um^2) : 30134.65
+Total Block Cell Area        ( um^2) : 0.00
+Total I/O Pad Cell Area      ( um^2) : 0.00
+
+------ Design Statistics:
+
+Number of Instances            : 14066
+Number of Non-uniquified Insts : 14056
+Number of Nets                 : 12774
+Average number of Pins per Net : 3.66
+Maximum number of Pins in Net  : 1828
+
+------ I/O Port summary
+
+Number of Primary I/O Ports    : 183
+Number of Input Ports          : 69
+Number of Output Ports         : 114
+Number of Bidirectional Ports  : 0
+Number of Power/Ground Ports   : 0
+Number of Floating Ports                     *: 0
+Number of Ports Connected to Multiple Pads   *: 0
+Number of Ports Connected to Core Instances   : 183
+**WARN: (IMPREPO-202):	There are 183 Ports connected to core instances.
+
+------ Design Rule Checking:
+
+Number of Output Pins connect to Power/Ground *: 0
+Number of Insts with Input Pins tied together ?: 0
+Number of TieHi/Lo term nets not connected to instance's PG terms ?: 0
+Number of Input/InOut Floating Pins            : 0
+Number of Output Floating Pins                 : 0
+Number of Output Term Marked TieHi/Lo         *: 0
+
+Number of nets with tri-state drivers          : 0
+Number of nets with parallel drivers           : 0
+Number of nets with multiple drivers           : 0
+Number of nets with no driver (No FanIn)       : 0
+Number of Output Floating nets (No FanOut)     : 80
+Number of High Fanout nets (>50)               : 6
+**WARN: (IMPREPO-227):	There are 6 High Fanout nets (>50).
+**WARN: (IMPREPO-213):	There are 183 I/O Pins connected to Non-IO Insts.
+Checking for any assigns in the netlist...
+  No assigns found.
+Checking routing tracks.....
+Checking other grids.....
+Checking FINFET Grid is on Manufacture Grid.....
+
+Checking core/die box is on Grid.....
+
+Checking snap rule ......
+
+Checking Row is on grid......
+
+INFO (IMPFP-7241): Tech site CoreSiteDouble has no symmetry Y. 	Current symmetry setting : isSymmetryR90 false; isSymmetryX : false; isSymmetryY : false;
+
+INFO (IMPFP-7241): Tech site CoreSite has no symmetry Y. 	Current symmetry setting : isSymmetryR90 false; isSymmetryX : false; isSymmetryY : false;
+
+Checking AreaIO row.....
+Checking routing blockage.....
+Checking components.....
+Checking constraints (guide/region/fence).....
+Checking groups.....
+Checking Ptn Core Box.....
+
+Checking Preroutes.....
+No. of regular pre-routes not on tracks : 0 
+ Design check done.
+Report saved in file reports/init_design/gpu.main.htm.ascii
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPREPO-227          1  There are %d High Fanout nets (>50).     
+WARNING   IMPREPO-202          1  There are %d Ports connected to core ins...
+WARNING   IMPREPO-205          1  There are %d Cells with missing PG PIN.  
+WARNING   IMPREPO-207          1  There are %d Cells dimensions not multip...
+WARNING   IMPREPO-213          1  There are %d I/O Pins connected to Non-I...
+*** Message Summary: 5 warning(s), 0 error(s)
+
+Start to collect the design information.
+Build netlist information for Cell gpu.
+Finished collecting the design information.
+Generating standard cells used in the design report.
+Analyze library ... 
+Analyze netlist ... 
+Generating HFO information report.
+Generate no-driven nets information report.
+
+**WARN: (IMPDB-1270):	Some nets (12513) did not have valid net lengths.
+Analyze timing ... 
+Report saved in file reports/init_design/summaryReport/gpu.main.htm.ascii
+TRACKS Y 1330 DO 499 STEP 950 LAYER  Metal11 ;   
+TRACKS X 1200 DO 481 STEP 1000 LAYER  Metal10 ;   
+TRACKS Y 190 DO 1249 STEP 380 LAYER  Metal9 ;   
+TRACKS X 200 DO 1205 STEP 400 LAYER  Metal8 ;   
+TRACKS Y 190 DO 1249 STEP 380 LAYER  Metal7 ;   
+TRACKS X 200 DO 1205 STEP 400 LAYER  Metal6 ;   
+TRACKS Y 190 DO 1249 STEP 380 LAYER  Metal5 ;   
+TRACKS X 200 DO 1205 STEP 400 LAYER  Metal4 ;   
+TRACKS Y 190 DO 1249 STEP 380 LAYER  Metal3 ;   
+TRACKS X 200 DO 1205 STEP 400 LAYER  Metal2 ;   
+TRACKS Y 190 DO 1249 STEP 380 LAYER  Metal1 ;   
+#-limit 1000000                          # int, default=1000000, user setting
+#-check_same_via_cell true               # bool, default=false, user setting
+#-report reports/init_design/report_verify_drc # string, default="", user setting
+ *** Starting Verify DRC (MEM: 1608.5) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+  VERIFY DRC ...... Sub-Area: {0.000 0.000 80.640 79.680} 1 of 9
+  VERIFY DRC ...... Sub-Area : 1 complete 160 Viols.
+  VERIFY DRC ...... Sub-Area: {80.640 0.000 161.280 79.680} 2 of 9
+  VERIFY DRC ...... Sub-Area : 2 complete 160 Viols.
+  VERIFY DRC ...... Sub-Area: {161.280 0.000 241.000 79.680} 3 of 9
+  VERIFY DRC ...... Sub-Area : 3 complete 160 Viols.
+  VERIFY DRC ...... Sub-Area: {0.000 79.680 80.640 159.360} 4 of 9
+  VERIFY DRC ...... Sub-Area : 4 complete 188 Viols.
+  VERIFY DRC ...... Sub-Area: {80.640 79.680 161.280 159.360} 5 of 9
+  VERIFY DRC ...... Sub-Area : 5 complete 188 Viols.
+  VERIFY DRC ...... Sub-Area: {161.280 79.680 241.000 159.360} 6 of 9
+  VERIFY DRC ...... Sub-Area : 6 complete 188 Viols.
+  VERIFY DRC ...... Sub-Area: {0.000 159.360 80.640 237.310} 7 of 9
+  VERIFY DRC ...... Sub-Area : 7 complete 156 Viols.
+  VERIFY DRC ...... Sub-Area: {80.640 159.360 161.280 237.310} 8 of 9
+  VERIFY DRC ...... Sub-Area : 8 complete 156 Viols.
+  VERIFY DRC ...... Sub-Area: {161.280 159.360 241.000 237.310} 9 of 9
+  VERIFY DRC ...... Sub-Area : 9 complete 156 Viols.
+
+  Verification Complete : 1512 Viols.
+
+**WARN: (IMPTCM-70):	Option "-droute_vio_display_type_num" for command getNanoRouteMode is obsolete and has been replaced by "-drouteVioDisplayTypeNum". The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, update your script to use "-drouteVioDisplayTypeNum".
+ Violation Summary By Layer and Type:
+
+	          Short   Totals
+	Metal1     1512     1512
+	Totals     1512     1512
+
+ *** End Verify DRC (CPU: 0:00:00.3  ELAPSED TIME: 0.00  MEM: 257.1M) ***
+
+RM-info: Completed time 12:48:06_21/05/26
+
+*** Memory Usage v#1 (Current mem = 1608.543M, initial mem = 478.109M) ***
+*** Message Summary: 5069 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:25.0, real=0:00:30.0, mem=1608.5M) ---
+

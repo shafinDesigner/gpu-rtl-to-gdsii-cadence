@@ -1,0 +1,637 @@
+
+Cadence Tempus(TM) Timing Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v22.11-s001_1, built Fri Sep 16 15:45:21 PDT 2022
+Options:	
+Date:		Sat May 23 04:59:23 2026
+Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+OS:		Red Hat Enterprise Linux Server release 7.9 (Maipo)
+
+License:
+		[04:59:23.389561] Configured Lic search path (21.01-s002): 5280@vlsi
+
+		tpsxl	Tempus Timing Signoff Solution XL	22.1	checkout succeeded
+		16 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+environment variable TMPDIR is '/tmp/ssv_tmpdir_204293_TrmsaH'.
+<CMD> read_lib -late ../LIB/slow_vdd1v0_basiccells.lib
+
+Description:
+read librarys
+
+Usage: read_lib [-help] [<libFiles <library_files>>] [-aocv <<aocv files>>] [-cdb <<typ.cdb files>>] [-lef <<.lef files>>]
+                [-library_side_file <<side files>>] [-max <<max.lib files>>] [-max_aocv <<max_aocv files>>] [-max_cdb <<max.cdb files>>] [-min <<min.lib files>>]
+                [-min_aocv <<min_aocv files>>] [-min_cdb <<min.cdb files>>] [-oaRef <<oaRefLib>>] [-pgv <<power grid lib files>>] [-socv <<socv files>>]
+
+**ERROR: (IMPTCM-48):	"-late" is not a legal option for command "read_lib". Either the current option or an option prior to it is not specified correctly.
+<CMD> read_lib -max ../LIB/slow_vdd1v0_basiccells.lib
+<CMD> read_lib -min ../LIB/fast_vdd1v0_basicCells.lib
+<CMD> read_verilog gpu_signoff_netlist.v
+<CMD> current_design gpu
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'gpu'
+**ERROR: (TCLCMD-917):	Cannot find 'designs' that match 'gpu'
+<CMD> read_verilog gpu_signoff_netlist.v
+invalid command name "elaborate"
+<CMD> set_top_module gpu
+#% Begin Load MMMC data ... (date=05/23 05:01:57, mem=998.4M)
+Number of views requested 1 are allowed with the current licenses... continuing with set_analysis_view.
+#% End Load MMMC data ... (date=05/23 05:01:57, total cpu=0:00:00.0, real=0:00:00.0, peak res=999.2M, current mem=999.2M)
+default_emulate_early_rc_corner default_emulate_late_rc_corner default_emulate_rc_corner
+Loading view definition file from .ssv_emulate_view_definition_204293.tcl
+Reading default_emulate_libset_max timing library '/home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib)
+Read 480 cells in library 'slow_vdd1v0' 
+Reading default_emulate_libset_min timing library '/home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib)
+Read 480 cells in library 'fast_vdd1v0' 
+*** End library_loading (cpu=0.02min, real=0.03min, mem=13.9M, fe_cpu=0.84min, fe_real=2.60min, fe_mem=1263.6M) ***
+#% Begin Load netlist data ... (date=05/23 05:01:59, mem=1007.4M)
+*** Begin netlist parsing (mem=1263.6M) ***
+Reading verilog netlist 'gpu_signoff_netlist.v'
+
+*** Memory Usage v#1 (Current mem = 1425.582M, initial mem = 620.184M) ***
+*** End netlist parsing (cpu=0:00:00.2, real=0:00:00.0, mem=1425.6M) ***
+#% End Load netlist data ... (date=05/23 05:01:59, total cpu=0:00:00.6, real=0:00:00.0, peak res=1124.1M, current mem=1114.2M)
+Set top cell to gpu.
+Starting consistency checks on late and early library sets of delay corner 'default_emulate_delay_corner'
+late library set: default_emulate_libset_max
+early library set: default_emulate_libset_min
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'default_emulate_delay_corner'
+late library set: default_emulate_libset_max
+early library set: default_emulate_libset_min
+Completed consistency checks. Status: Successful
+Building hierarchical netlist for Cell gpu ...
+***** UseNewTieNetMode *****.
+*** Netlist is unique.
+** info: there are 961 modules.
+** info: there are 14355 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 1789.039M, initial mem = 620.184M) ***
+Set Default Input Pin Transition as 0.1 ps.
+/dev/null
+Extraction setup Started 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: default_emulate_view
+    RC-Corner Name        : default_emulate_rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+Starting consistency checks on late and early library sets of delay corner 'default_emulate_delay_corner'
+late library set: default_emulate_libset_max
+early library set: default_emulate_libset_min
+Completed consistency checks. Status: Successful
+Reading timing constraints file '/dev/null' ...
+Current (total cpu=0:00:52.1, real=0:02:38, peak res=1735.6M, current mem=1735.6M)
+Total number of combinational cells: 314
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX12 BUFX16 BUFX2 BUFX20 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX2 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX12 CLKINVX16 CLKINVX2 CLKINVX20 CLKINVX3 CLKINVX4 CLKINVX6 CLKINVX8 INVX1 INVX12 INVX16 INVX2 INVX20 INVX3 INVX4 INVX6 INVXL INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X4 DLY4X1
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+default_emulate_constraint_mode
+Extraction setup Started 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: default_emulate_view
+    RC-Corner Name        : default_emulate_rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 125 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+Extraction setup Started 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: default_emulate_view
+    RC-Corner Name        : default_emulate_rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 125 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+Extraction setup Started 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: default_emulate_view
+    RC-Corner Name        : default_emulate_rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 125 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+default_emulate_libset_max default_emulate_libset_min
+<CMD> read_sdc gpu_signoff_constraints.sdc
+Current (total cpu=0:01:23, real=0:04:03, peak res=1766.2M, current mem=1728.9M)
+gpu
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1734.8M, current mem=1734.8M)
+Current (total cpu=0:01:23, real=0:04:03, peak res=1766.2M, current mem=1734.8M)
+<CMD> read_spef gpu_signoff_parasitics.spef
+
+SPEF files for RC Corner default_emulate_rc_corner:
+Top-level spef file 'gpu_signoff_parasitics.spef'.
+Start spef parsing (MEM=2124.98).
+SPEF file gpu_signoff_parasitics.spef.
+Number of Resistors     : 277163
+Number of Ground Caps   : 277765
+Number of Coupling Caps : 5296
+
+End spef parsing (MEM=2141.98 CPU=0:00:02.0 REAL=0:00:01.0).
+<CMD> report_timing
+AAE_INFO: opIsDesignInPostRouteState() is 0
+AAE DB initialization (MEM=2164.88 CPU=0:00:00.0 REAL=0:00:00.0) 
+#################################################################################
+# Design Name: gpu
+# Design Mode: 65nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Start delay calculation (fullDC) (1 T). (MEM=2019.88)
+/dev/null
+End delay calculation. (MEM=2256.02 CPU=0:00:04.1 REAL=0:00:04.0)
+End delay calculation (fullDC). (MEM=2248.02 CPU=0:00:04.4 REAL=0:00:04.0)
+Path 1: VIOLATED Setup Check with Pin cores[0].core_instance_threads[0].alu_instance_alu_out_reg[0]/CK 
+Endpoint:   cores[0].core_instance_threads[0].alu_instance_alu_out_reg[0]/D (^) checked with  leading edge of 'clk'
+Beginpoint: cores[0].core_instance_threads[0].register_instance_rt_reg[3]/Q (v) triggered by  leading edge of 'clk'
+Path Groups: {clk}
+Other End Arrival Time         -0.727
+- Setup                         0.130
++ Phase Shift                   4.500
+- Uncertainty                   0.030
+= Required Time                 3.613
+- Arrival Time                  4.695
+= Slack Time                   -1.082
+     Clock Rise Edge                 0.000
+     + Clock Network Latency (Prop)  0.572
+     = Beginpoint Arrival Time       0.572
+      ------------------------------------------------------------------------------------------------------------------------------
+      Instance                                                                     Arc           Cell       Delay  Arrival  Required  
+                                                                                                                   Time     Time  
+      ------------------------------------------------------------------------------------------------------------------------------
+      cores[0].core_instance_threads[0].register_instance_rt_reg[3]                CK ^          -          -      0.572    -0.510  
+      cores[0].core_instance_threads[0].register_instance_rt_reg[3]                CK ^ -> Q v   DFFX1      0.288  0.861    -0.221  
+      FE_OFC1998_cores_0__core_instance_rt_3                                       A v -> Y v    BUFX2      0.190  1.051    -0.031  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5582               A v -> Y ^    NOR2X2     0.167  1.218    0.136  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5557               B0 ^ -> Y v   OAI2BB1X1  0.131  1.349    0.268  
+      FE_RC_77_0                                                                   A v -> Y ^    NOR3X2     0.183  1.532    0.450  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5514               A1 ^ -> Y v   AOI21X4    0.168  1.701    0.619  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5508               B0 v -> Y ^   AOI21X1    0.139  1.840    0.758  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5507               A ^ -> Y v    INVX1      0.084  1.924    0.842  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5493               A1 v -> Y ^   AOI21X1    0.088  2.011    0.929  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5486               C ^ -> Y v    NOR3BX2    0.089  2.100    1.019  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5478               A v -> Y v    CLKAND2X3  0.133  2.233    1.151  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5474               B v -> Y ^    NAND2X4    0.047  2.280    1.198  
+      FE_RC_108_0                                                                  B1 ^ -> Y v   AOI22X4    0.066  2.346    1.264  
+      FE_OFC2022_cores_0__core_instance_threads_0__alu_instance_div_43_40_n_128    A v -> Y ^    INVX3      0.074  2.421    1.339  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5459               CI ^ -> CO ^  ADDFX1     0.230  2.651    1.569  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5455               B1 ^ -> Y v   AOI221X2   0.152  2.803    1.721  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5453               C v -> Y ^    NOR3X1     0.137  2.941    1.859  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5443               A1 ^ -> Y v   OAI211X1   0.158  3.099    2.017  
+      FE_OFC1005_cores_0__core_instance_threads_0__alu_instance_div_43_40_n_157    A v -> Y v    BUFX2      0.149  3.248    2.166  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5432               B v -> Y v    CLKAND2X2  0.131  3.379    2.297  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5425               A1 v -> Y ^   AOI221X1   0.167  3.546    2.464  
+      ctsFE_OFC401_cores_0__core_instance_threads_0__alu_instance_div_43_40_n_175  A ^ -> Y ^    BUFX2      0.172  3.718    2.636  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5419               B ^ -> Y v    NAND2X1    0.117  3.834    2.753  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5418               A v -> Y ^    INVX1      0.079  3.914    2.832  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5409               B1 ^ -> Y v   OAI22X1    0.104  4.018    2.936  
+      FE_RC_87_0                                                                   B v -> Y ^    NAND2X1    0.099  4.117    3.035  
+      FE_RC_86_0                                                                   B ^ -> Y v    NOR2BX1    0.068  4.185    3.103  
+      FE_RC_85_0                                                                   B0 v -> Y ^   AOI31X2    0.095  4.279    3.198  
+      ctsFE_RC_1299_0                                                              A0 ^ -> Y v   AOI21X4    0.134  4.414    3.332  
+      FE_RC_123_0                                                                  A v -> Y ^    NOR2X2     0.112  4.526    3.444  
+      FE_RC_122_0                                                                  B ^ -> Y v    NOR2X4     0.079  4.605    3.523  
+      FE_RC_61_0                                                                   A1 v -> Y ^   OAI211X2   0.091  4.695    3.613  
+      cores[0].core_instance_threads[0].alu_instance_alu_out_reg[0]                D ^           DFFHQX1    0.000  4.695    3.613  
+      ------------------------------------------------------------------------------------------------------------------------------
+
+<CMD> report_timing -early
+Path 1: VIOLATED Hold Check with Pin cores[0].core_instance_threads[2].lsu_instance_mem_read_address_reg[5]/CK 
+Endpoint:   cores[0].core_instance_threads[2].lsu_instance_mem_read_address_reg[5]/D (v) checked with  leading edge of 'clk'
+Beginpoint: cores[0].core_instance_threads[2].lsu_instance_mem_read_address_reg[5]/Q (v) triggered by  leading edge of 'clk'
+Path Groups: {clk}
+Other End Arrival Time          0.633
++ Hold                          0.125
++ Phase Shift                   0.000
++ Uncertainty                   0.030
+= Required Time                 0.789
+  Arrival Time                 -0.604
+  Slack Time                   -1.392
+     Clock Rise Edge                 0.000
+     + Clock Network Latency (Prop)  -0.708
+     = Beginpoint Arrival Time       -0.708
+      ----------------------------------------------------------------------------------------------------------------------
+      Instance                                                                Arc          Cell     Delay  Arrival  Required  
+                                                                                                           Time     Time  
+      ----------------------------------------------------------------------------------------------------------------------
+      cores[0].core_instance_threads[2].lsu_instance_mem_read_address_reg[5]  CK ^         -        -      -0.708   0.684  
+      cores[0].core_instance_threads[2].lsu_instance_mem_read_address_reg[5]  CK ^ -> Q v  DFFHQX1  0.069  -0.639   0.753  
+      g95143                                                                  B0 v -> Y v  AO22XL   0.035  -0.604   0.789  
+      cores[0].core_instance_threads[2].lsu_instance_mem_read_address_reg[5]  D v          DFFHQX1  0.000  -0.604   0.789  
+      ----------------------------------------------------------------------------------------------------------------------
+
+<CMD> set_db design_process_node 45
+##  Process: 45            (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+<CMD> report_annotated_parasitics -check
+
+Usage: report_annotated_parasitics [-help] [-net_file <string>] [-nets <string>] [-view {viewName}] [> {write_fileName}] [>> {append_fileName}] [ { [-list_annotated ] [-list_broken_net ] [-list_float_net ] [-list_nodriver_net ] [-list_noload_net ] [-list_not_annotated ] [-list_real_net ] [-list_supply_net ] [-list_zero_cap_net ] [-list_extra_pin_net ] [-max_missing {max_missing_int}]}]
+
+**ERROR: (IMPTCM-48):	"-check" is not a legal option for command "report_annotated_parasitics". Either the current option or an option prior to it is not specified correctly.
+
+<CMD> report_timing
+AAE_INFO: opIsDesignInPostRouteState() is 0
+#################################################################################
+# Design Name: gpu
+# Design Mode: 45nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Start delay calculation (fullDC) (1 T). (MEM=2248.02)
+End delay calculation. (MEM=2268.05 CPU=0:00:04.1 REAL=0:00:04.0)
+End delay calculation (fullDC). (MEM=2268.05 CPU=0:00:04.3 REAL=0:00:04.0)
+Path 1: VIOLATED Setup Check with Pin cores[0].core_instance_threads[0].alu_instance_alu_out_reg[0]/CK 
+Endpoint:   cores[0].core_instance_threads[0].alu_instance_alu_out_reg[0]/D (^) checked with  leading edge of 'clk'
+Beginpoint: cores[0].core_instance_threads[0].register_instance_rt_reg[3]/Q (v) triggered by  leading edge of 'clk'
+Path Groups: {clk}
+Other End Arrival Time         -0.727
+- Setup                         0.130
++ Phase Shift                   4.500
+- Uncertainty                   0.030
+= Required Time                 3.613
+- Arrival Time                  4.695
+= Slack Time                   -1.082
+     Clock Rise Edge                 0.000
+     + Clock Network Latency (Prop)  0.572
+     = Beginpoint Arrival Time       0.572
+      ------------------------------------------------------------------------------------------------------------------------------
+      Instance                                                                     Arc           Cell       Delay  Arrival  Required  
+                                                                                                                   Time     Time  
+      ------------------------------------------------------------------------------------------------------------------------------
+      cores[0].core_instance_threads[0].register_instance_rt_reg[3]                CK ^          -          -      0.572    -0.510  
+      cores[0].core_instance_threads[0].register_instance_rt_reg[3]                CK ^ -> Q v   DFFX1      0.288  0.861    -0.221  
+      FE_OFC1998_cores_0__core_instance_rt_3                                       A v -> Y v    BUFX2      0.190  1.051    -0.031  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5582               A v -> Y ^    NOR2X2     0.167  1.218    0.136  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5557               B0 ^ -> Y v   OAI2BB1X1  0.131  1.349    0.268  
+      FE_RC_77_0                                                                   A v -> Y ^    NOR3X2     0.183  1.532    0.450  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5514               A1 ^ -> Y v   AOI21X4    0.168  1.701    0.619  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5508               B0 v -> Y ^   AOI21X1    0.139  1.840    0.758  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5507               A ^ -> Y v    INVX1      0.084  1.924    0.842  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5493               A1 v -> Y ^   AOI21X1    0.088  2.011    0.929  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5486               C ^ -> Y v    NOR3BX2    0.089  2.100    1.019  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5478               A v -> Y v    CLKAND2X3  0.133  2.233    1.151  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5474               B v -> Y ^    NAND2X4    0.047  2.280    1.198  
+      FE_RC_108_0                                                                  B1 ^ -> Y v   AOI22X4    0.066  2.346    1.264  
+      FE_OFC2022_cores_0__core_instance_threads_0__alu_instance_div_43_40_n_128    A v -> Y ^    INVX3      0.074  2.421    1.339  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5459               CI ^ -> CO ^  ADDFX1     0.230  2.651    1.569  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5455               B1 ^ -> Y v   AOI221X2   0.152  2.803    1.721  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5453               C v -> Y ^    NOR3X1     0.137  2.941    1.859  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5443               A1 ^ -> Y v   OAI211X1   0.158  3.099    2.017  
+      FE_OFC1005_cores_0__core_instance_threads_0__alu_instance_div_43_40_n_157    A v -> Y v    BUFX2      0.149  3.248    2.166  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5432               B v -> Y v    CLKAND2X2  0.131  3.379    2.297  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5425               A1 v -> Y ^   AOI221X1   0.167  3.546    2.464  
+      ctsFE_OFC401_cores_0__core_instance_threads_0__alu_instance_div_43_40_n_175  A ^ -> Y ^    BUFX2      0.172  3.718    2.636  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5419               B ^ -> Y v    NAND2X1    0.117  3.834    2.753  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5418               A v -> Y ^    INVX1      0.079  3.914    2.832  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5409               B1 ^ -> Y v   OAI22X1    0.104  4.018    2.936  
+      FE_RC_87_0                                                                   B v -> Y ^    NAND2X1    0.099  4.117    3.035  
+      FE_RC_86_0                                                                   B ^ -> Y v    NOR2BX1    0.068  4.185    3.103  
+      FE_RC_85_0                                                                   B0 v -> Y ^   AOI31X2    0.095  4.279    3.198  
+      ctsFE_RC_1299_0                                                              A0 ^ -> Y v   AOI21X4    0.134  4.414    3.332  
+      FE_RC_123_0                                                                  A v -> Y ^    NOR2X2     0.112  4.526    3.444  
+      FE_RC_122_0                                                                  B ^ -> Y v    NOR2X4     0.079  4.605    3.523  
+      FE_RC_61_0                                                                   A1 v -> Y ^   OAI211X2   0.091  4.695    3.613  
+      cores[0].core_instance_threads[0].alu_instance_alu_out_reg[0]                D ^           DFFHQX1    0.000  4.695    3.613  
+      ------------------------------------------------------------------------------------------------------------------------------
+
+<CMD> set_db design_process_node 90
+##  Process: 90            (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+<CMD> report_timing
+AAE_INFO: opIsDesignInPostRouteState() is 0
+#################################################################################
+# Design Name: gpu
+# Design Mode: 90nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Start delay calculation (fullDC) (1 T). (MEM=2268.05)
+End delay calculation. (MEM=2295.14 CPU=0:00:04.0 REAL=0:00:04.0)
+End delay calculation (fullDC). (MEM=2295.14 CPU=0:00:04.2 REAL=0:00:05.0)
+Path 1: VIOLATED Setup Check with Pin cores[0].core_instance_threads[0].alu_instance_alu_out_reg[0]/CK 
+Endpoint:   cores[0].core_instance_threads[0].alu_instance_alu_out_reg[0]/D (^) checked with  leading edge of 'clk'
+Beginpoint: cores[0].core_instance_threads[0].register_instance_rt_reg[3]/Q (v) triggered by  leading edge of 'clk'
+Path Groups: {clk}
+Other End Arrival Time         -0.727
+- Setup                         0.130
++ Phase Shift                   4.500
+- Uncertainty                   0.030
+= Required Time                 3.613
+- Arrival Time                  4.695
+= Slack Time                   -1.082
+     Clock Rise Edge                 0.000
+     + Clock Network Latency (Prop)  0.572
+     = Beginpoint Arrival Time       0.572
+      ------------------------------------------------------------------------------------------------------------------------------
+      Instance                                                                     Arc           Cell       Delay  Arrival  Required  
+                                                                                                                   Time     Time  
+      ------------------------------------------------------------------------------------------------------------------------------
+      cores[0].core_instance_threads[0].register_instance_rt_reg[3]                CK ^          -          -      0.572    -0.510  
+      cores[0].core_instance_threads[0].register_instance_rt_reg[3]                CK ^ -> Q v   DFFX1      0.288  0.861    -0.221  
+      FE_OFC1998_cores_0__core_instance_rt_3                                       A v -> Y v    BUFX2      0.190  1.051    -0.031  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5582               A v -> Y ^    NOR2X2     0.167  1.218    0.136  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5557               B0 ^ -> Y v   OAI2BB1X1  0.131  1.349    0.268  
+      FE_RC_77_0                                                                   A v -> Y ^    NOR3X2     0.183  1.532    0.450  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5514               A1 ^ -> Y v   AOI21X4    0.168  1.701    0.619  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5508               B0 v -> Y ^   AOI21X1    0.139  1.840    0.758  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5507               A ^ -> Y v    INVX1      0.084  1.924    0.842  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5493               A1 v -> Y ^   AOI21X1    0.088  2.011    0.929  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5486               C ^ -> Y v    NOR3BX2    0.089  2.100    1.019  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5478               A v -> Y v    CLKAND2X3  0.133  2.233    1.151  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5474               B v -> Y ^    NAND2X4    0.047  2.280    1.198  
+      FE_RC_108_0                                                                  B1 ^ -> Y v   AOI22X4    0.066  2.346    1.264  
+      FE_OFC2022_cores_0__core_instance_threads_0__alu_instance_div_43_40_n_128    A v -> Y ^    INVX3      0.074  2.421    1.339  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5459               CI ^ -> CO ^  ADDFX1     0.230  2.651    1.569  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5455               B1 ^ -> Y v   AOI221X2   0.152  2.803    1.721  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5453               C v -> Y ^    NOR3X1     0.137  2.941    1.859  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5443               A1 ^ -> Y v   OAI211X1   0.158  3.099    2.017  
+      FE_OFC1005_cores_0__core_instance_threads_0__alu_instance_div_43_40_n_157    A v -> Y v    BUFX2      0.149  3.248    2.166  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5432               B v -> Y v    CLKAND2X2  0.131  3.379    2.297  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5425               A1 v -> Y ^   AOI221X1   0.167  3.546    2.464  
+      ctsFE_OFC401_cores_0__core_instance_threads_0__alu_instance_div_43_40_n_175  A ^ -> Y ^    BUFX2      0.172  3.718    2.636  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5419               B ^ -> Y v    NAND2X1    0.117  3.834    2.753  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5418               A v -> Y ^    INVX1      0.079  3.914    2.832  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5409               B1 ^ -> Y v   OAI22X1    0.104  4.018    2.936  
+      FE_RC_87_0                                                                   B v -> Y ^    NAND2X1    0.099  4.117    3.035  
+      FE_RC_86_0                                                                   B ^ -> Y v    NOR2BX1    0.068  4.185    3.103  
+      FE_RC_85_0                                                                   B0 v -> Y ^   AOI31X2    0.095  4.279    3.198  
+      ctsFE_RC_1299_0                                                              A0 ^ -> Y v   AOI21X4    0.134  4.414    3.332  
+      FE_RC_123_0                                                                  A v -> Y ^    NOR2X2     0.112  4.526    3.444  
+      FE_RC_122_0                                                                  B ^ -> Y v    NOR2X4     0.079  4.605    3.523  
+      FE_RC_61_0                                                                   A1 v -> Y ^   OAI211X2   0.091  4.695    3.613  
+      cores[0].core_instance_threads[0].alu_instance_alu_out_reg[0]                D ^           DFFHQX1    0.000  4.695    3.613  
+      ------------------------------------------------------------------------------------------------------------------------------
+
+<CMD> create_rc_corner -name typical_rc -qx_tech_file ../QRC_tech/gpdk045.tch
+<CMD> create_rc_corner -name typical_rc -qx_tech_file ../QRC_tech/gpdk045.tch
+Extraction setup Started 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: default_emulate_view
+    RC-Corner Name        : default_emulate_rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 125 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+set_analysis_view/update_rc_corner called to change MMMC setup. RC Corner setup information has remained the same. Therefore, parasitic data in the tool brought as per the previous MMMC setup is being maintained.
+<CMD> create_library_set -name slow_lib -timing {../LIB/slow_vdd1v0_basiccells.lib}
+<CMD> create_library_set -name fast_lib -timing {../LIB/fast_vdd1v0_basicCells.lib}
+<CMD> create_constraint_mode -name func_mode -sdc_files {gpu_signoff_constraints.sdc}
+<CMD> create_delay_corner -name slow_delay -rc_corner typical_rc -late_library_set slow_lib -early_library_set fast_lib
+<CMD> create_delay_corner -name fast_delay -rc_corner typical_rc -late_library_set fast_lib -early_library_set slow_lib
+<CMD> create_analysis_view -name setup_view -constraint_mode func_mode -delay_corner slow_delay
+<CMD> create_analysis_view -name hold_view  -constraint_mode func_mode -delay_corner fast_delay
+<CMD> set_analysis_view -setup {setup_view} -hold {hold_view}
+Number of views requested 1 are allowed with the current licenses... continuing with set_analysis_view.
+gpu_signoff_constraints.sdc
+Extraction setup Started 
+**WARN: (IMPEXT-3503):	The corner setup has changed in the MMMC flow. New RC corners 'typical_rc' have been added, therefore, no parasitic data exists for them. As a result, the parasitic data in the tool from the previous setup is deleted. Extract or restore the parasitic data for all the current corners by calling 'read_spef/read_rcdb'.
+Summary of Active RC-Corners : 
+ 
+ Analysis View: setup_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+    RC-Corner Technology file: '../QRC_tech/gpdk045.tch'
+ 
+ Analysis View: hold_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+    RC-Corner Technology file: '../QRC_tech/gpdk045.tch'
+**WARN: (IMPEXT-3494):	MMMC setup is changed by calling command set_analysis_view/update_rc_corner. Therefore, the existing parasitic data in the tool is deleted. Setting a new analysis view, updating the RC corner, changing extraction mode settings, or any other related setup changes will cause parasitics to be deleted. Read in the parasitics for each active corner again.
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+Reading timing constraints file 'gpu_signoff_constraints.sdc' ...
+Current (total cpu=0:03:42, real=0:08:09, peak res=1947.4M, current mem=1736.3M)
+gpu
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1749.4M, current mem=1749.4M)
+Current (total cpu=0:03:42, real=0:08:09, peak res=1947.4M, current mem=1749.4M)
+Total number of combinational cells: 314
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX12 BUFX16 BUFX2 BUFX20 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX2 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX12 CLKINVX16 CLKINVX2 CLKINVX20 CLKINVX3 CLKINVX4 CLKINVX6 CLKINVX8 INVX1 INVX12 INVX16 INVX2 INVX20 INVX3 INVX4 INVX6 INVXL INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X4 DLY4X1
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+<CMD> read_spef gpu_signoff_parasitics.spef
+Used active corner typical_rc for reading SPEF file as option '-rc_corner <cornerName>' is not specified in MMMC mode.
+
+SPEF files for RC Corner typical_rc:
+Top-level spef file 'gpu_signoff_parasitics.spef'.
+Start spef parsing (MEM=2060.39).
+SPEF file gpu_signoff_parasitics.spef.
+Number of Resistors     : 277163
+Number of Ground Caps   : 277765
+Number of Coupling Caps : 5296
+
+End spef parsing (MEM=2109.41 CPU=0:00:02.1 REAL=0:00:01.0).
+<CMD> report_timing
+AAE_INFO: opIsDesignInPostRouteState() is 0
+AAE DB initialization (MEM=2114.95 CPU=0:00:00.0 REAL=0:00:00.0) 
+#################################################################################
+# Design Name: gpu
+# Design Mode: 90nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Start delay calculation (fullDC) (1 T). (MEM=2160.83)
+gpu_signoff_constraints.sdc
+End delay calculation. (MEM=2372.47 CPU=0:00:04.2 REAL=0:00:04.0)
+End delay calculation (fullDC). (MEM=2364.47 CPU=0:00:04.6 REAL=0:00:04.0)
+Path 1: VIOLATED Setup Check with Pin cores[0].core_instance_threads[0].alu_instance_alu_out_reg[0]/CK 
+Endpoint:   cores[0].core_instance_threads[0].alu_instance_alu_out_reg[0]/D (^) checked with  leading edge of 'clk'
+Beginpoint: cores[0].core_instance_threads[0].register_instance_rt_reg[3]/Q (v) triggered by  leading edge of 'clk'
+Path Groups: {clk}
+Analysis View: setup_view
+Other End Arrival Time         -0.727
+- Setup                         0.130
++ Phase Shift                   4.500
+- Uncertainty                   0.030
+= Required Time                 3.613
+- Arrival Time                  4.695
+= Slack Time                   -1.082
+     Clock Rise Edge                 0.000
+     + Clock Network Latency (Prop)  0.572
+     = Beginpoint Arrival Time       0.572
+      ------------------------------------------------------------------------------------------------------------------------------
+      Instance                                                                     Arc           Cell       Delay  Arrival  Required  
+                                                                                                                   Time     Time  
+      ------------------------------------------------------------------------------------------------------------------------------
+      cores[0].core_instance_threads[0].register_instance_rt_reg[3]                CK ^          -          -      0.572    -0.510  
+      cores[0].core_instance_threads[0].register_instance_rt_reg[3]                CK ^ -> Q v   DFFX1      0.288  0.861    -0.221  
+      FE_OFC1998_cores_0__core_instance_rt_3                                       A v -> Y v    BUFX2      0.190  1.051    -0.031  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5582               A v -> Y ^    NOR2X2     0.167  1.218    0.136  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5557               B0 ^ -> Y v   OAI2BB1X1  0.131  1.349    0.268  
+      FE_RC_77_0                                                                   A v -> Y ^    NOR3X2     0.183  1.532    0.450  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5514               A1 ^ -> Y v   AOI21X4    0.168  1.701    0.619  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5508               B0 v -> Y ^   AOI21X1    0.139  1.840    0.758  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5507               A ^ -> Y v    INVX1      0.084  1.924    0.842  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5493               A1 v -> Y ^   AOI21X1    0.088  2.011    0.929  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5486               C ^ -> Y v    NOR3BX2    0.089  2.100    1.019  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5478               A v -> Y v    CLKAND2X3  0.133  2.233    1.151  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5474               B v -> Y ^    NAND2X4    0.047  2.280    1.198  
+      FE_RC_108_0                                                                  B1 ^ -> Y v   AOI22X4    0.066  2.346    1.264  
+      FE_OFC2022_cores_0__core_instance_threads_0__alu_instance_div_43_40_n_128    A v -> Y ^    INVX3      0.074  2.421    1.339  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5459               CI ^ -> CO ^  ADDFX1     0.230  2.651    1.569  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5455               B1 ^ -> Y v   AOI221X2   0.152  2.803    1.721  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5453               C v -> Y ^    NOR3X1     0.137  2.941    1.859  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5443               A1 ^ -> Y v   OAI211X1   0.158  3.099    2.017  
+      FE_OFC1005_cores_0__core_instance_threads_0__alu_instance_div_43_40_n_157    A v -> Y v    BUFX2      0.149  3.248    2.166  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5432               B v -> Y v    CLKAND2X2  0.131  3.379    2.297  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5425               A1 v -> Y ^   AOI221X1   0.167  3.546    2.464  
+      ctsFE_OFC401_cores_0__core_instance_threads_0__alu_instance_div_43_40_n_175  A ^ -> Y ^    BUFX2      0.172  3.718    2.636  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5419               B ^ -> Y v    NAND2X1    0.117  3.834    2.753  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5418               A v -> Y ^    INVX1      0.079  3.914    2.832  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5409               B1 ^ -> Y v   OAI22X1    0.104  4.018    2.936  
+      FE_RC_87_0                                                                   B v -> Y ^    NAND2X1    0.099  4.117    3.035  
+      FE_RC_86_0                                                                   B ^ -> Y v    NOR2BX1    0.068  4.185    3.103  
+      FE_RC_85_0                                                                   B0 v -> Y ^   AOI31X2    0.095  4.279    3.198  
+      ctsFE_RC_1299_0                                                              A0 ^ -> Y v   AOI21X4    0.134  4.414    3.332  
+      FE_RC_123_0                                                                  A v -> Y ^    NOR2X2     0.112  4.526    3.444  
+      FE_RC_122_0                                                                  B ^ -> Y v    NOR2X4     0.079  4.605    3.523  
+      FE_RC_61_0                                                                   A1 v -> Y ^   OAI211X2   0.091  4.695    3.613  
+      cores[0].core_instance_threads[0].alu_instance_alu_out_reg[0]                D ^           DFFHQX1    0.000  4.695    3.613  
+      ------------------------------------------------------------------------------------------------------------------------------
+
+invalid command name "ng"
+<CMD> set_eco_mode -fix_setup true -fix_hold true
+
+Usage: set_eco_mode [-help] [-reset] [-add_port_as_needed {true|false}] [-honor_dont_touch {true|false}] [-honor_dont_use {true|false}]
+                    [-honor_fixed_net_wire {true|false}] [-honor_fixed_status {true|false}] [-honor_power_intent {true|false}] [-leq_check {true|false}]
+                    [-modify_only_layers <bottom-layer>:<top-layer>] [-prefix_name <prefix>] [-preserve_module_function {true|false}] [-refine_place {true|false}]
+                    [-si_effort <effort_level>] [-update_timing {true|false}] [{ -batch_mode {true|false} }] [{ -delay_calc_effort effort_level}]
+
+**ERROR: (IMPTCM-48):	"-fix_setup" is not a legal option for command "set_eco_mode". Either the current option or an option prior to it is not specified correctly.
+
+<CMD> set_eco_mode -update_timing true
+invalid command name "fix_eco_timing"
+invalid command name "eco_fix_timing"
+invalid command name "fix_timing"
+No help is available for 'eco'.
+      You might have typed the command name incorrectly
+      (command names are case sensitive), or this is an
+      unknown or unsupported command.
+
+<CMD> report_timing
+Path 1: VIOLATED Setup Check with Pin cores[0].core_instance_threads[0].alu_instance_alu_out_reg[0]/CK 
+Endpoint:   cores[0].core_instance_threads[0].alu_instance_alu_out_reg[0]/D (^) checked with  leading edge of 'clk'
+Beginpoint: cores[0].core_instance_threads[0].register_instance_rt_reg[3]/Q (v) triggered by  leading edge of 'clk'
+Path Groups: {clk}
+Analysis View: setup_view
+Other End Arrival Time         -0.727
+- Setup                         0.130
++ Phase Shift                   4.500
+- Uncertainty                   0.030
+= Required Time                 3.613
+- Arrival Time                  4.695
+= Slack Time                   -1.082
+     Clock Rise Edge                 0.000
+     + Clock Network Latency (Prop)  0.572
+     = Beginpoint Arrival Time       0.572
+      ------------------------------------------------------------------------------------------------------------------------------
+      Instance                                                                     Arc           Cell       Delay  Arrival  Required  
+                                                                                                                   Time     Time  
+      ------------------------------------------------------------------------------------------------------------------------------
+      cores[0].core_instance_threads[0].register_instance_rt_reg[3]                CK ^          -          -      0.572    -0.510  
+      cores[0].core_instance_threads[0].register_instance_rt_reg[3]                CK ^ -> Q v   DFFX1      0.288  0.861    -0.221  
+      FE_OFC1998_cores_0__core_instance_rt_3                                       A v -> Y v    BUFX2      0.190  1.051    -0.031  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5582               A v -> Y ^    NOR2X2     0.167  1.218    0.136  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5557               B0 ^ -> Y v   OAI2BB1X1  0.131  1.349    0.268  
+      FE_RC_77_0                                                                   A v -> Y ^    NOR3X2     0.183  1.532    0.450  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5514               A1 ^ -> Y v   AOI21X4    0.168  1.701    0.619  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5508               B0 v -> Y ^   AOI21X1    0.139  1.840    0.758  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5507               A ^ -> Y v    INVX1      0.084  1.924    0.842  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5493               A1 v -> Y ^   AOI21X1    0.088  2.011    0.929  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5486               C ^ -> Y v    NOR3BX2    0.089  2.100    1.019  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5478               A v -> Y v    CLKAND2X3  0.133  2.233    1.151  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5474               B v -> Y ^    NAND2X4    0.047  2.280    1.198  
+      FE_RC_108_0                                                                  B1 ^ -> Y v   AOI22X4    0.066  2.346    1.264  
+      FE_OFC2022_cores_0__core_instance_threads_0__alu_instance_div_43_40_n_128    A v -> Y ^    INVX3      0.074  2.421    1.339  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5459               CI ^ -> CO ^  ADDFX1     0.230  2.651    1.569  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5455               B1 ^ -> Y v   AOI221X2   0.152  2.803    1.721  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5453               C v -> Y ^    NOR3X1     0.137  2.941    1.859  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5443               A1 ^ -> Y v   OAI211X1   0.158  3.099    2.017  
+      FE_OFC1005_cores_0__core_instance_threads_0__alu_instance_div_43_40_n_157    A v -> Y v    BUFX2      0.149  3.248    2.166  
+      cores[0].core_instance_threads[0].alu_instance_div_43_40_g5432               B v -> Y v    CLKAND2X2  0.131  3.379    2.297  
+      cores[0

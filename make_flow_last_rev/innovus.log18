@@ -1,0 +1,726 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.18-s099_1, built Tue Jul 18 13:03:50 PDT 2023
+Options:	
+Date:		Sat May 23 04:45:05 2026
+Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+OS:		Red Hat Enterprise Linux Server 7.9 (Maipo)
+
+License:
+		[04:45:05.389521] Configured Lic search path (21.01-s002): 5280@vlsi
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+<CMD> define_proc_arguments ViaFillQor -info {This procedure extracts Viafill details from innovus db} -define_args {
+		{-window "window coordinates" "" list optional}
+		{-window_size "window size in microns" "" string optional}
+	
+	}
+[INFO] Loading Pegasus 22.20 fill procedures
+<CMD> define_proc_arguments ProcessFills -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+<CMD> define_proc_arguments FillQor -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+<CMD> define_proc_arguments ProcessFills_fast -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+<CMD> define_proc_arguments FillQor_fast -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+<CMD> define_proc_arguments ProcessFills_fast_stampOnly -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+	
+}
+<CMD> define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+}
+<CMD> win
+<CMD> restoreDesign final_for_LVS_test1.inn.dat/
+**ERROR: (IMPTCM-113):	Option "<design>" is required when option "<session>" is specified. Type 'man restoreDesign' for more details.
+
+
+ERROR:   
+
+  
+    while executing
+"error $catchMsg"
+    (procedure "restoreDesign" line 33)
+
+  
+<CMD> restoreDesign final_for_LVS_test1.inn.dat/ gpu
+#% Begin load design ... (date=05/23 04:45:59, mem=755.7M)
+Set Default Input Pin Transition as 0.1 ps.
+INFO: You have enabled new technology 'legacy_fects_final_release' that has been internally qualified at Cadence but has only limited customer testing. You are encouraged to work with Cadence directly to qualify your usage and make sure it meets your needs before deploying it widely. Final production licensing of this feature is subject to change.
+Loading design 'gpu' saved by 'Innovus' '21.18-s099_1' on 'Sat May 23 03:54:04 2026'.
+% Begin Load MMMC data ... (date=05/23 04:46:00, mem=758.4M)
+% End Load MMMC data ... (date=05/23 04:46:00, total cpu=0:00:00.0, real=0:00:00.0, peak res=759.2M, current mem=759.2M)
+typical_rc
+
+Loading LEF file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/libs/lef/gsclib045_tech.lef ...
+
+Loading LEF file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/libs/lef/gsclib045_macro.lef ...
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/viewDefinition.tcl
+Reading slow_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib)
+Read 480 cells in library 'slow_vdd1v0' 
+Reading fast_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib)
+Read 480 cells in library 'fast_vdd1v0' 
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+*** End library_loading (cpu=0.02min, real=0.02min, mem=23.9M, fe_cpu=0.48min, fe_real=0.93min, fe_mem=1045.5M) ***
+% Begin Load netlist data ... (date=05/23 04:46:01, mem=779.2M)
+*** Begin netlist parsing (mem=1045.5M) ***
+Created 480 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.v.bin'
+
+*** Memory Usage v#1 (Current mem = 1053.461M, initial mem = 478.109M) ***
+*** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=1053.5M) ***
+% End Load netlist data ... (date=05/23 04:46:01, total cpu=0:00:00.1, real=0:00:00.0, peak res=792.5M, current mem=792.5M)
+Set top cell to gpu.
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+Hooked 960 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell gpu ...
+*** Netlist is unique.
+** info: there are 1055 modules.
+** info: there are 14355 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 1110.387M, initial mem = 478.109M) ***
+*info: set bottom ioPad orient R0
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Set Default Input Pin Transition as 0.1 ps.
+Set Shrink Factor to 0.90000
+Loading preference file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gui.pref.tcl ...
+Slack adjustment of -0 applied on <default> path group
+**WARN: (IMPOPT-3602):	The specified path group name reg2reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for reg2reg path_group
+Slack adjustment of -0 applied on reg2reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name reg2out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for reg2out path_group
+Slack adjustment of 0 applied on reg2out path_group
+**WARN: (IMPOPT-3602):	The specified path group name in2reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for in2reg path_group
+Slack adjustment of 0 applied on in2reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name in2out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for in2out path_group
+Slack adjustment of -0 applied on in2out path_group
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+#WARNING (NRIF-90) Option setNanoRouteMode -routeBottomRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -bottomRoutingLayer instead.
+#WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+AAE_INFO: switching -siAware from false to true ...
+AAE_INFO: The setting is changed from false to true in setDelayCalMode -SIAware
+**WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+**WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+**WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMaxRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -topRoutingLayer' instead.
+**WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMinRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -bottomRoutingLayer' instead.
+Change floorplan default-technical-site to 'CoreSite'.
+*Info: initialize multi-corner CTS.
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+% Begin Load MMMC data post ... (date=05/23 04:46:03, mem=1098.6M)
+% End Load MMMC data post ... (date=05/23 04:46:03, total cpu=0:00:00.0, real=0:00:00.0, peak res=1098.7M, current mem=1098.7M)
+Reading floorplan file - /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.fp.gz (mem = 1370.9M).
+% Begin Load floorplan data ... (date=05/23 04:46:03, mem=1098.8M)
+*info: reset 14826 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 482000 474620)
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+ ... processed partition successfully.
+Reading binary special route file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.fp.spr.gz (Created by Innovus v21.18-s099_1 on Sat May 23 03:54:01 2026, version: 1)
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:01.0, peak res=1099.6M, current mem=1099.6M)
+There are 143 nets with weight being set
+There are 146 nets with bottomPreferredRoutingLayer being set
+There are 143 nets with avoidDetour being set
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+% End Load floorplan data ... (date=05/23 04:46:04, total cpu=0:00:00.1, real=0:00:01.0, peak res=1100.5M, current mem=1100.5M)
+Reading congestion map file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=05/23 04:46:04, mem=1100.8M)
+Suppress "**WARN ..." messages.
+Un-suppress "**WARN ..." messages.
+% End Load SymbolTable ... (date=05/23 04:46:04, total cpu=0:00:00.1, real=0:00:00.0, peak res=1104.2M, current mem=1104.2M)
+Loading place ...
+% Begin Load placement data ... (date=05/23 04:46:04, mem=1104.2M)
+Reading placement file - /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v21.18-s099_1 on Sat May 23 03:54:02 2026, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Checked 2 GNC rules.
+*** applyConnectGlobalNets disabled.
+*** Completed restorePlace (cpu=0:00:00.1 real=0:00:00.0 mem=1381.9M) ***
+Total net length = 2.152e+05 (1.150e+05 1.002e+05) (ext = 1.337e+04)
+% End Load placement data ... (date=05/23 04:46:04, total cpu=0:00:00.1, real=0:00:00.0, peak res=1110.1M, current mem=1109.2M)
+Reading PG file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.pg.gz, version#2, (Created by Innovus v21.18-s099_1 on       Sat May 23 03:54:01 2026)
+*** Completed restorePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=1378.9M) ***
+% Begin Load routing data ... (date=05/23 04:46:04, mem=1109.7M)
+Reading routing file - /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.route.gz.
+Reading Innovus routing data (Created by Innovus v21.18-s099_1 on Sat May 23 03:54:02 2026 Format: 20.1) ...
+*** Total 14750 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.1 real=0:00:01.0 mem=1398.9M) ***
+% End Load routing data ... (date=05/23 04:46:05, total cpu=0:00:00.2, real=0:00:01.0, peak res=1130.4M, current mem=1129.4M)
+TAT_INFO: restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+Reading property file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1402.9M) ***
+Reading dirtyarea snapshot file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.db.da.gz (Create by Innovus v21.18-s099_1 on Sat May 23 03:54:02 2026, version: 4).
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Capacitance Table File /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl ...
+Cap table was created using Encounter 10.10-b056_1.
+Process name: cln28hpl_1p10m+alrdl_5x2yu2yz_typical.
+Set Shrink Factor to 0.90000
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: setup_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+ 
+ Analysis View: hold_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Start generating vias ..
+#Skip building auto via since it is not turned on.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Via generation completed.
+% Begin Load power constraints ... (date=05/23 04:46:07, mem=1145.1M)
+'set_default_switching_activity' finished successfully.
+% End Load power constraints ... (date=05/23 04:46:07, total cpu=0:00:00.0, real=0:00:00.0, peak res=1151.6M, current mem=1151.6M)
+slow_delay fast_delay
+% Begin load AAE data ... (date=05/23 04:46:07, mem=1196.9M)
+AAE DB initialization (MEM=1507.93 CPU=0:00:00.0 REAL=0:00:00.0) 
+% End load AAE data ... (date=05/23 04:46:07, total cpu=0:00:00.6, real=0:00:00.0, peak res=1205.1M, current mem=1205.1M)
+Restoring CCOpt config...
+  Extracting original clock gating for clk...
+    clock_tree clk contains 1827 sinks and 0 clock gates.
+  Extracting original clock gating for clk done.
+  The skew group clk/func_mode was created. It contains 1827 sinks and 1 sources.
+  The skew group clk/func_mode was created. It contains 1827 sinks and 1 sources.
+Restoring CCOpt config done.
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+**WARN: (IMPCTE-107):	The following globals have been obsoleted since version . They will be removed in the next release. 
+timing_enable_separate_device_slew_effect_sensitivities
+#% End load design ... (date=05/23 04:46:08, total cpu=0:00:05.8, real=0:00:09.0, peak res=1227.8M, current mem=1212.8M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+WARNING   IMPPTN-867           2  Found use of %s. This will continue to w...
+WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+WARNING   IMPOPT-3602          4  The specified path group name %s is not ...
+WARNING   NRIF-90              1  Option setNanoRouteMode -routeBottomRout...
+WARNING   NRIF-91              1  Option setNanoRouteMode -routeTopRouting...
+WARNING   IMPCTE-107           1  The following globals have been obsolete...
+WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+WARNING   IMPPSP-1003          2  Found use of '%s'. This will continue to...
+WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+*** Message Summary: 20 warning(s), 0 error(s)
+
+<CMD> streamOut ./gpu_final2.gds -mapFile ./streamOut.map -units 1000 -mode ALL -libName gpu
+Parse flat map file...
+Writing GDSII file ...
+	****** db unit per micron = 2000 ******
+	****** output gds2 file unit per micron = 1000 ******
+	****** unit scaling factor = 0.5 ******
+**WARN: (IMPOGDS-250):	Specified unit is smaller than the one in db. You may have rounding problems
+Output for instance
+Output for bump
+Output for physical terminals
+Output for logical terminals
+Output for regular nets
+Output for special nets and metal fills
+Output for via structure generation total number 69
+Statistics for GDS generated (version 3)
+----------------------------------------
+Stream Out Layer Mapping Information:
+GDS Layer Number          GDS Layer Name
+----------------------------------------
+    233                             COMP
+    234                          DIEAREA
+    223                          Metal11
+    221                          Metal11
+    220                          Metal11
+    219                          Metal11
+    218                          Metal11
+    217                            Via10
+    216                            Via10
+    212                            Via10
+    202                          Metal10
+    200                          Metal10
+    199                          Metal10
+    198                          Metal10
+    197                          Metal10
+    196                             Via9
+    195                             Via9
+    191                             Via9
+    181                           Metal9
+    179                           Metal9
+    178                           Metal9
+    177                           Metal9
+    176                           Metal9
+    175                             Via8
+    174                             Via8
+    170                             Via8
+    160                           Metal8
+    158                           Metal8
+    157                           Metal8
+    156                           Metal8
+    155                           Metal8
+    154                             Via7
+    153                             Via7
+    149                             Via7
+    139                           Metal7
+    137                           Metal7
+    136                           Metal7
+    135                           Metal7
+    134                           Metal7
+    133                             Via6
+    132                             Via6
+    131                             Via6
+    130                             Via6
+    129                             Via6
+    128                             Via6
+    127                             Via6
+    122                           Metal6
+    121                           Metal6
+    120                           Metal6
+    119                           Metal6
+    118                           Metal6
+    53                            Metal3
+    52                            Metal3
+    185                           Metal9
+    48                              Via2
+    29                            Metal2
+    180                           Metal9
+    47                              Via2
+    182                           Metal9
+    44                              Via2
+    43                              Via2
+    172                             Via8
+    38                            Metal2
+    95                            Metal5
+    36                            Metal2
+    93                            Metal5
+    112                             Via5
+    194                             Via9
+    55                            Metal3
+    113                           Metal6
+    32                            Metal2
+    54                            Metal3
+    31                            Metal2
+    107                             Via5
+    30                            Metal2
+    49                              Via2
+    106                             Via5
+    33                            Metal2
+    109                             Via5
+    10                            Metal1
+    224                          Metal11
+    86                              Via4
+    50                            Metal3
+    206                          Metal10
+    69                              Via3
+    143                           Metal7
+    6                               Cont
+    169                             Via8
+    35                            Metal2
+    8                             Metal1
+    164                           Metal8
+    27                              Via1
+    141                           Metal7
+    3                               Cont
+    51                            Metal3
+    70                              Via3
+    7                               Cont
+    64                              Via3
+    173                             Via8
+    34                            Metal2
+    92                            Metal5
+    111                             Via5
+    11                            Metal1
+    142                           Metal7
+    4                               Cont
+    9                             Metal1
+    28                              Via1
+    85                              Via4
+    138                           Metal7
+    5                               Cont
+    12                            Metal1
+    226                          Metal11
+    88                              Via4
+    183                           Metal9
+    45                              Via2
+    22                              Via1
+    152                             Via7
+    13                            Metal1
+    71                            Metal4
+    227                          Metal11
+    90                              Via4
+    184                           Metal9
+    46                              Via2
+    161                           Metal8
+    23                              Via1
+    171                             Via8
+    37                            Metal2
+    94                            Metal5
+    148                             Via7
+    14                            Metal1
+    15                            Metal1
+    72                            Metal4
+    91                              Via4
+    150                             Via7
+    16                            Metal1
+    73                            Metal4
+    159                           Metal8
+    26                              Via1
+    151                             Via7
+    17                            Metal1
+    74                            Metal4
+    1                               Cont
+    162                           Metal8
+    24                              Via1
+    140                           Metal7
+    2                               Cont
+    163                           Metal8
+    25                              Via1
+    190                             Via9
+    56                            Metal3
+    57                            Metal3
+    114                           Metal6
+    192                             Via9
+    58                            Metal3
+    115                           Metal6
+    193                             Via9
+    59                            Metal3
+    116                           Metal6
+    203                          Metal10
+    65                              Via3
+    204                          Metal10
+    66                              Via3
+    205                          Metal10
+    67                              Via3
+    201                          Metal10
+    68                              Via3
+    75                            Metal4
+    215                            Via10
+    76                            Metal4
+    211                            Via10
+    77                            Metal4
+    78                            Metal4
+    213                            Via10
+    79                            Metal4
+    214                            Via10
+    80                            Metal4
+    225                          Metal11
+    87                              Via4
+    222                          Metal11
+    89                              Via4
+    96                            Metal5
+    97                            Metal5
+    98                            Metal5
+    99                            Metal5
+    100                           Metal5
+    101                           Metal5
+    108                             Via5
+    110                             Via5
+    117                           Metal6
+    231                          Metal11
+    230                          Metal11
+    229                          Metal11
+    228                          Metal11
+    210                          Metal10
+    209                          Metal10
+    208                          Metal10
+    207                          Metal10
+    189                           Metal9
+    188                           Metal9
+    187                           Metal9
+    186                           Metal9
+    168                           Metal8
+    167                           Metal8
+    166                           Metal8
+    165                           Metal8
+    147                           Metal7
+    146                           Metal7
+    145                           Metal7
+    144                           Metal7
+    63                            Metal3
+    62                            Metal3
+    39                            Metal2
+    105                           Metal5
+    103                           Metal5
+    123                           Metal6
+    42                            Metal2
+    41                            Metal2
+    40                            Metal2
+    20                            Metal1
+    60                            Metal3
+    18                            Metal1
+    61                            Metal3
+    102                           Metal5
+    21                            Metal1
+    19                            Metal1
+    81                            Metal4
+    104                           Metal5
+    82                            Metal4
+    83                            Metal4
+    84                            Metal4
+    124                           Metal6
+    125                           Metal6
+    126                           Metal6
+
+
+Stream Out Information Processed for GDS version 3:
+Units: 1000 DBU
+
+Object                             Count
+----------------------------------------
+Instances                          21462
+
+Ports/Pins                           183
+    metal layer Metal2                39
+    metal layer Metal3                73
+    metal layer Metal4                43
+    metal layer Metal5                17
+    metal layer Metal6                 5
+    metal layer Metal7                 6
+
+Nets                              166856
+    metal layer Metal1              6792
+    metal layer Metal2             75575
+    metal layer Metal3             46491
+    metal layer Metal4             22688
+    metal layer Metal5             11498
+    metal layer Metal6              3082
+    metal layer Metal7               647
+    metal layer Metal8                83
+
+    Via Instances                 110307
+
+Special Nets                         396
+    metal layer Metal1               378
+    metal layer Metal6                10
+    metal layer Metal7                 4
+    metal layer Metal8                 4
+
+    Via Instances                   4942
+
+Metal Fills                            0
+
+    Via Instances                      0
+
+Metal FillOPCs                         0
+
+    Via Instances                      0
+
+Metal FillDRCs                         0
+
+    Via Instances                      0
+
+Text                               14933
+    metal layer Metal1               962
+    metal layer Metal2              9777
+    metal layer Metal3              3353
+    metal layer Metal4               607
+    metal layer Metal5               152
+    metal layer Metal6                57
+    metal layer Metal7                23
+    metal layer Metal8                 2
+
+
+Blockages                              0
+
+
+Custom Text                            0
+
+
+Custom Box                             0
+
+Trim Metal                             0
+
+######Streamout is finished!
+<CMD> extractRC -outfile ./outputs/gpu2.spef
+Extraction called for design 'gpu' of instances=21462 and nets=14826 using extraction engine 'postRoute' at effort level 'low' .
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+Type 'man IMPEXT-3530' for more detail.
+PostRoute (effortLevel low) RC Extraction called for design gpu.
+RC Extraction called in multi-corner(1) mode.
+Process corner(s) are loaded.
+ Corner: typical_rc
+Metal density calculation for erosion effect completed (CPU=0:00:00.2  MEM=1943.94M)
+extractDetailRC Option : -outfile /tmp/innovus_temp_192794_vlsi_user_77_DuFyZa/gpu_192794_VqfbpK.rcdb.d  -extended
+RC Mode: PostRoute -effortLevel low [Extended CapTable, RC Table Resistances]
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Coupling Cap. Scaling Factor : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 0.90000
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 1946.9M)
+Extracted 10.001% (CPU Time= 0:00:00.3  MEM= 2029.5M)
+Extracted 20.0008% (CPU Time= 0:00:00.4  MEM= 2033.5M)
+Extracted 30.0012% (CPU Time= 0:00:00.5  MEM= 2035.5M)
+Extracted 40.0009% (CPU Time= 0:00:00.7  MEM= 2038.5M)
+Extracted 50.0013% (CPU Time= 0:00:00.8  MEM= 2040.5M)
+Extracted 60.001% (CPU Time= 0:00:00.9  MEM= 2042.5M)
+Extracted 70.0008% (CPU Time= 0:00:01.1  MEM= 2043.5M)
+Extracted 80.0012% (CPU Time= 0:00:01.3  MEM= 2045.5M)
+Extracted 90.0009% (CPU Time= 0:00:01.5  MEM= 2046.5M)
+Extracted 100% (CPU Time= 0:00:02.0  MEM= 2052.5M)
+Number of Extracted Resistors     : 277163
+Number of Extracted Ground Cap.   : 277765
+Number of Extracted Coupling Cap. : 445884
+Filtering XCap in 'relativeOnly' mode using values relative_c_threshold=0.03 and total_c_threshold=5fF.
+ Corner: typical_rc
+Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 2037.4M)
+PostRoute (effortLevel low) RC Extraction DONE (CPU Time: 0:00:03.4  Real Time: 0:00:03.0  MEM: 2037.438M)
+
+*** Memory Usage v#1 (Current mem = 1995.438M, initial mem = 478.109M) ***
+*** Message Summary: 22 warning(s), 1 error(s)
+
+--- Ending "Innovus" (totcpu=0:02:19, real=0:10:27, mem=1995.4M) ---

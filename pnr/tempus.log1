@@ -1,0 +1,22 @@
+
+Cadence Tempus(TM) Timing Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v22.11-s001_1, built Fri Sep 16 15:45:21 PDT 2022
+Options:	
+Date:		Mon May 18 04:29:24 2026
+Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+OS:		Red Hat Enterprise Linux Server release 7.9 (Maipo)
+
+License:
+		[04:29:24.389545] Configured Lic search path (21.01-s002): 5280@vlsi
+
+		tpsxl	Tempus Timing Signoff Solution XL	22.1	checkout succeeded
+		16 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+The soft stacksize limit is either up to the hard limit or larger than 0.2% of RAM. No change is needed.
+environment variable TMPDIR is '/tmp/innovus_temp_216390_vlsi_user_77_nYSNjj/ssv_tmpdir_21459_sWcZxC'.
+**WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib - *WARNING* '/home/user_77/cds.lib', Line 7: Skipping: '//UNDEFINE'.
+**WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib -  gpdk045.
+**WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib - 
+.
+**WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib - Unable to open library analogLib at path /home/cadence/lnx/ssv_221/tools.lnx86/dfII/etc/cdslib/artist/analogLib: Invalid Lib Path..

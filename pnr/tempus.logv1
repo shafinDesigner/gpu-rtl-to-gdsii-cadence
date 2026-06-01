@@ -1,0 +1,34 @@
+[05/18 04:29:24      0s] 
+[05/18 04:29:24      0s] Cadence Tempus(TM) Timing Solution.
+[05/18 04:29:24      0s] Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/18 04:29:24      0s] 
+[05/18 04:29:24      0s] Version:	v22.11-s001_1, built Fri Sep 16 15:45:21 PDT 2022
+[05/18 04:29:24      0s] Options:	
+[05/18 04:29:24      0s] Date:		Mon May 18 04:29:24 2026
+[05/18 04:29:24      0s] Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+[05/18 04:29:24      0s] OS:		Red Hat Enterprise Linux Server release 7.9 (Maipo)
+[05/18 04:29:24      0s] 
+[05/18 04:29:24      0s] License:
+[05/18 04:29:24      0s] 		[04:29:24.389545] Configured Lic search path (21.01-s002): 5280@vlsi
+
+[05/18 04:29:24      0s] 		tpsxl	Tempus Timing Signoff Solution XL	22.1	checkout succeeded
+[05/18 04:29:24      0s] 		16 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[05/18 04:29:41     14s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Tempus Timing Solution v22.11-s001_1 (64bit) 09/16/2022 15:45 (Linux 3.10.0-693.el7.x86_64)
+[05/18 04:29:49     21s] @(#)CDS: NanoRoute 22.11-s001_1 NR220910-1931/22_11-UB (database version 18.20.592) {superthreading v2.19}
+[05/18 04:29:49     21s] @(#)CDS: AAE 22.11-e006 (64bit) 09/16/2022 (Linux 3.10.0-693.el7.x86_64)
+[05/18 04:29:49     21s] @(#)CDS: CTE 22.11-e010_1 () Sep  5 2022 07:16:46 ( )
+[05/18 04:29:49     21s] @(#)CDS: SYNTECH 22.11-e002_1 () Aug  2 2022 07:54:00 ( )
+[05/18 04:29:49     21s] @(#)CDS: CPE v22.11-e028
+[05/18 04:29:49     21s] @(#)CDS: OA 22.60-p076 Wed May 18 13:45:29 2022
+[05/18 04:29:49     21s] @(#)CDS: SGN 21.20-d001 (11-Feb-2022) (64 bit executable, TkQt5.9.1)
+[05/18 04:29:49     21s] @(#)CDS: RCDB 11.15.0
+[05/18 04:29:49     21s] @(#)CDS: STYLUS 22.10-p002_1 (09/01/2022 08:10 PDT)
+[05/18 04:29:49     21s] @(#)CDS: SystemPlanner-21.18-10439 (21.18) (2023-03-01 15:40:03+0800)
+[05/18 04:29:49     21s] The soft stacksize limit is either up to the hard limit or larger than 0.2% of RAM. No change is needed.
+[05/18 04:29:49     21s] **INFO: (TMPDIR-1001): Create and set the environment variable TMPDIR to '/tmp/innovus_temp_216390_vlsi_user_77_nYSNjj/ssv_tmpdir_21459_sWcZxC'.
+environment variable TMPDIR is '/tmp/innovus_temp_216390_vlsi_user_77_nYSNjj/ssv_tmpdir_21459_sWcZxC'.
+[05/18 04:30:27     28s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib - *WARNING* '/home/user_77/cds.lib', Line 7: Skipping: '//UNDEFINE'.
+[05/18 04:30:27     28s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib -  gpdk045.
+[05/18 04:30:27     28s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib - 
+[05/18 04:30:27     28s] .
+[05/18 04:30:27     28s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib - Unable to open library analogLib at path /home/cadence/lnx/ssv_221/tools.lnx86/dfII/etc/cdslib/artist/analogLib: Invalid Lib Path..

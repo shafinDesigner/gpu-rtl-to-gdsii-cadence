@@ -1,0 +1,3900 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.18-s099_1, built Tue Jul 18 13:03:50 PDT 2023
+Options:	
+Date:		Mon May 18 05:14:00 2026
+Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+OS:		Red Hat Enterprise Linux Server 7.9 (Maipo)
+
+License:
+		[05:14:00.389457] Configured Lic search path (21.01-s002): 5280@vlsi
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+<CMD> define_proc_arguments ViaFillQor -info {This procedure extracts Viafill details from innovus db} -define_args {
+		{-window "window coordinates" "" list optional}
+		{-window_size "window size in microns" "" string optional}
+	
+	}
+[INFO] Loading Pegasus 22.20 fill procedures
+<CMD> define_proc_arguments ProcessFills -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+<CMD> define_proc_arguments FillQor -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+<CMD> define_proc_arguments ProcessFills_fast -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+<CMD> define_proc_arguments FillQor_fast -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+<CMD> define_proc_arguments ProcessFills_fast_stampOnly -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+	
+}
+<CMD> define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+}
+<CMD> win
+<CMD> restoreDesign fixtran.inn.dat /gpu
+#% Begin load design ... (date=05/18 05:14:57, mem=756.6M)
+Set Default Input Pin Transition as 0.1 ps.
+Loading design 'gpu' saved by 'Innovus' '21.18-s099_1' on 'Mon May 18 05:02:50 2026'.
+% Begin Load MMMC data ... (date=05/18 05:14:57, mem=758.7M)
+% End Load MMMC data ... (date=05/18 05:14:57, total cpu=0:00:00.0, real=0:00:00.0, peak res=759.5M, current mem=759.5M)
+typical_rc
+
+Loading LEF file /home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/lef/gsclib045_tech.lef ...
+
+Loading LEF file /home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/lef/gsclib045_macro.lef ...
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/viewDefinition.tcl
+Reading slow_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib)
+Read 480 cells in library 'slow_vdd1v0' 
+Reading fast_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib)
+Read 480 cells in library 'fast_vdd1v0' 
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+*** End library_loading (cpu=0.02min, real=0.02min, mem=23.9M, fe_cpu=0.46min, fe_real=0.97min, fe_mem=1045.3M) ***
+% Begin Load netlist data ... (date=05/18 05:14:58, mem=780.6M)
+*** Begin netlist parsing (mem=1045.3M) ***
+Created 480 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/gpu.v.bin'
+
+*** Memory Usage v#1 (Current mem = 1054.297M, initial mem = 486.109M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1054.3M) ***
+% End Load netlist data ... (date=05/18 05:14:58, total cpu=0:00:00.1, real=0:00:01.0, peak res=793.7M, current mem=793.7M)
+Set top cell to gpu.
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+Hooked 960 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell gpu ...
+*** Netlist is unique.
+** info: there are 1055 modules.
+** info: there are 15728 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 1111.223M, initial mem = 486.109M) ***
+*info: set bottom ioPad orient R0
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Set Shrink Factor to 0.90000
+Loading preference file /home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/gui.pref.tcl ...
+**WARN: (IMPOPT-3602):	The specified path group name reg2reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for reg2reg path_group
+Slack adjustment of -0 applied on reg2reg path_group
+Slack adjustment of -0 applied on <default> path group
+**WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+AAE_INFO: switching -siAware from false to true ...
+AAE_INFO: The setting is changed from false to true in setDelayCalMode -SIAware
+addRing command will ignore shorts while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will consider rows while creating rings.
+The ring targets are set to core/block ring wires.
+addStripe will allow jog to connect padcore ring and block ring.
+
+Stripes will not extend to closest target.
+When breaking rings, the power planner will consider the existence of blocks.
+addStripe will break automatically at non-default domains when generating global stripes over the core area or default domain.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+Stripes will not be created over regions without power planning wires.
+Offset for stripe breaking is set to 0.
+Stripes will stop at the boundary of the specified area.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Change floorplan default-technical-site to 'CoreSite'.
+*Info: initialize multi-corner CTS.
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+Reading floorplan file - /home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat//gpu.fp.gz (mem = 1374.7M).
+% Begin Load floorplan data ... (date=05/18 05:15:01, mem=1102.3M)
+*info: reset 16145 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 482000 474620)
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+ ... processed partition successfully.
+Reading binary special route file /home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat//gpu.fp.spr.gz (Created by Innovus v21.18-s099_1 on Mon May 18 05:02:47 2026, version: 1)
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1103.1M, current mem=1103.1M)
+There are 59 nets with weight being set
+There are 59 nets with bottomPreferredRoutingLayer being set
+There are 59 nets with avoidDetour being set
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+% End Load floorplan data ... (date=05/18 05:15:02, total cpu=0:00:00.1, real=0:00:01.0, peak res=1104.0M, current mem=1104.0M)
+Reading congestion map file /home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat//gpu.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=05/18 05:15:02, mem=1104.5M)
+Suppress "**WARN ..." messages.
+Un-suppress "**WARN ..." messages.
+% End Load SymbolTable ... (date=05/18 05:15:02, total cpu=0:00:00.1, real=0:00:00.0, peak res=1108.0M, current mem=1108.0M)
+Loading place ...
+% Begin Load placement data ... (date=05/18 05:15:02, mem=1108.0M)
+Reading placement file - /home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat//gpu.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v21.18-s099_1 on Mon May 18 05:02:47 2026, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Checked 2 GNC rules.
+*** applyConnectGlobalNets disabled.
+*** Completed restorePlace (cpu=0:00:00.1 real=0:00:00.0 mem=1384.7M) ***
+Total net length = 2.239e+05 (1.265e+05 9.736e+04) (ext = 1.265e+04)
+% End Load placement data ... (date=05/18 05:15:02, total cpu=0:00:00.1, real=0:00:00.0, peak res=1114.4M, current mem=1113.4M)
+Reading PG file /home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat//gpu.pg.gz, version#2, (Created by Innovus v21.18-s099_1 on       Mon May 18 05:02:47 2026)
+*** Completed restorePGFile (cpu=0:00:00.0 real=0:00:01.0 mem=1381.7M) ***
+% Begin Load routing data ... (date=05/18 05:15:03, mem=1113.7M)
+Reading routing file - /home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat//gpu.route.gz.
+Reading Innovus routing data (Created by Innovus v21.18-s099_1 on Mon May 18 05:02:47 2026 Format: 20.1) ...
+*** Total 16070 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.1 real=0:00:00.0 mem=1402.7M) ***
+% End Load routing data ... (date=05/18 05:15:03, total cpu=0:00:00.2, real=0:00:00.0, peak res=1135.7M, current mem=1135.2M)
+TAT_INFO: restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+Reading property file /home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat//gpu.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1406.7M) ***
+Reading dirtyarea snapshot file /home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat//gpu.db.da.gz (Create by Innovus v21.18-s099_1 on Mon May 18 05:02:48 2026, version: 4).
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Capacitance Table File /home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl ...
+Cap table was created using Encounter 10.10-b056_1.
+Process name: cln28hpl_1p10m+alrdl_5x2yu2yz_typical.
+Set Shrink Factor to 0.90000
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: setup_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+ 
+ Analysis View: hold_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Start generating vias ..
+#Skip building auto via since it is not turned on.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Via generation completed.
+% Begin Load power constraints ... (date=05/18 05:15:05, mem=1150.4M)
+'set_default_switching_activity' finished successfully.
+% End Load power constraints ... (date=05/18 05:15:05, total cpu=0:00:00.0, real=0:00:00.0, peak res=1156.9M, current mem=1156.9M)
+slow_delay fast_delay
+% Begin load AAE data ... (date=05/18 05:15:05, mem=1201.0M)
+AAE DB initialization (MEM=1511.94 CPU=0:00:00.0 REAL=0:00:00.0) 
+% End load AAE data ... (date=05/18 05:15:05, total cpu=0:00:00.6, real=0:00:00.0, peak res=1209.8M, current mem=1209.8M)
+Restoring CCOpt config...
+  Extracting original clock gating for clk...
+    clock_tree clk contains 1827 sinks and 0 clock gates.
+  Extracting original clock gating for clk done.
+  The skew group clk/func_mode was created. It contains 1827 sinks and 1 sources.
+  The skew group clk/func_mode was created. It contains 1827 sinks and 1 sources.
+Restoring CCOpt config done.
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+**WARN: (IMPCTE-107):	The following globals have been obsoleted since version . They will be removed in the next release. 
+timing_enable_separate_device_slew_effect_sensitivities
+#% End load design ... (date=05/18 05:15:05, total cpu=0:00:05.7, real=0:00:08.0, peak res=1232.0M, current mem=1217.2M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+WARNING   IMPOPT-3602          1  The specified path group name %s is not ...
+WARNING   IMPCTE-107           1  The following globals have been obsolete...
+WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+*** Message Summary: 11 warning(s), 0 error(s)
+
+<CMD> verify_drc
+#-check_same_via_cell true               # bool, default=false, user setting
+ *** Starting Verify DRC (MEM: 1943.0) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+
+  Verification Complete : 0 Viols.
+
+ *** End Verify DRC (CPU: 0:00:05.7  ELAPSED TIME: 6.00  MEM: 345.1M) ***
+
+<CMD> timeDesign -postRoute
+*** timeDesign #1 [begin] : totSession cpu/real = 0:01:00.4/0:03:15.0 (0.3), mem = 2302.0M
+ Reset EOS DB
+Ignoring AAE DB Resetting ...
+Extraction called for design 'gpu' of instances=22129 and nets=16146 using extraction engine 'postRoute' at effort level 'low' .
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+Type 'man IMPEXT-3530' for more detail.
+PostRoute (effortLevel low) RC Extraction called for design gpu.
+RC Extraction called in multi-corner(1) mode.
+Process corner(s) are loaded.
+ Corner: typical_rc
+Metal density calculation for erosion effect completed (CPU=0:00:00.2  MEM=2302.04M)
+extractDetailRC Option : -outfile /tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/gpu_71590_hludGp.rcdb.d  -extended
+RC Mode: PostRoute -effortLevel low [Extended CapTable, RC Table Resistances]
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Coupling Cap. Scaling Factor : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 0.90000
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 2052.0M)
+Extracted 10.0007% (CPU Time= 0:00:00.4  MEM= 2120.6M)
+Extracted 20.0007% (CPU Time= 0:00:00.4  MEM= 2120.6M)
+Extracted 30.0008% (CPU Time= 0:00:00.6  MEM= 2120.6M)
+Extracted 40.0009% (CPU Time= 0:00:00.7  MEM= 2120.6M)
+Extracted 50.0009% (CPU Time= 0:00:00.8  MEM= 2120.6M)
+Extracted 60.001% (CPU Time= 0:00:00.9  MEM= 2120.6M)
+Extracted 70.001% (CPU Time= 0:00:01.1  MEM= 2120.6M)
+Extracted 80.0011% (CPU Time= 0:00:01.3  MEM= 2120.6M)
+Extracted 90.0012% (CPU Time= 0:00:01.5  MEM= 2124.6M)
+Extracted 100% (CPU Time= 0:00:02.0  MEM= 2124.6M)
+Number of Extracted Resistors     : 293979
+Number of Extracted Ground Cap.   : 295500
+Number of Extracted Coupling Cap. : 470452
+Filtering XCap in 'relativeOnly' mode using values relative_c_threshold=0.03 and total_c_threshold=5fF.
+ Corner: typical_rc
+Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 2108.5M)
+PostRoute (effortLevel low) RC Extraction DONE (CPU Time: 0:00:03.2  Real Time: 0:00:04.0  MEM: 2108.539M)
+Starting delay calculation for Setup views
+AAE_INFO: opIsDesignInPostRouteState() is 1
+AAE_INFO: resetNetProps viewIdx 0 
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: gpu
+# Design Mode: 90nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+AAE_INFO: 1 threads acquired from CTE.
+Start delay calculation (fullDC) (1 T). (MEM=2108.54)
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2254.73 CPU=0:00:04.2 REAL=0:00:04.0)
+End delay calculation (fullDC). (MEM=2218.11 CPU=0:00:04.8 REAL=0:00:05.0)
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2218.1M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.1, REAL = 0:00:00.0, MEM = 2218.1M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (1 T). (MEM=2192.23)
+Glitch Analysis: View setup_view -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View setup_view -- Total Number of Nets Analyzed = 0. 
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.2 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.4 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2243.45 CPU=0:00:00.3 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2243.45 CPU=0:00:00.3 REAL=0:00:00.0)
+*** Done Building Timing Graph (cpu=0:00:06.8 real=0:00:06.0 totSessionCpu=0:01:10 mem=2243.5M)
+
+------------------------------------------------------------------
+          timeDesign Summary
+------------------------------------------------------------------
+
+Setup views included:
+ setup_view 
+
++--------------------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | default |
++--------------------+---------+---------+---------+
+|           WNS (ns):|  0.003  |  0.003  |  0.683  |
+|           TNS (ns):|  0.000  |  0.000  |  0.000  |
+|    Violating Paths:|    0    |    0    |    0    |
+|          All Paths:|  1830   |  1829   |   185   |
++--------------------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |      0 (0)       |   0.000    |      0 (0)       |
+|   max_tran     |      0 (0)       |   0.000    |      0 (0)       |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 86.035%
+       (95.251% with Fillers)
+------------------------------------------------------------------
+Reported timing to dir ./timingReports
+Total CPU time: 11.66 sec
+Total Real time: 14.0 sec
+Total Memory Usage: 2365.585938 Mbytes
+Reset AAE Options
+*** timeDesign #1 [finish] : cpu/real = 0:00:11.6/0:00:13.6 (0.9), totSession cpu/real = 0:01:12.0/0:03:28.6 (0.3), mem = 2365.6M
+<CMD> ecoChangeCell -inst {cores[1].core_instance_threads[3].alu_instance_mul_42_40_g1126} -cell CLKXOR2X2
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: gpu
+# Design Mode: 90nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+   _____________________________________________________________
+  /  Design State
+ +--------------------------------------------------------------
+ | unconnected nets:        6
+ | signal nets: 
+ |    routed nets:    16002 (100.0% routed)
+ |     total nets:    16002
+ | clock nets: 
+ |    routed nets:       59 (100.0% routed)
+ |     total nets:       59
+ +--------------------------------------------------------------
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: gpu
+# Design Mode: 90nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+*** Starting refinePlace (0:01:39 mem=2367.5M) ***
+Total net bbox length = 2.239e+05 (1.265e+05 9.737e+04) (ext = 1.006e+04)
+Move report: Detail placement moves 11 insts, mean move: 3.55 um, max move: 9.75 um 
+	Max move on inst (FILLER_T_1_639): (68.20, 40.85) --> (69.40, 49.40)
+	Runtime: CPU: 0:00:00.6 REAL: 0:00:00.0 MEM: 2362.7MB
+Summary Report:
+Instances move: 10 (out of 15681 movable)
+Instances flipped: 0
+Mean displacement: 2.93 um
+Max displacement: 7.31 um (Instance: FE_OFC3903_cores_1__core_instance_threads_3__alu_instance_mul_42_40_n_14) (61.2, 42.56) -> (66.8, 40.85)
+	Length: 2 sites, height: 1 rows, site name: CoreSite, cell type: INVX1
+Total net bbox length = 2.239e+05 (1.265e+05 9.738e+04) (ext = 1.006e+04)
+Runtime: CPU: 0:00:00.6 REAL: 0:00:00.0 MEM: 2362.7MB
+*** Finished refinePlace (0:01:40 mem=2362.7M) ***
+Resize cores[1].core_instance_threads[3].alu_instance_mul_42_40_g1126 (CLKXOR2X1) to CLKXOR2X2.
+<CMD> ecoRoute
+**INFO: User settings:
+setNanoRouteMode -drouteAntennaFactor                           1
+setNanoRouteMode -droutePostRouteSpreadWire                     auto
+setNanoRouteMode -drouteStartIteration                          0
+setNanoRouteMode -drouteUseMinSpacingForBlockage                auto
+setNanoRouteMode -extractThirdPartyCompatible                   false
+setNanoRouteMode -grouteExpTdStdDelay                           38.8
+setNanoRouteMode -grouteExpTdUseTifTimingEngineForImportDesign  false
+setNanoRouteMode -routeStrictlyHonorNonDefaultRule              false
+setNanoRouteMode -routeWithSiPostRouteFix                       false
+
+#% Begin globalDetailRoute (date=05/18 05:20:14, mem=1600.9M)
+
+globalDetailRoute
+
+#Start globalDetailRoute on Mon May 18 05:20:14 2026
+#
+#num needed restored net=0
+#need_extraction net=0 (total=16146)
+#NanoRoute Version 21.18-s099_1 NR230707-1955/21_18-UB
+#Skip comparing routing design signature in db-snapshot flow
+#Total number of trivial nets (e.g. < 2 pins) = 85 (skipped).
+#Total number of routable nets = 16061.
+#Total number of nets in the design = 16146.
+#21 routable nets do not have any wires.
+#16040 routable nets have routed wires.
+#21 nets will be global routed.
+#63 detail routed (routable) nets have been constrained (e.g. have preferred extra spacing, require shielding etc.)
+#Start routing data preparation on Mon May 18 05:20:15 2026
+#
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 1.100.
+#Voltage range [0.000 - 1.100] has 16144 nets.
+#Voltage range [0.900 - 1.100] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Build and mark too close pins for the same net.
+#Restoring pin access data from file /home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat//gpu.apa ...
+#Done restoring pin access data
+#Initial pin access analysis.
+#Detail pin access analysis.
+# Metal1       H   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.13000
+# Metal2       V   Track-Pitch = 0.20000    Line-2-Via Pitch = 0.15000
+# Metal3       H   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.15000
+# Metal4       V   Track-Pitch = 0.20000    Line-2-Via Pitch = 0.15000
+# Metal5       H   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.15000
+# Metal6       V   Track-Pitch = 0.20000    Line-2-Via Pitch = 0.15000
+# Metal7       H   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.15000
+# Metal8       V   Track-Pitch = 0.20000    Line-2-Via Pitch = 0.15000
+# Metal9       H   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.15000
+# Metal10      V   Track-Pitch = 0.50000    Line-2-Via Pitch = 0.42000
+# Metal11      H   Track-Pitch = 0.47500    Line-2-Via Pitch = 0.43000
+#Bottom routing layer index=1(Metal1), bottom routing layer for shielding=1(Metal1), bottom shield layer=1(Metal1)
+#shield_bottom_stripe_layer=1(Metal1), shield_top_stripe_layer=11(Metal11)
+#pin_access_rlayer=2(Metal2)
+#shield_top_dpt_rlayer=-1 top_rlayer=11 top_trim_metal_rlayer=-1 rlayer_lowest=1 bottom_rlayer=1
+#enable_trim_layer_shield=F enable_dpt_layer_shield=F has_line_end_grid=F
+#Processed 13/0 dirty instances, 22/0 dirty terms, 0/0 dirty fterms, 0/0 dirty pgterms, 0/0 misc dirty regions(7 insts marked dirty, reset pre-exisiting dirty flag on 12 insts, 0 nets marked need extraction)
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1649.84 (MB), peak = 1650.80 (MB)
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=15 tracks, using layer Metal3's pitch = 0.19000.
+#Using automatically generated G-grids.
+#Done routing data preparation.
+#cpu time = 00:00:02, elapsed time = 00:00:02, memory = 1663.43 (MB), peak = 1663.93 (MB)
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 1.100.
+#Voltage range [0.000 - 1.100] has 16144 nets.
+#Voltage range [0.900 - 1.100] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#
+#Finished routing data preparation on Mon May 18 05:20:17 2026
+#
+#Cpu time = 00:00:02
+#Elapsed time = 00:00:02
+#Increased memory = 58.56 (MB)
+#Total memory = 1663.55 (MB)
+#Peak memory = 1663.93 (MB)
+#
+#
+#Start global routing on Mon May 18 05:20:17 2026
+#
+#
+#Start global routing initialization on Mon May 18 05:20:17 2026
+#
+#Number of eco nets is 21
+#
+#Start global routing data preparation on Mon May 18 05:20:17 2026
+#
+#Start routing resource analysis on Mon May 18 05:20:17 2026
+#
+#Routing resource analysis is done on Mon May 18 05:20:17 2026
+#
+#  Resource Analysis:
+#
+#               Routing  #Avail      #Track     #Total     %Gcell
+#  Layer      Direction   Track     Blocked      Gcell    Blocked
+#  --------------------------------------------------------------
+#  Metal1         H         196        1053        7055    78.38%
+#  Metal2         V         269         936        7055     0.00%
+#  Metal3         H         540         709        7055     0.00%
+#  Metal4         V         617         588        7055     0.00%
+#  Metal5         H         921         328        7055     0.00%
+#  Metal6         V         914         291        7055     0.00%
+#  Metal7         H        1109         140        7055     0.00%
+#  Metal8         V        1104         101        7055     3.27%
+#  Metal9         H        1192          57        7055     3.19%
+#  Metal10        V         459          22        7055     3.27%
+#  Metal11        H         473          26        7055     3.23%
+#  --------------------------------------------------------------
+#  Total                   7797      31.96%       77605     8.30%
+#
+#  63 nets (0.39%) with 1 preferred extra spacing.
+#
+#
+#
+#Global routing data preparation is done on Mon May 18 05:20:17 2026
+#
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1666.20 (MB), peak = 1666.20 (MB)
+#
+#
+#Global routing initialization is done on Mon May 18 05:20:17 2026
+#
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 1666.27 (MB), peak = 1666.27 (MB)
+#
+#start global routing iteration 1...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1670.33 (MB), peak = 1670.33 (MB)
+#
+#start global routing iteration 2...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1670.33 (MB), peak = 1670.33 (MB)
+#
+#
+#Total number of trivial nets (e.g. < 2 pins) = 85 (skipped).
+#Total number of routable nets = 16061.
+#Total number of nets in the design = 16146.
+#
+#16061 routable nets have routed wires.
+#63 detail routed (routable) nets have been constrained (e.g. have preferred extra spacing, require shielding etc.)
+#
+#Routed nets constraints summary:
+#-----------------------------
+#        Rules   Unconstrained  
+#-----------------------------
+#      Default              21  
+#-----------------------------
+#        Total              21  
+#-----------------------------
+#
+#Routing constraints summary of the whole design:
+#------------------------------------------------
+#        Rules   Pref Extra Space   Unconstrained  
+#------------------------------------------------
+#      Default                 63           15998  
+#------------------------------------------------
+#        Total                 63           15998  
+#------------------------------------------------
+#
+#
+#  Congestion Analysis: (blocked Gcells are excluded)
+#
+#                 OverCon       OverCon          
+#                  #Gcell        #Gcell    %Gcell
+#     Layer           (1)           (2)   OverCon
+#  ----------------------------------------------
+#  Metal1        0(0.00%)      0(0.00%)   (0.00%)
+#  Metal2        1(0.01%)      3(0.04%)   (0.06%)
+#  Metal3        1(0.01%)      0(0.00%)   (0.01%)
+#  Metal4        0(0.00%)      0(0.00%)   (0.00%)
+#  Metal5        0(0.00%)      0(0.00%)   (0.00%)
+#  Metal6        0(0.00%)      0(0.00%)   (0.00%)
+#  Metal7        0(0.00%)      0(0.00%)   (0.00%)
+#  Metal8        0(0.00%)      0(0.00%)   (0.00%)
+#  Metal9        0(0.00%)      0(0.00%)   (0.00%)
+#  Metal10       0(0.00%)      0(0.00%)   (0.00%)
+#  Metal11       0(0.00%)      0(0.00%)   (0.00%)
+#  ----------------------------------------------
+#     Total      2(0.00%)      3(0.00%)   (0.01%)
+#
+#  The worst congested Gcell overcon (routing demand over resource in number of tracks) = 2
+#  Overflow after GR: 0.00% H + 0.01% V
+#
+#Complete Global Routing.
+#Total number of nets with non-default rule or having extra spacing = 63
+#Total wire length = 269172 um.
+#Total half perimeter of net bounding box = 239715 um.
+#Total wire length on LAYER Metal1 = 4439 um.
+#Total wire length on LAYER Metal2 = 59827 um.
+#Total wire length on LAYER Metal3 = 81112 um.
+#Total wire length on LAYER Metal4 = 50053 um.
+#Total wire length on LAYER Metal5 = 45090 um.
+#Total wire length on LAYER Metal6 = 16496 um.
+#Total wire length on LAYER Metal7 = 12019 um.
+#Total wire length on LAYER Metal8 = 137 um.
+#Total wire length on LAYER Metal9 = 0 um.
+#Total wire length on LAYER Metal10 = 0 um.
+#Total wire length on LAYER Metal11 = 0 um.
+#Total number of vias = 116837
+#Total number of multi-cut vias = 108226 ( 92.6%)
+#Total number of single cut vias = 8611 (  7.4%)
+#Up-Via Summary (total 116837):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+# Metal1          6789 ( 12.6%)     47220 ( 87.4%)      54009
+# Metal2          1466 (  3.7%)     38697 ( 96.3%)      40163
+# Metal3           298 (  2.1%)     13934 ( 97.9%)      14232
+# Metal4            55 (  0.9%)      5864 ( 99.1%)       5919
+# Metal5             2 (  0.1%)      1902 ( 99.9%)       1904
+# Metal6             1 (  0.2%)       597 ( 99.8%)        598
+# Metal7             0 (  0.0%)        12 (100.0%)         12
+#-----------------------------------------------------------
+#                 8611 (  7.4%)    108226 ( 92.6%)     116837 
+#
+#Max overcon = 2 tracks.
+#Total overcon = 0.01%.
+#Worst layer Gcell overcon rate = 0.01%.
+#
+#Global routing statistics:
+#Cpu time = 00:00:01
+#Elapsed time = 00:00:01
+#Increased memory = 6.94 (MB)
+#Total memory = 1670.48 (MB)
+#Peak memory = 1670.88 (MB)
+#
+#Finished global routing on Mon May 18 05:20:17 2026
+#
+#
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 1.100.
+#Voltage range [0.000 - 1.100] has 16144 nets.
+#Voltage range [0.900 - 1.100] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 1.100.
+#Voltage range [0.000 - 1.100] has 16144 nets.
+#Voltage range [0.900 - 1.100] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1669.25 (MB), peak = 1670.88 (MB)
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 1.100.
+#Voltage range [0.000 - 1.100] has 16144 nets.
+#Voltage range [0.900 - 1.100] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Start Track Assignment.
+#Done with 9 horizontal wires in 3 hboxes and 6 vertical wires in 3 hboxes.
+#Done with 1 horizontal wires in 3 hboxes and 2 vertical wires in 3 hboxes.
+#Complete Track Assignment.
+#Total number of nets with non-default rule or having extra spacing = 63
+#Total wire length = 269178 um.
+#Total half perimeter of net bounding box = 239715 um.
+#Total wire length on LAYER Metal1 = 4439 um.
+#Total wire length on LAYER Metal2 = 59832 um.
+#Total wire length on LAYER Metal3 = 81112 um.
+#Total wire length on LAYER Metal4 = 50055 um.
+#Total wire length on LAYER Metal5 = 45090 um.
+#Total wire length on LAYER Metal6 = 16496 um.
+#Total wire length on LAYER Metal7 = 12019 um.
+#Total wire length on LAYER Metal8 = 137 um.
+#Total wire length on LAYER Metal9 = 0 um.
+#Total wire length on LAYER Metal10 = 0 um.
+#Total wire length on LAYER Metal11 = 0 um.
+#Total number of vias = 116837
+#Total number of multi-cut vias = 108226 ( 92.6%)
+#Total number of single cut vias = 8611 (  7.4%)
+#Up-Via Summary (total 116837):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+# Metal1          6789 ( 12.6%)     47220 ( 87.4%)      54009
+# Metal2          1466 (  3.7%)     38697 ( 96.3%)      40163
+# Metal3           298 (  2.1%)     13934 ( 97.9%)      14232
+# Metal4            55 (  0.9%)      5864 ( 99.1%)       5919
+# Metal5             2 (  0.1%)      1902 ( 99.9%)       1904
+# Metal6             1 (  0.2%)       597 ( 99.8%)        598
+# Metal7             0 (  0.0%)        12 (100.0%)         12
+#-----------------------------------------------------------
+#                 8611 (  7.4%)    108226 ( 92.6%)     116837 
+#
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 1684.84 (MB), peak = 1686.46 (MB)
+#
+#number of short segments in preferred routing layers
+#	
+#	
+#
+#Routing data preparation, pin analysis, global routing and track assignment statistics:
+#Cpu time = 00:00:04
+#Elapsed time = 00:00:04
+#Increased memory = 80.38 (MB)
+#Total memory = 1685.21 (MB)
+#Peak memory = 1686.46 (MB)
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 1.100.
+#Voltage range [0.000 - 1.100] has 16144 nets.
+#Voltage range [0.900 - 1.100] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 1.100.
+#Voltage range [0.000 - 1.100] has 16144 nets.
+#Voltage range [0.900 - 1.100] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 1.100.
+#Voltage range [0.000 - 1.100] has 16144 nets.
+#Voltage range [0.900 - 1.100] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 1.100.
+#Voltage range [0.000 - 1.100] has 16144 nets.
+#Voltage range [0.900 - 1.100] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#
+#Start Detail Routing..
+#start initial detail routing ...
+# ECO: 1.53% of the total area was rechecked for DRC, and 1.02% required routing.
+#   number of violations = 0
+#7 out of 22129 instances (0.0%) need to be verified(marked ipoed), dirty area = 0.0%.
+#0.0% of the total area is being checked for drcs
+#0.0% of the total area was checked
+#   number of violations = 0
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 1691.07 (MB), peak = 1718.74 (MB)
+#Complete Detail Routing.
+#Total number of nets with non-default rule or having extra spacing = 63
+#Total wire length = 269173 um.
+#Total half perimeter of net bounding box = 239715 um.
+#Total wire length on LAYER Metal1 = 4440 um.
+#Total wire length on LAYER Metal2 = 59829 um.
+#Total wire length on LAYER Metal3 = 81107 um.
+#Total wire length on LAYER Metal4 = 50056 um.
+#Total wire length on LAYER Metal5 = 45090 um.
+#Total wire length on LAYER Metal6 = 16496 um.
+#Total wire length on LAYER Metal7 = 12019 um.
+#Total wire length on LAYER Metal8 = 137 um.
+#Total wire length on LAYER Metal9 = 0 um.
+#Total wire length on LAYER Metal10 = 0 um.
+#Total wire length on LAYER Metal11 = 0 um.
+#Total number of vias = 116853
+#Total number of multi-cut vias = 108201 ( 92.6%)
+#Total number of single cut vias = 8652 (  7.4%)
+#Up-Via Summary (total 116853):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+# Metal1          6806 ( 12.6%)     47207 ( 87.4%)      54013
+# Metal2          1484 (  3.7%)     38685 ( 96.3%)      40169
+# Metal3           304 (  2.1%)     13934 ( 97.9%)      14238
+# Metal4            55 (  0.9%)      5864 ( 99.1%)       5919
+# Metal5             2 (  0.1%)      1902 ( 99.9%)       1904
+# Metal6             1 (  0.2%)       597 ( 99.8%)        598
+# Metal7             0 (  0.0%)        12 (100.0%)         12
+#-----------------------------------------------------------
+#                 8652 (  7.4%)    108201 ( 92.6%)     116853 
+#
+#Total number of DRC violations = 0
+#Cpu time = 00:00:01
+#Elapsed time = 00:00:01
+#Increased memory = 5.88 (MB)
+#Total memory = 1691.09 (MB)
+#Peak memory = 1718.74 (MB)
+#
+#start routing for process antenna violation fix ...
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 1.100.
+#Voltage range [0.000 - 1.100] has 16144 nets.
+#Voltage range [0.900 - 1.100] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 1.100.
+#Voltage range [0.000 - 1.100] has 16144 nets.
+#Voltage range [0.900 - 1.100] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#cpu time = 00:00:03, elapsed time = 00:00:03, memory = 1691.91 (MB), peak = 1718.74 (MB)
+#
+#Total number of nets with non-default rule or having extra spacing = 63
+#Total wire length = 269173 um.
+#Total half perimeter of net bounding box = 239715 um.
+#Total wire length on LAYER Metal1 = 4440 um.
+#Total wire length on LAYER Metal2 = 59829 um.
+#Total wire length on LAYER Metal3 = 81107 um.
+#Total wire length on LAYER Metal4 = 50056 um.
+#Total wire length on LAYER Metal5 = 45090 um.
+#Total wire length on LAYER Metal6 = 16496 um.
+#Total wire length on LAYER Metal7 = 12019 um.
+#Total wire length on LAYER Metal8 = 137 um.
+#Total wire length on LAYER Metal9 = 0 um.
+#Total wire length on LAYER Metal10 = 0 um.
+#Total wire length on LAYER Metal11 = 0 um.
+#Total number of vias = 116853
+#Total number of multi-cut vias = 108201 ( 92.6%)
+#Total number of single cut vias = 8652 (  7.4%)
+#Up-Via Summary (total 116853):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+# Metal1          6806 ( 12.6%)     47207 ( 87.4%)      54013
+# Metal2          1484 (  3.7%)     38685 ( 96.3%)      40169
+# Metal3           304 (  2.1%)     13934 ( 97.9%)      14238
+# Metal4            55 (  0.9%)      5864 ( 99.1%)       5919
+# Metal5             2 (  0.1%)      1902 ( 99.9%)       1904
+# Metal6             1 (  0.2%)       597 ( 99.8%)        598
+# Metal7             0 (  0.0%)        12 (100.0%)         12
+#-----------------------------------------------------------
+#                 8652 (  7.4%)    108201 ( 92.6%)     116853 
+#
+#Total number of DRC violations = 0
+#Total number of process antenna violations = 0
+#Total number of net violated process antenna rule = 0
+#
+#
+#Total number of nets with non-default rule or having extra spacing = 63
+#Total wire length = 269173 um.
+#Total half perimeter of net bounding box = 239715 um.
+#Total wire length on LAYER Metal1 = 4440 um.
+#Total wire length on LAYER Metal2 = 59829 um.
+#Total wire length on LAYER Metal3 = 81107 um.
+#Total wire length on LAYER Metal4 = 50056 um.
+#Total wire length on LAYER Metal5 = 45090 um.
+#Total wire length on LAYER Metal6 = 16496 um.
+#Total wire length on LAYER Metal7 = 12019 um.
+#Total wire length on LAYER Metal8 = 137 um.
+#Total wire length on LAYER Metal9 = 0 um.
+#Total wire length on LAYER Metal10 = 0 um.
+#Total wire length on LAYER Metal11 = 0 um.
+#Total number of vias = 116853
+#Total number of multi-cut vias = 108201 ( 92.6%)
+#Total number of single cut vias = 8652 (  7.4%)
+#Up-Via Summary (total 116853):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+# Metal1          6806 ( 12.6%)     47207 ( 87.4%)      54013
+# Metal2          1484 (  3.7%)     38685 ( 96.3%)      40169
+# Metal3           304 (  2.1%)     13934 ( 97.9%)      14238
+# Metal4            55 (  0.9%)      5864 ( 99.1%)       5919
+# Metal5             2 (  0.1%)      1902 ( 99.9%)       1904
+# Metal6             1 (  0.2%)       597 ( 99.8%)        598
+# Metal7             0 (  0.0%)        12 (100.0%)         12
+#-----------------------------------------------------------
+#                 8652 (  7.4%)    108201 ( 92.6%)     116853 
+#
+#Total number of DRC violations = 0
+#Total number of process antenna violations = 0
+#Total number of net violated process antenna rule = 0
+#
+#detailRoute Statistics:
+#Cpu time = 00:00:06
+#Elapsed time = 00:00:06
+#Increased memory = 6.73 (MB)
+#Total memory = 1691.94 (MB)
+#Peak memory = 1718.74 (MB)
+#Skip updating routing design signature in db-snapshot flow
+#
+#globalDetailRoute statistics:
+#Cpu time = 00:00:11
+#Elapsed time = 00:00:11
+#Increased memory = 39.04 (MB)
+#Total memory = 1640.01 (MB)
+#Peak memory = 1718.74 (MB)
+#Number of warnings = 0
+#Total number of warnings = 0
+#Number of fails = 0
+#Total number of fails = 0
+#Complete globalDetailRoute on Mon May 18 05:20:24 2026
+#
+#% End globalDetailRoute (date=05/18 05:20:24, total cpu=0:00:10.8, real=0:00:11.0, peak res=1718.7M, current mem=1640.0M)
+<CMD> extractRC
+Extraction called for design 'gpu' of instances=22129 and nets=16146 using extraction engine 'postRoute' at effort level 'low' .
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+Type 'man IMPEXT-3530' for more detail.
+PostRoute (effortLevel low) RC Extraction called for design gpu.
+RC Extraction called in multi-corner(1) mode.
+Process corner(s) are loaded.
+ Corner: typical_rc
+Metal density calculation for erosion effect completed (CPU=0:00:00.2  MEM=2440.05M)
+extractDetailRC Option : -outfile /tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/gpu_71590_hludGp.rcdb.d -maxResLength 222.222  -extended
+RC Mode: PostRoute -effortLevel low [Extended CapTable, RC Table Resistances]
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Coupling Cap. Scaling Factor : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 0.90000
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 2440.1M)
+Extracted 10.001% (CPU Time= 0:00:00.4  MEM= 2500.6M)
+Extracted 20.0007% (CPU Time= 0:00:00.5  MEM= 2500.6M)
+Extracted 30.0011% (CPU Time= 0:00:00.6  MEM= 2500.6M)
+Extracted 40.0009% (CPU Time= 0:00:00.8  MEM= 2500.6M)
+Extracted 50.0012% (CPU Time= 0:00:00.8  MEM= 2500.6M)
+Extracted 60.001% (CPU Time= 0:00:01.0  MEM= 2500.6M)
+Extracted 70.0007% (CPU Time= 0:00:01.2  MEM= 2500.6M)
+Extracted 80.0011% (CPU Time= 0:00:01.3  MEM= 2500.6M)
+Extracted 90.0009% (CPU Time= 0:00:01.6  MEM= 2504.6M)
+Extracted 100% (CPU Time= 0:00:02.0  MEM= 2504.6M)
+Number of Extracted Resistors     : 294034
+Number of Extracted Ground Cap.   : 295552
+Number of Extracted Coupling Cap. : 470556
+Filtering XCap in 'relativeOnly' mode using values relative_c_threshold=0.03 and total_c_threshold=5fF.
+ Corner: typical_rc
+Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 2483.5M)
+PostRoute (effortLevel low) RC Extraction DONE (CPU Time: 0:00:03.3  Real Time: 0:00:03.0  MEM: 2487.543M)
+<CMD> timeDesign -postRoute
+*** timeDesign #2 [begin] : totSession cpu/real = 0:01:59.7/0:06:32.1 (0.3), mem = 2487.5M
+ Reset EOS DB
+Ignoring AAE DB Resetting ...
+Extraction called for design 'gpu' of instances=22129 and nets=16146 using extraction engine 'postRoute' at effort level 'low' .
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+Type 'man IMPEXT-3530' for more detail.
+PostRoute (effortLevel low) RC Extraction called for design gpu.
+RC Extraction called in multi-corner(1) mode.
+Process corner(s) are loaded.
+ Corner: typical_rc
+Metal density calculation for erosion effect completed (CPU=0:00:00.2  MEM=2487.54M)
+extractDetailRC Option : -outfile /tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/gpu_71590_hludGp.rcdb.d -maxResLength 222.222  -extended
+RC Mode: PostRoute -effortLevel low [Extended CapTable, RC Table Resistances]
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Coupling Cap. Scaling Factor : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 0.90000
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 2450.5M)
+Extracted 10.001% (CPU Time= 0:00:00.4  MEM= 2495.0M)
+Extracted 20.0007% (CPU Time= 0:00:00.5  MEM= 2495.0M)
+Extracted 30.0011% (CPU Time= 0:00:00.7  MEM= 2495.0M)
+Extracted 40.0009% (CPU Time= 0:00:00.8  MEM= 2495.0M)
+Extracted 50.0012% (CPU Time= 0:00:00.9  MEM= 2495.0M)
+Extracted 60.001% (CPU Time= 0:00:01.0  MEM= 2495.0M)
+Extracted 70.0007% (CPU Time= 0:00:01.2  MEM= 2495.0M)
+Extracted 80.0011% (CPU Time= 0:00:01.4  MEM= 2495.0M)
+Extracted 90.0009% (CPU Time= 0:00:01.6  MEM= 2499.0M)
+Extracted 100% (CPU Time= 0:00:02.0  MEM= 2499.0M)
+Number of Extracted Resistors     : 294034
+Number of Extracted Ground Cap.   : 295552
+Number of Extracted Coupling Cap. : 470556
+Filtering XCap in 'relativeOnly' mode using values relative_c_threshold=0.03 and total_c_threshold=5fF.
+ Corner: typical_rc
+Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 2483.0M)
+PostRoute (effortLevel low) RC Extraction DONE (CPU Time: 0:00:03.3  Real Time: 0:00:03.0  MEM: 2487.027M)
+Starting delay calculation for Setup views
+AAE_INFO: opIsDesignInPostRouteState() is 1
+AAE_INFO: resetNetProps viewIdx 0 
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: gpu
+# Design Mode: 90nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+AAE_INFO: 1 threads acquired from CTE.
+Start delay calculation (fullDC) (1 T). (MEM=2485.03)
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2512.32 CPU=0:00:04.3 REAL=0:00:04.0)
+End delay calculation (fullDC). (MEM=2512.32 CPU=0:00:04.8 REAL=0:00:04.0)
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2512.3M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.1, REAL = 0:00:00.0, MEM = 2512.3M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (1 T). (MEM=2464.43)
+Glitch Analysis: View setup_view -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View setup_view -- Total Number of Nets Analyzed = 0. 
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.2 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.4 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2515.66 CPU=0:00:00.3 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2515.66 CPU=0:00:00.3 REAL=0:00:00.0)
+*** Done Building Timing Graph (cpu=0:00:06.8 real=0:00:07.0 totSessionCpu=0:02:10 mem=2515.7M)
+
+------------------------------------------------------------------
+          timeDesign Summary
+------------------------------------------------------------------
+
+Setup views included:
+ setup_view 
+
++--------------------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | default |
++--------------------+---------+---------+---------+
+|           WNS (ns):| -0.062  | -0.062  |  0.683  |
+|           TNS (ns):| -0.095  | -0.095  |  0.000  |
+|    Violating Paths:|    2    |    2    |    0    |
+|          All Paths:|  1830   |  1829   |   185   |
++--------------------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |      0 (0)       |   0.000    |      0 (0)       |
+|   max_tran     |      0 (0)       |   0.000    |      0 (0)       |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 86.036%
+       (95.252% with Fillers)
+------------------------------------------------------------------
+Reported timing to dir ./timingReports
+Total CPU time: 11.54 sec
+Total Real time: 13.0 sec
+Total Memory Usage: 2485.984375 Mbytes
+Reset AAE Options
+*** timeDesign #2 [finish] : cpu/real = 0:00:11.5/0:00:13.6 (0.9), totSession cpu/real = 0:02:11.3/0:06:45.6 (0.3), mem = 2486.0M
+<CMD> ecoChangeCell -inst {cores[1].core_instance_threads[3].alu_instance_mul_42_40_g1126} -cell CLKXOR2X1
+   _____________________________________________________________
+  /  Design State
+ +--------------------------------------------------------------
+ | unconnected nets:        6
+ | signal nets: 
+ |    routed nets:    16002 (100.0% routed)
+ |     total nets:    16002
+ | clock nets: 
+ |    routed nets:       59 (100.0% routed)
+ |     total nets:       59
+ +--------------------------------------------------------------
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: gpu
+# Design Mode: 90nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+*** Starting refinePlace (0:02:30 mem=2486.0M) ***
+Total net bbox length = 2.239e+05 (1.265e+05 9.738e+04) (ext = 1.006e+04)
+Move report: Detail placement moves 0 insts, mean move: 0.00 um, max move: 0.00 um 
+	Runtime: CPU: 0:00:00.6 REAL: 0:00:01.0 MEM: 2474.2MB
+Summary Report:
+Instances move: 0 (out of 15681 movable)
+Instances flipped: 0
+Mean displacement: 0.00 um
+Max displacement: 0.00 um 
+Total net bbox length = 2.239e+05 (1.265e+05 9.738e+04) (ext = 1.006e+04)
+Runtime: CPU: 0:00:00.6 REAL: 0:00:01.0 MEM: 2474.2MB
+*** Finished refinePlace (0:02:31 mem=2474.2M) ***
+Resize cores[1].core_instance_threads[3].alu_instance_mul_42_40_g1126 (CLKXOR2X2) to CLKXOR2X1.
+<CMD> timeDesign -signoff
+**WARN: (IMPOPT-7250):	Option -signOff for command timeDesign is obsolete and has been replaced by signoffTimeDesign.
+The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, update your script to use signoffTimeDesign.
+The setDelayCalMode -SIAware true is set. Running Signoff AAE-SI Analysis.
+*** timeDesign #3 [begin] : totSession cpu/real = 0:03:16.0/0:12:22.5 (0.3), mem = 2549.4M
+ Reset EOS DB
+Ignoring AAE DB Resetting ...
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+Deleting AAE DB and timing data for delay calculations...
+AAE DB initialization (MEM=2531.69 CPU=0:00:00.0 REAL=0:00:00.0) 
+[05:26:26.184641] Periodic Lic check successful
+[05:26:26.184658] Feature usage summary:
+[05:26:26.184659] Innovus_Impl_System
+[05:26:26.184659] Tempus_Timing_Signoff_XL
+
+This command "timeDesign -signoff" required an extra checkout of license tpsxl.
+Additional license(s) checked out: 1 'Tempus_Timing_Signoff_XL' license(s)
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+**WARN: (IMPEXT-3493):	The design extraction status has been reset by set_analysis_view/update_rc_corner or setExtractRCMode  command. The parasitic data can be regenerated either by extracting the design using the extractRC command or by loading the SPEF or RCDB file(s). To prevent resetting of the extraction status, avoid changing extraction modes.
+Type 'man IMPEXT-3493' for more detail.
+Extraction called for design 'gpu' of instances=22129 and nets=16146 using extraction engine 'postRoute' at effort level 'signoff' .
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+Type 'man IMPEXT-3530' for more detail.
+typical_rc
+
+
+  Cadence Quantus Extraction - 64-bit Parasitic Extractor - Version
+22.1.1-p041 Mon Apr 17 07:53:34 PDT 2023
+---------------------------------------------------------------------------------------------------------------
+                                  Copyright 2023 Cadence Design Systems,
+Inc.
+
+
+
+INFO (EXTQRCXLOG-128) : Quantus command line:
+ Started at: 2026-May-18 05:26:29 (2026-May-17 23:26:29 GMT)
+ Executable: /home/cadence/lnx/quat/tools.lnx86/extraction/bin/64bit/qrc
+ Options:     -cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_NlONdk/qrc.cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_NlONdk/qrc.def.gz
+ Current working directory:
+/home/user_77/backup_extract/my_project/project/pnr
+
+
+INFO (EXTQRCXLOG-103) : The Command File Options for the current Quantus run are as follows:
+
+extract \
+	 -selection "all" \
+	 -type "rc_coupled"
+extraction_setup \
+	 -layout_scale 0.9 \
+	 -max_fracture_length 50 \
+	 -promote_pin_pad "LOGICAL"
+filter_coupling_cap \
+	 -cap_filtering_mode "absolute_and_relative" \
+	 -coupling_cap_threshold_absolute 3.0 \
+	 -coupling_cap_threshold_relative 0.03 \
+	 -total_cap_threshold 5.0
+input_db -type def \
+	 -lef_file_list_file "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_NlONdk/qrc.leflist"
+log_file \
+	 -dump_options true \
+	 -file_name "qrc_71590_20260518_05:26:26.log"
+output_db -type spef \
+	 -short_incomplete_net_pins true \
+	 -subtype "EXTENDED"
+output_setup \
+	 -compressed true \
+	 -directory_name "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_NlONdk" \
+	 -file_name "gpu" \
+	 -temporary_directory_name "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_NlONdk"
+process_technology \
+	 -technology_corner \
+		"typical_rc" \
+	 -technology_library_file "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_NlONdk/_qrc_techlib.defs" \
+	 -technology_name "_qrc_tech_" \
+	 -temperature \
+		"25"
+
+
+
+sh: /usr/bin/mpstat: No such file or directory
+
+INFO (EXTGRMP-102) : Starting at 2026-May-18 05:26:29 (2026-May-17 23:26:29 GMT) on host vlsi
+with pid 84449.
+Running binary as: 
+ /home/cadence/lnx/quat/tools.lnx86/extraction/bin/64bit/qrc -cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_NlONdk/qrc.cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_NlONdk/qrc.def.gz  
+
+WARNING (EXTGRMP-414) : No GDSII/OASIS file is specified. Setting graybox type as LEF_OBSTRUCTION.
+
+INFO (EXTGRMP-142) : Command line arguments:
+"-cmd"
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_NlONdk/qrc.cmd"
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_NlONdk/qrc.def.gz"
+
+INFO (EXTGRMP-143) : Option extraction_setup -copy_port_to_obs = "true"
+
+INFO (EXTGRMP-143) : Option log_file = "qrc_71590_20260518_05:26:26.log"
+
+INFO (EXTGRMP-143) : Option log_file -message_config_file = ""
+
+INFO (EXTGRMP-143) : Option log_file -max_error_messages = "100"
+
+INFO (EXTGRMP-143) : Option log_file -max_warning_messages = "10"
+
+INFO (EXTGRMP-143) : Option log_file -max_info_messages = "1000"
+
+INFO (EXTGRMP-143) : Option process_technology -technology_name = ""
+
+INFO (EXTGRMP-143) : Option EM_techname = ""
+
+INFO (EXTGRMP-143) : Option process_technology -EM_WEE_clamping_factor = "0.7"
+
+INFO (EXTGRMP-143) : Option input_db -libgen_library_name = ""
+
+INFO (EXTGRMP-143) : Option oa_default_rule_name = ""
+
+INFO (EXTGRMP-143) : Option graybox -type = "obs"
+
+INFO (EXTGRMP-143) : Option graybox -use_macro_density = "false"
+
+INFO (EXTGRMP-143) : Option comp_prealloc = "0"
+
+INFO (EXTGRMP-143) : Option net_prealloc = "0"
+
+INFO (EXTGRMP-143) : Option output_setup -directory_name =
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_NlONdk"
+
+INFO (EXTGRMP-143) : Option output_db -units = "micron"
+
+INFO (EXTGRMP-143) : Option user_comment = ""
+
+INFO (EXTGRMP-143) : Option output_cache_directory_name =
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_NlONdk/.qrctemp"
+
+INFO (EXTGRMP-143) : Option keep_temporary_files = "false"
+
+INFO (EXTGRMP-143) : Option output_density_tiles = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -file_name = "gpu"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -predefined_spef_cells_file = ""
+
+INFO (EXTGRMP-143) : Option parasitic_reduction -enable_reduction = "false"
+
+INFO (EXTGRMP-143) : Option debug_log = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -subtype = "extended"
+
+INFO (EXTGRMP-143) : Option output_db -type dspf -subtype = "none"
+
+INFO (EXTGRMP-143) : Option output_sstorm_db_name = ""
+
+INFO (EXTGRMP-143) : Option netlist_output = "none"
+
+INFO (EXTGRMP-143) : Option output_db -type coupling_cap_reports = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type rcdb = "false"
+
+INFO (EXTGRMP-143) : Option output_db -hierarchy_delimiter = "/"
+
+INFO (EXTGRMP-143) : Option output_db -busbit_delimiter = "[]"
+
+INFO (EXTGRMP-143) : Option output_db -pin_delimiter = ":"
+
+INFO (EXTGRMP-143) : Option output_db -output_incomplete_nets_type = "no_pin one_pin
+disconnected_pin multiple_partitions floating_resistors"
+
+INFO (EXTGRMP-143) : Option truncate_regular_wires = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -layout_scale = "0.9"
+
+INFO (EXTGRMP-143) : Option output_setup -file_max_size = "9223372036854775807"
+
+INFO (EXTGRMP-143) : Option log_file -dump_options = "true"
+
+INFO (EXTGRMP-143) : Option short_incomplete_net_pins = "true"
+
+INFO (EXTGRMP-143) : Option promote_incomplete_net_pins = "true"
+
+INFO (EXTGRMP-143) : Option output_db -output_incomplete_nets = "true"
+
+INFO (EXTGRMP-143) : Option output_db -output_unrouted_nets = "false"
+
+INFO (EXTGRMP-143) : Option output_db -escape_special_characters = "true"
+
+INFO (EXTGRMP-143) : Option lumped_cc_threshold = "0.0"
+
+INFO (EXTGRMP-143) : Option parasitic_reduction -max_frequency = "1.0e+08"
+
+INFO (EXTGRMP-143) : Option output_setup -compressed = "true"
+
+INFO (EXTGRMP-143) : Option max_resistor_length = "50"
+
+INFO (EXTGRMP-143) : Option promote_feedthru_ports = "none"
+
+INFO (EXTGRMP-143) : Option promote_instance_ports = "none"
+
+INFO (EXTGRMP-143) : Option output_promoted_feedthrus = "false"
+
+INFO (EXTGRMP-143) : Option output_unconnected_pins = "false"
+
+INFO (EXTGRMP-143) : Option remove_floating_metals = "false"
+
+INFO (EXTGRMP-143) : Option promote_pin_pad = "logical"
+
+INFO (EXTGRMP-143) : Option eco_compatible_mode = "false"
+
+INFO (EXTGRMP-143) : Option output setup   -max_message_in_shorts_file = "100"
+
+INFO (EXTGRMP-143) : Option cap_mode_2915 = "true"
+
+INFO (EXTGRMP-143) : Option quickcap_file = "false"
+
+INFO (EXTGRMP-143) : Option ict_file = "process.ict"
+
+INFO (EXTGRMP-143) : Option quickcap_netfile = "qapi.net"
+
+INFO (EXTGRMP-143) : Option lefcap_output = "false"
+
+INFO (EXTGRMP-143) : Option lefcap_scale = "1.25"
+
+INFO (EXTGRMP-143) : Option lefres_output = "false"
+
+INFO (EXTGRMP-143) : Option kfactor_file = ""
+
+INFO (EXTGRMP-143) : Option total_c_threshold = "5"
+
+INFO (EXTGRMP-143) : Option relative_c_threshold = "0.03"
+
+INFO (EXTGRMP-143) : Option output_cap_filtering_mode = "relative_and_coupling"
+
+INFO (EXTGRMP-143) : Option cap_mode = "default"
+
+INFO (EXTGRMP-143) : Option parallel_options = ""
+
+INFO (EXTGRMP-143) : Option load_optimized_views = "true"
+
+INFO (EXTGRMP-143) : Option enable_metal_fill_effects = "true"
+
+INFO (EXTGRMP-143) : Option metal_fill -enable_advanced_virtual_fill = "false"
+
+INFO (EXTGRMP-143) : Option metal_fill -type = "floating"
+
+INFO (EXTGRMP-143) : Option vmf_metal_scheme_file = ""
+
+INFO (EXTGRMP-143) : Option vmf_rule_file = ""
+
+INFO (EXTGRMP-143) : Option extraction_setup -ignore_conn_to_bump = "true"
+
+INFO (EXTGRMP-143) : Option extraction_setup -lic_queue = "0"
+
+INFO (EXTGRMP-143) : Option extraction_setup -cerebrus_license_only = "false"
+
+INFO (EXTGRMP-143) : Option input_db -type metal_fill -gds_file = ""
+
+INFO (EXTGRMP-143) : Option density_check_method = "none"
+
+INFO (EXTGRMP-143) : Option process_technology -technology_corner = "typical_rc"
+
+INFO (EXTGRMP-143) : Option process_technology -EM_technology_corner = ""
+
+INFO (EXTGRMP-143) : Option process_technology -temperature = "25"
+
+INFO (EXTGRMP-143) : Option promote_gray_data_pins = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_layer_bias = "false"
+
+INFO (EXTGRMP-143) : Option output_db -map_eeq_to_master = "false"
+
+INFO (EXTGRMP-143) : Option output_db -match_res_cap = "false"
+
+INFO (EXTGRMP-143) : Option merge_tile_boundary_data = "true"
+
+INFO (EXTGRMP-143) : Option coupling_c_threshold = "3"
+
+INFO (EXTGRMP-143) : Option use_icecaps_models_only = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -use_name_map = "true"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -name_map_start_index = "0"
+
+INFO (EXTGRMP-143) : Option distributed_processing -timeout = "300"
+
+INFO (EXTGRMP-143) : Option distributed_processing -num_of_trials = "0"
+
+INFO (EXTGRMP-143) : Option output_db -type dspf -add_cap_prefix = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type oa = "false"
+
+INFO (EXTGRMP-143) : Option oa_analysis_point = "default"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_sensitivity_extraction = "false"
+
+INFO (EXTGRMP-143) : Option report_details = "false"
+
+INFO (EXTGRMP-143) : Option input_db -type metal_fill -offset_x = "0.0"
+
+INFO (EXTGRMP-143) : Option input_db -type metal_fill -offset_y = "0.0"
+
+INFO (EXTGRMP-143) : Option extraction_setup -ignore_pushdown_blockages = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -compress_temporary_files = "true"
+
+INFO (EXTGRMP-143) : Option strong_gray_debug = "false"
+
+INFO (EXTGRMP-143) : Option output_db -disable_instances = "true"
+
+INFO (EXTGRMP-143) : Option output_db -disable_subnodes = "true"
+
+INFO (EXTGRMP-143) : Option output_db -type coupling_cap_reports -dump_erosion_info = ""
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_res_width_drawn = "true"
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_res_parameters_unscaled = "false"
+
+INFO (EXTGRMP-143) : Option enable_active_fill_via_processing = "false"
+
+INFO (EXTGRMP-143) : Option output_db -add_explicit_vias = "false"
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_cap_layers = "false"
+
+INFO (EXTGRMP-143) : Option capacitance -ground_net = "0"
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_res_temp_coeff = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -write_coupled_decoupled_files = "false"
+
+INFO (EXTGRMP-143) : Option capacitance_coupling = "default"
+
+INFO (EXTGRMP-143) : Option extraction_setup -gds_top_cell = ""
+
+INFO (EXTGRMP-143) : Option input_db -directory_name = ""
+
+INFO (EXTGRMP-143) : Option binary_input = "false"
+
+INFO (EXTGRMP-143) : Option binary_output = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -enable_ieee_sensitivity = "false"
+
+INFO (EXTGRMP-143) : Option input_db -bump_map_file = ""
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_bump_instance = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_tsv_instance = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_TSV_STA_Cc_model = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -stitch_bump_model = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -stitch_tsv_model = "none"
+
+INFO (EXTGRMP-143) : Option enable_eco_mode = "false"
+
+INFO (EXTGRMP-143) : Option eco_file = ""
+
+INFO (EXTGRMP-143) : Option override_eco_reference = "true"
+
+INFO (EXTGRMP-143) : Option analysis_mode = "timing"
+
+INFO (EXTGRMP-143) : Option use_lef_for_hierarchical_def = "false"
+
+INFO (EXTGRMP-143) : Option enable_ws_r_scaling = "false"
+
+INFO (EXTGRMP-143) : Option include_gate_forming_layers = "false"
+
+INFO (EXTGRMP-143) : Option log_file -strict_error_reporting = "false"
+
+INFO (EXTGRMP-143) : Option log_file -report_outside_die_area_object = "false"
+
+INFO (EXTGRMP-143) : Option report_outside_diearea_object_error_limit = "1"
+
+INFO (EXTGRMP-143) : Option change_overhang_direction = "false"
+
+INFO (EXTGRMP-143) : Option ubump_subckt_file = ""
+
+INFO (EXTGRMP-143) : Option tsv_subckt_file = ""
+
+INFO (EXTGRMP-143) : Option output_setup -write_drc_violations = "false"
+
+INFO (EXTGRMP-143) : Option log_file -max_drc_messages = "1000"
+
+INFO (EXTGRMP-143) : Option LEF files =
+"/home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/lef/gsclib045_tech.lef
+/home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/lef/gsclib045_macro.lef"
+
+INFO (EXTGRMP-143) : Option DEF files =
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_NlONdk/qrc.def.gz"
+
+INFO (EXTGRMP-143) : Option GDSII files = ""
+
+INFO (EXTGRMP-143) : Option GDSII/RDL files = ""
+
+INFO (EXTGRMP-143) : Option SPICE files = ""
+
+INFO (EXTGRMP-143) : Option DENSITY cells = ""
+
+INFO (EXTGRMP-143) : Option stitch bump cells = ""
+
+INFO (EXTGRMP-143) : Option ignored macros = ""
+
+INFO (EXTGRMP-143) : Option black macros = ""
+
+INFO (EXTGRMP-155) : Layer mappings were not specified.
+
+INFO (EXTGRMP-276) : Gds/Oasis Layer Map settings were not specified.
+
+INFO (EXTGRMP-548) : Gds/Oasis Fill layer Map settings were not specified.
+
+INFO (EXTGRMP-550) : Gds/Oasis Active Fill layer Map settings were not specified.
+
+INFO (EXTGRMP-562) : HPB layer settings were not specified.
+
+INFO (EXTGRMP-828) : Gds/Oasis InfoGds layer Map settings were not specified.
+
+INFO (EXTGRMP-623) : Background density layer mappings were not specified.
+
+INFO (EXTGRMP-144) : There were no layer bias commands for R values.
+
+INFO (EXTGRMP-147) : Layer bias settings for C values were not specified.
+
+INFO (EXTGRMP-149) : Lefcap area scale settings were not specified.
+
+INFO (EXTGRMP-153) : Lefcap edge scale settings were not specified.
+
+INFO (EXTGRMP-151) : Parameter name settings were not specified.
+
+INFO (EXTGRMP-260) : Layer cluster settings were not specified.
+
+INFO (EXTHPY-253) : Extraction started at Mon May 18 05:26:29 2026.
+
+INFO (EXTHPY-232) : Preprocessing stage started at Mon May 18 05:26:29 2026.
+
+INFO (EXTGRMP-103) : Local job on vlsi obtained for resource 0 with 2 cores at 2026-May-18
+05:26:29 (2026-May-17 23:26:29 GMT); 
+
+WARNING (EXTGRMP-103) : Maximum size of the process stack (stacksize) on host vlsi is 133169152 bytes. Set it to a large value, preferably unlimited, to avoid any unexpected issues.
+
+
+ERROR (Plx-14) : "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_NlONdk/_qrc_techdir/typical_rc/qrcTechFile"
+This does not appear to be an ICECAPS technology file, neither plain text nor binary. 
+
+ERROR (EXTGRMP-103) : Current job number 0 failed. Please check stdout and log files for more
+details. Exiting...
+
+INFO (EXTHPY-260) : Extraction completed unsuccessfully at Mon May 18 05:26:33 2026.
+
+Warning message summary: 
+
+Message Code(ID)   Count     Message
+=================|=========|=======================================================================================================================
+EXTGRMP-103       2          Maximum size of the process stack (stacksize) on host vlsi is 133169152 bytes. Set it to a large value, preferably unlimited, to avoid any unexpected issues.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+EXTGRMP-414       1          No GDSII/OASIS file is specified. Setting graybox type as LEF_OBSTRUCTION.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+
+TOTAL WARNINGS: 2 
+TOTAL ERRORS: 2 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+----
+
+Ending at 2026-May-18 05:26:34 (2026-May-17 23:26:34 GMT).
+
+ Tool:                    Cadence Quantus Extraction 64-bit
+ Version:                 22.1.1-p041 Mon Apr 17 07:53:34 PDT 2023
+ IR Build No:             041 
+ Techfile:                Unknown ; version: Unknown 
+ License(s) used:         0 of Unknown 
+ User Name:               user_77
+ Host Name:               vlsi
+ Host OS Release:         Linux 3.10.0-1160.el7.x86_64
+ Host OS Version:         #1 SMP Tue Aug 18 14:50:17 EDT 2020
+ CPU Model Name:          Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz
+ L1d Cache:               32K
+ L1i Cache:               32K
+ L2 Cache:                1024K
+ L3 Cache:                14080K
+ Memory:                  62 GB
+ Run duration:            00:00:00 CPU time, 00:00:05 clock time
+ Max (Total) memory used: 0 MB
+ Max (CPU) memory used:   0 MB
+ Max Temp-Directory used: 0 MB
+ Nets/hour:               0K nets/CPU-hr, 0K nets/clock-hr
+ Design data:
+    Components:           0
+    Phy components:       0
+    Nets:                 0
+    Unconnected pins:     0
+ Warning messages:        2
+ Error messages:          2
+
+Exit code 2.
+Cadence Quantus Extraction completed unsuccessfully at 2026-May-18 05:26:34
+(2026-May-17 23:26:34 GMT).
+Extraction called for design 'gpu' of instances=22129 and nets=16146 using extraction engine 'postRoute' at effort level 'signoff' .
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+Type 'man IMPEXT-3530' for more detail.
+typical_rc
+
+
+  Cadence Quantus Extraction - 64-bit Parasitic Extractor - Version
+22.1.1-p041 Mon Apr 17 07:53:34 PDT 2023
+---------------------------------------------------------------------------------------------------------------
+                                  Copyright 2023 Cadence Design Systems,
+Inc.
+
+
+
+INFO (EXTQRCXLOG-128) : Quantus command line:
+ Started at: 2026-May-18 05:26:37 (2026-May-17 23:26:37 GMT)
+ Executable: /home/cadence/lnx/quat/tools.lnx86/extraction/bin/64bit/qrc
+ Options:     -cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_v4f5BP/qrc.cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_v4f5BP/qrc.def.gz
+ Current working directory:
+/home/user_77/backup_extract/my_project/project/pnr
+
+
+INFO (EXTQRCXLOG-103) : The Command File Options for the current Quantus run are as follows:
+
+extract \
+	 -selection "all" \
+	 -type "rc_coupled"
+extraction_setup \
+	 -layout_scale 0.9 \
+	 -promote_pin_pad "LOGICAL"
+filter_coupling_cap \
+	 -cap_filtering_mode "absolute_and_relative" \
+	 -coupling_cap_threshold_absolute 3.0 \
+	 -coupling_cap_threshold_relative 0.03 \
+	 -total_cap_threshold 5.0
+input_db -type def \
+	 -lef_file_list_file "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_v4f5BP/qrc.leflist"
+log_file \
+	 -dump_options true \
+	 -file_name "qrc_71590_20260518_05:26:35.log"
+output_db -type spef \
+	 -short_incomplete_net_pins true \
+	 -subtype "EXTENDED"
+output_setup \
+	 -compressed true \
+	 -directory_name "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_v4f5BP" \
+	 -file_name "gpu" \
+	 -temporary_directory_name "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_v4f5BP"
+process_technology \
+	 -technology_corner \
+		"typical_rc" \
+	 -technology_library_file "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_v4f5BP/_qrc_techlib.defs" \
+	 -technology_name "_qrc_tech_" \
+	 -temperature \
+		"25"
+
+
+
+sh: /usr/bin/mpstat: No such file or directory
+
+INFO (EXTGRMP-102) : Starting at 2026-May-18 05:26:37 (2026-May-17 23:26:37 GMT) on host vlsi
+with pid 85377.
+Running binary as: 
+ /home/cadence/lnx/quat/tools.lnx86/extraction/bin/64bit/qrc -cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_v4f5BP/qrc.cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_v4f5BP/qrc.def.gz  
+
+WARNING (EXTGRMP-414) : No GDSII/OASIS file is specified. Setting graybox type as LEF_OBSTRUCTION.
+
+INFO (EXTGRMP-142) : Command line arguments:
+"-cmd"
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_v4f5BP/qrc.cmd"
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_v4f5BP/qrc.def.gz"
+
+INFO (EXTGRMP-143) : Option extraction_setup -copy_port_to_obs = "true"
+
+INFO (EXTGRMP-143) : Option log_file = "qrc_71590_20260518_05:26:35.log"
+
+INFO (EXTGRMP-143) : Option log_file -message_config_file = ""
+
+INFO (EXTGRMP-143) : Option log_file -max_error_messages = "100"
+
+INFO (EXTGRMP-143) : Option log_file -max_warning_messages = "10"
+
+INFO (EXTGRMP-143) : Option log_file -max_info_messages = "1000"
+
+INFO (EXTGRMP-143) : Option process_technology -technology_name = ""
+
+INFO (EXTGRMP-143) : Option EM_techname = ""
+
+INFO (EXTGRMP-143) : Option process_technology -EM_WEE_clamping_factor = "0.7"
+
+INFO (EXTGRMP-143) : Option input_db -libgen_library_name = ""
+
+INFO (EXTGRMP-143) : Option oa_default_rule_name = ""
+
+INFO (EXTGRMP-143) : Option graybox -type = "obs"
+
+INFO (EXTGRMP-143) : Option graybox -use_macro_density = "false"
+
+INFO (EXTGRMP-143) : Option comp_prealloc = "0"
+
+INFO (EXTGRMP-143) : Option net_prealloc = "0"
+
+INFO (EXTGRMP-143) : Option output_setup -directory_name =
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_v4f5BP"
+
+INFO (EXTGRMP-143) : Option output_db -units = "micron"
+
+INFO (EXTGRMP-143) : Option user_comment = ""
+
+INFO (EXTGRMP-143) : Option output_cache_directory_name =
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_v4f5BP/.qrctemp"
+
+INFO (EXTGRMP-143) : Option keep_temporary_files = "false"
+
+INFO (EXTGRMP-143) : Option output_density_tiles = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -file_name = "gpu"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -predefined_spef_cells_file = ""
+
+INFO (EXTGRMP-143) : Option parasitic_reduction -enable_reduction = "false"
+
+INFO (EXTGRMP-143) : Option debug_log = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -subtype = "extended"
+
+INFO (EXTGRMP-143) : Option output_db -type dspf -subtype = "none"
+
+INFO (EXTGRMP-143) : Option output_sstorm_db_name = ""
+
+INFO (EXTGRMP-143) : Option netlist_output = "none"
+
+INFO (EXTGRMP-143) : Option output_db -type coupling_cap_reports = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type rcdb = "false"
+
+INFO (EXTGRMP-143) : Option output_db -hierarchy_delimiter = "/"
+
+INFO (EXTGRMP-143) : Option output_db -busbit_delimiter = "[]"
+
+INFO (EXTGRMP-143) : Option output_db -pin_delimiter = ":"
+
+INFO (EXTGRMP-143) : Option output_db -output_incomplete_nets_type = "no_pin one_pin
+disconnected_pin multiple_partitions floating_resistors"
+
+INFO (EXTGRMP-143) : Option truncate_regular_wires = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -layout_scale = "0.9"
+
+INFO (EXTGRMP-143) : Option output_setup -file_max_size = "9223372036854775807"
+
+INFO (EXTGRMP-143) : Option log_file -dump_options = "true"
+
+INFO (EXTGRMP-143) : Option short_incomplete_net_pins = "true"
+
+INFO (EXTGRMP-143) : Option promote_incomplete_net_pins = "true"
+
+INFO (EXTGRMP-143) : Option output_db -output_incomplete_nets = "true"
+
+INFO (EXTGRMP-143) : Option output_db -output_unrouted_nets = "false"
+
+INFO (EXTGRMP-143) : Option output_db -escape_special_characters = "true"
+
+INFO (EXTGRMP-143) : Option lumped_cc_threshold = "0.0"
+
+INFO (EXTGRMP-143) : Option parasitic_reduction -max_frequency = "1.0e+08"
+
+INFO (EXTGRMP-143) : Option output_setup -compressed = "true"
+
+INFO (EXTGRMP-143) : Option max_resistor_length = "100.0"
+
+INFO (EXTGRMP-143) : Option promote_feedthru_ports = "none"
+
+INFO (EXTGRMP-143) : Option promote_instance_ports = "none"
+
+INFO (EXTGRMP-143) : Option output_promoted_feedthrus = "false"
+
+INFO (EXTGRMP-143) : Option output_unconnected_pins = "false"
+
+INFO (EXTGRMP-143) : Option remove_floating_metals = "false"
+
+INFO (EXTGRMP-143) : Option promote_pin_pad = "logical"
+
+INFO (EXTGRMP-143) : Option eco_compatible_mode = "false"
+
+INFO (EXTGRMP-143) : Option output setup   -max_message_in_shorts_file = "100"
+
+INFO (EXTGRMP-143) : Option cap_mode_2915 = "true"
+
+INFO (EXTGRMP-143) : Option quickcap_file = "false"
+
+INFO (EXTGRMP-143) : Option ict_file = "process.ict"
+
+INFO (EXTGRMP-143) : Option quickcap_netfile = "qapi.net"
+
+INFO (EXTGRMP-143) : Option lefcap_output = "false"
+
+INFO (EXTGRMP-143) : Option lefcap_scale = "1.25"
+
+INFO (EXTGRMP-143) : Option lefres_output = "false"
+
+INFO (EXTGRMP-143) : Option kfactor_file = ""
+
+INFO (EXTGRMP-143) : Option total_c_threshold = "5"
+
+INFO (EXTGRMP-143) : Option relative_c_threshold = "0.03"
+
+INFO (EXTGRMP-143) : Option output_cap_filtering_mode = "relative_and_coupling"
+
+INFO (EXTGRMP-143) : Option cap_mode = "default"
+
+INFO (EXTGRMP-143) : Option parallel_options = ""
+
+INFO (EXTGRMP-143) : Option load_optimized_views = "true"
+
+INFO (EXTGRMP-143) : Option enable_metal_fill_effects = "true"
+
+INFO (EXTGRMP-143) : Option metal_fill -enable_advanced_virtual_fill = "false"
+
+INFO (EXTGRMP-143) : Option metal_fill -type = "floating"
+
+INFO (EXTGRMP-143) : Option vmf_metal_scheme_file = ""
+
+INFO (EXTGRMP-143) : Option vmf_rule_file = ""
+
+INFO (EXTGRMP-143) : Option extraction_setup -ignore_conn_to_bump = "true"
+
+INFO (EXTGRMP-143) : Option extraction_setup -lic_queue = "0"
+
+INFO (EXTGRMP-143) : Option extraction_setup -cerebrus_license_only = "false"
+
+INFO (EXTGRMP-143) : Option input_db -type metal_fill -gds_file = ""
+
+INFO (EXTGRMP-143) : Option density_check_method = "none"
+
+INFO (EXTGRMP-143) : Option process_technology -technology_corner = "typical_rc"
+
+INFO (EXTGRMP-143) : Option process_technology -EM_technology_corner = ""
+
+INFO (EXTGRMP-143) : Option process_technology -temperature = "25"
+
+INFO (EXTGRMP-143) : Option promote_gray_data_pins = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_layer_bias = "false"
+
+INFO (EXTGRMP-143) : Option output_db -map_eeq_to_master = "false"
+
+INFO (EXTGRMP-143) : Option output_db -match_res_cap = "false"
+
+INFO (EXTGRMP-143) : Option merge_tile_boundary_data = "true"
+
+INFO (EXTGRMP-143) : Option coupling_c_threshold = "3"
+
+INFO (EXTGRMP-143) : Option use_icecaps_models_only = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -use_name_map = "true"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -name_map_start_index = "0"
+
+INFO (EXTGRMP-143) : Option distributed_processing -timeout = "300"
+
+INFO (EXTGRMP-143) : Option distributed_processing -num_of_trials = "0"
+
+INFO (EXTGRMP-143) : Option output_db -type dspf -add_cap_prefix = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type oa = "false"
+
+INFO (EXTGRMP-143) : Option oa_analysis_point = "default"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_sensitivity_extraction = "false"
+
+INFO (EXTGRMP-143) : Option report_details = "false"
+
+INFO (EXTGRMP-143) : Option input_db -type metal_fill -offset_x = "0.0"
+
+INFO (EXTGRMP-143) : Option input_db -type metal_fill -offset_y = "0.0"
+
+INFO (EXTGRMP-143) : Option extraction_setup -ignore_pushdown_blockages = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -compress_temporary_files = "true"
+
+INFO (EXTGRMP-143) : Option strong_gray_debug = "false"
+
+INFO (EXTGRMP-143) : Option output_db -disable_instances = "true"
+
+INFO (EXTGRMP-143) : Option output_db -disable_subnodes = "true"
+
+INFO (EXTGRMP-143) : Option output_db -type coupling_cap_reports -dump_erosion_info = ""
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_res_width_drawn = "true"
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_res_parameters_unscaled = "false"
+
+INFO (EXTGRMP-143) : Option enable_active_fill_via_processing = "false"
+
+INFO (EXTGRMP-143) : Option output_db -add_explicit_vias = "false"
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_cap_layers = "false"
+
+INFO (EXTGRMP-143) : Option capacitance -ground_net = "0"
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_res_temp_coeff = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -write_coupled_decoupled_files = "false"
+
+INFO (EXTGRMP-143) : Option capacitance_coupling = "default"
+
+INFO (EXTGRMP-143) : Option extraction_setup -gds_top_cell = ""
+
+INFO (EXTGRMP-143) : Option input_db -directory_name = ""
+
+INFO (EXTGRMP-143) : Option binary_input = "false"
+
+INFO (EXTGRMP-143) : Option binary_output = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -enable_ieee_sensitivity = "false"
+
+INFO (EXTGRMP-143) : Option input_db -bump_map_file = ""
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_bump_instance = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_tsv_instance = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_TSV_STA_Cc_model = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -stitch_bump_model = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -stitch_tsv_model = "none"
+
+INFO (EXTGRMP-143) : Option enable_eco_mode = "false"
+
+INFO (EXTGRMP-143) : Option eco_file = ""
+
+INFO (EXTGRMP-143) : Option override_eco_reference = "true"
+
+INFO (EXTGRMP-143) : Option analysis_mode = "timing"
+
+INFO (EXTGRMP-143) : Option use_lef_for_hierarchical_def = "false"
+
+INFO (EXTGRMP-143) : Option enable_ws_r_scaling = "false"
+
+INFO (EXTGRMP-143) : Option include_gate_forming_layers = "false"
+
+INFO (EXTGRMP-143) : Option log_file -strict_error_reporting = "false"
+
+INFO (EXTGRMP-143) : Option log_file -report_outside_die_area_object = "false"
+
+INFO (EXTGRMP-143) : Option report_outside_diearea_object_error_limit = "1"
+
+INFO (EXTGRMP-143) : Option change_overhang_direction = "false"
+
+INFO (EXTGRMP-143) : Option ubump_subckt_file = ""
+
+INFO (EXTGRMP-143) : Option tsv_subckt_file = ""
+
+INFO (EXTGRMP-143) : Option output_setup -write_drc_violations = "false"
+
+INFO (EXTGRMP-143) : Option log_file -max_drc_messages = "1000"
+
+INFO (EXTGRMP-143) : Option LEF files =
+"/home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/lef/gsclib045_tech.lef
+/home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/lef/gsclib045_macro.lef"
+
+INFO (EXTGRMP-143) : Option DEF files =
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_v4f5BP/qrc.def.gz"
+
+INFO (EXTGRMP-143) : Option GDSII files = ""
+
+INFO (EXTGRMP-143) : Option GDSII/RDL files = ""
+
+INFO (EXTGRMP-143) : Option SPICE files = ""
+
+INFO (EXTGRMP-143) : Option DENSITY cells = ""
+
+INFO (EXTGRMP-143) : Option stitch bump cells = ""
+
+INFO (EXTGRMP-143) : Option ignored macros = ""
+
+INFO (EXTGRMP-143) : Option black macros = ""
+
+INFO (EXTGRMP-155) : Layer mappings were not specified.
+
+INFO (EXTGRMP-276) : Gds/Oasis Layer Map settings were not specified.
+
+INFO (EXTGRMP-548) : Gds/Oasis Fill layer Map settings were not specified.
+
+INFO (EXTGRMP-550) : Gds/Oasis Active Fill layer Map settings were not specified.
+
+INFO (EXTGRMP-562) : HPB layer settings were not specified.
+
+INFO (EXTGRMP-828) : Gds/Oasis InfoGds layer Map settings were not specified.
+
+INFO (EXTGRMP-623) : Background density layer mappings were not specified.
+
+INFO (EXTGRMP-144) : There were no layer bias commands for R values.
+
+INFO (EXTGRMP-147) : Layer bias settings for C values were not specified.
+
+INFO (EXTGRMP-149) : Lefcap area scale settings were not specified.
+
+INFO (EXTGRMP-153) : Lefcap edge scale settings were not specified.
+
+INFO (EXTGRMP-151) : Parameter name settings were not specified.
+
+INFO (EXTGRMP-260) : Layer cluster settings were not specified.
+
+INFO (EXTHPY-253) : Extraction started at Mon May 18 05:26:37 2026.
+
+INFO (EXTHPY-232) : Preprocessing stage started at Mon May 18 05:26:37 2026.
+
+INFO (EXTGRMP-103) : Local job on vlsi obtained for resource 0 with 2 cores at 2026-May-18
+05:26:37 (2026-May-17 23:26:37 GMT); 
+
+WARNING (EXTGRMP-103) : Maximum size of the process stack (stacksize) on host vlsi is 133169152 bytes. Set it to a large value, preferably unlimited, to avoid any unexpected issues.
+
+
+ERROR (Plx-14) : "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_v4f5BP/_qrc_techdir/typical_rc/qrcTechFile"
+This does not appear to be an ICECAPS technology file, neither plain text nor binary. 
+
+ERROR (EXTGRMP-103) : Current job number 0 failed. Please check stdout and log files for more
+details. Exiting...
+
+INFO (EXTHPY-260) : Extraction completed unsuccessfully at Mon May 18 05:26:41 2026.
+
+Warning message summary: 
+
+Message Code(ID)   Count     Message
+=================|=========|=======================================================================================================================
+EXTGRMP-103       2          Maximum size of the process stack (stacksize) on host vlsi is 133169152 bytes. Set it to a large value, preferably unlimited, to avoid any unexpected issues.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+EXTGRMP-414       1          No GDSII/OASIS file is specified. Setting graybox type as LEF_OBSTRUCTION.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+
+TOTAL WARNINGS: 2 
+TOTAL ERRORS: 2 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+----
+
+Ending at 2026-May-18 05:26:42 (2026-May-17 23:26:42 GMT).
+
+ Tool:                    Cadence Quantus Extraction 64-bit
+ Version:                 22.1.1-p041 Mon Apr 17 07:53:34 PDT 2023
+ IR Build No:             041 
+ Techfile:                Unknown ; version: Unknown 
+ License(s) used:         0 of Unknown 
+ User Name:               user_77
+ Host Name:               vlsi
+ Host OS Release:         Linux 3.10.0-1160.el7.x86_64
+ Host OS Version:         #1 SMP Tue Aug 18 14:50:17 EDT 2020
+ CPU Model Name:          Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz
+ L1d Cache:               32K
+ L1i Cache:               32K
+ L2 Cache:                1024K
+ L3 Cache:                14080K
+ Memory:                  62 GB
+ Run duration:            00:00:00 CPU time, 00:00:05 clock time
+ Max (Total) memory used: 0 MB
+ Max (CPU) memory used:   0 MB
+ Max Temp-Directory used: 0 MB
+ Nets/hour:               0K nets/CPU-hr, 0K nets/clock-hr
+ Design data:
+    Components:           0
+    Phy components:       0
+    Nets:                 0
+    Unconnected pins:     0
+ Warning messages:        2
+ Error messages:          2
+
+Exit code 2.
+Cadence Quantus Extraction completed unsuccessfully at 2026-May-18 05:26:42
+(2026-May-17 23:26:42 GMT).
+Starting delay calculation for Setup views
+AAE_INFO: opIsDesignInPostRouteState() is 1
+AAE_INFO: resetNetProps viewIdx 0 
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: gpu
+# Design Mode: 90nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+Extraction called for design 'gpu' of instances=22129 and nets=16146 using extraction engine 'postRoute' at effort level 'signoff' .
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+Type 'man IMPEXT-3530' for more detail.
+typical_rc
+
+
+  Cadence Quantus Extraction - 64-bit Parasitic Extractor - Version
+22.1.1-p041 Mon Apr 17 07:53:34 PDT 2023
+---------------------------------------------------------------------------------------------------------------
+                                  Copyright 2023 Cadence Design Systems,
+Inc.
+
+
+
+INFO (EXTQRCXLOG-128) : Quantus command line:
+ Started at: 2026-May-18 05:26:45 (2026-May-17 23:26:45 GMT)
+ Executable: /home/cadence/lnx/quat/tools.lnx86/extraction/bin/64bit/qrc
+ Options:     -cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_FMJeM3/qrc.cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_FMJeM3/qrc.def.gz
+ Current working directory:
+/home/user_77/backup_extract/my_project/project/pnr
+
+
+INFO (EXTQRCXLOG-103) : The Command File Options for the current Quantus run are as follows:
+
+extract \
+	 -selection "all" \
+	 -type "rc_coupled"
+extraction_setup \
+	 -layout_scale 0.9 \
+	 -promote_pin_pad "LOGICAL"
+filter_coupling_cap \
+	 -cap_filtering_mode "absolute_and_relative" \
+	 -coupling_cap_threshold_absolute 3.0 \
+	 -coupling_cap_threshold_relative 0.03 \
+	 -total_cap_threshold 5.0
+input_db -type def \
+	 -lef_file_list_file "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_FMJeM3/qrc.leflist"
+log_file \
+	 -dump_options true \
+	 -file_name "qrc_71590_20260518_05:26:43.log"
+output_db -type spef \
+	 -short_incomplete_net_pins true \
+	 -subtype "EXTENDED"
+output_setup \
+	 -compressed true \
+	 -directory_name "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_FMJeM3" \
+	 -file_name "gpu" \
+	 -temporary_directory_name "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_FMJeM3"
+process_technology \
+	 -technology_corner \
+		"typical_rc" \
+	 -technology_library_file "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_FMJeM3/_qrc_techlib.defs" \
+	 -technology_name "_qrc_tech_" \
+	 -temperature \
+		"25"
+
+
+
+sh: /usr/bin/mpstat: No such file or directory
+
+INFO (EXTGRMP-102) : Starting at 2026-May-18 05:26:45 (2026-May-17 23:26:45 GMT) on host vlsi
+with pid 86297.
+Running binary as: 
+ /home/cadence/lnx/quat/tools.lnx86/extraction/bin/64bit/qrc -cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_FMJeM3/qrc.cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_FMJeM3/qrc.def.gz  
+
+WARNING (EXTGRMP-414) : No GDSII/OASIS file is specified. Setting graybox type as LEF_OBSTRUCTION.
+
+INFO (EXTGRMP-142) : Command line arguments:
+"-cmd"
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_FMJeM3/qrc.cmd"
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_FMJeM3/qrc.def.gz"
+
+INFO (EXTGRMP-143) : Option extraction_setup -copy_port_to_obs = "true"
+
+INFO (EXTGRMP-143) : Option log_file = "qrc_71590_20260518_05:26:43.log"
+
+INFO (EXTGRMP-143) : Option log_file -message_config_file = ""
+
+INFO (EXTGRMP-143) : Option log_file -max_error_messages = "100"
+
+INFO (EXTGRMP-143) : Option log_file -max_warning_messages = "10"
+
+INFO (EXTGRMP-143) : Option log_file -max_info_messages = "1000"
+
+INFO (EXTGRMP-143) : Option process_technology -technology_name = ""
+
+INFO (EXTGRMP-143) : Option EM_techname = ""
+
+INFO (EXTGRMP-143) : Option process_technology -EM_WEE_clamping_factor = "0.7"
+
+INFO (EXTGRMP-143) : Option input_db -libgen_library_name = ""
+
+INFO (EXTGRMP-143) : Option oa_default_rule_name = ""
+
+INFO (EXTGRMP-143) : Option graybox -type = "obs"
+
+INFO (EXTGRMP-143) : Option graybox -use_macro_density = "false"
+
+INFO (EXTGRMP-143) : Option comp_prealloc = "0"
+
+INFO (EXTGRMP-143) : Option net_prealloc = "0"
+
+INFO (EXTGRMP-143) : Option output_setup -directory_name =
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_FMJeM3"
+
+INFO (EXTGRMP-143) : Option output_db -units = "micron"
+
+INFO (EXTGRMP-143) : Option user_comment = ""
+
+INFO (EXTGRMP-143) : Option output_cache_directory_name =
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_FMJeM3/.qrctemp"
+
+INFO (EXTGRMP-143) : Option keep_temporary_files = "false"
+
+INFO (EXTGRMP-143) : Option output_density_tiles = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -file_name = "gpu"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -predefined_spef_cells_file = ""
+
+INFO (EXTGRMP-143) : Option parasitic_reduction -enable_reduction = "false"
+
+INFO (EXTGRMP-143) : Option debug_log = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -subtype = "extended"
+
+INFO (EXTGRMP-143) : Option output_db -type dspf -subtype = "none"
+
+INFO (EXTGRMP-143) : Option output_sstorm_db_name = ""
+
+INFO (EXTGRMP-143) : Option netlist_output = "none"
+
+INFO (EXTGRMP-143) : Option output_db -type coupling_cap_reports = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type rcdb = "false"
+
+INFO (EXTGRMP-143) : Option output_db -hierarchy_delimiter = "/"
+
+INFO (EXTGRMP-143) : Option output_db -busbit_delimiter = "[]"
+
+INFO (EXTGRMP-143) : Option output_db -pin_delimiter = ":"
+
+INFO (EXTGRMP-143) : Option output_db -output_incomplete_nets_type = "no_pin one_pin
+disconnected_pin multiple_partitions floating_resistors"
+
+INFO (EXTGRMP-143) : Option truncate_regular_wires = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -layout_scale = "0.9"
+
+INFO (EXTGRMP-143) : Option output_setup -file_max_size = "9223372036854775807"
+
+INFO (EXTGRMP-143) : Option log_file -dump_options = "true"
+
+INFO (EXTGRMP-143) : Option short_incomplete_net_pins = "true"
+
+INFO (EXTGRMP-143) : Option promote_incomplete_net_pins = "true"
+
+INFO (EXTGRMP-143) : Option output_db -output_incomplete_nets = "true"
+
+INFO (EXTGRMP-143) : Option output_db -output_unrouted_nets = "false"
+
+INFO (EXTGRMP-143) : Option output_db -escape_special_characters = "true"
+
+INFO (EXTGRMP-143) : Option lumped_cc_threshold = "0.0"
+
+INFO (EXTGRMP-143) : Option parasitic_reduction -max_frequency = "1.0e+08"
+
+INFO (EXTGRMP-143) : Option output_setup -compressed = "true"
+
+INFO (EXTGRMP-143) : Option max_resistor_length = "100.0"
+
+INFO (EXTGRMP-143) : Option promote_feedthru_ports = "none"
+
+INFO (EXTGRMP-143) : Option promote_instance_ports = "none"
+
+INFO (EXTGRMP-143) : Option output_promoted_feedthrus = "false"
+
+INFO (EXTGRMP-143) : Option output_unconnected_pins = "false"
+
+INFO (EXTGRMP-143) : Option remove_floating_metals = "false"
+
+INFO (EXTGRMP-143) : Option promote_pin_pad = "logical"
+
+INFO (EXTGRMP-143) : Option eco_compatible_mode = "false"
+
+INFO (EXTGRMP-143) : Option output setup   -max_message_in_shorts_file = "100"
+
+INFO (EXTGRMP-143) : Option cap_mode_2915 = "true"
+
+INFO (EXTGRMP-143) : Option quickcap_file = "false"
+
+INFO (EXTGRMP-143) : Option ict_file = "process.ict"
+
+INFO (EXTGRMP-143) : Option quickcap_netfile = "qapi.net"
+
+INFO (EXTGRMP-143) : Option lefcap_output = "false"
+
+INFO (EXTGRMP-143) : Option lefcap_scale = "1.25"
+
+INFO (EXTGRMP-143) : Option lefres_output = "false"
+
+INFO (EXTGRMP-143) : Option kfactor_file = ""
+
+INFO (EXTGRMP-143) : Option total_c_threshold = "5"
+
+INFO (EXTGRMP-143) : Option relative_c_threshold = "0.03"
+
+INFO (EXTGRMP-143) : Option output_cap_filtering_mode = "relative_and_coupling"
+
+INFO (EXTGRMP-143) : Option cap_mode = "default"
+
+INFO (EXTGRMP-143) : Option parallel_options = ""
+
+INFO (EXTGRMP-143) : Option load_optimized_views = "true"
+
+INFO (EXTGRMP-143) : Option enable_metal_fill_effects = "true"
+
+INFO (EXTGRMP-143) : Option metal_fill -enable_advanced_virtual_fill = "false"
+
+INFO (EXTGRMP-143) : Option metal_fill -type = "floating"
+
+INFO (EXTGRMP-143) : Option vmf_metal_scheme_file = ""
+
+INFO (EXTGRMP-143) : Option vmf_rule_file = ""
+
+INFO (EXTGRMP-143) : Option extraction_setup -ignore_conn_to_bump = "true"
+
+INFO (EXTGRMP-143) : Option extraction_setup -lic_queue = "0"
+
+INFO (EXTGRMP-143) : Option extraction_setup -cerebrus_license_only = "false"
+
+INFO (EXTGRMP-143) : Option input_db -type metal_fill -gds_file = ""
+
+INFO (EXTGRMP-143) : Option density_check_method = "none"
+
+INFO (EXTGRMP-143) : Option process_technology -technology_corner = "typical_rc"
+
+INFO (EXTGRMP-143) : Option process_technology -EM_technology_corner = ""
+
+INFO (EXTGRMP-143) : Option process_technology -temperature = "25"
+
+INFO (EXTGRMP-143) : Option promote_gray_data_pins = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_layer_bias = "false"
+
+INFO (EXTGRMP-143) : Option output_db -map_eeq_to_master = "false"
+
+INFO (EXTGRMP-143) : Option output_db -match_res_cap = "false"
+
+INFO (EXTGRMP-143) : Option merge_tile_boundary_data = "true"
+
+INFO (EXTGRMP-143) : Option coupling_c_threshold = "3"
+
+INFO (EXTGRMP-143) : Option use_icecaps_models_only = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -use_name_map = "true"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -name_map_start_index = "0"
+
+INFO (EXTGRMP-143) : Option distributed_processing -timeout = "300"
+
+INFO (EXTGRMP-143) : Option distributed_processing -num_of_trials = "0"
+
+INFO (EXTGRMP-143) : Option output_db -type dspf -add_cap_prefix = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type oa = "false"
+
+INFO (EXTGRMP-143) : Option oa_analysis_point = "default"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_sensitivity_extraction = "false"
+
+INFO (EXTGRMP-143) : Option report_details = "false"
+
+INFO (EXTGRMP-143) : Option input_db -type metal_fill -offset_x = "0.0"
+
+INFO (EXTGRMP-143) : Option input_db -type metal_fill -offset_y = "0.0"
+
+INFO (EXTGRMP-143) : Option extraction_setup -ignore_pushdown_blockages = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -compress_temporary_files = "true"
+
+INFO (EXTGRMP-143) : Option strong_gray_debug = "false"
+
+INFO (EXTGRMP-143) : Option output_db -disable_instances = "true"
+
+INFO (EXTGRMP-143) : Option output_db -disable_subnodes = "true"
+
+INFO (EXTGRMP-143) : Option output_db -type coupling_cap_reports -dump_erosion_info = ""
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_res_width_drawn = "true"
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_res_parameters_unscaled = "false"
+
+INFO (EXTGRMP-143) : Option enable_active_fill_via_processing = "false"
+
+INFO (EXTGRMP-143) : Option output_db -add_explicit_vias = "false"
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_cap_layers = "false"
+
+INFO (EXTGRMP-143) : Option capacitance -ground_net = "0"
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_res_temp_coeff = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -write_coupled_decoupled_files = "false"
+
+INFO (EXTGRMP-143) : Option capacitance_coupling = "default"
+
+INFO (EXTGRMP-143) : Option extraction_setup -gds_top_cell = ""
+
+INFO (EXTGRMP-143) : Option input_db -directory_name = ""
+
+INFO (EXTGRMP-143) : Option binary_input = "false"
+
+INFO (EXTGRMP-143) : Option binary_output = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -enable_ieee_sensitivity = "false"
+
+INFO (EXTGRMP-143) : Option input_db -bump_map_file = ""
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_bump_instance = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_tsv_instance = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_TSV_STA_Cc_model = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -stitch_bump_model = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -stitch_tsv_model = "none"
+
+INFO (EXTGRMP-143) : Option enable_eco_mode = "false"
+
+INFO (EXTGRMP-143) : Option eco_file = ""
+
+INFO (EXTGRMP-143) : Option override_eco_reference = "true"
+
+INFO (EXTGRMP-143) : Option analysis_mode = "timing"
+
+INFO (EXTGRMP-143) : Option use_lef_for_hierarchical_def = "false"
+
+INFO (EXTGRMP-143) : Option enable_ws_r_scaling = "false"
+
+INFO (EXTGRMP-143) : Option include_gate_forming_layers = "false"
+
+INFO (EXTGRMP-143) : Option log_file -strict_error_reporting = "false"
+
+INFO (EXTGRMP-143) : Option log_file -report_outside_die_area_object = "false"
+
+INFO (EXTGRMP-143) : Option report_outside_diearea_object_error_limit = "1"
+
+INFO (EXTGRMP-143) : Option change_overhang_direction = "false"
+
+INFO (EXTGRMP-143) : Option ubump_subckt_file = ""
+
+INFO (EXTGRMP-143) : Option tsv_subckt_file = ""
+
+INFO (EXTGRMP-143) : Option output_setup -write_drc_violations = "false"
+
+INFO (EXTGRMP-143) : Option log_file -max_drc_messages = "1000"
+
+INFO (EXTGRMP-143) : Option LEF files =
+"/home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/lef/gsclib045_tech.lef
+/home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/lef/gsclib045_macro.lef"
+
+INFO (EXTGRMP-143) : Option DEF files =
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_FMJeM3/qrc.def.gz"
+
+INFO (EXTGRMP-143) : Option GDSII files = ""
+
+INFO (EXTGRMP-143) : Option GDSII/RDL files = ""
+
+INFO (EXTGRMP-143) : Option SPICE files = ""
+
+INFO (EXTGRMP-143) : Option DENSITY cells = ""
+
+INFO (EXTGRMP-143) : Option stitch bump cells = ""
+
+INFO (EXTGRMP-143) : Option ignored macros = ""
+
+INFO (EXTGRMP-143) : Option black macros = ""
+
+INFO (EXTGRMP-155) : Layer mappings were not specified.
+
+INFO (EXTGRMP-276) : Gds/Oasis Layer Map settings were not specified.
+
+INFO (EXTGRMP-548) : Gds/Oasis Fill layer Map settings were not specified.
+
+INFO (EXTGRMP-550) : Gds/Oasis Active Fill layer Map settings were not specified.
+
+INFO (EXTGRMP-562) : HPB layer settings were not specified.
+
+INFO (EXTGRMP-828) : Gds/Oasis InfoGds layer Map settings were not specified.
+
+INFO (EXTGRMP-623) : Background density layer mappings were not specified.
+
+INFO (EXTGRMP-144) : There were no layer bias commands for R values.
+
+INFO (EXTGRMP-147) : Layer bias settings for C values were not specified.
+
+INFO (EXTGRMP-149) : Lefcap area scale settings were not specified.
+
+INFO (EXTGRMP-153) : Lefcap edge scale settings were not specified.
+
+INFO (EXTGRMP-151) : Parameter name settings were not specified.
+
+INFO (EXTGRMP-260) : Layer cluster settings were not specified.
+
+INFO (EXTHPY-253) : Extraction started at Mon May 18 05:26:45 2026.
+
+INFO (EXTHPY-232) : Preprocessing stage started at Mon May 18 05:26:45 2026.
+
+INFO (EXTGRMP-103) : Local job on vlsi obtained for resource 0 with 2 cores at 2026-May-18
+05:26:45 (2026-May-17 23:26:45 GMT); 
+
+WARNING (EXTGRMP-103) : Maximum size of the process stack (stacksize) on host vlsi is 133169152 bytes. Set it to a large value, preferably unlimited, to avoid any unexpected issues.
+
+
+ERROR (Plx-14) : "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_FMJeM3/_qrc_techdir/typical_rc/qrcTechFile"
+This does not appear to be an ICECAPS technology file, neither plain text nor binary. 
+
+ERROR (EXTGRMP-103) : Current job number 0 failed. Please check stdout and log files for more
+details. Exiting...
+
+INFO (EXTHPY-260) : Extraction completed unsuccessfully at Mon May 18 05:26:49 2026.
+
+Warning message summary: 
+
+Message Code(ID)   Count     Message
+=================|=========|=======================================================================================================================
+EXTGRMP-103       2          Maximum size of the process stack (stacksize) on host vlsi is 133169152 bytes. Set it to a large value, preferably unlimited, to avoid any unexpected issues.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+EXTGRMP-414       1          No GDSII/OASIS file is specified. Setting graybox type as LEF_OBSTRUCTION.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+
+TOTAL WARNINGS: 2 
+TOTAL ERRORS: 2 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+----
+
+Ending at 2026-May-18 05:26:50 (2026-May-17 23:26:50 GMT).
+
+ Tool:                    Cadence Quantus Extraction 64-bit
+ Version:                 22.1.1-p041 Mon Apr 17 07:53:34 PDT 2023
+ IR Build No:             041 
+ Techfile:                Unknown ; version: Unknown 
+ License(s) used:         0 of Unknown 
+ User Name:               user_77
+ Host Name:               vlsi
+ Host OS Release:         Linux 3.10.0-1160.el7.x86_64
+ Host OS Version:         #1 SMP Tue Aug 18 14:50:17 EDT 2020
+ CPU Model Name:          Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz
+ L1d Cache:               32K
+ L1i Cache:               32K
+ L2 Cache:                1024K
+ L3 Cache:                14080K
+ Memory:                  62 GB
+ Run duration:            00:00:00 CPU time, 00:00:05 clock time
+ Max (Total) memory used: 0 MB
+ Max (CPU) memory used:   0 MB
+ Max Temp-Directory used: 0 MB
+ Nets/hour:               0K nets/CPU-hr, 0K nets/clock-hr
+ Design data:
+    Components:           0
+    Phy components:       0
+    Nets:                 0
+    Unconnected pins:     0
+ Warning messages:        2
+ Error messages:          2
+
+Exit code 2.
+Cadence Quantus Extraction completed unsuccessfully at 2026-May-18 05:26:50
+(2026-May-17 23:26:50 GMT).
+AAE_INFO: 1 threads acquired from CTE.
+Start delay calculation (fullDC) (1 T). (MEM=2529.69)
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+ Report initialization with DMWrite ... (0, Worst)
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2544.37 CPU=0:00:04.4 REAL=0:00:04.0)
+End delay calculation (fullDC). (MEM=2536.37 CPU=0:00:04.8 REAL=0:00:05.0)
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2536.4M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.1, REAL = 0:00:01.0, MEM = 2536.4M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (1 T). (MEM=2499.48)
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+ Report initialization with DMUpdate ... (1, Worst)
+Glitch Analysis: View setup_view -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View setup_view -- Total Number of Nets Analyzed = 0. 
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.2 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2550.71 CPU=0:00:00.3 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2550.71 CPU=0:00:00.3 REAL=0:00:00.0)
+*** Done Building Timing Graph (cpu=0:00:21.5 real=0:00:22.0 totSessionCpu=0:03:45 mem=2550.7M)
+AAE_INFO: opIsDesignInPostRouteState() is 1
+AAE_INFO: resetNetProps viewIdx 0 
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: gpu
+# Design Mode: 90nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+Extraction called for design 'gpu' of instances=22129 and nets=16146 using extraction engine 'postRoute' at effort level 'signoff' .
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+Type 'man IMPEXT-3530' for more detail.
+typical_rc
+
+
+  Cadence Quantus Extraction - 64-bit Parasitic Extractor - Version
+22.1.1-p041 Mon Apr 17 07:53:34 PDT 2023
+---------------------------------------------------------------------------------------------------------------
+                                  Copyright 2023 Cadence Design Systems,
+Inc.
+
+
+
+INFO (EXTQRCXLOG-128) : Quantus command line:
+ Started at: 2026-May-18 05:26:59 (2026-May-17 23:26:59 GMT)
+ Executable: /home/cadence/lnx/quat/tools.lnx86/extraction/bin/64bit/qrc
+ Options:     -cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_nZfGYH/qrc.cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_nZfGYH/qrc.def.gz
+ Current working directory:
+/home/user_77/backup_extract/my_project/project/pnr
+
+
+INFO (EXTQRCXLOG-103) : The Command File Options for the current Quantus run are as follows:
+
+extract \
+	 -selection "all" \
+	 -type "rc_coupled"
+extraction_setup \
+	 -layout_scale 0.9 \
+	 -promote_pin_pad "LOGICAL"
+filter_coupling_cap \
+	 -cap_filtering_mode "absolute_and_relative" \
+	 -coupling_cap_threshold_absolute 3.0 \
+	 -coupling_cap_threshold_relative 0.03 \
+	 -total_cap_threshold 5.0
+input_db -type def \
+	 -lef_file_list_file "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_nZfGYH/qrc.leflist"
+log_file \
+	 -dump_options true \
+	 -file_name "qrc_71590_20260518_05:26:58.log"
+output_db -type spef \
+	 -short_incomplete_net_pins true \
+	 -subtype "EXTENDED"
+output_setup \
+	 -compressed true \
+	 -directory_name "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_nZfGYH" \
+	 -file_name "gpu" \
+	 -temporary_directory_name "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_nZfGYH"
+process_technology \
+	 -technology_corner \
+		"typical_rc" \
+	 -technology_library_file "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_nZfGYH/_qrc_techlib.defs" \
+	 -technology_name "_qrc_tech_" \
+	 -temperature \
+		"25"
+
+
+
+sh: /usr/bin/mpstat: No such file or directory
+
+INFO (EXTGRMP-102) : Starting at 2026-May-18 05:27:00 (2026-May-17 23:27:00 GMT) on host vlsi
+with pid 87299.
+Running binary as: 
+ /home/cadence/lnx/quat/tools.lnx86/extraction/bin/64bit/qrc -cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_nZfGYH/qrc.cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_nZfGYH/qrc.def.gz  
+
+WARNING (EXTGRMP-414) : No GDSII/OASIS file is specified. Setting graybox type as LEF_OBSTRUCTION.
+
+INFO (EXTGRMP-142) : Command line arguments:
+"-cmd"
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_nZfGYH/qrc.cmd"
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_nZfGYH/qrc.def.gz"
+
+INFO (EXTGRMP-143) : Option extraction_setup -copy_port_to_obs = "true"
+
+INFO (EXTGRMP-143) : Option log_file = "qrc_71590_20260518_05:26:58.log"
+
+INFO (EXTGRMP-143) : Option log_file -message_config_file = ""
+
+INFO (EXTGRMP-143) : Option log_file -max_error_messages = "100"
+
+INFO (EXTGRMP-143) : Option log_file -max_warning_messages = "10"
+
+INFO (EXTGRMP-143) : Option log_file -max_info_messages = "1000"
+
+INFO (EXTGRMP-143) : Option process_technology -technology_name = ""
+
+INFO (EXTGRMP-143) : Option EM_techname = ""
+
+INFO (EXTGRMP-143) : Option process_technology -EM_WEE_clamping_factor = "0.7"
+
+INFO (EXTGRMP-143) : Option input_db -libgen_library_name = ""
+
+INFO (EXTGRMP-143) : Option oa_default_rule_name = ""
+
+INFO (EXTGRMP-143) : Option graybox -type = "obs"
+
+INFO (EXTGRMP-143) : Option graybox -use_macro_density = "false"
+
+INFO (EXTGRMP-143) : Option comp_prealloc = "0"
+
+INFO (EXTGRMP-143) : Option net_prealloc = "0"
+
+INFO (EXTGRMP-143) : Option output_setup -directory_name =
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_nZfGYH"
+
+INFO (EXTGRMP-143) : Option output_db -units = "micron"
+
+INFO (EXTGRMP-143) : Option user_comment = ""
+
+INFO (EXTGRMP-143) : Option output_cache_directory_name =
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_nZfGYH/.qrctemp"
+
+INFO (EXTGRMP-143) : Option keep_temporary_files = "false"
+
+INFO (EXTGRMP-143) : Option output_density_tiles = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -file_name = "gpu"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -predefined_spef_cells_file = ""
+
+INFO (EXTGRMP-143) : Option parasitic_reduction -enable_reduction = "false"
+
+INFO (EXTGRMP-143) : Option debug_log = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -subtype = "extended"
+
+INFO (EXTGRMP-143) : Option output_db -type dspf -subtype = "none"
+
+INFO (EXTGRMP-143) : Option output_sstorm_db_name = ""
+
+INFO (EXTGRMP-143) : Option netlist_output = "none"
+
+INFO (EXTGRMP-143) : Option output_db -type coupling_cap_reports = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type rcdb = "false"
+
+INFO (EXTGRMP-143) : Option output_db -hierarchy_delimiter = "/"
+
+INFO (EXTGRMP-143) : Option output_db -busbit_delimiter = "[]"
+
+INFO (EXTGRMP-143) : Option output_db -pin_delimiter = ":"
+
+INFO (EXTGRMP-143) : Option output_db -output_incomplete_nets_type = "no_pin one_pin
+disconnected_pin multiple_partitions floating_resistors"
+
+INFO (EXTGRMP-143) : Option truncate_regular_wires = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -layout_scale = "0.9"
+
+INFO (EXTGRMP-143) : Option output_setup -file_max_size = "9223372036854775807"
+
+INFO (EXTGRMP-143) : Option log_file -dump_options = "true"
+
+INFO (EXTGRMP-143) : Option short_incomplete_net_pins = "true"
+
+INFO (EXTGRMP-143) : Option promote_incomplete_net_pins = "true"
+
+INFO (EXTGRMP-143) : Option output_db -output_incomplete_nets = "true"
+
+INFO (EXTGRMP-143) : Option output_db -output_unrouted_nets = "false"
+
+INFO (EXTGRMP-143) : Option output_db -escape_special_characters = "true"
+
+INFO (EXTGRMP-143) : Option lumped_cc_threshold = "0.0"
+
+INFO (EXTGRMP-143) : Option parasitic_reduction -max_frequency = "1.0e+08"
+
+INFO (EXTGRMP-143) : Option output_setup -compressed = "true"
+
+INFO (EXTGRMP-143) : Option max_resistor_length = "100.0"
+
+INFO (EXTGRMP-143) : Option promote_feedthru_ports = "none"
+
+INFO (EXTGRMP-143) : Option promote_instance_ports = "none"
+
+INFO (EXTGRMP-143) : Option output_promoted_feedthrus = "false"
+
+INFO (EXTGRMP-143) : Option output_unconnected_pins = "false"
+
+INFO (EXTGRMP-143) : Option remove_floating_metals = "false"
+
+INFO (EXTGRMP-143) : Option promote_pin_pad = "logical"
+
+INFO (EXTGRMP-143) : Option eco_compatible_mode = "false"
+
+INFO (EXTGRMP-143) : Option output setup   -max_message_in_shorts_file = "100"
+
+INFO (EXTGRMP-143) : Option cap_mode_2915 = "true"
+
+INFO (EXTGRMP-143) : Option quickcap_file = "false"
+
+INFO (EXTGRMP-143) : Option ict_file = "process.ict"
+
+INFO (EXTGRMP-143) : Option quickcap_netfile = "qapi.net"
+
+INFO (EXTGRMP-143) : Option lefcap_output = "false"
+
+INFO (EXTGRMP-143) : Option lefcap_scale = "1.25"
+
+INFO (EXTGRMP-143) : Option lefres_output = "false"
+
+INFO (EXTGRMP-143) : Option kfactor_file = ""
+
+INFO (EXTGRMP-143) : Option total_c_threshold = "5"
+
+INFO (EXTGRMP-143) : Option relative_c_threshold = "0.03"
+
+INFO (EXTGRMP-143) : Option output_cap_filtering_mode = "relative_and_coupling"
+
+INFO (EXTGRMP-143) : Option cap_mode = "default"
+
+INFO (EXTGRMP-143) : Option parallel_options = ""
+
+INFO (EXTGRMP-143) : Option load_optimized_views = "true"
+
+INFO (EXTGRMP-143) : Option enable_metal_fill_effects = "true"
+
+INFO (EXTGRMP-143) : Option metal_fill -enable_advanced_virtual_fill = "false"
+
+INFO (EXTGRMP-143) : Option metal_fill -type = "floating"
+
+INFO (EXTGRMP-143) : Option vmf_metal_scheme_file = ""
+
+INFO (EXTGRMP-143) : Option vmf_rule_file = ""
+
+INFO (EXTGRMP-143) : Option extraction_setup -ignore_conn_to_bump = "true"
+
+INFO (EXTGRMP-143) : Option extraction_setup -lic_queue = "0"
+
+INFO (EXTGRMP-143) : Option extraction_setup -cerebrus_license_only = "false"
+
+INFO (EXTGRMP-143) : Option input_db -type metal_fill -gds_file = ""
+
+INFO (EXTGRMP-143) : Option density_check_method = "none"
+
+INFO (EXTGRMP-143) : Option process_technology -technology_corner = "typical_rc"
+
+INFO (EXTGRMP-143) : Option process_technology -EM_technology_corner = ""
+
+INFO (EXTGRMP-143) : Option process_technology -temperature = "25"
+
+INFO (EXTGRMP-143) : Option promote_gray_data_pins = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_layer_bias = "false"
+
+INFO (EXTGRMP-143) : Option output_db -map_eeq_to_master = "false"
+
+INFO (EXTGRMP-143) : Option output_db -match_res_cap = "false"
+
+INFO (EXTGRMP-143) : Option merge_tile_boundary_data = "true"
+
+INFO (EXTGRMP-143) : Option coupling_c_threshold = "3"
+
+INFO (EXTGRMP-143) : Option use_icecaps_models_only = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -use_name_map = "true"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -name_map_start_index = "0"
+
+INFO (EXTGRMP-143) : Option distributed_processing -timeout = "300"
+
+INFO (EXTGRMP-143) : Option distributed_processing -num_of_trials = "0"
+
+INFO (EXTGRMP-143) : Option output_db -type dspf -add_cap_prefix = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type oa = "false"
+
+INFO (EXTGRMP-143) : Option oa_analysis_point = "default"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_sensitivity_extraction = "false"
+
+INFO (EXTGRMP-143) : Option report_details = "false"
+
+INFO (EXTGRMP-143) : Option input_db -type metal_fill -offset_x = "0.0"
+
+INFO (EXTGRMP-143) : Option input_db -type metal_fill -offset_y = "0.0"
+
+INFO (EXTGRMP-143) : Option extraction_setup -ignore_pushdown_blockages = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -compress_temporary_files = "true"
+
+INFO (EXTGRMP-143) : Option strong_gray_debug = "false"
+
+INFO (EXTGRMP-143) : Option output_db -disable_instances = "true"
+
+INFO (EXTGRMP-143) : Option output_db -disable_subnodes = "true"
+
+INFO (EXTGRMP-143) : Option output_db -type coupling_cap_reports -dump_erosion_info = ""
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_res_width_drawn = "true"
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_res_parameters_unscaled = "false"
+
+INFO (EXTGRMP-143) : Option enable_active_fill_via_processing = "false"
+
+INFO (EXTGRMP-143) : Option output_db -add_explicit_vias = "false"
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_cap_layers = "false"
+
+INFO (EXTGRMP-143) : Option capacitance -ground_net = "0"
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_res_temp_coeff = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -write_coupled_decoupled_files = "false"
+
+INFO (EXTGRMP-143) : Option capacitance_coupling = "default"
+
+INFO (EXTGRMP-143) : Option extraction_setup -gds_top_cell = ""
+
+INFO (EXTGRMP-143) : Option input_db -directory_name = ""
+
+INFO (EXTGRMP-143) : Option binary_input = "false"
+
+INFO (EXTGRMP-143) : Option binary_output = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -enable_ieee_sensitivity = "false"
+
+INFO (EXTGRMP-143) : Option input_db -bump_map_file = ""
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_bump_instance = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_tsv_instance = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_TSV_STA_Cc_model = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -stitch_bump_model = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -stitch_tsv_model = "none"
+
+INFO (EXTGRMP-143) : Option enable_eco_mode = "false"
+
+INFO (EXTGRMP-143) : Option eco_file = ""
+
+INFO (EXTGRMP-143) : Option override_eco_reference = "true"
+
+INFO (EXTGRMP-143) : Option analysis_mode = "timing"
+
+INFO (EXTGRMP-143) : Option use_lef_for_hierarchical_def = "false"
+
+INFO (EXTGRMP-143) : Option enable_ws_r_scaling = "false"
+
+INFO (EXTGRMP-143) : Option include_gate_forming_layers = "false"
+
+INFO (EXTGRMP-143) : Option log_file -strict_error_reporting = "false"
+
+INFO (EXTGRMP-143) : Option log_file -report_outside_die_area_object = "false"
+
+INFO (EXTGRMP-143) : Option report_outside_diearea_object_error_limit = "1"
+
+INFO (EXTGRMP-143) : Option change_overhang_direction = "false"
+
+INFO (EXTGRMP-143) : Option ubump_subckt_file = ""
+
+INFO (EXTGRMP-143) : Option tsv_subckt_file = ""
+
+INFO (EXTGRMP-143) : Option output_setup -write_drc_violations = "false"
+
+INFO (EXTGRMP-143) : Option log_file -max_drc_messages = "1000"
+
+INFO (EXTGRMP-143) : Option LEF files =
+"/home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/lef/gsclib045_tech.lef
+/home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/lef/gsclib045_macro.lef"
+
+INFO (EXTGRMP-143) : Option DEF files =
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_nZfGYH/qrc.def.gz"
+
+INFO (EXTGRMP-143) : Option GDSII files = ""
+
+INFO (EXTGRMP-143) : Option GDSII/RDL files = ""
+
+INFO (EXTGRMP-143) : Option SPICE files = ""
+
+INFO (EXTGRMP-143) : Option DENSITY cells = ""
+
+INFO (EXTGRMP-143) : Option stitch bump cells = ""
+
+INFO (EXTGRMP-143) : Option ignored macros = ""
+
+INFO (EXTGRMP-143) : Option black macros = ""
+
+INFO (EXTGRMP-155) : Layer mappings were not specified.
+
+INFO (EXTGRMP-276) : Gds/Oasis Layer Map settings were not specified.
+
+INFO (EXTGRMP-548) : Gds/Oasis Fill layer Map settings were not specified.
+
+INFO (EXTGRMP-550) : Gds/Oasis Active Fill layer Map settings were not specified.
+
+INFO (EXTGRMP-562) : HPB layer settings were not specified.
+
+INFO (EXTGRMP-828) : Gds/Oasis InfoGds layer Map settings were not specified.
+
+INFO (EXTGRMP-623) : Background density layer mappings were not specified.
+
+INFO (EXTGRMP-144) : There were no layer bias commands for R values.
+
+INFO (EXTGRMP-147) : Layer bias settings for C values were not specified.
+
+INFO (EXTGRMP-149) : Lefcap area scale settings were not specified.
+
+INFO (EXTGRMP-153) : Lefcap edge scale settings were not specified.
+
+INFO (EXTGRMP-151) : Parameter name settings were not specified.
+
+INFO (EXTGRMP-260) : Layer cluster settings were not specified.
+
+INFO (EXTHPY-253) : Extraction started at Mon May 18 05:27:00 2026.
+
+INFO (EXTHPY-232) : Preprocessing stage started at Mon May 18 05:27:00 2026.
+
+INFO (EXTGRMP-103) : Local job on vlsi obtained for resource 0 with 2 cores at 2026-May-18
+05:27:00 (2026-May-17 23:27:00 GMT); 
+
+WARNING (EXTGRMP-103) : Maximum size of the process stack (stacksize) on host vlsi is 133169152 bytes. Set it to a large value, preferably unlimited, to avoid any unexpected issues.
+
+
+ERROR (Plx-14) : "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_nZfGYH/_qrc_techdir/typical_rc/qrcTechFile"
+This does not appear to be an ICECAPS technology file, neither plain text nor binary. 
+
+ERROR (EXTGRMP-103) : Current job number 0 failed. Please check stdout and log files for more
+details. Exiting...
+
+INFO (EXTHPY-260) : Extraction completed unsuccessfully at Mon May 18 05:27:04 2026.
+
+Warning message summary: 
+
+Message Code(ID)   Count     Message
+=================|=========|=======================================================================================================================
+EXTGRMP-103       2          Maximum size of the process stack (stacksize) on host vlsi is 133169152 bytes. Set it to a large value, preferably unlimited, to avoid any unexpected issues.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+EXTGRMP-414       1          No GDSII/OASIS file is specified. Setting graybox type as LEF_OBSTRUCTION.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+
+TOTAL WARNINGS: 2 
+TOTAL ERRORS: 2 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+----
+
+Ending at 2026-May-18 05:27:05 (2026-May-17 23:27:05 GMT).
+
+ Tool:                    Cadence Quantus Extraction 64-bit
+ Version:                 22.1.1-p041 Mon Apr 17 07:53:34 PDT 2023
+ IR Build No:             041 
+ Techfile:                Unknown ; version: Unknown 
+ License(s) used:         0 of Unknown 
+ User Name:               user_77
+ Host Name:               vlsi
+ Host OS Release:         Linux 3.10.0-1160.el7.x86_64
+ Host OS Version:         #1 SMP Tue Aug 18 14:50:17 EDT 2020
+ CPU Model Name:          Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz
+ L1d Cache:               32K
+ L1i Cache:               32K
+ L2 Cache:                1024K
+ L3 Cache:                14080K
+ Memory:                  62 GB
+ Run duration:            00:00:00 CPU time, 00:00:05 clock time
+ Max (Total) memory used: 0 MB
+ Max (CPU) memory used:   0 MB
+ Max Temp-Directory used: 0 MB
+ Nets/hour:               0K nets/CPU-hr, 0K nets/clock-hr
+ Design data:
+    Components:           0
+    Phy components:       0
+    Nets:                 0
+    Unconnected pins:     0
+ Warning messages:        2
+ Error messages:          2
+
+Exit code 2.
+Cadence Quantus Extraction completed unsuccessfully at 2026-May-18 05:27:05
+(2026-May-17 23:27:05 GMT).
+AAE_INFO: 1 threads acquired from CTE.
+Start delay calculation (fullDC) (1 T). (MEM=2506.71)
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+ Report initialization with DMWrite ... (0, Worst)
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2554.41 CPU=0:00:04.4 REAL=0:00:04.0)
+End delay calculation (fullDC). (MEM=2554.41 CPU=0:00:04.7 REAL=0:00:04.0)
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2546.4M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.1, REAL = 0:00:00.0, MEM = 2546.4M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (1 T). (MEM=2512.41)
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+ Report initialization with DMUpdate ... (1, Worst)
+Glitch Analysis: View setup_view -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View setup_view -- Total Number of Nets Analyzed = 0. 
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.2 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2559.61 CPU=0:00:00.3 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2559.61 CPU=0:00:00.3 REAL=0:00:00.0)
+AAE_INFO: opIsDesignInPostRouteState() is 1
+AAE_INFO: resetNetProps viewIdx 0 
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: gpu
+# Design Mode: 90nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+Extraction called for design 'gpu' of instances=22129 and nets=16146 using extraction engine 'postRoute' at effort level 'signoff' .
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+Type 'man IMPEXT-3530' for more detail.
+typical_rc
+
+
+  Cadence Quantus Extraction - 64-bit Parasitic Extractor - Version
+22.1.1-p041 Mon Apr 17 07:53:34 PDT 2023
+---------------------------------------------------------------------------------------------------------------
+                                  Copyright 2023 Cadence Design Systems,
+Inc.
+
+
+
+INFO (EXTQRCXLOG-128) : Quantus command line:
+ Started at: 2026-May-18 05:27:13 (2026-May-17 23:27:13 GMT)
+ Executable: /home/cadence/lnx/quat/tools.lnx86/extraction/bin/64bit/qrc
+ Options:     -cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_3gpwEg/qrc.cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_3gpwEg/qrc.def.gz
+ Current working directory:
+/home/user_77/backup_extract/my_project/project/pnr
+
+
+INFO (EXTQRCXLOG-103) : The Command File Options for the current Quantus run are as follows:
+
+extract \
+	 -selection "all" \
+	 -type "rc_coupled"
+extraction_setup \
+	 -layout_scale 0.9 \
+	 -promote_pin_pad "LOGICAL"
+filter_coupling_cap \
+	 -cap_filtering_mode "absolute_and_relative" \
+	 -coupling_cap_threshold_absolute 3.0 \
+	 -coupling_cap_threshold_relative 0.03 \
+	 -total_cap_threshold 5.0
+input_db -type def \
+	 -lef_file_list_file "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_3gpwEg/qrc.leflist"
+log_file \
+	 -dump_options true \
+	 -file_name "qrc_71590_20260518_05:27:12.log"
+output_db -type spef \
+	 -short_incomplete_net_pins true \
+	 -subtype "EXTENDED"
+output_setup \
+	 -compressed true \
+	 -directory_name "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_3gpwEg" \
+	 -file_name "gpu" \
+	 -temporary_directory_name "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_3gpwEg"
+process_technology \
+	 -technology_corner \
+		"typical_rc" \
+	 -technology_library_file "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_3gpwEg/_qrc_techlib.defs" \
+	 -technology_name "_qrc_tech_" \
+	 -temperature \
+		"25"
+
+
+
+sh: /usr/bin/mpstat: No such file or directory
+
+INFO (EXTGRMP-102) : Starting at 2026-May-18 05:27:13 (2026-May-17 23:27:13 GMT) on host vlsi
+with pid 88297.
+Running binary as: 
+ /home/cadence/lnx/quat/tools.lnx86/extraction/bin/64bit/qrc -cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_3gpwEg/qrc.cmd
+/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_3gpwEg/qrc.def.gz  
+
+WARNING (EXTGRMP-414) : No GDSII/OASIS file is specified. Setting graybox type as LEF_OBSTRUCTION.
+
+INFO (EXTGRMP-142) : Command line arguments:
+"-cmd"
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_3gpwEg/qrc.cmd"
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_3gpwEg/qrc.def.gz"
+
+INFO (EXTGRMP-143) : Option extraction_setup -copy_port_to_obs = "true"
+
+INFO (EXTGRMP-143) : Option log_file = "qrc_71590_20260518_05:27:12.log"
+
+INFO (EXTGRMP-143) : Option log_file -message_config_file = ""
+
+INFO (EXTGRMP-143) : Option log_file -max_error_messages = "100"
+
+INFO (EXTGRMP-143) : Option log_file -max_warning_messages = "10"
+
+INFO (EXTGRMP-143) : Option log_file -max_info_messages = "1000"
+
+INFO (EXTGRMP-143) : Option process_technology -technology_name = ""
+
+INFO (EXTGRMP-143) : Option EM_techname = ""
+
+INFO (EXTGRMP-143) : Option process_technology -EM_WEE_clamping_factor = "0.7"
+
+INFO (EXTGRMP-143) : Option input_db -libgen_library_name = ""
+
+INFO (EXTGRMP-143) : Option oa_default_rule_name = ""
+
+INFO (EXTGRMP-143) : Option graybox -type = "obs"
+
+INFO (EXTGRMP-143) : Option graybox -use_macro_density = "false"
+
+INFO (EXTGRMP-143) : Option comp_prealloc = "0"
+
+INFO (EXTGRMP-143) : Option net_prealloc = "0"
+
+INFO (EXTGRMP-143) : Option output_setup -directory_name =
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_3gpwEg"
+
+INFO (EXTGRMP-143) : Option output_db -units = "micron"
+
+INFO (EXTGRMP-143) : Option user_comment = ""
+
+INFO (EXTGRMP-143) : Option output_cache_directory_name =
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_3gpwEg/.qrctemp"
+
+INFO (EXTGRMP-143) : Option keep_temporary_files = "false"
+
+INFO (EXTGRMP-143) : Option output_density_tiles = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -file_name = "gpu"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -predefined_spef_cells_file = ""
+
+INFO (EXTGRMP-143) : Option parasitic_reduction -enable_reduction = "false"
+
+INFO (EXTGRMP-143) : Option debug_log = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -subtype = "extended"
+
+INFO (EXTGRMP-143) : Option output_db -type dspf -subtype = "none"
+
+INFO (EXTGRMP-143) : Option output_sstorm_db_name = ""
+
+INFO (EXTGRMP-143) : Option netlist_output = "none"
+
+INFO (EXTGRMP-143) : Option output_db -type coupling_cap_reports = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type rcdb = "false"
+
+INFO (EXTGRMP-143) : Option output_db -hierarchy_delimiter = "/"
+
+INFO (EXTGRMP-143) : Option output_db -busbit_delimiter = "[]"
+
+INFO (EXTGRMP-143) : Option output_db -pin_delimiter = ":"
+
+INFO (EXTGRMP-143) : Option output_db -output_incomplete_nets_type = "no_pin one_pin
+disconnected_pin multiple_partitions floating_resistors"
+
+INFO (EXTGRMP-143) : Option truncate_regular_wires = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -layout_scale = "0.9"
+
+INFO (EXTGRMP-143) : Option output_setup -file_max_size = "9223372036854775807"
+
+INFO (EXTGRMP-143) : Option log_file -dump_options = "true"
+
+INFO (EXTGRMP-143) : Option short_incomplete_net_pins = "true"
+
+INFO (EXTGRMP-143) : Option promote_incomplete_net_pins = "true"
+
+INFO (EXTGRMP-143) : Option output_db -output_incomplete_nets = "true"
+
+INFO (EXTGRMP-143) : Option output_db -output_unrouted_nets = "false"
+
+INFO (EXTGRMP-143) : Option output_db -escape_special_characters = "true"
+
+INFO (EXTGRMP-143) : Option lumped_cc_threshold = "0.0"
+
+INFO (EXTGRMP-143) : Option parasitic_reduction -max_frequency = "1.0e+08"
+
+INFO (EXTGRMP-143) : Option output_setup -compressed = "true"
+
+INFO (EXTGRMP-143) : Option max_resistor_length = "100.0"
+
+INFO (EXTGRMP-143) : Option promote_feedthru_ports = "none"
+
+INFO (EXTGRMP-143) : Option promote_instance_ports = "none"
+
+INFO (EXTGRMP-143) : Option output_promoted_feedthrus = "false"
+
+INFO (EXTGRMP-143) : Option output_unconnected_pins = "false"
+
+INFO (EXTGRMP-143) : Option remove_floating_metals = "false"
+
+INFO (EXTGRMP-143) : Option promote_pin_pad = "logical"
+
+INFO (EXTGRMP-143) : Option eco_compatible_mode = "false"
+
+INFO (EXTGRMP-143) : Option output setup   -max_message_in_shorts_file = "100"
+
+INFO (EXTGRMP-143) : Option cap_mode_2915 = "true"
+
+INFO (EXTGRMP-143) : Option quickcap_file = "false"
+
+INFO (EXTGRMP-143) : Option ict_file = "process.ict"
+
+INFO (EXTGRMP-143) : Option quickcap_netfile = "qapi.net"
+
+INFO (EXTGRMP-143) : Option lefcap_output = "false"
+
+INFO (EXTGRMP-143) : Option lefcap_scale = "1.25"
+
+INFO (EXTGRMP-143) : Option lefres_output = "false"
+
+INFO (EXTGRMP-143) : Option kfactor_file = ""
+
+INFO (EXTGRMP-143) : Option total_c_threshold = "5"
+
+INFO (EXTGRMP-143) : Option relative_c_threshold = "0.03"
+
+INFO (EXTGRMP-143) : Option output_cap_filtering_mode = "relative_and_coupling"
+
+INFO (EXTGRMP-143) : Option cap_mode = "default"
+
+INFO (EXTGRMP-143) : Option parallel_options = ""
+
+INFO (EXTGRMP-143) : Option load_optimized_views = "true"
+
+INFO (EXTGRMP-143) : Option enable_metal_fill_effects = "true"
+
+INFO (EXTGRMP-143) : Option metal_fill -enable_advanced_virtual_fill = "false"
+
+INFO (EXTGRMP-143) : Option metal_fill -type = "floating"
+
+INFO (EXTGRMP-143) : Option vmf_metal_scheme_file = ""
+
+INFO (EXTGRMP-143) : Option vmf_rule_file = ""
+
+INFO (EXTGRMP-143) : Option extraction_setup -ignore_conn_to_bump = "true"
+
+INFO (EXTGRMP-143) : Option extraction_setup -lic_queue = "0"
+
+INFO (EXTGRMP-143) : Option extraction_setup -cerebrus_license_only = "false"
+
+INFO (EXTGRMP-143) : Option input_db -type metal_fill -gds_file = ""
+
+INFO (EXTGRMP-143) : Option density_check_method = "none"
+
+INFO (EXTGRMP-143) : Option process_technology -technology_corner = "typical_rc"
+
+INFO (EXTGRMP-143) : Option process_technology -EM_technology_corner = ""
+
+INFO (EXTGRMP-143) : Option process_technology -temperature = "25"
+
+INFO (EXTGRMP-143) : Option promote_gray_data_pins = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_layer_bias = "false"
+
+INFO (EXTGRMP-143) : Option output_db -map_eeq_to_master = "false"
+
+INFO (EXTGRMP-143) : Option output_db -match_res_cap = "false"
+
+INFO (EXTGRMP-143) : Option merge_tile_boundary_data = "true"
+
+INFO (EXTGRMP-143) : Option coupling_c_threshold = "3"
+
+INFO (EXTGRMP-143) : Option use_icecaps_models_only = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -use_name_map = "true"
+
+INFO (EXTGRMP-143) : Option output_db -type spef -name_map_start_index = "0"
+
+INFO (EXTGRMP-143) : Option distributed_processing -timeout = "300"
+
+INFO (EXTGRMP-143) : Option distributed_processing -num_of_trials = "0"
+
+INFO (EXTGRMP-143) : Option output_db -type dspf -add_cap_prefix = "false"
+
+INFO (EXTGRMP-143) : Option output_db -type oa = "false"
+
+INFO (EXTGRMP-143) : Option oa_analysis_point = "default"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_sensitivity_extraction = "false"
+
+INFO (EXTGRMP-143) : Option report_details = "false"
+
+INFO (EXTGRMP-143) : Option input_db -type metal_fill -offset_x = "0.0"
+
+INFO (EXTGRMP-143) : Option input_db -type metal_fill -offset_y = "0.0"
+
+INFO (EXTGRMP-143) : Option extraction_setup -ignore_pushdown_blockages = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -compress_temporary_files = "true"
+
+INFO (EXTGRMP-143) : Option strong_gray_debug = "false"
+
+INFO (EXTGRMP-143) : Option output_db -disable_instances = "true"
+
+INFO (EXTGRMP-143) : Option output_db -disable_subnodes = "true"
+
+INFO (EXTGRMP-143) : Option output_db -type coupling_cap_reports -dump_erosion_info = ""
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_res_width_drawn = "true"
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_res_parameters_unscaled = "false"
+
+INFO (EXTGRMP-143) : Option enable_active_fill_via_processing = "false"
+
+INFO (EXTGRMP-143) : Option output_db -add_explicit_vias = "false"
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_cap_layers = "false"
+
+INFO (EXTGRMP-143) : Option capacitance -ground_net = "0"
+
+INFO (EXTGRMP-143) : Option output_db -include_parasitic_res_temp_coeff = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -write_coupled_decoupled_files = "false"
+
+INFO (EXTGRMP-143) : Option capacitance_coupling = "default"
+
+INFO (EXTGRMP-143) : Option extraction_setup -gds_top_cell = ""
+
+INFO (EXTGRMP-143) : Option input_db -directory_name = ""
+
+INFO (EXTGRMP-143) : Option binary_input = "false"
+
+INFO (EXTGRMP-143) : Option binary_output = "false"
+
+INFO (EXTGRMP-143) : Option output_setup -enable_ieee_sensitivity = "false"
+
+INFO (EXTGRMP-143) : Option input_db -bump_map_file = ""
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_bump_instance = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_tsv_instance = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -enable_TSV_STA_Cc_model = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -stitch_bump_model = "false"
+
+INFO (EXTGRMP-143) : Option extraction_setup -stitch_tsv_model = "none"
+
+INFO (EXTGRMP-143) : Option enable_eco_mode = "false"
+
+INFO (EXTGRMP-143) : Option eco_file = ""
+
+INFO (EXTGRMP-143) : Option override_eco_reference = "true"
+
+INFO (EXTGRMP-143) : Option analysis_mode = "timing"
+
+INFO (EXTGRMP-143) : Option use_lef_for_hierarchical_def = "false"
+
+INFO (EXTGRMP-143) : Option enable_ws_r_scaling = "false"
+
+INFO (EXTGRMP-143) : Option include_gate_forming_layers = "false"
+
+INFO (EXTGRMP-143) : Option log_file -strict_error_reporting = "false"
+
+INFO (EXTGRMP-143) : Option log_file -report_outside_die_area_object = "false"
+
+INFO (EXTGRMP-143) : Option report_outside_diearea_object_error_limit = "1"
+
+INFO (EXTGRMP-143) : Option change_overhang_direction = "false"
+
+INFO (EXTGRMP-143) : Option ubump_subckt_file = ""
+
+INFO (EXTGRMP-143) : Option tsv_subckt_file = ""
+
+INFO (EXTGRMP-143) : Option output_setup -write_drc_violations = "false"
+
+INFO (EXTGRMP-143) : Option log_file -max_drc_messages = "1000"
+
+INFO (EXTGRMP-143) : Option LEF files =
+"/home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/lef/gsclib045_tech.lef
+/home/user_77/backup_extract/my_project/project/pnr/fixtran.inn.dat/libs/lef/gsclib045_macro.lef"
+
+INFO (EXTGRMP-143) : Option DEF files =
+"/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_3gpwEg/qrc.def.gz"
+
+INFO (EXTGRMP-143) : Option GDSII files = ""
+
+INFO (EXTGRMP-143) : Option GDSII/RDL files = ""
+
+INFO (EXTGRMP-143) : Option SPICE files = ""
+
+INFO (EXTGRMP-143) : Option DENSITY cells = ""
+
+INFO (EXTGRMP-143) : Option stitch bump cells = ""
+
+INFO (EXTGRMP-143) : Option ignored macros = ""
+
+INFO (EXTGRMP-143) : Option black macros = ""
+
+INFO (EXTGRMP-155) : Layer mappings were not specified.
+
+INFO (EXTGRMP-276) : Gds/Oasis Layer Map settings were not specified.
+
+INFO (EXTGRMP-548) : Gds/Oasis Fill layer Map settings were not specified.
+
+INFO (EXTGRMP-550) : Gds/Oasis Active Fill layer Map settings were not specified.
+
+INFO (EXTGRMP-562) : HPB layer settings were not specified.
+
+INFO (EXTGRMP-828) : Gds/Oasis InfoGds layer Map settings were not specified.
+
+INFO (EXTGRMP-623) : Background density layer mappings were not specified.
+
+INFO (EXTGRMP-144) : There were no layer bias commands for R values.
+
+INFO (EXTGRMP-147) : Layer bias settings for C values were not specified.
+
+INFO (EXTGRMP-149) : Lefcap area scale settings were not specified.
+
+INFO (EXTGRMP-153) : Lefcap edge scale settings were not specified.
+
+INFO (EXTGRMP-151) : Parameter name settings were not specified.
+
+INFO (EXTGRMP-260) : Layer cluster settings were not specified.
+
+INFO (EXTHPY-253) : Extraction started at Mon May 18 05:27:13 2026.
+
+INFO (EXTHPY-232) : Preprocessing stage started at Mon May 18 05:27:13 2026.
+
+INFO (EXTGRMP-103) : Local job on vlsi obtained for resource 0 with 2 cores at 2026-May-18
+05:27:14 (2026-May-17 23:27:14 GMT); 
+
+WARNING (EXTGRMP-103) : Maximum size of the process stack (stacksize) on host vlsi is 133169152 bytes. Set it to a large value, preferably unlimited, to avoid any unexpected issues.
+
+
+ERROR (Plx-14) : "/tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/tmp_qrc_3gpwEg/_qrc_techdir/typical_rc/qrcTechFile"
+This does not appear to be an ICECAPS technology file, neither plain text nor binary. 
+
+ERROR (EXTGRMP-103) : Current job number 0 failed. Please check stdout and log files for more
+details. Exiting...
+
+INFO (EXTHPY-260) : Extraction completed unsuccessfully at Mon May 18 05:27:18 2026.
+
+Warning message summary: 
+
+Message Code(ID)   Count     Message
+=================|=========|=======================================================================================================================
+EXTGRMP-103       2          Maximum size of the process stack (stacksize) on host vlsi is 133169152 bytes. Set it to a large value, preferably unlimited, to avoid any unexpected issues.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+EXTGRMP-414       1          No GDSII/OASIS file is specified. Setting graybox type as LEF_OBSTRUCTION.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+
+TOTAL WARNINGS: 2 
+TOTAL ERRORS: 2 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+----
+
+Ending at 2026-May-18 05:27:19 (2026-May-17 23:27:19 GMT).
+
+ Tool:                    Cadence Quantus Extraction 64-bit
+ Version:                 22.1.1-p041 Mon Apr 17 07:53:34 PDT 2023
+ IR Build No:             041 
+ Techfile:                Unknown ; version: Unknown 
+ License(s) used:         0 of Unknown 
+ User Name:               user_77
+ Host Name:               vlsi
+ Host OS Release:         Linux 3.10.0-1160.el7.x86_64
+ Host OS Version:         #1 SMP Tue Aug 18 14:50:17 EDT 2020
+ CPU Model Name:          Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz
+ L1d Cache:               32K
+ L1i Cache:               32K
+ L2 Cache:                1024K
+ L3 Cache:                14080K
+ Memory:                  62 GB
+ Run duration:            00:00:00 CPU time, 00:00:06 clock time
+ Max (Total) memory used: 0 MB
+ Max (CPU) memory used:   0 MB
+ Max Temp-Directory used: 0 MB
+ Nets/hour:               0K nets/CPU-hr, 0K nets/clock-hr
+ Design data:
+    Components:           0
+    Phy components:       0
+    Nets:                 0
+    Unconnected pins:     0
+ Warning messages:        2
+ Error messages:          2
+
+Exit code 2.
+Cadence Quantus Extraction completed unsuccessfully at 2026-May-18 05:27:19
+(2026-May-17 23:27:19 GMT).
+AAE_INFO: 1 threads acquired from CTE.
+Start delay calculation (fullDC) (1 T). (MEM=2559.61)
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+ Report initialization with DMWrite ... (0, Worst)
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2564.14 CPU=0:00:04.4 REAL=0:00:04.0)
+End delay calculation (fullDC). (MEM=2564.14 CPU=0:00:04.7 REAL=0:00:04.0)
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2556.1M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.1, REAL = 0:00:00.0, MEM = 2556.1M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (1 T). (MEM=2521.14)
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+ Report initialization with DMUpdate ... (1, Worst)
+Glitch Analysis: View setup_view -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View setup_view -- Total Number of Nets Analyzed = 0. 
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.2 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2570.35 CPU=0:00:00.3 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2570.35 CPU=0:00:00.3 REAL=0:00:00.0)
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+typical_rc
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+ Report initialization with DMWrite ... (0, Worst)
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2574.05 CPU=0:00:04.5 REAL=0:00:04.0)
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+ Report initialization with DMUpdate ... (1, Worst)
+Glitch Analysis: View setup_view -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View setup_view -- Total Number of Nets Analyzed = 0. 
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.2 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2582.25 CPU=0:00:00.3 REAL=0:00:00.0)
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+typical_rc
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+ Report initialization with DMWrite ... (0, Worst)
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2585.95 CPU=0:00:04.4 REAL=0:00:04.0)
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+ Report initialization with DMUpdate ... (1, Worst)
+Glitch Analysis: View setup_view -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View setup_view -- Total Number of Nets Analyzed = 0. 
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.2 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2595.16 CPU=0:00:00.3 REAL=0:00:00.0)
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+typical_rc
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+ Report initialization with DMWrite ... (0, Worst)
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2599.85 CPU=0:00:04.5 REAL=0:00:04.0)
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+ Report initialization with DMUpdate ... (1, Worst)
+Glitch Analysis: View setup_view -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View setup_view -- Total Number of Nets Analyzed = 0. 
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.2 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2608.05 CPU=0:00:00.3 REAL=0:00:00.0)
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+typical_rc
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+ Report initialization with DMWrite ... (0, Worst)
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2719.45 CPU=0:00:04.4 REAL=0:00:04.0)
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+ Report initialization with DMUpdate ... (1, Worst)
+Glitch Analysis: View setup_view -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View setup_view -- Total Number of Nets Analyzed = 0. 
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.2 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2727.66 CPU=0:00:00.3 REAL=0:00:00.0)
+
+------------------------------------------------------------------
+          timeDesign Summary
+------------------------------------------------------------------
+
+Setup views included:
+ setup_view 
+
++--------------------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | default |
++--------------------+---------+---------+---------+
+|           WNS (ns):| -0.101  | -0.101  |  0.684  |
+|           TNS (ns):| -0.891  | -0.891  |  0.000  |
+|    Violating Paths:|   41    |   41    |    0    |
+|          All Paths:|  1830   |  1829   |   185   |
++--------------------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |      0 (0)       |   0.000    |      0 (0)       |
+|   max_tran     |      6 (11)      |   -0.056   |      6 (16)      |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 86.035%
+       (95.251% with Fillers)
+Total number of glitch violations: 0
+------------------------------------------------------------------
+Total CPU time: 112.62 sec
+Total Real time: 119.0 sec
+Total Memory Usage: 2598.121094 Mbytes
+Reset AAE Options
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+*** timeDesign #3 [finish] : cpu/real = 0:01:52.7/0:01:58.7 (0.9), totSession cpu/real = 0:05:08.7/0:14:21.2 (0.4), mem = 2580.4M
+<CMD> timeDesign -postRoute
+Deleting AAE DB and timing data for delay calculations...
+AAE DB initialization (MEM=2580.39 CPU=0:00:00.0 REAL=0:00:00.0) 
+*** timeDesign #4 [begin] : totSession cpu/real = 0:05:15.6/0:14:58.5 (0.4), mem = 2580.4M
+ Reset EOS DB
+Ignoring AAE DB Resetting ...
+Extraction called for design 'gpu' of instances=22129 and nets=16146 using extraction engine 'postRoute' at effort level 'low' .
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+Type 'man IMPEXT-3530' for more detail.
+PostRoute (effortLevel low) RC Extraction called for design gpu.
+RC Extraction called in multi-corner(1) mode.
+Process corner(s) are loaded.
+ Corner: typical_rc
+Metal density calculation for erosion effect completed (CPU=0:00:00.2  MEM=2580.39M)
+extractDetailRC Option : -outfile /tmp/innovus_temp_71590_vlsi_user_77_bJnMdL/gpu_71590_hludGp.rcdb.d -maxResLength 222.222  -extended
+RC Mode: PostRoute -effortLevel low [Extended CapTable, RC Table Resistances]
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Coupling Cap. Scaling Factor : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 0.90000
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 2505.4M)
+Extracted 10.001% (CPU Time= 0:00:00.4  MEM= 2573.9M)
+Extracted 20.0007% (CPU Time= 0:00:00.5  MEM= 2573.9M)
+Extracted 30.0011% (CPU Time= 0:00:00.7  MEM= 2573.9M)
+Extracted 40.0009% (CPU Time= 0:00:00.8  MEM= 2573.9M)
+Extracted 50.0012% (CPU Time= 0:00:00.9  MEM= 2573.9M)
+Extracted 60.001% (CPU Time= 0:00:01.0  MEM= 2573.9M)
+Extracted 70.0007% (CPU Time= 0:00:01.2  MEM= 2573.9M)
+Extracted 80.0011% (CPU Time= 0:00:01.4  MEM= 2574.9M)
+Extracted 90.0009% (CPU Time= 0:00:01.6  MEM= 2579.9M)
+Extracted 100% (CPU Time= 0:00:02.0  MEM= 2581.9M)
+Number of Extracted Resistors     : 294034
+Number of Extracted Ground Cap.   : 295552
+Number of Extracted Coupling Cap. : 470556
+Filtering XCap in 'relativeOnly' mode using values relative_c_threshold=0.03 and total_c_threshold=5fF.
+ Corner: typical_rc
+Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 2557.9M)
+PostRoute (effortLevel low) RC Extraction DONE (CPU Time: 0:00:03.3  Real Time: 0:00:03.0  MEM: 2557.891M)
+Starting delay calculation for Setup views
+AAE_INFO: opIsDesignInPostRouteState() is 1
+AAE DB initialization (MEM=2555.89 CPU=0:00:00.0 REAL=0:00:00.0) 
+AAE_INFO: resetNetProps viewIdx 0 
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: gpu
+# Design Mode: 90nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+AAE_INFO: 1 threads acquired from CTE.
+Start delay calculation (fullDC) (1 T). (MEM=2561.66)
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  99.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2657.7 CPU=0:00:04.2 REAL=0:00:04.0)
+End delay calculation (fullDC). (MEM=2621.08 CPU=0:00:04.8 REAL=0:00:05.0)
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2621.1M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.1, REAL = 0:00:00.0, MEM = 2621.1M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (1 T). (MEM=2585.2)
+Glitch Analysis: View setup_view -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View setup_view -- Total Number of Nets Analyzed = 0. 
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.2 percent of the nets selected for SI analysis
+Total number of fetched objects 16067
+AAE_INFO-618: Total number of nets in the design is 16146,  0.4 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2635.41 CPU=0:00:00.3 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2635.41 CPU=0:00:00.3 REAL=0:00:01.0)
+*** Done Building Timing Graph (cpu=0:00:06.7 real=0:00:07.0 totSessionCpu=0:05:26 mem=2635.4M)
+
+------------------------------------------------------------------
+          timeDesign Summary
+------------------------------------------------------------------
+
+Setup views included:
+ setup_view 
+
++--------------------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | default |
++--------------------+---------+---------+---------+
+|           WNS (ns):| -0.039  | -0.039  |  0.683  |
+|           TNS (ns):| -0.073  | -0.073  |  0.000  |
+|    Violating Paths:|    2    |    2    |    0    |
+|          All Paths:|  1830   |  1829   |   185   |
++--------------------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |      0 (0)       |   0.000    |      0 (0)       |
+|   max_tran     |      0 (0)       |   0.000    |      0 (0)       |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 86.035%
+       (95.251% with Fillers)
+------------------------------------------------------------------
+Reported timing to dir ./timingReports
+Total CPU time: 11.56 sec
+Total Real time: 13.0 sec
+Total Memory Usage: 2605.738281 Mbytes
+Reset AAE Options
+*** timeDesign #4 [finish] : cpu/real = 0:00:11.4/0:00:13.4 (0.9), totSession cpu/real = 0:05:27.0/0:15:12.0 (0.4), mem = 2605.7M
+
+*** Memory Usage v#1 (Current mem = 2605.738M, initial mem = 486.109M) ***
+*** Message Summary: 45 warning(s), 9 error(s)
+
+--- Ending "Innovus" (totcpu=0:05:31, real=0:15:36, mem=2605.7M) ---

@@ -1,0 +1,48 @@
+
+Cadence Tempus(TM) Timing Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v22.11-s001_1, built Fri Sep 16 15:45:21 PDT 2022
+Options:	
+Date:		Mon May 18 04:37:13 2026
+Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+OS:		Red Hat Enterprise Linux Server release 7.9 (Maipo)
+
+License:
+		[04:37:13.389521] Configured Lic search path (21.01-s002): 5280@vlsi
+
+		tpsxl	Tempus Timing Signoff Solution XL	22.1	checkout succeeded
+		16 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+environment variable TMPDIR is '/tmp/ssv_tmpdir_31147_kqXr37'.
+<CMD> load_timing_debug_report -name default_report final_setup.mtarpt -max_path_num 10000 -updateCategory 0 -isDrv 0
+Parsing file final_setup.mtarpt...
+<CMD> load_timing_debug_report -name default_report final_hold.mtarpt -max_path_num 10000 -updateCategory 0 -isDrv 0
+Parsing file final_hold.mtarpt...
+<CMD> load_timing_debug_report -name default_report final_setup.mtarpt -max_path_num 10000 -updateCategory 0 -isDrv 0
+Parsing file final_setup.mtarpt...
+**WARN: (IMPDB-2094):	get instance of a Nil cell!
+**ERROR: (IMPQTF-4044):	Error occurs when '::tdg_timing::openEcoOpt resize inst cores[1].core_instance_threads[3].register_instance_rs_reg[4]' is executed with the error message: 'Invalid pointer argument "0x0" in "dbInstCell"
+Usage: dbInstCell <instPtr>'. This is probably an inner GUI action error. Use the TCL command directly instead of the GUI interactive.
+**ERROR: (IMPQTF-4044):	Error occurs when '::tdg_timing::dpathList:b1cb gtdDetail@frameOnly tabfpan1detail 346 124 0' is executed with the error message: 'Design must be in memory
+'. This is probably an inner GUI action error. Use the TCL command directly instead of the GUI interactive.
+<CMD> set_eco_mode -honor_dont_touch true -honor_dont_use true -leq_check true -update_timing true -prefix_name ECO
+**WARN: (IMPDB-2094):	get instance of a Nil cell!
+**ERROR: (IMPQTF-4044):	Error occurs when '::tdg_timing::openEcoOpt resize inst g292' is executed with the error message: 'Invalid pointer argument "0x0" in "dbInstCell"
+Usage: dbInstCell <instPtr>'. This is probably an inner GUI action error. Use the TCL command directly instead of the GUI interactive.
+**ERROR: (IMPQTF-4044):	Error occurs when '::Rda_Timing::EcoOpt::sort_cellList_Type ecoopt cellType "TIE Cell"' is executed with the error message: 'invalid command name "findCoreFillerCells"'. This is probably an inner GUI action error. Use the TCL command directly instead of the GUI interactive.
+<CMD> set_eco_mode -honor_dont_touch true -honor_dont_use true -leq_check true -update_timing true -prefix_name ECO
+<CMD> set_eco_mode -honor_dont_touch true -honor_dont_use true -leq_check true -update_timing true -prefix_name ECO
+**ERROR: (TCLCMD-917):	Cannot find 'analysis_view' that match 'setup_view'
+<CMD> exit
+
+*** Memory Usage v#1 (Current mem = 1282.652M, initial mem = 612.184M) ***
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPDB-2094           2  get instance of a Nil cell!              
+ERROR     IMPQTF-4044          4  Error occurs when '%s' is executed with ...
+ERROR     TCLCMD-917           1  Cannot find '%s' that match '%s'         
+*** Message Summary: 2 warning(s), 5 error(s)
+
+--- Ending "Tempus Timing Solution" (totcpu=0:01:58, real=0:08:46, mem=1282.7M) ---

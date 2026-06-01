@@ -1,0 +1,11 @@
+#WARNING (NRIF-19) Check ERROR messages in log file and correct them if possible.
+**ERROR: (LS_PLACEOPT::runCurrentState): Internal failure executing '::LS_PLACEOPT::PR:doExtrInit' **ERROR: (IMPOPT-460):	optDesign command aborted.
+**ERROR: **ERROR: (IMPOPT-460):	optDesign command aborted.
+#WARNING (NRIF-19) Check ERROR messages in log file and correct them if possible.
+**ERROR: (LS_PLACEOPT::runCurrentState): Internal failure executing '::LS_PLACEOPT::PR:doExtrInit' **ERROR: (IMPOPT-460):	optDesign command aborted.
+**ERROR: **ERROR: (IMPOPT-460):	optDesign command aborted.
+#WARNING (NRIF-19) Check ERROR messages in log file and correct them if possible.
+**ERROR: (LS_PLACEOPT::runCurrentState): Internal failure executing '::LS_PLACEOPT::PR:doExtrInit' **ERROR: (IMPOPT-460):	optDesign command aborted.
+**ERROR: **ERROR: (IMPOPT-460):	optDesign command aborted.
+#WARNING (NRIF-19) Check ERROR messages in log file and correct them if possible.
+**ERROR: (IMPSYT-6692):	Invalid return code while executing 'scripts/route_design.tcl' was returned and script processing was stopped. Review the following error in 'scripts/route_design.tcl' then restart.

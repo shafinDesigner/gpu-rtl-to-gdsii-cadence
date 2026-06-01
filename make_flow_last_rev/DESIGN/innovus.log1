@@ -1,0 +1,929 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.18-s099_1, built Tue Jul 18 13:03:50 PDT 2023
+Options:	
+Date:		Mon May 25 22:58:21 2026
+Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+OS:		Red Hat Enterprise Linux Server 7.9 (Maipo)
+
+License:
+		[22:58:21.389537] Configured Lic search path (21.01-s002): 5280@vlsi
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+<CMD> define_proc_arguments ViaFillQor -info {This procedure extracts Viafill details from innovus db} -define_args {
+		{-window "window coordinates" "" list optional}
+		{-window_size "window size in microns" "" string optional}
+	
+	}
+[INFO] Loading Pegasus 22.20 fill procedures
+<CMD> define_proc_arguments ProcessFills -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+<CMD> define_proc_arguments FillQor -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+<CMD> define_proc_arguments ProcessFills_fast -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+<CMD> define_proc_arguments FillQor_fast -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+<CMD> define_proc_arguments ProcessFills_fast_stampOnly -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+	
+}
+<CMD> define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+}
+<CMD> win
+<CMD> restoreDesign place_opt.inn.dat/ gpu
+#% Begin load design ... (date=05/25 23:00:10, mem=756.4M)
+Set Default Input Pin Transition as 0.1 ps.
+INFO: You have enabled new technology 'legacy_fects_final_release' that has been internally qualified at Cadence but has only limited customer testing. You are encouraged to work with Cadence directly to qualify your usage and make sure it meets your needs before deploying it widely. Final production licensing of this feature is subject to change.
+Loading design 'gpu' saved by 'Innovus' '21.18-s099_1' on 'Mon May 25 02:12:55 2026'.
+% Begin Load MMMC data ... (date=05/25 23:00:11, mem=759.2M)
+% End Load MMMC data ... (date=05/25 23:00:11, total cpu=0:00:00.0, real=0:00:00.0, peak res=760.1M, current mem=760.1M)
+typical_rc
+
+Loading LEF file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/libs/lef/gsclib045_tech.lef ...
+
+Loading LEF file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/libs/lef/gsclib045_macro.lef ...
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/viewDefinition.tcl
+Reading slow_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib)
+Read 480 cells in library 'slow_vdd1v0' 
+Reading fast_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib)
+Read 480 cells in library 'fast_vdd1v0' 
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+*** End library_loading (cpu=0.02min, real=0.02min, mem=21.9M, fe_cpu=0.59min, fe_real=1.85min, fe_mem=1043.8M) ***
+% Begin Load netlist data ... (date=05/25 23:00:12, mem=780.9M)
+*** Begin netlist parsing (mem=1043.8M) ***
+Created 480 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/vbin/gpu.v.bin'
+
+*** Memory Usage v#1 (Current mem = 1057.789M, initial mem = 478.109M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1057.8M) ***
+% End Load netlist data ... (date=05/25 23:00:12, total cpu=0:00:00.1, real=0:00:00.0, peak res=793.8M, current mem=793.8M)
+Set top cell to gpu.
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+Hooked 960 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell gpu ...
+*** Netlist is unique.
+** info: there are 1055 modules.
+** info: there are 13511 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 1110.715M, initial mem = 478.109M) ***
+*info: set bottom ioPad orient R0
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Set Default Input Pin Transition as 0.1 ps.
+Set Shrink Factor to 0.90000
+Loading preference file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/gui.pref.tcl ...
+Slack adjustment of -0 applied on <default> path group
+**WARN: (IMPOPT-3602):	The specified path group name reg2reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for reg2reg path_group
+Slack adjustment of -0 applied on reg2reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name reg2out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for reg2out path_group
+Slack adjustment of 0 applied on reg2out path_group
+**WARN: (IMPOPT-3602):	The specified path group name in2reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for in2reg path_group
+Slack adjustment of 0 applied on in2reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name in2out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for in2out path_group
+Slack adjustment of -0 applied on in2out path_group
+#WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+**WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+**WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMaxRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -topRoutingLayer' instead.
+Change floorplan default-technical-site to 'CoreSite'.
+*Info: initialize multi-corner CTS.
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+% Begin Load MMMC data post ... (date=05/25 23:00:13, mem=1098.0M)
+% End Load MMMC data post ... (date=05/25 23:00:13, total cpu=0:00:00.0, real=0:00:00.0, peak res=1098.1M, current mem=1098.1M)
+Reading floorplan file - /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/gpu.fp.gz (mem = 1369.2M).
+% Begin Load floorplan data ... (date=05/25 23:00:13, mem=1098.2M)
+*info: reset 13995 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 482000 474620)
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+ ... processed partition successfully.
+Reading binary special route file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/gpu.fp.spr.gz (Created by Innovus v21.18-s099_1 on Mon May 25 02:12:54 2026, version: 1)
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1099.0M, current mem=1099.0M)
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+% End Load floorplan data ... (date=05/25 23:00:14, total cpu=0:00:00.1, real=0:00:01.0, peak res=1099.9M, current mem=1099.9M)
+Reading congestion map file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/gpu.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=05/25 23:00:14, mem=1100.1M)
+Suppress "**WARN ..." messages.
+Un-suppress "**WARN ..." messages.
+% End Load SymbolTable ... (date=05/25 23:00:14, total cpu=0:00:00.1, real=0:00:01.0, peak res=1103.8M, current mem=1103.8M)
+Loading place ...
+% Begin Load placement data ... (date=05/25 23:00:15, mem=1103.8M)
+Reading placement file - /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/gpu.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v21.18-s099_1 on Mon May 25 02:12:54 2026, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Completed restorePlace (cpu=0:00:00.0 real=0:00:00.0 mem=1379.2M) ***
+Total net length = 1.995e+05 (1.063e+05 9.315e+04) (ext = 1.380e+04)
+% End Load placement data ... (date=05/25 23:00:15, total cpu=0:00:00.1, real=0:00:00.0, peak res=1107.5M, current mem=1106.8M)
+% Begin Load routing data ... (date=05/25 23:00:15, mem=1106.8M)
+Reading routing file - /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/gpu.route.gz.
+Reading Innovus routing data (Created by Innovus v21.18-s099_1 on Mon May 25 02:12:54 2026 Format: 20.1) ...
+*** Total 13919 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.1 real=0:00:00.0 mem=1393.2M) ***
+% End Load routing data ... (date=05/25 23:00:15, total cpu=0:00:00.1, real=0:00:00.0, peak res=1125.5M, current mem=1124.3M)
+Loading Drc markers ...
+... 8 markers are loaded ...
+... 0 geometry drc markers are loaded ...
+... 0 antenna drc markers are loaded ...
+TAT_INFO: restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+Reading property file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/gpu.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1396.2M) ***
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Capacitance Table File /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl ...
+Cap table was created using Encounter 10.10-b056_1.
+Process name: cln28hpl_1p10m+alrdl_5x2yu2yz_typical.
+Set Shrink Factor to 0.90000
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: setup_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+ 
+ Analysis View: hold_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Loading rc congestion map /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/place_opt.inn.dat/gpu.congmap.gz ...
+Start generating vias ..
+#Skip building auto via since it is not turned on.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Via generation completed.
+% Begin Load power constraints ... (date=05/25 23:00:17, mem=1137.5M)
+'set_default_switching_activity' finished successfully.
+% End Load power constraints ... (date=05/25 23:00:17, total cpu=0:00:00.0, real=0:00:00.0, peak res=1144.0M, current mem=1144.0M)
+slow_delay fast_delay
+% Begin load AAE data ... (date=05/25 23:00:17, mem=1189.2M)
+AAE DB initialization (MEM=1497.94 CPU=0:00:00.0 REAL=0:00:00.0) 
+% End load AAE data ... (date=05/25 23:00:17, total cpu=0:00:00.6, real=0:00:00.0, peak res=1196.6M, current mem=1196.6M)
+Restoring CCOpt config...
+  Extracting original clock gating for clk...
+    clock_tree clk contains 1827 sinks and 0 clock gates.
+  Extracting original clock gating for clk done.
+  The skew group clk/func_mode was created. It contains 1827 sinks and 1 sources.
+Restoring CCOpt config done.
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+**WARN: (IMPCTE-107):	The following globals have been obsoleted since version . They will be removed in the next release. 
+timing_enable_separate_device_slew_effect_sensitivities
+#% End load design ... (date=05/25 23:00:17, total cpu=0:00:05.6, real=0:00:07.0, peak res=1220.1M, current mem=1201.6M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+WARNING   IMPPTN-867           1  Found use of %s. This will continue to w...
+WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+WARNING   IMPOPT-3602          4  The specified path group name %s is not ...
+WARNING   NRIF-91              1  Option setNanoRouteMode -routeTopRouting...
+WARNING   IMPCTE-107           1  The following globals have been obsolete...
+WARNING   IMPPSP-1003          1  Found use of '%s'. This will continue to...
+WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+*** Message Summary: 16 warning(s), 0 error(s)
+
+<CMD> setLayerPreference violation -isSelectable 0
+<CMD> setLayerPreference violation -isVisible 0
+<CMD> fit
+<CMD> setMetalFill -layer Metal1 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal2 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal3 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal4 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal5 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal6 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal7 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal8 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal9 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal10 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal11 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> verifyMetalDensity -report gpu.density.rpt
+
+******** Start: VERIFY DENSITY ********
+Density calculation ...... Slot :   1 of   1
+
+Densities of non-overlapping windows have been saved in FE DB.
+
+A total of 127 density violation(s).
+Windows < Min. Density = 127
+Windows > Max. Density = 0
+Windows < Min. Union. Density = 0
+Windows > Max. Union. Density = 0
+
+******** End: VERIFY DENSITY ********
+VMD: elapsed time: 2.00
+     (CPU Time: 0:00:02.4  MEM: 16.336M)
+
+<CMD> setLayerPreference densityMap -isVisible 1
+<CMD> setMetalFill -layer Metal1 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal2 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal3 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal4 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal5 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal6 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal7 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal8 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal9 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal10 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal11 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> verifyMetalDensity -report gpu.density.rpt
+
+******** Start: VERIFY DENSITY ********
+Density calculation ...... Slot :   1 of   1
+
+Densities of non-overlapping windows have been saved in FE DB.
+
+A total of 127 density violation(s).
+Windows < Min. Density = 127
+Windows > Max. Density = 0
+Windows < Min. Union. Density = 0
+Windows > Max. Union. Density = 0
+
+******** End: VERIFY DENSITY ********
+VMD: elapsed time: 2.00
+     (CPU Time: 0:00:02.4  MEM: 16.336M)
+
+<CMD> setMetalFill -layer Metal1 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal2 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal3 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal4 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal5 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal6 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal7 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal8 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal9 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal10 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal11 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> verifyMetalDensity -report gpu.density.rpt -detailed
+
+******** Start: VERIFY DENSITY ********
+Density calculation ...... Slot :   1 of   1
+
+Densities of non-overlapping windows have been saved in FE DB.
+
+A total of 127 density violation(s).
+Windows < Min. Density = 127
+Windows > Max. Density = 0
+Windows < Min. Union. Density = 0
+Windows > Max. Union. Density = 0
+
+******** End: VERIFY DENSITY ********
+VMD: elapsed time: 2.00
+     (CPU Time: 0:00:02.3  MEM: 9.078M)
+
+<CMD> setMetalFill -layer Metal1 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal2 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal3 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal4 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal5 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal6 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal7 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal8 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal9 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal10 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal11 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> verifyMetalDensity -report gpu.density.rpt -detailed
+
+******** Start: VERIFY DENSITY ********
+Density calculation ...... Slot :   1 of   1
+
+Densities of non-overlapping windows have been saved in FE DB.
+
+A total of 127 density violation(s).
+Windows < Min. Density = 127
+Windows > Max. Density = 0
+Windows < Min. Union. Density = 0
+Windows > Max. Union. Density = 0
+
+******** End: VERIFY DENSITY ********
+VMD: elapsed time: 3.00
+     (CPU Time: 0:00:02.3  MEM: 0.000M)
+
+invalid command name "reportMetalDensity"
+<CMD> verifyMetalDensity
+
+******** Start: VERIFY DENSITY ********
+Density calculation ...... Slot :   1 of   1
+
+Densities of non-overlapping windows have been saved in FE DB.
+
+A total of 127 density violation(s).
+Windows < Min. Density = 127
+Windows > Max. Density = 0
+Windows < Min. Union. Density = 0
+Windows > Max. Union. Density = 0
+
+******** End: VERIFY DENSITY ********
+VMD: elapsed time: 2.00
+     (CPU Time: 0:00:02.3  MEM: 0.000M)
+
+<CMD> gui_show_edge_number
+**WARN: (IMPSYT-3206):	No objects to show the edge number.
+invalid command name "report_density"
+<CMD> help *density*# Check available density-related commands
+
+Usage: help [-help] [-k | -cmd | -var ] [<pattern>]
+
+**ERROR: (IMPTCM-48):	"Check" is not a legal option for command "help". Either the current option or an option prior to it is not specified correctly.
+  
+<CMD> help *density*
+Multiple matches found:
+      addChannelDensityControl
+      createDensityArea
+      deleteAllDensityAreas
+      extract_metal_density
+      getDensityMapMode
+      getPinDensityMapMode
+      queryDensityInBox
+      queryPinDensity
+      reportDensityMap
+      reportPinDensityMap
+      setDensityMapMode
+      setPinDensityMapMode
+      setSelectedDensityArea
+      set_metal_density_options
+      verifyCutDensity
+      verifyMetalDensity
+
+<CMD> verifyMetalDensity -report metal_density.rpt
+
+******** Start: VERIFY DENSITY ********
+Density calculation ...... Slot :   1 of   1
+
+Densities of non-overlapping windows have been saved in FE DB.
+
+A total of 127 density violation(s).
+Windows < Min. Density = 127
+Windows > Max. Density = 0
+Windows < Min. Union. Density = 0
+Windows > Max. Union. Density = 0
+
+******** End: VERIFY DENSITY ********
+VMD: elapsed time: 2.00
+     (CPU Time: 0:00:02.4  MEM: 0.000M)
+
+<CMD> man verifyMetalDensity
+<CMD> extract_metal_density
+**ERROR: (IMPLIC-90):	This command "extract_metal_density" does not have the necessary license to run with the current base license 'invs'.
+Type 'man IMPLIC-90' for more detail.
+You must get access to one of the following optional licenses before you can run the command:  vtsaa.
+Use 'setLicenseCheck -status' to see the current licenses in use and for more information.
+**ERROR: (VOLTUS-5329):	AdvEPSAA feature is not available.
+<CMD> zoomBox -30.54100 42.91400 359.56600 231.51650
+<CMD> zoomBox 55.38500 82.49200 337.23850 218.75800
+<CMD> fit
+<CMD> fit
+<CMD> reportCongestion
+**ERROR: (IMPSP-9110):	Missing mandatory options for this command. Use -hotspot or -overflow to report hotspot score or congestion map distribution table.
+<CMD> setLicenseCheck -status
+Current checked out base license : invs (Innovus_Impl_System 21.1).
+Current checked out optional licenses : none
+When checking-out an optional license, wait for up to : 0 minutes.
+The base license allows the following optional licenses available now on the server(s) : invs_hier invs_ms genb genphy invs_dfm modus_dft tpsxl qrcaa vtsxl
+The automatic optional license check-out is limited by -optionList to : invs_hier invs_ms invs_3d_ic invs_i20nm invs_20nm invs_i10nm invs_10nm invs_7nm invs_5nm invs_3nm invs_3nm_gaa invs_2nm_gaa invs_hfr invs_gigaplace invs_gigaplace_gxl encng encng900 engt910 invs_sc invs_pi invs_ml genb genphy invs_ehfs diga_stream invs_dfm invs_crbs crbs_replay vdst invs_automotive modus_dft litmus_cmgr midas_user tpsxl tpsl qrcaa invs_eco tps_aa tps_3nm vtsxm vtsesd vtsxl vtsl vtsaa
+Summary of all checked out licenses:
+	Innovus_Impl_System
+<CMD> setLicenseCheck -checkout vtsaa
+**ERROR: (IMPLIC-83):	Option license 'vtsaa' (Voltus_Power_Integrity_AA 21.1) did not exist in license server. Check license server settings to ensure required licenses are installed properly and accessible.
+<CMD> extract_metal_density
+**ERROR: (IMPLIC-90):	This command "extract_metal_density" does not have the necessary license to run with the current base license 'invs'.
+Type 'man IMPLIC-90' for more detail.
+You must get access to one of the following optional licenses before you can run the command:  vtsaa.
+Use 'setLicenseCheck -status' to see the current licenses in use and for more information.
+**ERROR: (VOLTUS-5329):	AdvEPSAA feature is not available.
+<CMD> verifyMetalDensity
+
+******** Start: VERIFY DENSITY ********
+Density calculation ...... Slot :   1 of   1
+
+Densities of non-overlapping windows have been saved in FE DB.
+
+A total of 127 density violation(s).
+Windows < Min. Density = 127
+Windows > Max. Density = 0
+Windows < Min. Union. Density = 0
+Windows > Max. Union. Density = 0
+
+******** End: VERIFY DENSITY ********
+VMD: elapsed time: 3.00
+     (CPU Time: 0:00:02.3  MEM: 0.000M)
+
+<CMD> verifyMetalDensity -layers
+
+Usage: verifyMetalDensity [-help] [-area {x1 y1 x2 y2}] [-detailed] [-ignoreLEFDensity] [-oversize <integer>] [-report <string>] [-layer <string>]
+
+**ERROR: (IMPTCM-6):	Missing string value for option "-layers".  
+
+<CMD> setMetalFill -layer Metal1 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal2 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal3 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal4 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal5 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal6 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal7 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal8 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal9 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal10 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal11 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> verifyMetalDensity -report gpu.density.rpt -detailed -saveToDB
+
+******** Start: VERIFY DENSITY ********
+Density calculation ...... Slot :   1 of   1
+
+Densities of non-overlapping windows have been saved in FE DB.
+
+A total of 127 density violation(s).
+Windows < Min. Density = 127
+Windows > Max. Density = 0
+Windows < Min. Union. Density = 0
+Windows > Max. Union. Density = 0
+
+******** End: VERIFY DENSITY ********
+VMD: elapsed time: 2.00
+     (CPU Time: 0:00:02.2  MEM: 0.000M)
+
+<CMD> selectInst {cores[1].core_instance_g94277}
+<CMD> setLayerPreference densityMap -color {#000066 #00006d #000074 #00007b #000082 #000089 #000090 #000097 #00009e #0000a5 #0000ac #0000b3 #0000bb #0000c2 #0000c9 #0000d0 #0000d7 #0000de #0000e5 #0000ec #0000f3 #0000fa #0005ff #0011ff #001eff #002aff #0037ff #0043ff #0050ff #005cff #0069ff #0076ff #0082ff #008fff #009bff #00a8ff #00b4ff #00c1ff #00cdff #00daff #00e7ff #00f3ff #00fefd #00f8f2 #00f2e6 #00ecda #00e6ce #00e0c2 #00dbb7 #00d5ab #00cf9f #00c993 #00c387 #00bd7c #00b770 #00b164 #00ab58 #00a54c #009f40 #009a35 #009429 #008e1d #008811 #008205 #058200 #118800 #1d8e00 #299400 #359a00 #409f00 #4ca500 #58ab00 #64b100 #70b700 #7cbd00 #87c300 #93c900 #9fcf00 #abd500 #b7db00 #c2e000 #cee600 #daec00 #e6f200 #f2f800 #fdfe00 #fff300 #ffe700 #ffda00 #ffcd00 #ffc100 #ffb400 #ffa800 #ff9b00 #ff8f00 #ff8200 #ff7600 #ff6900 #ff5c00 #ff5000 #ff4300 #ff3700 #ff2a00 #ff1e00 #ff1100 #ff0500 #ff0606 #ff1212 #ff1e1e #ff2a2a #ff3636 #ff4242 #ff4d4d #ff5959 #ff6565 #ff7171 #ff7d7d #ff8888 #ff9494 #ffa0a0 #ffacac #ffb8b8 #ffc3c3 #ffcfcf #ffdbdb #ffe7e7 #fff3f3} -stippleData 8 4 {0xaa 0x55 0xaa 0x55}
+<CMD> setLayerPreference densityMap -color {#000066 #00006d #000074 #00007b #000082 #000089 #000090 #000097 #00009e #0000a5 #0000ac #0000b3 #0000bb #0000c2 #0000c9 #0000d0 #0000d7 #0000de #0000e5 #0000ec #0000f3 #0000fa #0005ff #0011ff #001eff #002aff #0037ff #0043ff #0050ff #005cff #0069ff #0076ff #0082ff #008fff #009bff #00a8ff #00b4ff #00c1ff #00cdff #00daff #00e7ff #00f3ff #00fefd #00f8f2 #00f2e6 #00ecda #00e6ce #00e0c2 #00dbb7 #00d5ab #00cf9f #00c993 #00c387 #00bd7c #00b770 #00b164 #00ab58 #00a54c #009f40 #009a35 #009429 #008e1d #008811 #008205 #058200 #118800 #1d8e00 #299400 #359a00 #409f00 #4ca500 #58ab00 #64b100 #70b700 #7cbd00 #87c300 #93c900 #9fcf00 #abd500 #b7db00 #c2e000 #cee600 #daec00 #e6f200 #f2f800 #fdfe00 #fff300 #ffe700 #ffda00 #ffcd00 #ffc100 #ffb400 #ffa800 #ff9b00 #ff8f00 #ff8200 #ff7600 #ff6900 #ff5c00 #ff5000 #ff4300 #ff3700 #ff2a00 #ff1e00 #ff1100 #ff0500 #ff0606 #ff1212 #ff1e1e #ff2a2a #ff3636 #ff4242 #ff4d4d #ff5959 #ff6565 #ff7171 #ff7d7d #ff8888 #ff9494 #ffa0a0 #ffacac #ffb8b8 #ffc3c3 #ffcfcf #ffdbdb #ffe7e7 #fff3f3 #ffffff}
+<CMD> setLayerPreference timingMap -isVisible 1
+<CMD> all_hold_analysis_views
+<CMD> all_setup_analysis_views
+invalid command name "displayMetalDensity"
+invalid command name "displayMetalDensity"
+invalid command name "displayMetalDensity"
+<CMD> setLayerPreference pinDensityMap -isVisible 1
+<CMD> setLayerPreference routeCongest -isVisible 1
+<CMD> setLayerPreference congestH -color {#000066 #0000c9 #0053ff #00fcfa #00a953 #53a900 #f9fc00 #ff5300 #ff5858 #ffffff}
+<CMD> setLayerPreference congestV -color {#000066 #0000c9 #0053ff #00fcfa #00a953 #53a900 #f9fc00 #ff5300 #ff5858 #ffffff}
+<CMD> deselectAll
+<CMD> addMetalFill -layer { Metal1 Metal2 Metal3 Metal4 Metal5 Metal6 Metal7 Metal8 Metal9 Metal10 Metal11 } -net { VSS VDD }
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.1'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.1'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.2'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.2'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.3'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.3'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.4'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.4'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.5'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.5'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.6'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.6'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.7'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.7'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.8'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.8'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.9'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.9'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.10'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.10'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.11'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.11'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+************************
+Timing Aware on 
+P/G Nets: 2
+Signal Nets: 13993
+Clock Nets: 0
+************************
+Density calculation ...... Slot :   1 of   1
+Density calculation ...... Slot :   1 of   1
+End of Density Calculation : cpu time : 0:00:03.8, real time : 0:00:04.0, peak mem : 2204.88 megs
+Process data during iteration   1 in region   0 of 1.
+End metal filling: cpu:  0:00:05.7,  real:  0:00:06.0,  peak mem:  2348.07  megs.
+<CMD> addMetalFill -layer { Metal1 Metal2 Metal3 Metal4 Metal5 Metal6 Metal7 Metal8 Metal9 Metal10 Metal11 } -net { VSS VDD }
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.1'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.1'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.2'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.2'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.3'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.3'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.4'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.4'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.5'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.5'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.6'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.6'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.7'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.7'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.8'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.8'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.9'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.9'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.10'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.10'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.11'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.11'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+************************
+Timing Aware on 
+P/G Nets: 2
+Signal Nets: 13994
+Clock Nets: 0
+************************
+Density calculation ...... Slot :   1 of   1
+Density calculation ...... Slot :   1 of   1
+End of Density Calculation : cpu time : 0:00:04.0, real time : 0:00:04.0, peak mem : 2382.95 megs
+Process data during iteration   1 in region   0 of 1.
+End metal filling: cpu:  0:00:05.9,  real:  0:00:06.0,  peak mem:  2382.95  megs.
+<CMD> addMetalFill -layer { Metal1 Metal2 Metal3 Metal4 Metal5 Metal6 Metal7 Metal8 Metal9 Metal10 Metal11 } -net { VSS VDD }
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.1'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.1'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.2'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.2'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.3'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.3'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.4'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.4'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.5'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.5'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.6'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.6'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.7'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.7'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.8'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.8'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.9'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.9'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.10'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.10'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.11'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.11'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+************************
+Timing Aware on 
+P/G Nets: 2
+Signal Nets: 13994
+Clock Nets: 0
+************************
+Density calculation ...... Slot :   1 of   1
+Density calculation ...... Slot :   1 of   1
+End of Density Calculation : cpu time : 0:00:04.1, real time : 0:00:04.0, peak mem : 2407.47 megs
+Process data during iteration   1 in region   0 of 1.
+End metal filling: cpu:  0:00:05.9,  real:  0:00:06.0,  peak mem:  2407.47  megs.
+<CMD> addMetalFill -layer { Metal1 Metal2 Metal3 Metal4 Metal5 Metal6 Metal7 Metal8 Metal9 Metal10 Metal11 } -net { VSS VDD }
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.1'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.1'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.2'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.2'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.3'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.3'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.4'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.4'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.5'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.5'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.6'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.6'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.7'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.7'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.8'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.8'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.9'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.9'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.10'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.10'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMaxUnionDensityToAboveLayer.11'!
+**WARN: (from .metalfill_217999.conf) Unknown option '2'!
+**WARN: (from .metalfill_217999.conf) Unknown option 'srouteLayerFillMinUnionDensityToAboveLayer.11'!
+**WARN: (from .metalfill_217999.conf) Unknown option '0'!
+************************
+Timing Aware on 
+P/G Nets: 2
+Signal Nets: 13994
+Clock Nets: 0
+************************
+Density calculation ...... Slot :   1 of   1
+Density calculation ...... Slot :   1 of   1
+End of Density Calculation : cpu time : 0:00:04.1, real time : 0:00:04.0, peak mem : 2407.47 megs
+Process data during iteration   1 in region   0 of 1.
+End metal filling: cpu:  0:00:05.9,  real:  0:00:06.0,  peak mem:  2407.47  megs.
+<CMD> setLayerPreference densityMap -color {#000066 #00006d #000074 #00007b #000082 #000089 #000090 #000097 #00009e #0000a5 #0000ac #0000b3 #0000bb #0000c2 #0000c9 #0000d0 #0000d7 #0000de #0000e5 #0000ec #0000f3 #0000fa #0005ff #0011ff #001eff #002aff #0037ff #0043ff #0050ff #005cff #0069ff #0076ff #0082ff #008fff #009bff #00a8ff #00b4ff #00c1ff #00cdff #00daff #00e7ff #00f3ff #00fefd #00f8f2 #00f2e6 #00ecda #00e6ce #00e0c2 #00dbb7 #00d5ab #00cf9f #00c993 #00c387 #00bd7c #00b770 #00b164 #00ab58 #00a54c #009f40 #009a35 #009429 #008e1d #008811 #008205 #058200 #118800 #1d8e00 #299400 #359a00 #409f00 #4ca500 #58ab00 #64b100 #70b700 #7cbd00 #87c300 #93c900 #9fcf00 #abd500 #b7db00 #c2e000 #cee600 #daec00 #e6f200 #f2f800 #fdfe00 #fff300 #ffe700 #ffda00 #ffcd00 #ffc100 #ffb400 #ffa800 #ff9b00 #ff8f00 #ff8200 #ff7600 #ff6900 #ff5c00 #ff5000 #ff4300 #ff3700 #ff2a00 #ff1e00 #ff1100 #ff0500 #ff0606 #ff1212 #ff1e1e #ff2a2a #ff3636 #ff4242 #ff4d4d #ff5959 #ff6565 #ff7171 #ff7d7d #ff8888 #ff9494 #ffa0a0 #ffacac #ffb8b8 #ffc3c3 #ffcfcf #ffdbdb #ffe7e7 #fff3f3 #ffffff} -stippleData 8 4 {0xaa 0x55 0xaa 0x55}
+<CMD> setMetalFill -layer Metal1 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal2 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal3 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal4 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal5 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal6 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal7 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal8 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal9 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal10 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> setMetalFill -layer Metal11 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+<CMD> verifyMetalDensity -report gpu.density.rpt -detailed -saveToDB
+
+******** Start: VERIFY DENSITY ********
+Density calculation ...... Slot :   1 of   1
+
+Densities of non-overlapping windows have been saved in FE DB.
+
+A total of 4 density violation(s).
+Windows < Min. Density = 4
+Windows > Max. Density = 0
+Windows < Min. Union. Density = 0
+Windows > Max. Union. Density = 0
+
+******** End: VERIFY DENSITY ********
+VMD: elapsed time: 3.00
+     (CPU Time: 0:00:02.4  MEM: 0.000M)
+
+<CMD> help *density*
+Multiple matches found:
+      addChannelDensityControl
+      createDensityArea
+      deleteAllDensityAreas
+      extract_metal_density
+      getDensityMapMode
+      getPinDensityMapMode
+      queryDensityInBox
+      queryPinDensity
+      reportDensityMap
+      reportPinDensityMap
+      setDensityMapMode
+      setPinDensityMapMode
+      setSelectedDensityArea
+      set_metal_density_options
+      verifyCutDensity
+      verifyMetalDensity
+
+<CMD> getDensityMapMode
+-gridInMicron 50           # float, default=50, min=0, max=1000
+-gridInRow 10              # int, default=10, min=1, max=100
+-ignoreBlock false         # bool, default=false
+-ignoreFiller false        # bool, default=false
+-threshold 0.75            # float, default=0.75, min=0, max=2
+
+<CMD> reportDensityMap
+Estimated cell power/ground rail width = 0.160 um
+default core: bins with density > 0.750 = 38.46 % ( 65 / 169 )
+bin size: 86 sites by 10 row(s). total 169 bins ( 13 by 13 )
+  density range     #bins    %
+  (0.750 - 0.800]      25  14.79
+  (0.800 - 0.850]      21  12.43
+  (0.850 - 0.900]      15   8.88
+  (0.900 - 0.950]       4   2.37
+  total                65  38.46
+
+Density distribution unevenness ratio = 10.137%
+<CMD> verifyMetalDensity -display -report metal.rpt
+
+Usage: verifyMetalDensity [-help] [-area {x1 y1 x2 y2}] [-detailed] [-ignoreLEFDensity] [-oversize <integer>] [-report <string>] [-layer <string>]
+
+**ERROR: (IMPTCM-48):	"-display" is not a legal option for command "verifyMetalDensity". Either the current option or an option prior to it is not specified correctly.
+
+<CMD> verifyMetalDensity -report metal.rpt -detailed
+
+******** Start: VERIFY DENSITY ********
+Density calculation ...... Slot :   1 of   1
+
+Densities of non-overlapping windows have been saved in FE DB.
+
+A total of 4 density violation(s).
+Windows < Min. Density = 4
+Windows > Max. Density = 0
+Windows < Min. Union. Density = 0
+Windows > Max. Union. Density = 0
+
+******** End: VERIFY DENSITY ********
+VMD: elapsed time: 3.00
+     (CPU Time: 0:00:02.4  MEM: 16.773M)
+
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Mon May 25 23:51:38 2026
+  Total CPU time:     0:09:38
+  Total real time:    0:53:18
+  Peak memory (main): 1841.71MB
+
+
+*** Memory Usage v#1 (Current mem = 2509.258M, initial mem = 478.109M) ***
+*** Message Summary: 17 warning(s), 11 error(s)
+
+--- Ending "Innovus" (totcpu=0:09:34, real=0:53:17, mem=2509.3M) ---

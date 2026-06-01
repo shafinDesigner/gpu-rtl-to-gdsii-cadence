@@ -1,0 +1,979 @@
+[05/23 04:45:05      0s] 
+[05/23 04:45:05      0s] Cadence Innovus(TM) Implementation System.
+[05/23 04:45:05      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/23 04:45:05      0s] 
+[05/23 04:45:05      0s] Version:	v21.18-s099_1, built Tue Jul 18 13:03:50 PDT 2023
+[05/23 04:45:05      0s] Options:	
+[05/23 04:45:05      0s] Date:		Sat May 23 04:45:05 2026
+[05/23 04:45:05      0s] Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+[05/23 04:45:05      0s] OS:		Red Hat Enterprise Linux Server 7.9 (Maipo)
+[05/23 04:45:05      0s] 
+[05/23 04:45:05      0s] License:
+[05/23 04:45:05      0s] 		[04:45:05.389521] Configured Lic search path (21.01-s002): 5280@vlsi
+
+[05/23 04:45:05      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[05/23 04:45:05      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[05/23 04:45:22     15s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.18-s099_1 (64bit) 07/18/2023 13:03 (Linux 3.10.0-693.el7.x86_64)
+[05/23 04:45:25     18s] @(#)CDS: NanoRoute 21.18-s099_1 NR230707-1955/21_18-UB (database version 18.20.605) {superthreading v2.17}
+[05/23 04:45:25     18s] @(#)CDS: AAE 21.18-s017 (64bit) 07/18/2023 (Linux 3.10.0-693.el7.x86_64)
+[05/23 04:45:25     18s] @(#)CDS: CTE 21.18-s022_1 () Jul 11 2023 23:10:24 ( )
+[05/23 04:45:25     18s] @(#)CDS: SYNTECH 21.18-s010_1 () Jul  5 2023 06:32:03 ( )
+[05/23 04:45:25     18s] @(#)CDS: CPE v21.18-s053
+[05/23 04:45:25     18s] @(#)CDS: IQuantus/TQuantus 21.1.1-s966 (64bit) Wed Mar 8 10:22:20 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+[05/23 04:45:25     18s] @(#)CDS: OA 22.60-p087 Thu Feb  9 09:35:26 2023
+[05/23 04:45:25     18s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[05/23 04:45:25     18s] @(#)CDS: RCDB 11.15.0
+[05/23 04:45:25     18s] @(#)CDS: STYLUS 21.12-s019_1 (12/20/2022 05:13 PST)
+[05/23 04:45:25     18s] @(#)CDS: SystemPlanner-21.18-10439 (21.18) (2023-03-01 15:40:03+0800)
+[05/23 04:45:25     18s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_192794_vlsi_user_77_DuFyZa.
+
+[05/23 04:45:25     18s] Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+[05/23 04:45:28     20s] 
+[05/23 04:45:28     20s] **INFO:  MMMC transition support version v31-84 
+[05/23 04:45:28     20s] 
+[05/23 04:45:28     20s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[05/23 04:45:28     20s] <CMD> suppressMessage ENCEXT-2799
+[05/23 04:45:28     20s] <CMD> getVersion
+[05/23 04:45:28     20s] <CMD> define_proc_arguments ViaFillQor -info {This procedure extracts Viafill details from innovus db} -define_args {
+		{-window "window coordinates" "" list optional}
+		{-window_size "window size in microns" "" string optional}
+	
+	}
+[05/23 04:45:29     20s] [INFO] Loading Pegasus 22.20 fill procedures
+[05/23 04:45:29     20s] <CMD> define_proc_arguments ProcessFills -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+[05/23 04:45:29     20s] <CMD> define_proc_arguments FillQor -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+[05/23 04:45:29     20s] <CMD> define_proc_arguments ProcessFills_fast -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+[05/23 04:45:29     20s] <CMD> define_proc_arguments FillQor_fast -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+[05/23 04:45:29     20s] <CMD> define_proc_arguments ProcessFills_fast_stampOnly -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+	
+}
+[05/23 04:45:29     20s] <CMD> define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+}
+[05/23 04:45:29     20s] <CMD> win
+[05/23 04:45:48     24s] <CMD> restoreDesign final_for_LVS_test1.inn.dat/
+[05/23 04:45:48     24s] **ERROR: (IMPTCM-113):	Option "<design>" is required when option "<session>" is specified. Type 'man restoreDesign' for more details.
+
+[05/23 04:45:48     24s] 
+[05/23 04:45:48     24s] ERROR:   
+[05/23 04:45:48     24s] 
+[05/23 04:45:48     24s]   
+[05/23 04:45:48     24s]     while executing
+[05/23 04:45:48     24s] "error $catchMsg"
+[05/23 04:45:48     24s]     (procedure "restoreDesign" line 33)
+[05/23 04:45:48     24s] 
+[05/23 04:45:48     24s]   
+[05/23 04:45:59     26s] <CMD> restoreDesign final_for_LVS_test1.inn.dat/ gpu
+[05/23 04:45:59     26s] #% Begin load design ... (date=05/23 04:45:59, mem=755.7M)
+[05/23 04:46:00     26s] Set Default Input Pin Transition as 0.1 ps.
+[05/23 04:46:00     27s] INFO: You have enabled new technology 'legacy_fects_final_release' that has been internally qualified at Cadence but has only limited customer testing. You are encouraged to work with Cadence directly to qualify your usage and make sure it meets your needs before deploying it widely. Final production licensing of this feature is subject to change.
+[05/23 04:46:00     27s] Loading design 'gpu' saved by 'Innovus' '21.18-s099_1' on 'Sat May 23 03:54:04 2026'.
+[05/23 04:46:00     27s] % Begin Load MMMC data ... (date=05/23 04:46:00, mem=758.4M)
+[05/23 04:46:00     27s] % End Load MMMC data ... (date=05/23 04:46:00, total cpu=0:00:00.0, real=0:00:00.0, peak res=759.2M, current mem=759.2M)
+[05/23 04:46:00     27s] 
+[05/23 04:46:00     27s] Loading LEF file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/libs/lef/gsclib045_tech.lef ...
+[05/23 04:46:00     27s] 
+[05/23 04:46:00     27s] Loading LEF file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/libs/lef/gsclib045_macro.lef ...
+[05/23 04:46:00     27s] Set DBUPerIGU to M2 pitch 400.
+[05/23 04:46:00     27s] **WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/23 04:46:00     27s] Type 'man IMPLF-200' for more detail.
+[05/23 04:46:00     27s] 
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[05/23 04:46:00     27s] Loading view definition file from /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/viewDefinition.tcl
+[05/23 04:46:00     27s] Reading slow_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib' ...
+[05/23 04:46:01     27s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib)
+[05/23 04:46:01     28s] Read 480 cells in library 'slow_vdd1v0' 
+[05/23 04:46:01     28s] Reading fast_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib' ...
+[05/23 04:46:01     28s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib)
+[05/23 04:46:01     28s] Read 480 cells in library 'fast_vdd1v0' 
+[05/23 04:46:01     28s] Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+[05/23 04:46:01     28s] late library set: slow_lib
+[05/23 04:46:01     28s] early library set: fast_lib
+[05/23 04:46:01     28s] Completed consistency checks. Status: Successful
+[05/23 04:46:01     28s] Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+[05/23 04:46:01     28s] late library set: fast_lib
+[05/23 04:46:01     28s] early library set: slow_lib
+[05/23 04:46:01     28s] Completed consistency checks. Status: Successful
+[05/23 04:46:01     28s] Ending "PreSetAnalysisView" (total cpu=0:00:01.1, real=0:00:01.0, peak res=831.2M, current mem=779.2M)
+[05/23 04:46:01     28s] *** End library_loading (cpu=0.02min, real=0.02min, mem=23.9M, fe_cpu=0.48min, fe_real=0.93min, fe_mem=1045.5M) ***
+[05/23 04:46:01     28s] % Begin Load netlist data ... (date=05/23 04:46:01, mem=779.2M)
+[05/23 04:46:01     28s] *** Begin netlist parsing (mem=1045.5M) ***
+[05/23 04:46:01     28s] Created 480 new cells from 2 timing libraries.
+[05/23 04:46:01     28s] Reading netlist ...
+[05/23 04:46:01     28s] Backslashed names will retain backslash and a trailing blank character.
+[05/23 04:46:01     28s] Reading verilogBinary netlist '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.v.bin'
+[05/23 04:46:01     28s] 
+[05/23 04:46:01     28s] *** Memory Usage v#1 (Current mem = 1053.461M, initial mem = 478.109M) ***
+[05/23 04:46:01     28s] *** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=1053.5M) ***
+[05/23 04:46:01     28s] % End Load netlist data ... (date=05/23 04:46:01, total cpu=0:00:00.1, real=0:00:00.0, peak res=792.5M, current mem=792.5M)
+[05/23 04:46:01     28s] Set top cell to gpu.
+[05/23 04:46:02     28s] Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+[05/23 04:46:02     28s] late library set: slow_lib
+[05/23 04:46:02     28s] early library set: fast_lib
+[05/23 04:46:02     28s] Completed consistency checks. Status: Successful
+[05/23 04:46:02     28s] Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+[05/23 04:46:02     28s] late library set: fast_lib
+[05/23 04:46:02     28s] early library set: slow_lib
+[05/23 04:46:02     28s] Completed consistency checks. Status: Successful
+[05/23 04:46:02     28s] Hooked 960 DB cells to tlib cells.
+[05/23 04:46:02     28s] Ending "BindLib:" (total cpu=0:00:00.1, real=0:00:00.0, peak res=807.9M, current mem=807.9M)
+[05/23 04:46:02     28s] Starting recursive module instantiation check.
+[05/23 04:46:02     28s] No recursion found.
+[05/23 04:46:02     28s] Building hierarchical netlist for Cell gpu ...
+[05/23 04:46:02     28s] *** Netlist is unique.
+[05/23 04:46:02     28s] Setting Std. cell height to 3420 DBU (smallest netlist inst).
+[05/23 04:46:02     28s] ** info: there are 1055 modules.
+[05/23 04:46:02     28s] ** info: there are 14355 stdCell insts.
+[05/23 04:46:02     28s] 
+[05/23 04:46:02     28s] *** Memory Usage v#1 (Current mem = 1110.387M, initial mem = 478.109M) ***
+[05/23 04:46:02     28s] *info: set bottom ioPad orient R0
+[05/23 04:46:02     28s] **WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/23 04:46:02     28s] Type 'man IMPFP-3961' for more detail.
+[05/23 04:46:02     28s] **WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/23 04:46:02     28s] Type 'man IMPFP-3961' for more detail.
+[05/23 04:46:02     28s] Start create_tracks
+[05/23 04:46:02     28s] Set Default Input Pin Transition as 0.1 ps.
+[05/23 04:46:02     28s] Set Shrink Factor to 0.90000
+[05/23 04:46:02     29s] Loading preference file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gui.pref.tcl ...
+[05/23 04:46:02     29s] Slack adjustment of -0 applied on <default> path group
+[05/23 04:46:02     29s] **WARN: (IMPOPT-3602):	The specified path group name reg2reg is not defined.
+[05/23 04:46:02     29s] Type 'man IMPOPT-3602' for more detail.
+[05/23 04:46:02     29s] Effort level <high> specified for reg2reg path_group
+[05/23 04:46:02     29s] Slack adjustment of -0 applied on reg2reg path_group
+[05/23 04:46:02     29s] **WARN: (IMPOPT-3602):	The specified path group name reg2out is not defined.
+[05/23 04:46:02     29s] Type 'man IMPOPT-3602' for more detail.
+[05/23 04:46:02     29s] Effort level <high> specified for reg2out path_group
+[05/23 04:46:02     29s] Slack adjustment of 0 applied on reg2out path_group
+[05/23 04:46:02     29s] **WARN: (IMPOPT-3602):	The specified path group name in2reg is not defined.
+[05/23 04:46:02     29s] Type 'man IMPOPT-3602' for more detail.
+[05/23 04:46:02     29s] Effort level <high> specified for in2reg path_group
+[05/23 04:46:02     29s] Slack adjustment of 0 applied on in2reg path_group
+[05/23 04:46:02     29s] **WARN: (IMPOPT-3602):	The specified path group name in2out is not defined.
+[05/23 04:46:02     29s] Type 'man IMPOPT-3602' for more detail.
+[05/23 04:46:02     29s] Effort level <high> specified for in2out path_group
+[05/23 04:46:02     29s] Slack adjustment of -0 applied on in2out path_group
+[05/23 04:46:02     29s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[05/23 04:46:02     29s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[05/23 04:46:02     29s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[05/23 04:46:02     29s] **WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+[05/23 04:46:02     29s] #WARNING (NRIF-90) Option setNanoRouteMode -routeBottomRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -bottomRoutingLayer instead.
+[05/23 04:46:02     29s] #WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+[05/23 04:46:02     29s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[05/23 04:46:02     29s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[05/23 04:46:02     29s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[05/23 04:46:02     29s] AAE_INFO: switching -siAware from false to true ...
+[05/23 04:46:02     29s] AAE_INFO: The setting is changed from false to true in setDelayCalMode -SIAware
+[05/23 04:46:02     29s] **WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+[05/23 04:46:02     29s] **WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+[05/23 04:46:02     29s] **WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMaxRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -topRoutingLayer' instead.
+[05/23 04:46:02     29s] **WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMinRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -bottomRoutingLayer' instead.
+[05/23 04:46:02     29s] Change floorplan default-technical-site to 'CoreSite'.
+[05/23 04:46:02     29s] Extraction setup Delayed 
+[05/23 04:46:02     29s] *Info: initialize multi-corner CTS.
+[05/23 04:46:02     29s] Ending "SetAnalysisView" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1089.5M, current mem=834.6M)
+[05/23 04:46:03     29s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[05/23 04:46:03     29s] 
+[05/23 04:46:03     29s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign Begin ...
+[05/23 04:46:03     29s] SBFF Setting to complicate: SMDFFHQX8 complicate code: 30.1
+[05/23 04:46:03     29s] SBFF Setting to complicate: SMDFFHQX4 complicate code: 30.1
+[05/23 04:46:03     29s] SBFF Setting to complicate: SMDFFHQX2 complicate code: 30.1
+[05/23 04:46:03     29s] SBFF Setting to complicate: SMDFFHQX1 complicate code: 30.1
+[05/23 04:46:03     29s] SBFF Setting to complicate: SEDFFTRXL complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: SEDFFTRX4 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: SEDFFTRX2 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: SEDFFTRX1 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: SEDFFHQX8 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: SEDFFHQX4 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: SEDFFHQX2 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: SEDFFHQX1 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: EDFFTRXL complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: EDFFTRX4 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: EDFFTRX2 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: EDFFTRX1 complicate code: 30.05
+[05/23 04:46:03     29s] Summary for sequential cells identification: 
+[05/23 04:46:03     29s]   Identified SBFF number: 104
+[05/23 04:46:03     29s]   Identified MBFF number: 0
+[05/23 04:46:03     29s]   Identified SB Latch number: 0
+[05/23 04:46:03     29s]   Identified MB Latch number: 0
+[05/23 04:46:03     29s]   Not identified SBFF number: 16
+[05/23 04:46:03     29s]   Not identified MBFF number: 0
+[05/23 04:46:03     29s]   Not identified SB Latch number: 0
+[05/23 04:46:03     29s]   Not identified MB Latch number: 0
+[05/23 04:46:03     29s]   Number of sequential cells which are not FFs: 32
+[05/23 04:46:03     29s] Total number of combinational cells: 318
+[05/23 04:46:03     29s] Total number of sequential cells: 152
+[05/23 04:46:03     29s] Total number of tristate cells: 10
+[05/23 04:46:03     29s] Total number of level shifter cells: 0
+[05/23 04:46:03     29s] Total number of power gating cells: 0
+[05/23 04:46:03     29s] Total number of isolation cells: 0
+[05/23 04:46:03     29s] Total number of power switch cells: 0
+[05/23 04:46:03     29s] Total number of pulse generator cells: 0
+[05/23 04:46:03     29s] Total number of always on buffers: 0
+[05/23 04:46:03     29s] Total number of retention cells: 0
+[05/23 04:46:03     29s] Total number of physical cells: 0
+[05/23 04:46:03     29s] List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+[05/23 04:46:03     29s] Total number of usable buffers: 16
+[05/23 04:46:03     29s] List of unusable buffers:
+[05/23 04:46:03     29s] Total number of unusable buffers: 0
+[05/23 04:46:03     29s] List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+[05/23 04:46:03     29s] Total number of usable inverters: 19
+[05/23 04:46:03     29s] List of unusable inverters:
+[05/23 04:46:03     29s] Total number of unusable inverters: 0
+[05/23 04:46:03     29s] List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+[05/23 04:46:03     29s] Total number of identified usable delay cells: 8
+[05/23 04:46:03     29s] List of identified unusable delay cells:
+[05/23 04:46:03     29s] Total number of identified unusable delay cells: 0
+[05/23 04:46:03     29s] 
+[05/23 04:46:03     29s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign End ...
+[05/23 04:46:03     29s] 
+[05/23 04:46:03     29s] TimeStamp Deleting Cell Server Begin ...
+[05/23 04:46:03     29s] 
+[05/23 04:46:03     29s] TimeStamp Deleting Cell Server End ...
+[05/23 04:46:03     29s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1098.1M, current mem=1098.0M)
+[05/23 04:46:03     29s] 
+[05/23 04:46:03     29s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign Begin ...
+[05/23 04:46:03     29s] SBFF Setting to complicate: SMDFFHQX8 complicate code: 30.1
+[05/23 04:46:03     29s] SBFF Setting to complicate: SMDFFHQX4 complicate code: 30.1
+[05/23 04:46:03     29s] SBFF Setting to complicate: SMDFFHQX2 complicate code: 30.1
+[05/23 04:46:03     29s] SBFF Setting to complicate: SMDFFHQX1 complicate code: 30.1
+[05/23 04:46:03     29s] SBFF Setting to complicate: SEDFFTRXL complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: SEDFFTRX4 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: SEDFFTRX2 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: SEDFFTRX1 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: SEDFFHQX8 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: SEDFFHQX4 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: SEDFFHQX2 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: SEDFFHQX1 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: EDFFTRXL complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: EDFFTRX4 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: EDFFTRX2 complicate code: 30.05
+[05/23 04:46:03     29s] SBFF Setting to complicate: EDFFTRX1 complicate code: 30.05
+[05/23 04:46:03     29s] Summary for sequential cells identification: 
+[05/23 04:46:03     29s]   Identified SBFF number: 104
+[05/23 04:46:03     29s]   Identified MBFF number: 0
+[05/23 04:46:03     29s]   Identified SB Latch number: 0
+[05/23 04:46:03     29s]   Identified MB Latch number: 0
+[05/23 04:46:03     29s]   Not identified SBFF number: 16
+[05/23 04:46:03     29s]   Not identified MBFF number: 0
+[05/23 04:46:03     29s]   Not identified SB Latch number: 0
+[05/23 04:46:03     29s]   Not identified MB Latch number: 0
+[05/23 04:46:03     29s]   Number of sequential cells which are not FFs: 32
+[05/23 04:46:03     29s] 
+[05/23 04:46:03     29s] Trim Metal Layers:
+[05/23 04:46:03     29s]  Visiting view : setup_view
+[05/23 04:46:03     29s]    : PowerDomain = none : Weighted F : unweighted  = 37.60 (1.000) with rcCorner = 0
+[05/23 04:46:03     29s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = -1
+[05/23 04:46:03     29s]  Visiting view : hold_view
+[05/23 04:46:03     29s]    : PowerDomain = none : Weighted F : unweighted  = 11.90 (1.000) with rcCorner = 0
+[05/23 04:46:03     29s]    : PowerDomain = none : Weighted F : unweighted  = 5.30 (1.000) with rcCorner = -1
+[05/23 04:46:03     29s] 
+[05/23 04:46:03     29s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign End ...
+[05/23 04:46:03     29s] 
+[05/23 04:46:03     29s] TimeStamp Deleting Cell Server Begin ...
+[05/23 04:46:03     29s] 
+[05/23 04:46:03     29s] TimeStamp Deleting Cell Server End ...
+[05/23 04:46:03     29s] % Begin Load MMMC data post ... (date=05/23 04:46:03, mem=1098.6M)
+[05/23 04:46:03     29s] % End Load MMMC data post ... (date=05/23 04:46:03, total cpu=0:00:00.0, real=0:00:00.0, peak res=1098.7M, current mem=1098.7M)
+[05/23 04:46:03     29s] Reading floorplan file - /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.fp.gz (mem = 1370.9M).
+[05/23 04:46:03     29s] % Begin Load floorplan data ... (date=05/23 04:46:03, mem=1098.8M)
+[05/23 04:46:03     29s] *info: reset 14826 existing net BottomPreferredLayer and AvoidDetour
+[05/23 04:46:03     29s] Deleting old partition specification.
+[05/23 04:46:03     29s] Set FPlanBox to (0 0 482000 474620)
+[05/23 04:46:03     29s] **WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/23 04:46:03     29s] Type 'man IMPFP-3961' for more detail.
+[05/23 04:46:03     29s] **WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/23 04:46:03     29s] Type 'man IMPFP-3961' for more detail.
+[05/23 04:46:03     29s] Start create_tracks
+[05/23 04:46:03     29s]  ... processed partition successfully.
+[05/23 04:46:04     29s] Reading binary special route file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.fp.spr.gz (Created by Innovus v21.18-s099_1 on Sat May 23 03:54:01 2026, version: 1)
+[05/23 04:46:04     29s] Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:01.0, peak res=1099.6M, current mem=1099.6M)
+[05/23 04:46:04     29s] There are 143 nets with weight being set
+[05/23 04:46:04     29s] There are 146 nets with bottomPreferredRoutingLayer being set
+[05/23 04:46:04     29s] There are 143 nets with avoidDetour being set
+[05/23 04:46:04     29s] Extracting standard cell pins and blockage ...... 
+[05/23 04:46:04     29s] Pin and blockage extraction finished
+[05/23 04:46:04     29s] % End Load floorplan data ... (date=05/23 04:46:04, total cpu=0:00:00.1, real=0:00:01.0, peak res=1100.5M, current mem=1100.5M)
+[05/23 04:46:04     29s] Reading congestion map file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.route.congmap.gz ...
+[05/23 04:46:04     29s] % Begin Load SymbolTable ... (date=05/23 04:46:04, mem=1100.8M)
+[05/23 04:46:04     29s] Suppress "**WARN ..." messages.
+[05/23 04:46:04     29s] routingBox: (0 0) (482000 474620)
+[05/23 04:46:04     29s] coreBox:    (20000 20140) (462000 454480)
+[05/23 04:46:04     29s] Un-suppress "**WARN ..." messages.
+[05/23 04:46:04     30s] % End Load SymbolTable ... (date=05/23 04:46:04, total cpu=0:00:00.1, real=0:00:00.0, peak res=1104.2M, current mem=1104.2M)
+[05/23 04:46:04     30s] Loading place ...
+[05/23 04:46:04     30s] % Begin Load placement data ... (date=05/23 04:46:04, mem=1104.2M)
+[05/23 04:46:04     30s] Reading placement file - /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.place.gz.
+[05/23 04:46:04     30s] ** Reading stdCellPlacement_binary (Created by Innovus v21.18-s099_1 on Sat May 23 03:54:02 2026, version# 2) ...
+[05/23 04:46:04     30s] Read Views for adaptive view pruning ...
+[05/23 04:46:04     30s] Read 0 views from Binary DB for adaptive view pruning
+[05/23 04:46:04     30s] *** Checked 2 GNC rules.
+[05/23 04:46:04     30s] *** applyConnectGlobalNets disabled.
+[05/23 04:46:04     30s] *** Completed restorePlace (cpu=0:00:00.1 real=0:00:00.0 mem=1381.9M) ***
+[05/23 04:46:04     30s] Total net length = 2.152e+05 (1.150e+05 1.002e+05) (ext = 1.337e+04)
+[05/23 04:46:04     30s] % End Load placement data ... (date=05/23 04:46:04, total cpu=0:00:00.1, real=0:00:00.0, peak res=1110.1M, current mem=1109.2M)
+[05/23 04:46:04     30s] Reading PG file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.pg.gz, version#2, (Created by Innovus v21.18-s099_1 on       Sat May 23 03:54:01 2026)
+[05/23 04:46:04     30s] *** Completed restorePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=1378.9M) ***
+[05/23 04:46:04     30s] % Begin Load routing data ... (date=05/23 04:46:04, mem=1109.7M)
+[05/23 04:46:04     30s] Reading routing file - /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.route.gz.
+[05/23 04:46:05     30s] Reading Innovus routing data (Created by Innovus v21.18-s099_1 on Sat May 23 03:54:02 2026 Format: 20.1) ...
+[05/23 04:46:05     30s] *** Total 14750 nets are successfully restored.
+[05/23 04:46:05     30s] *** Completed restoreRoute (cpu=0:00:00.1 real=0:00:01.0 mem=1398.9M) ***
+[05/23 04:46:05     30s] % End Load routing data ... (date=05/23 04:46:05, total cpu=0:00:00.2, real=0:00:01.0, peak res=1130.4M, current mem=1129.4M)
+[05/23 04:46:05     30s] TAT_INFO: restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+[05/23 04:46:05     30s] Reading property file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.prop
+[05/23 04:46:05     30s] *** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1402.9M) ***
+[05/23 04:46:06     30s] Reading dirtyarea snapshot file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/gpu.db.da.gz (Create by Innovus v21.18-s099_1 on Sat May 23 03:54:02 2026, version: 4).
+[05/23 04:46:06     30s] Set Default Input Pin Transition as 0.1 ps.
+[05/23 04:46:06     31s] eee: readRCCornerMetaData, file read unsuccessful: /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/extraction/extractionMetaData.gz
+[05/23 04:46:06     31s] Extraction setup Started 
+[05/23 04:46:06     31s] 
+[05/23 04:46:06     31s] Trim Metal Layers:
+[05/23 04:46:06     31s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[05/23 04:46:06     31s] **WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+[05/23 04:46:06     31s] Type 'man IMPEXT-6202' for more detail.
+[05/23 04:46:06     31s] Reading Capacitance Table File /home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl ...
+[05/23 04:46:06     31s] Cap table was created using Encounter 10.10-b056_1.
+[05/23 04:46:06     31s] Process name: cln28hpl_1p10m+alrdl_5x2yu2yz_typical.
+[05/23 04:46:06     31s] Set Shrink Factor to 0.90000
+[05/23 04:46:06     31s] Importing multi-corner RC tables ... 
+[05/23 04:46:06     31s] Summary of Active RC-Corners : 
+[05/23 04:46:06     31s]  
+[05/23 04:46:06     31s]  Analysis View: setup_view
+[05/23 04:46:06     31s]     RC-Corner Name        : typical_rc
+[05/23 04:46:06     31s]     RC-Corner Index       : 0
+[05/23 04:46:06     31s]     RC-Corner Temperature : 25 Celsius
+[05/23 04:46:06     31s]     RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+[05/23 04:46:06     31s]     RC-Corner PreRoute Res Factor         : 1
+[05/23 04:46:06     31s]     RC-Corner PreRoute Cap Factor         : 1
+[05/23 04:46:06     31s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/23 04:46:06     31s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/23 04:46:06     31s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/23 04:46:06     31s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/23 04:46:06     31s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/23 04:46:06     31s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[05/23 04:46:06     31s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[05/23 04:46:06     31s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/23 04:46:06     31s]     RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+[05/23 04:46:06     31s]  
+[05/23 04:46:06     31s]  Analysis View: hold_view
+[05/23 04:46:06     31s]     RC-Corner Name        : typical_rc
+[05/23 04:46:06     31s]     RC-Corner Index       : 0
+[05/23 04:46:06     31s]     RC-Corner Temperature : 25 Celsius
+[05/23 04:46:06     31s]     RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+[05/23 04:46:06     31s]     RC-Corner PreRoute Res Factor         : 1
+[05/23 04:46:06     31s]     RC-Corner PreRoute Cap Factor         : 1
+[05/23 04:46:06     31s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/23 04:46:06     31s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/23 04:46:06     31s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/23 04:46:06     31s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/23 04:46:06     31s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/23 04:46:06     31s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[05/23 04:46:06     31s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[05/23 04:46:06     31s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/23 04:46:06     31s]     RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/final_for_LVS_test1.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+[05/23 04:46:06     31s] 
+[05/23 04:46:06     31s] Trim Metal Layers:
+[05/23 04:46:06     31s] LayerId::1 widthSet size::4
+[05/23 04:46:06     31s] LayerId::2 widthSet size::4
+[05/23 04:46:06     31s] LayerId::3 widthSet size::4
+[05/23 04:46:06     31s] LayerId::4 widthSet size::4
+[05/23 04:46:06     31s] LayerId::5 widthSet size::4
+[05/23 04:46:06     31s] LayerId::6 widthSet size::4
+[05/23 04:46:06     31s] LayerId::7 widthSet size::5
+[05/23 04:46:06     31s] LayerId::8 widthSet size::5
+[05/23 04:46:06     31s] LayerId::9 widthSet size::5
+[05/23 04:46:06     31s] LayerId::10 widthSet size::4
+[05/23 04:46:06     31s] LayerId::11 widthSet size::3
+[05/23 04:46:06     31s] eee: pegSigSF::1.070000
+[05/23 04:46:06     31s] Initializing multi-corner capacitance tables ... 
+[05/23 04:46:06     31s] Initializing multi-corner resistance tables ...
+[05/23 04:46:06     31s] Creating RPSQ from WeeR and WRes ...
+[05/23 04:46:07     31s] eee: l::1 avDens::0.113528 usedTrk::1988.932459 availTrk::17519.387932 sigTrk::1988.932459
+[05/23 04:46:07     31s] eee: l::2 avDens::0.195834 usedTrk::3444.150528 availTrk::17587.102268 sigTrk::3444.150528
+[05/23 04:46:07     31s] eee: l::3 avDens::0.241090 usedTrk::4505.815591 availTrk::18689.387932 sigTrk::4505.815591
+[05/23 04:46:07     31s] eee: l::4 avDens::0.183567 usedTrk::3120.354182 availTrk::16998.414720 sigTrk::3120.354182
+[05/23 04:46:07     31s] eee: l::5 avDens::0.159210 usedTrk::2495.073327 availTrk::15671.598730 sigTrk::2495.073327
+[05/23 04:46:07     31s] eee: l::6 avDens::0.084634 usedTrk::1099.502165 availTrk::12991.274969 sigTrk::1099.502165
+[05/23 04:46:07     31s] eee: l::7 avDens::0.045422 usedTrk::480.987547 availTrk::10589.387932 sigTrk::480.987547
+[05/23 04:46:07     31s] eee: l::8 avDens::0.022815 usedTrk::104.072485 availTrk::4561.578122 sigTrk::104.072485
+[05/23 04:46:07     31s] eee: l::9 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 04:46:07     31s] eee: l::10 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 04:46:07     31s] eee: l::11 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 04:46:07     31s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.275012 uaWl=0.998831 uaWlH=0.467536 aWlH=0.000867 lMod=0 pMax=0.863100 pMod=80 wcR=0.772700 newSi=0.001600 wHLS=1.933434 siPrev=0 viaL=0.000000 crit=0.001122 shortMod=0.005611 fMod=0.000281 
+[05/23 04:46:07     31s] Start generating vias ..
+[05/23 04:46:07     31s] #create default rule from bind_ndr_rule rule=0x7f674e4883d0 0x7f672288a568
+[05/23 04:46:07     31s] ### import design signature (1): route=1 fixed_route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1 via=610195162 routing_via=1
+[05/23 04:46:07     31s] #Skip building auto via since it is not turned on.
+[05/23 04:46:07     31s] Extracting standard cell pins and blockage ...... 
+[05/23 04:46:07     31s] Pin and blockage extraction finished
+[05/23 04:46:07     31s] Via generation completed.
+[05/23 04:46:07     31s] % Begin Load power constraints ... (date=05/23 04:46:07, mem=1145.1M)
+[05/23 04:46:07     31s] % End Load power constraints ... (date=05/23 04:46:07, total cpu=0:00:00.0, real=0:00:00.0, peak res=1151.6M, current mem=1151.6M)
+[05/23 04:46:07     31s] % Begin load AAE data ... (date=05/23 04:46:07, mem=1196.9M)
+[05/23 04:46:07     32s] AAE DB initialization (MEM=1507.93 CPU=0:00:00.0 REAL=0:00:00.0) 
+[05/23 04:46:07     32s] % End load AAE data ... (date=05/23 04:46:07, total cpu=0:00:00.6, real=0:00:00.0, peak res=1205.1M, current mem=1205.1M)
+[05/23 04:46:07     32s] Restoring CCOpt config...
+[05/23 04:46:07     32s] 
+[05/23 04:46:07     32s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign Begin ...
+[05/23 04:46:07     32s] SBFF Setting to complicate: SMDFFHQX8 complicate code: 30.1
+[05/23 04:46:07     32s] SBFF Setting to complicate: SMDFFHQX4 complicate code: 30.1
+[05/23 04:46:07     32s] SBFF Setting to complicate: SMDFFHQX2 complicate code: 30.1
+[05/23 04:46:07     32s] SBFF Setting to complicate: SMDFFHQX1 complicate code: 30.1
+[05/23 04:46:07     32s] SBFF Setting to complicate: SEDFFTRXL complicate code: 30.05
+[05/23 04:46:07     32s] SBFF Setting to complicate: SEDFFTRX4 complicate code: 30.05
+[05/23 04:46:07     32s] SBFF Setting to complicate: SEDFFTRX2 complicate code: 30.05
+[05/23 04:46:07     32s] SBFF Setting to complicate: SEDFFTRX1 complicate code: 30.05
+[05/23 04:46:07     32s] SBFF Setting to complicate: SEDFFHQX8 complicate code: 30.05
+[05/23 04:46:07     32s] SBFF Setting to complicate: SEDFFHQX4 complicate code: 30.05
+[05/23 04:46:07     32s] SBFF Setting to complicate: SEDFFHQX2 complicate code: 30.05
+[05/23 04:46:07     32s] SBFF Setting to complicate: SEDFFHQX1 complicate code: 30.05
+[05/23 04:46:07     32s] SBFF Setting to complicate: EDFFTRXL complicate code: 30.05
+[05/23 04:46:07     32s] SBFF Setting to complicate: EDFFTRX4 complicate code: 30.05
+[05/23 04:46:07     32s] SBFF Setting to complicate: EDFFTRX2 complicate code: 30.05
+[05/23 04:46:07     32s] SBFF Setting to complicate: EDFFTRX1 complicate code: 30.05
+[05/23 04:46:07     32s] Summary for sequential cells identification: 
+[05/23 04:46:07     32s]   Identified SBFF number: 104
+[05/23 04:46:07     32s]   Identified MBFF number: 0
+[05/23 04:46:07     32s]   Identified SB Latch number: 0
+[05/23 04:46:07     32s]   Identified MB Latch number: 0
+[05/23 04:46:07     32s]   Not identified SBFF number: 16
+[05/23 04:46:07     32s]   Not identified MBFF number: 0
+[05/23 04:46:07     32s]   Not identified SB Latch number: 0
+[05/23 04:46:07     32s]   Not identified MB Latch number: 0
+[05/23 04:46:07     32s]   Number of sequential cells which are not FFs: 32
+[05/23 04:46:07     32s]  Visiting view : setup_view
+[05/23 04:46:07     32s]    : PowerDomain = none : Weighted F : unweighted  = 36.80 (1.000) with rcCorner = 0
+[05/23 04:46:07     32s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = -1
+[05/23 04:46:07     32s]  Visiting view : hold_view
+[05/23 04:46:07     32s]    : PowerDomain = none : Weighted F : unweighted  = 11.90 (1.000) with rcCorner = 0
+[05/23 04:46:07     32s]    : PowerDomain = none : Weighted F : unweighted  = 5.30 (1.000) with rcCorner = -1
+[05/23 04:46:07     32s] 
+[05/23 04:46:07     32s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign End ...
+[05/23 04:46:07     32s]   Extracting original clock gating for clk...
+[05/23 04:46:08     32s]     clock_tree clk contains 1827 sinks and 0 clock gates.
+[05/23 04:46:08     32s]   Extracting original clock gating for clk done.
+[05/23 04:46:08     32s]   The skew group clk/func_mode was created. It contains 1827 sinks and 1 sources.
+[05/23 04:46:08     32s]   The skew group clk/func_mode was created. It contains 1827 sinks and 1 sources.
+[05/23 04:46:08     32s] Restoring CCOpt config done.
+[05/23 04:46:08     32s] 
+[05/23 04:46:08     32s] TimeStamp Deleting Cell Server Begin ...
+[05/23 04:46:08     32s] 
+[05/23 04:46:08     32s] TimeStamp Deleting Cell Server End ...
+[05/23 04:46:08     32s] 
+[05/23 04:46:08     32s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign Begin ...
+[05/23 04:46:08     32s] SBFF Setting to complicate: SMDFFHQX8 complicate code: 30.1
+[05/23 04:46:08     32s] SBFF Setting to complicate: SMDFFHQX4 complicate code: 30.1
+[05/23 04:46:08     32s] SBFF Setting to complicate: SMDFFHQX2 complicate code: 30.1
+[05/23 04:46:08     32s] SBFF Setting to complicate: SMDFFHQX1 complicate code: 30.1
+[05/23 04:46:08     32s] SBFF Setting to complicate: SEDFFTRXL complicate code: 30.05
+[05/23 04:46:08     32s] SBFF Setting to complicate: SEDFFTRX4 complicate code: 30.05
+[05/23 04:46:08     32s] SBFF Setting to complicate: SEDFFTRX2 complicate code: 30.05
+[05/23 04:46:08     32s] SBFF Setting to complicate: SEDFFTRX1 complicate code: 30.05
+[05/23 04:46:08     32s] SBFF Setting to complicate: SEDFFHQX8 complicate code: 30.05
+[05/23 04:46:08     32s] SBFF Setting to complicate: SEDFFHQX4 complicate code: 30.05
+[05/23 04:46:08     32s] SBFF Setting to complicate: SEDFFHQX2 complicate code: 30.05
+[05/23 04:46:08     32s] SBFF Setting to complicate: SEDFFHQX1 complicate code: 30.05
+[05/23 04:46:08     32s] SBFF Setting to complicate: EDFFTRXL complicate code: 30.05
+[05/23 04:46:08     32s] SBFF Setting to complicate: EDFFTRX4 complicate code: 30.05
+[05/23 04:46:08     32s] SBFF Setting to complicate: EDFFTRX2 complicate code: 30.05
+[05/23 04:46:08     32s] SBFF Setting to complicate: EDFFTRX1 complicate code: 30.05
+[05/23 04:46:08     32s] Summary for sequential cells identification: 
+[05/23 04:46:08     32s]   Identified SBFF number: 104
+[05/23 04:46:08     32s]   Identified MBFF number: 0
+[05/23 04:46:08     32s]   Identified SB Latch number: 0
+[05/23 04:46:08     32s]   Identified MB Latch number: 0
+[05/23 04:46:08     32s]   Not identified SBFF number: 16
+[05/23 04:46:08     32s]   Not identified MBFF number: 0
+[05/23 04:46:08     32s]   Not identified SB Latch number: 0
+[05/23 04:46:08     32s]   Not identified MB Latch number: 0
+[05/23 04:46:08     32s]   Number of sequential cells which are not FFs: 32
+[05/23 04:46:08     32s] Total number of combinational cells: 318
+[05/23 04:46:08     32s] Total number of sequential cells: 152
+[05/23 04:46:08     32s] Total number of tristate cells: 10
+[05/23 04:46:08     32s] Total number of level shifter cells: 0
+[05/23 04:46:08     32s] Total number of power gating cells: 0
+[05/23 04:46:08     32s] Total number of isolation cells: 0
+[05/23 04:46:08     32s] Total number of power switch cells: 0
+[05/23 04:46:08     32s] Total number of pulse generator cells: 0
+[05/23 04:46:08     32s] Total number of always on buffers: 0
+[05/23 04:46:08     32s] Total number of retention cells: 0
+[05/23 04:46:08     32s] Total number of physical cells: 0
+[05/23 04:46:08     32s] List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+[05/23 04:46:08     32s] Total number of usable buffers: 16
+[05/23 04:46:08     32s] List of unusable buffers:
+[05/23 04:46:08     32s] Total number of unusable buffers: 0
+[05/23 04:46:08     32s] List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+[05/23 04:46:08     32s] Total number of usable inverters: 19
+[05/23 04:46:08     32s] List of unusable inverters:
+[05/23 04:46:08     32s] Total number of unusable inverters: 0
+[05/23 04:46:08     32s] List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+[05/23 04:46:08     32s] Total number of identified usable delay cells: 8
+[05/23 04:46:08     32s] List of identified unusable delay cells:
+[05/23 04:46:08     32s] Total number of identified unusable delay cells: 0
+[05/23 04:46:08     32s] 
+[05/23 04:46:08     32s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign End ...
+[05/23 04:46:08     32s] 
+[05/23 04:46:08     32s] TimeStamp Deleting Cell Server Begin ...
+[05/23 04:46:08     32s] 
+[05/23 04:46:08     32s] TimeStamp Deleting Cell Server End ...
+[05/23 04:46:08     32s] **WARN: (IMPCTE-107):	The following globals have been obsoleted since version . They will be removed in the next release. 
+[05/23 04:46:08     32s] timing_enable_separate_device_slew_effect_sensitivities
+[05/23 04:46:08     32s] #% End load design ... (date=05/23 04:46:08, total cpu=0:00:05.8, real=0:00:09.0, peak res=1227.8M, current mem=1212.8M)
+[05/23 04:46:08     32s] 
+[05/23 04:46:08     32s] *** Summary of all messages that are not suppressed in this session:
+[05/23 04:46:08     32s] Severity  ID               Count  Summary                                  
+[05/23 04:46:08     32s] WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[05/23 04:46:08     32s] WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+[05/23 04:46:08     32s] WARNING   IMPPTN-867           2  Found use of %s. This will continue to w...
+[05/23 04:46:08     32s] WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+[05/23 04:46:08     32s] WARNING   IMPOPT-3602          4  The specified path group name %s is not ...
+[05/23 04:46:08     32s] WARNING   NRIF-90              1  Option setNanoRouteMode -routeBottomRout...
+[05/23 04:46:08     32s] WARNING   NRIF-91              1  Option setNanoRouteMode -routeTopRouting...
+[05/23 04:46:08     32s] WARNING   IMPCTE-107           1  The following globals have been obsolete...
+[05/23 04:46:08     32s] WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+[05/23 04:46:08     32s] WARNING   IMPPSP-1003          2  Found use of '%s'. This will continue to...
+[05/23 04:46:08     32s] WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+[05/23 04:46:08     32s] *** Message Summary: 20 warning(s), 0 error(s)
+[05/23 04:46:08     32s] 
+[05/23 04:47:29     45s] <CMD> streamOut ./gpu_final2.gds -mapFile ./streamOut.map -units 1000 -mode ALL -libName gpu
+[05/23 04:47:29     45s] Parse flat map file...
+[05/23 04:47:29     45s] Writing GDSII file ...
+[05/23 04:47:29     45s] 	****** db unit per micron = 2000 ******
+[05/23 04:47:29     45s] 	****** output gds2 file unit per micron = 1000 ******
+[05/23 04:47:29     45s] 	****** unit scaling factor = 0.5 ******
+[05/23 04:47:29     45s] **WARN: (IMPOGDS-250):	Specified unit is smaller than the one in db. You may have rounding problems
+[05/23 04:47:29     45s] Output for instance
+[05/23 04:47:29     45s] Output for bump
+[05/23 04:47:29     45s] Output for physical terminals
+[05/23 04:47:29     45s] Output for logical terminals
+[05/23 04:47:29     45s] Output for regular nets
+[05/23 04:47:29     45s] Output for special nets and metal fills
+[05/23 04:47:29     45s] Output for via structure generation total number 69
+[05/23 04:47:29     45s] Statistics for GDS generated (version 3)
+[05/23 04:47:29     45s] ----------------------------------------
+[05/23 04:47:29     45s] Stream Out Layer Mapping Information:
+[05/23 04:47:29     45s] GDS Layer Number          GDS Layer Name
+[05/23 04:47:29     45s] ----------------------------------------
+[05/23 04:47:29     45s]     233                             COMP
+[05/23 04:47:29     45s]     234                          DIEAREA
+[05/23 04:47:29     45s]     223                          Metal11
+[05/23 04:47:29     45s]     221                          Metal11
+[05/23 04:47:29     45s]     220                          Metal11
+[05/23 04:47:29     45s]     219                          Metal11
+[05/23 04:47:29     45s]     218                          Metal11
+[05/23 04:47:29     45s]     217                            Via10
+[05/23 04:47:29     45s]     216                            Via10
+[05/23 04:47:29     45s]     212                            Via10
+[05/23 04:47:29     45s]     202                          Metal10
+[05/23 04:47:29     45s]     200                          Metal10
+[05/23 04:47:29     45s]     199                          Metal10
+[05/23 04:47:29     45s]     198                          Metal10
+[05/23 04:47:29     45s]     197                          Metal10
+[05/23 04:47:29     45s]     196                             Via9
+[05/23 04:47:29     45s]     195                             Via9
+[05/23 04:47:29     45s]     191                             Via9
+[05/23 04:47:29     45s]     181                           Metal9
+[05/23 04:47:29     45s]     179                           Metal9
+[05/23 04:47:29     45s]     178                           Metal9
+[05/23 04:47:29     45s]     177                           Metal9
+[05/23 04:47:29     45s]     176                           Metal9
+[05/23 04:47:29     45s]     175                             Via8
+[05/23 04:47:29     45s]     174                             Via8
+[05/23 04:47:29     45s]     170                             Via8
+[05/23 04:47:29     45s]     160                           Metal8
+[05/23 04:47:29     45s]     158                           Metal8
+[05/23 04:47:29     45s]     157                           Metal8
+[05/23 04:47:29     45s]     156                           Metal8
+[05/23 04:47:29     45s]     155                           Metal8
+[05/23 04:47:29     45s]     154                             Via7
+[05/23 04:47:29     45s]     153                             Via7
+[05/23 04:47:29     45s]     149                             Via7
+[05/23 04:47:29     45s]     139                           Metal7
+[05/23 04:47:29     45s]     137                           Metal7
+[05/23 04:47:29     45s]     136                           Metal7
+[05/23 04:47:29     45s]     135                           Metal7
+[05/23 04:47:29     45s]     134                           Metal7
+[05/23 04:47:29     45s]     133                             Via6
+[05/23 04:47:29     45s]     132                             Via6
+[05/23 04:47:29     45s]     131                             Via6
+[05/23 04:47:29     45s]     130                             Via6
+[05/23 04:47:29     45s]     129                             Via6
+[05/23 04:47:29     45s]     128                             Via6
+[05/23 04:47:29     45s]     127                             Via6
+[05/23 04:47:29     45s]     122                           Metal6
+[05/23 04:47:29     45s]     121                           Metal6
+[05/23 04:47:29     45s]     120                           Metal6
+[05/23 04:47:29     45s]     119                           Metal6
+[05/23 04:47:29     45s]     118                           Metal6
+[05/23 04:47:29     45s]     53                            Metal3
+[05/23 04:47:29     45s]     52                            Metal3
+[05/23 04:47:29     45s]     185                           Metal9
+[05/23 04:47:29     45s]     48                              Via2
+[05/23 04:47:29     45s]     29                            Metal2
+[05/23 04:47:29     45s]     180                           Metal9
+[05/23 04:47:29     45s]     47                              Via2
+[05/23 04:47:29     45s]     182                           Metal9
+[05/23 04:47:29     45s]     44                              Via2
+[05/23 04:47:29     45s]     43                              Via2
+[05/23 04:47:29     45s]     172                             Via8
+[05/23 04:47:29     45s]     38                            Metal2
+[05/23 04:47:29     45s]     95                            Metal5
+[05/23 04:47:29     45s]     36                            Metal2
+[05/23 04:47:29     45s]     93                            Metal5
+[05/23 04:47:29     45s]     112                             Via5
+[05/23 04:47:29     45s]     194                             Via9
+[05/23 04:47:29     45s]     55                            Metal3
+[05/23 04:47:29     45s]     113                           Metal6
+[05/23 04:47:29     45s]     32                            Metal2
+[05/23 04:47:29     45s]     54                            Metal3
+[05/23 04:47:29     45s]     31                            Metal2
+[05/23 04:47:29     45s]     107                             Via5
+[05/23 04:47:29     45s]     30                            Metal2
+[05/23 04:47:29     45s]     49                              Via2
+[05/23 04:47:29     45s]     106                             Via5
+[05/23 04:47:29     45s]     33                            Metal2
+[05/23 04:47:29     45s]     109                             Via5
+[05/23 04:47:29     45s]     10                            Metal1
+[05/23 04:47:29     45s]     224                          Metal11
+[05/23 04:47:29     45s]     86                              Via4
+[05/23 04:47:29     45s]     50                            Metal3
+[05/23 04:47:29     45s]     206                          Metal10
+[05/23 04:47:29     45s]     69                              Via3
+[05/23 04:47:29     45s]     143                           Metal7
+[05/23 04:47:29     45s]     6                               Cont
+[05/23 04:47:29     45s]     169                             Via8
+[05/23 04:47:29     45s]     35                            Metal2
+[05/23 04:47:29     45s]     8                             Metal1
+[05/23 04:47:29     45s]     164                           Metal8
+[05/23 04:47:29     45s]     27                              Via1
+[05/23 04:47:29     45s]     141                           Metal7
+[05/23 04:47:29     45s]     3                               Cont
+[05/23 04:47:29     45s]     51                            Metal3
+[05/23 04:47:29     45s]     70                              Via3
+[05/23 04:47:29     45s]     7                               Cont
+[05/23 04:47:29     45s]     64                              Via3
+[05/23 04:47:29     45s]     173                             Via8
+[05/23 04:47:29     45s]     34                            Metal2
+[05/23 04:47:29     45s]     92                            Metal5
+[05/23 04:47:29     45s]     111                             Via5
+[05/23 04:47:29     45s]     11                            Metal1
+[05/23 04:47:29     45s]     142                           Metal7
+[05/23 04:47:29     45s]     4                               Cont
+[05/23 04:47:29     45s]     9                             Metal1
+[05/23 04:47:29     45s]     28                              Via1
+[05/23 04:47:29     45s]     85                              Via4
+[05/23 04:47:29     45s]     138                           Metal7
+[05/23 04:47:29     45s]     5                               Cont
+[05/23 04:47:29     45s]     12                            Metal1
+[05/23 04:47:29     45s]     226                          Metal11
+[05/23 04:47:29     45s]     88                              Via4
+[05/23 04:47:29     45s]     183                           Metal9
+[05/23 04:47:29     45s]     45                              Via2
+[05/23 04:47:29     45s]     22                              Via1
+[05/23 04:47:29     45s]     152                             Via7
+[05/23 04:47:29     45s]     13                            Metal1
+[05/23 04:47:29     45s]     71                            Metal4
+[05/23 04:47:29     45s]     227                          Metal11
+[05/23 04:47:29     45s]     90                              Via4
+[05/23 04:47:29     45s]     184                           Metal9
+[05/23 04:47:29     45s]     46                              Via2
+[05/23 04:47:29     45s]     161                           Metal8
+[05/23 04:47:29     45s]     23                              Via1
+[05/23 04:47:29     45s]     171                             Via8
+[05/23 04:47:29     45s]     37                            Metal2
+[05/23 04:47:29     45s]     94                            Metal5
+[05/23 04:47:29     45s]     148                             Via7
+[05/23 04:47:29     45s]     14                            Metal1
+[05/23 04:47:29     45s]     15                            Metal1
+[05/23 04:47:29     45s]     72                            Metal4
+[05/23 04:47:29     45s]     91                              Via4
+[05/23 04:47:29     45s]     150                             Via7
+[05/23 04:47:29     45s]     16                            Metal1
+[05/23 04:47:29     45s]     73                            Metal4
+[05/23 04:47:29     45s]     159                           Metal8
+[05/23 04:47:29     45s]     26                              Via1
+[05/23 04:47:29     45s]     151                             Via7
+[05/23 04:47:29     45s]     17                            Metal1
+[05/23 04:47:29     45s]     74                            Metal4
+[05/23 04:47:29     45s]     1                               Cont
+[05/23 04:47:29     45s]     162                           Metal8
+[05/23 04:47:29     45s]     24                              Via1
+[05/23 04:47:29     45s]     140                           Metal7
+[05/23 04:47:29     45s]     2                               Cont
+[05/23 04:47:29     45s]     163                           Metal8
+[05/23 04:47:29     45s]     25                              Via1
+[05/23 04:47:29     45s]     190                             Via9
+[05/23 04:47:29     45s]     56                            Metal3
+[05/23 04:47:29     45s]     57                            Metal3
+[05/23 04:47:29     45s]     114                           Metal6
+[05/23 04:47:29     45s]     192                             Via9
+[05/23 04:47:29     45s]     58                            Metal3
+[05/23 04:47:29     45s]     115                           Metal6
+[05/23 04:47:29     45s]     193                             Via9
+[05/23 04:47:29     45s]     59                            Metal3
+[05/23 04:47:29     45s]     116                           Metal6
+[05/23 04:47:29     45s]     203                          Metal10
+[05/23 04:47:29     45s]     65                              Via3
+[05/23 04:47:29     45s]     204                          Metal10
+[05/23 04:47:29     45s]     66                              Via3
+[05/23 04:47:29     45s]     205                          Metal10
+[05/23 04:47:29     45s]     67                              Via3
+[05/23 04:47:29     45s]     201                          Metal10
+[05/23 04:47:29     45s]     68                              Via3
+[05/23 04:47:29     45s]     75                            Metal4
+[05/23 04:47:29     45s]     215                            Via10
+[05/23 04:47:29     45s]     76                            Metal4
+[05/23 04:47:29     45s]     211                            Via10
+[05/23 04:47:29     45s]     77                            Metal4
+[05/23 04:47:29     45s]     78                            Metal4
+[05/23 04:47:29     45s]     213                            Via10
+[05/23 04:47:29     45s]     79                            Metal4
+[05/23 04:47:29     45s]     214                            Via10
+[05/23 04:47:29     45s]     80                            Metal4
+[05/23 04:47:29     45s]     225                          Metal11
+[05/23 04:47:29     45s]     87                              Via4
+[05/23 04:47:29     45s]     222                          Metal11
+[05/23 04:47:29     45s]     89                              Via4
+[05/23 04:47:29     45s]     96                            Metal5
+[05/23 04:47:29     45s]     97                            Metal5
+[05/23 04:47:29     45s]     98                            Metal5
+[05/23 04:47:29     45s]     99                            Metal5
+[05/23 04:47:29     45s]     100                           Metal5
+[05/23 04:47:29     45s]     101                           Metal5
+[05/23 04:47:29     45s]     108                             Via5
+[05/23 04:47:29     45s]     110                             Via5
+[05/23 04:47:29     45s]     117                           Metal6
+[05/23 04:47:29     45s]     231                          Metal11
+[05/23 04:47:29     45s]     230                          Metal11
+[05/23 04:47:29     45s]     229                          Metal11
+[05/23 04:47:29     45s]     228                          Metal11
+[05/23 04:47:29     45s]     210                          Metal10
+[05/23 04:47:29     45s]     209                          Metal10
+[05/23 04:47:29     45s]     208                          Metal10
+[05/23 04:47:29     45s]     207                          Metal10
+[05/23 04:47:29     45s]     189                           Metal9
+[05/23 04:47:29     45s]     188                           Metal9
+[05/23 04:47:29     45s]     187                           Metal9
+[05/23 04:47:29     45s]     186                           Metal9
+[05/23 04:47:29     45s]     168                           Metal8
+[05/23 04:47:29     45s]     167                           Metal8
+[05/23 04:47:29     45s]     166                           Metal8
+[05/23 04:47:29     45s]     165                           Metal8
+[05/23 04:47:29     45s]     147                           Metal7
+[05/23 04:47:29     45s]     146                           Metal7
+[05/23 04:47:29     45s]     145                           Metal7
+[05/23 04:47:29     45s]     144                           Metal7
+[05/23 04:47:29     45s]     63                            Metal3
+[05/23 04:47:29     45s]     62                            Metal3
+[05/23 04:47:29     45s]     39                            Metal2
+[05/23 04:47:29     45s]     105                           Metal5
+[05/23 04:47:29     45s]     103                           Metal5
+[05/23 04:47:29     45s]     123                           Metal6
+[05/23 04:47:29     45s]     42                            Metal2
+[05/23 04:47:29     45s]     41                            Metal2
+[05/23 04:47:29     45s]     40                            Metal2
+[05/23 04:47:29     45s]     20                            Metal1
+[05/23 04:47:29     45s]     60                            Metal3
+[05/23 04:47:29     45s]     18                            Metal1
+[05/23 04:47:29     45s]     61                            Metal3
+[05/23 04:47:29     45s]     102                           Metal5
+[05/23 04:47:29     45s]     21                            Metal1
+[05/23 04:47:29     45s]     19                            Metal1
+[05/23 04:47:29     45s]     81                            Metal4
+[05/23 04:47:29     45s]     104                           Metal5
+[05/23 04:47:29     45s]     82                            Metal4
+[05/23 04:47:29     45s]     83                            Metal4
+[05/23 04:47:29     45s]     84                            Metal4
+[05/23 04:47:29     45s]     124                           Metal6
+[05/23 04:47:29     45s]     125                           Metal6
+[05/23 04:47:29     45s]     126                           Metal6
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] Stream Out Information Processed for GDS version 3:
+[05/23 04:47:29     45s] Units: 1000 DBU
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] Object                             Count
+[05/23 04:47:29     45s] ----------------------------------------
+[05/23 04:47:29     45s] Instances                          21462
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] Ports/Pins                           183
+[05/23 04:47:29     45s]     metal layer Metal2                39
+[05/23 04:47:29     45s]     metal layer Metal3                73
+[05/23 04:47:29     45s]     metal layer Metal4                43
+[05/23 04:47:29     45s]     metal layer Metal5                17
+[05/23 04:47:29     45s]     metal layer Metal6                 5
+[05/23 04:47:29     45s]     metal layer Metal7                 6
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] Nets                              166856
+[05/23 04:47:29     45s]     metal layer Metal1              6792
+[05/23 04:47:29     45s]     metal layer Metal2             75575
+[05/23 04:47:29     45s]     metal layer Metal3             46491
+[05/23 04:47:29     45s]     metal layer Metal4             22688
+[05/23 04:47:29     45s]     metal layer Metal5             11498
+[05/23 04:47:29     45s]     metal layer Metal6              3082
+[05/23 04:47:29     45s]     metal layer Metal7               647
+[05/23 04:47:29     45s]     metal layer Metal8                83
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s]     Via Instances                 110307
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] Special Nets                         396
+[05/23 04:47:29     45s]     metal layer Metal1               378
+[05/23 04:47:29     45s]     metal layer Metal6                10
+[05/23 04:47:29     45s]     metal layer Metal7                 4
+[05/23 04:47:29     45s]     metal layer Metal8                 4
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s]     Via Instances                   4942
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] Metal Fills                            0
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s]     Via Instances                      0
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] Metal FillOPCs                         0
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s]     Via Instances                      0
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] Metal FillDRCs                         0
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s]     Via Instances                      0
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] Text                               14933
+[05/23 04:47:29     45s]     metal layer Metal1               962
+[05/23 04:47:29     45s]     metal layer Metal2              9777
+[05/23 04:47:29     45s]     metal layer Metal3              3353
+[05/23 04:47:29     45s]     metal layer Metal4               607
+[05/23 04:47:29     45s]     metal layer Metal5               152
+[05/23 04:47:29     45s]     metal layer Metal6                57
+[05/23 04:47:29     45s]     metal layer Metal7                23
+[05/23 04:47:29     45s]     metal layer Metal8                 2
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] Blockages                              0
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] Custom Text                            0
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] Custom Box                             0
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] Trim Metal                             0
+[05/23 04:47:29     45s] 
+[05/23 04:47:29     45s] ######Streamout is finished!
+[05/23 04:50:41     82s] <CMD> extractRC -outfile ./outputs/gpu2.spef
+[05/23 04:50:41     82s] Extraction called for design 'gpu' of instances=21462 and nets=14826 using extraction engine 'postRoute' at effort level 'low' .
+[05/23 04:50:41     82s] **WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+[05/23 04:50:41     82s] Type 'man IMPEXT-3530' for more detail.
+[05/23 04:50:41     82s] PostRoute (effortLevel low) RC Extraction called for design gpu.
+[05/23 04:50:41     82s] RC Extraction called in multi-corner(1) mode.
+[05/23 04:50:41     82s] Process corner(s) are loaded.
+[05/23 04:50:41     82s]  Corner: typical_rc
+[05/23 04:50:41     82s] Metal density calculation for erosion effect completed (CPU=0:00:00.2  MEM=1943.94M)
+[05/23 04:50:41     82s] extractDetailRC Option : -outfile /tmp/innovus_temp_192794_vlsi_user_77_DuFyZa/gpu_192794_VqfbpK.rcdb.d  -extended
+[05/23 04:50:41     82s] RC Mode: PostRoute -effortLevel low [Extended CapTable, RC Table Resistances]
+[05/23 04:50:41     82s]       RC Corner Indexes            0   
+[05/23 04:50:41     82s] Capacitance Scaling Factor   : 1.00000 
+[05/23 04:50:41     82s] Coupling Cap. Scaling Factor : 1.00000 
+[05/23 04:50:41     82s] Resistance Scaling Factor    : 1.00000 
+[05/23 04:50:41     82s] Clock Cap. Scaling Factor    : 1.00000 
+[05/23 04:50:41     82s] Clock Res. Scaling Factor    : 1.00000 
+[05/23 04:50:41     82s] Shrink Factor                : 0.90000
+[05/23 04:50:41     82s] 
+[05/23 04:50:41     82s] Trim Metal Layers:
+[05/23 04:50:41     82s] LayerId::1 widthSet size::4
+[05/23 04:50:41     82s] LayerId::2 widthSet size::4
+[05/23 04:50:41     82s] LayerId::3 widthSet size::4
+[05/23 04:50:41     82s] LayerId::4 widthSet size::4
+[05/23 04:50:41     82s] LayerId::5 widthSet size::4
+[05/23 04:50:41     82s] LayerId::6 widthSet size::4
+[05/23 04:50:41     82s] LayerId::7 widthSet size::5
+[05/23 04:50:41     82s] LayerId::8 widthSet size::5
+[05/23 04:50:41     82s] LayerId::9 widthSet size::5
+[05/23 04:50:41     82s] LayerId::10 widthSet size::4
+[05/23 04:50:41     82s] LayerId::11 widthSet size::3
+[05/23 04:50:41     82s] eee: pegSigSF::1.070000
+[05/23 04:50:41     82s] Initializing multi-corner capacitance tables ... 
+[05/23 04:50:41     82s] Initializing multi-corner resistance tables ...
+[05/23 04:50:41     82s] Creating RPSQ from WeeR and WRes ...
+[05/23 04:50:41     82s] eee: l::1 avDens::0.113528 usedTrk::1988.932459 availTrk::17519.387932 sigTrk::1988.932459
+[05/23 04:50:41     82s] eee: l::2 avDens::0.195834 usedTrk::3444.150528 availTrk::17587.102268 sigTrk::3444.150528
+[05/23 04:50:41     82s] eee: l::3 avDens::0.241090 usedTrk::4505.815591 availTrk::18689.387932 sigTrk::4505.815591
+[05/23 04:50:41     82s] eee: l::4 avDens::0.183567 usedTrk::3120.354182 availTrk::16998.414720 sigTrk::3120.354182
+[05/23 04:50:41     82s] eee: l::5 avDens::0.159210 usedTrk::2495.073327 availTrk::15671.598730 sigTrk::2495.073327
+[05/23 04:50:41     82s] eee: l::6 avDens::0.084634 usedTrk::1099.502165 availTrk::12991.274969 sigTrk::1099.502165
+[05/23 04:50:41     82s] eee: l::7 avDens::0.045422 usedTrk::480.987547 availTrk::10589.387932 sigTrk::480.987547
+[05/23 04:50:41     82s] eee: l::8 avDens::0.022815 usedTrk::104.072485 availTrk::4561.578122 sigTrk::104.072485
+[05/23 04:50:41     82s] eee: l::9 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 04:50:41     82s] eee: l::10 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 04:50:41     82s] eee: l::11 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 04:50:41     82s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.275012 uaWl=0.998831 uaWlH=0.467536 aWlH=0.000867 lMod=0 pMax=0.863100 pMod=80 wcR=0.772700 newSi=0.001600 wHLS=1.933434 siPrev=0 viaL=0.000000 crit=0.001122 shortMod=0.005611 fMod=0.000281 
+[05/23 04:50:41     82s] Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 1946.9M)
+[05/23 04:50:41     82s] Creating parasitic data file '/tmp/innovus_temp_192794_vlsi_user_77_DuFyZa/gpu_192794_VqfbpK.rcdb.d' for storing RC.
+[05/23 04:50:41     82s] Extracted 10.001% (CPU Time= 0:00:00.3  MEM= 2029.5M)
+[05/23 04:50:41     82s] Extracted 20.0008% (CPU Time= 0:00:00.4  MEM= 2033.5M)
+[05/23 04:50:41     82s] Extracted 30.0012% (CPU Time= 0:00:00.5  MEM= 2035.5M)
+[05/23 04:50:42     82s] Extracted 40.0009% (CPU Time= 0:00:00.7  MEM= 2038.5M)
+[05/23 04:50:42     83s] Extracted 50.0013% (CPU Time= 0:00:00.8  MEM= 2040.5M)
+[05/23 04:50:42     83s] Extracted 60.001% (CPU Time= 0:00:00.9  MEM= 2042.5M)
+[05/23 04:50:42     83s] Extracted 70.0008% (CPU Time= 0:00:01.1  MEM= 2043.5M)
+[05/23 04:50:42     83s] Extracted 80.0012% (CPU Time= 0:00:01.3  MEM= 2045.5M)
+[05/23 04:50:42     83s] Extracted 90.0009% (CPU Time= 0:00:01.5  MEM= 2046.5M)
+[05/23 04:50:43     84s] Extracted 100% (CPU Time= 0:00:02.0  MEM= 2052.5M)
+[05/23 04:50:43     84s] Number of Extracted Resistors     : 277163
+[05/23 04:50:43     84s] Number of Extracted Ground Cap.   : 277765
+[05/23 04:50:43     84s] Number of Extracted Coupling Cap. : 445884
+[05/23 04:50:43     84s] Opening parasitic data file '/tmp/innovus_temp_192794_vlsi_user_77_DuFyZa/gpu_192794_VqfbpK.rcdb.d' for reading (mem: 2037.438M)
+[05/23 04:50:43     84s] Filtering XCap in 'relativeOnly' mode using values relative_c_threshold=0.03 and total_c_threshold=5fF.
+[05/23 04:50:43     84s]  Corner: typical_rc
+[05/23 04:50:43     84s] Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 2037.4M)
+[05/23 04:50:43     84s] Creating parasitic data file '/tmp/innovus_temp_192794_vlsi_user_77_DuFyZa/gpu_192794_VqfbpK.rcdb_Filter.rcdb.d' for storing RC.
+[05/23 04:50:43     84s] Closing parasitic data file '/tmp/innovus_temp_192794_vlsi_user_77_DuFyZa/gpu_192794_VqfbpK.rcdb.d': 14748 access done (mem: 2037.438M)
+[05/23 04:50:43     84s] Lumped Parasitic Loading Started (total cpu=0:00:00.0, real=0:00:00.0, current mem=2037.438M)
+[05/23 04:50:43     84s] Opening parasitic data file '/tmp/innovus_temp_192794_vlsi_user_77_DuFyZa/gpu_192794_VqfbpK.rcdb.d' for reading (mem: 2037.438M)
+[05/23 04:50:43     84s] processing rcdb (/tmp/innovus_temp_192794_vlsi_user_77_DuFyZa/gpu_192794_VqfbpK.rcdb.d) for hinst (top) of cell (gpu);
+[05/23 04:50:44     85s] Closing parasitic data file '/tmp/innovus_temp_192794_vlsi_user_77_DuFyZa/gpu_192794_VqfbpK.rcdb.d': 0 access done (mem: 2037.438M)
+[05/23 04:50:44     85s] Lumped Parasitic Loading Completed (total cpu=0:00:00.9, real=0:00:01.0, current mem=2037.438M)
+[05/23 04:50:44     85s] PostRoute (effortLevel low) RC Extraction DONE (CPU Time: 0:00:03.4  Real Time: 0:00:03.0  MEM: 2037.438M)
+[05/23 04:55:32    138s] 
+[05/23 04:55:32    138s] *** Memory Usage v#1 (Current mem = 1995.438M, initial mem = 478.109M) ***
+[05/23 04:55:32    139s] 
+[05/23 04:55:32    139s] *** Summary of all messages that are not suppressed in this session:
+[05/23 04:55:32    139s] Severity  ID               Count  Summary                                  
+[05/23 04:55:32    139s] WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[05/23 04:55:32    139s] WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+[05/23 04:55:32    139s] WARNING   IMPPTN-867           2  Found use of %s. This will continue to w...
+[05/23 04:55:32    139s] WARNING   IMPOGDS-250          1  Specified unit is smaller than the one i...
+[05/23 04:55:32    139s] WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+[05/23 04:55:32    139s] WARNING   IMPEXT-3530          1  The process node is not set. Use the com...
+[05/23 04:55:32    139s] WARNING   IMPOPT-3602          4  The specified path group name %s is not ...
+[05/23 04:55:32    139s] WARNING   NRIF-90              1  Option setNanoRouteMode -routeBottomRout...
+[05/23 04:55:32    139s] WARNING   NRIF-91              1  Option setNanoRouteMode -routeTopRouting...
+[05/23 04:55:32    139s] WARNING   IMPCTE-107           1  The following globals have been obsolete...
+[05/23 04:55:32    139s] WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+[05/23 04:55:32    139s] ERROR     IMPTCM-113           1  Option "%s" is required when option "%s"...
+[05/23 04:55:32    139s] WARNING   IMPPSP-1003          2  Found use of '%s'. This will continue to...
+[05/23 04:55:32    139s] WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+[05/23 04:55:32    139s] *** Message Summary: 22 warning(s), 1 error(s)
+[05/23 04:55:32    139s] 
+[05/23 04:55:32    139s] --- Ending "Innovus" (totcpu=0:02:19, real=0:10:27, mem=1995.4M) ---

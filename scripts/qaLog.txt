@@ -1,0 +1,121 @@
+04/28/2026 21:15:04 (687307-3897207040 innovus): Initialization started (21.01-s002)...
+04/28/2026 21:15:04 (687307-3897207040): FLEXnet version 11.16.4.0 build 252457
+04/28/2026 21:15:04 (687307-3897207040): Process ID 88401
+04/28/2026 21:15:04 (687307-3897207040): Creating a new job ...
+04/28/2026 21:15:04 (687307-3897207040): Validating server path: 
+04/28/2026 21:15:04 (687307-3897207040): Server path validation status: 0
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of license path is '5280@cad_vlsi'.
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of recheck interval minimum is 290.
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of 2000000000 maximum retry calls.
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of sleep time value of 0.
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of display specification is ':67'.
+04/28/2026 21:15:04 (687307-3897207040):   Licenses will be checked out using techvlsi_07@cad_vlsi(:67).
+04/28/2026 21:15:04 (687307-3897207040):   (System spec would have been techvlsi_07@cad_vlsi(/dev/pts/4) )
+04/28/2026 21:15:04 (687307-3897207040): Job creation completed with status 0 (time 0).
+04/28/2026 21:15:04 (687307-3897207040): Creating a new job ...
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of license path is '5280@cad_vlsi'.
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of recheck interval minimum is 290.
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of 2000000000 maximum retry calls.
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of sleep time value of 0.
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of display specification is ':67'.
+04/28/2026 21:15:04 (687307-3897207040):   Licenses will be checked out using techvlsi_07@cad_vlsi(:67).
+04/28/2026 21:15:04 (687307-3897207040):   (System spec would have been techvlsi_07@cad_vlsi(/dev/pts/4) )
+04/28/2026 21:15:04 (687307-3897207040): Job creation completed with status 0 (time 0).
+04/28/2026 21:15:04 (687307-3897207040): Creating a new job ...
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of license path is '5280@cad_vlsi'.
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of recheck interval minimum is 290.
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of 2000000000 maximum retry calls.
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of sleep time value of 0.
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of display specification is ':67'.
+04/28/2026 21:15:04 (687307-3897207040):   Licenses will be checked out using techvlsi_07@cad_vlsi(:67).
+04/28/2026 21:15:04 (687307-3897207040):   (System spec would have been techvlsi_07@cad_vlsi(/dev/pts/4) )
+04/28/2026 21:15:04 (687307-3897207040): Job creation completed with status 0 (time 0).
+04/28/2026 21:15:04 (687307-3897207040): Creating a new job ...
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of license path is '5280@cad_vlsi'.
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of recheck interval minimum is 290.
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of 2000000000 maximum retry calls.
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of sleep time value of 0.
+04/28/2026 21:15:04 (687307-3897207040):   Configuration of display specification is ':67'.
+04/28/2026 21:15:04 (687307-3897207040):   Licenses will be checked out using techvlsi_07@cad_vlsi(:67).
+04/28/2026 21:15:04 (687307-3897207040):   (System spec would have been techvlsi_07@cad_vlsi(/dev/pts/4) )
+04/28/2026 21:15:04 (687307-3897207040): Job creation completed with status 0 (time 0).
+04/28/2026 21:15:04 (687307-3897207040): Initialization completed with status 0 (time 0).
+04/28/2026 21:15:04 (687307-3897207040): FeatureExists started ....
+04/28/2026 21:15:04 (687307-3897207040): Check-out started ....
+04/28/2026 21:15:04 (687307-3897207040): Testing only for the validity of feature Innovus_Impl_System 21.100...
+04/28/2026 21:15:04 (687307-3897207040): Validity test completed with status 0.
+04/28/2026 21:15:04 (687307-3897207040): Check-out completed with status 0 (time 0).
+04/28/2026 21:15:04 (687307-3897207040): FeatureExists of Innovus_Impl_System completed with status 0 (time 0).
+04/28/2026 21:15:04 (687307-3897207040): Added Innovus_Impl_System,21.100000 entry with status 0 to feature exists cache
+04/28/2026 21:15:04 (687307-3897207040): FeatureNumLic started ....
+04/28/2026 21:15:04 (687307-3897207040): FeatureNumLic of Innovus_Impl_System completed with status 0 (time 0).
+04/28/2026 21:15:04 (687307-3897207040): Check-out started ....
+04/28/2026 21:15:04 (687307-3897207040): Checking out 1 license(s) for Innovus_Impl_System 21.100...
+04/28/2026 21:15:04 (687307-3897207040):   (Checked out from file '5280@cad_vlsi',
+             line '22.1 29-apr-2026 40 5F260C7C155715B51491 ')
+04/28/2026 21:15:04 (687307-3897207040): Check-out completed with status 0 (time 0).
+04/28/2026 21:15:04 (687307-3749263104): Recheck started ....
+04/28/2026 21:15:04 (687307-3749263104):   Checking feature Innovus_Impl_System
+04/28/2026 21:15:04 (687307-3749263104):   Time spent in server Recheck was 0.
+04/28/2026 21:15:04 (687307-3749263104): Re-check completed with status 0 (time 0).
+04/28/2026 21:15:55 (127594-733145088 pegasusgui): Initialization started (21.01-s003)...
+04/28/2026 21:15:55 (127594-733145088): FLEXnet version 11.16.4.0 build 252457
+04/28/2026 21:15:55 (127594-733145088): Process ID 89557
+04/28/2026 21:15:55 (127594-733145088): Creating a new job ...
+04/28/2026 21:15:55 (127594-733145088): Validating server path: 
+04/28/2026 21:15:55 (127594-733145088): Server path validation status: 0
+04/28/2026 21:15:55 (127594-733145088):   Configuration of license path is '5280@cad_vlsi'.
+04/28/2026 21:15:55 (127594-733145088):   Configuration of recheck interval minimum is 290.
+04/28/2026 21:15:55 (127594-733145088):   Configuration of 2000000000 maximum retry calls.
+04/28/2026 21:15:55 (127594-733145088):   Configuration of sleep time value of 0.
+04/28/2026 21:15:55 (127594-733145088):   Configuration of display specification is ':67'.
+04/28/2026 21:15:55 (127594-733145088):   Licenses will be checked out using techvlsi_07@cad_vlsi(:67).
+04/28/2026 21:15:55 (127594-733145088):   (System spec would have been techvlsi_07@cad_vlsi(/dev/pts/4) )
+04/28/2026 21:15:55 (127594-733145088): Job creation completed with status 0 (time 0).
+04/28/2026 21:15:55 (127594-733145088): Creating a new job ...
+04/28/2026 21:15:55 (127594-733145088):   Configuration of license path is '5280@cad_vlsi'.
+04/28/2026 21:15:55 (127594-733145088):   Configuration of recheck interval minimum is 290.
+04/28/2026 21:15:55 (127594-733145088):   Configuration of 2000000000 maximum retry calls.
+04/28/2026 21:15:55 (127594-733145088):   Configuration of sleep time value of 0.
+04/28/2026 21:15:55 (127594-733145088):   Configuration of display specification is ':67'.
+04/28/2026 21:15:55 (127594-733145088):   Licenses will be checked out using techvlsi_07@cad_vlsi(:67).
+04/28/2026 21:15:55 (127594-733145088):   (System spec would have been techvlsi_07@cad_vlsi(/dev/pts/4) )
+04/28/2026 21:15:55 (127594-733145088): Job creation completed with status 0 (time 0).
+04/28/2026 21:15:55 (127594-733145088): Creating a new job ...
+04/28/2026 21:15:55 (127594-733145088):   Configuration of license path is '5280@cad_vlsi'.
+04/28/2026 21:15:55 (127594-733145088):   Configuration of recheck interval minimum is 290.
+04/28/2026 21:15:55 (127594-733145088):   Configuration of 2000000000 maximum retry calls.
+04/28/2026 21:15:55 (127594-733145088):   Configuration of sleep time value of 0.
+04/28/2026 21:15:55 (127594-733145088):   Configuration of display specification is ':67'.
+04/28/2026 21:15:55 (127594-733145088):   Licenses will be checked out using techvlsi_07@cad_vlsi(:67).
+04/28/2026 21:15:55 (127594-733145088):   (System spec would have been techvlsi_07@cad_vlsi(/dev/pts/4) )
+04/28/2026 21:15:55 (127594-733145088): Job creation completed with status 0 (time 0).
+04/28/2026 21:15:55 (127594-733145088): Creating a new job ...
+04/28/2026 21:15:55 (127594-733145088):   Configuration of license path is '5280@cad_vlsi'.
+04/28/2026 21:15:55 (127594-733145088):   Configuration of recheck interval minimum is 290.
+04/28/2026 21:15:55 (127594-733145088):   Configuration of 2000000000 maximum retry calls.
+04/28/2026 21:15:55 (127594-733145088):   Configuration of sleep time value of 0.
+04/28/2026 21:15:55 (127594-733145088):   Configuration of display specification is ':67'.
+04/28/2026 21:15:55 (127594-733145088):   Licenses will be checked out using techvlsi_07@cad_vlsi(:67).
+04/28/2026 21:15:55 (127594-733145088):   (System spec would have been techvlsi_07@cad_vlsi(/dev/pts/4) )
+04/28/2026 21:15:55 (127594-733145088): Job creation completed with status 0 (time 0).
+04/28/2026 21:15:55 (127594-733145088): Initialization completed with status 0 (time 0).
+04/28/2026 21:15:55 (127594-733145088 pegasusgui): Initialization started (21.01-s003)...
+04/28/2026 21:15:55 (127594-733145088): ERROR!  Multiple initializations attempted!
+04/28/2026 21:15:55 (127594-733145088): Initialization completed with status 0 (time 0).
+04/28/2026 21:16:16 (687307-3897207040): Exit started ....
+04/28/2026 21:16:16 (687307-3897207040): Creating a new job ...
+04/28/2026 21:16:16 (687307-3897207040): Validating server path: 5280@cad_vlsi
+04/28/2026 21:16:16 (687307-3897207040): Server path validation status: 0
+04/28/2026 21:16:16 (687307-3897207040):   Configuration of license path is '5280@cad_vlsi'.
+04/28/2026 21:16:16 (687307-3897207040):   Configuration of recheck interval minimum is 290.
+04/28/2026 21:16:16 (687307-3897207040):   Configuration of 2000000000 maximum retry calls.
+04/28/2026 21:16:16 (687307-3897207040):   Configuration of sleep time value of 0.
+04/28/2026 21:16:16 (687307-3897207040):   Configuration of display specification is ':67'.
+04/28/2026 21:16:16 (687307-3897207040):   Licenses will be checked out using techvlsi_07@cad_vlsi(:67).
+04/28/2026 21:16:16 (687307-3897207040):   (System spec would have been techvlsi_07@cad_vlsi(/dev/pts/4) )
+04/28/2026 21:16:16 (687307-3897207040): Job creation completed with status 0 (time 0).
+04/28/2026 21:16:16 (687307-3897207040): Check-in (Increment) of Innovus_Impl_System completed with status 0 (time 0).
+04/28/2026 21:16:16 (687307-3897207040): Exit completed with status 0 (time 0).
+04/28/2026 21:16:17 (127594-733145088): Exit started ....
+04/28/2026 21:16:17 (127594-733145088): Exit completed with status 0 (time 0).

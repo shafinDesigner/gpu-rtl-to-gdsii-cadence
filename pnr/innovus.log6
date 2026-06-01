@@ -1,0 +1,989 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.18-s099_1, built Tue Jul 18 13:03:50 PDT 2023
+Options:	
+Date:		Thu May 14 02:00:53 2026
+Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+OS:		Red Hat Enterprise Linux Server 7.9 (Maipo)
+
+License:
+		[02:00:53.389457] Configured Lic search path (21.01-s002): 5280@vlsi
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+<CMD> define_proc_arguments ViaFillQor -info {This procedure extracts Viafill details from innovus db} -define_args {
+		{-window "window coordinates" "" list optional}
+		{-window_size "window size in microns" "" string optional}
+	
+	}
+[INFO] Loading Pegasus 22.20 fill procedures
+<CMD> define_proc_arguments ProcessFills -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+<CMD> define_proc_arguments FillQor -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+<CMD> define_proc_arguments ProcessFills_fast -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+<CMD> define_proc_arguments FillQor_fast -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+<CMD> define_proc_arguments ProcessFills_fast_stampOnly -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+	
+}
+<CMD> define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+}
+<CMD> win
+<CMD> restoreDesign post_pg_spare_prep.inn.dat
+**ERROR: (IMPTCM-113):	Option "<design>" is required when option "<session>" is specified. Type 'man restoreDesign' for more details.
+
+
+ERROR:   
+
+  
+    while executing
+"error $catchMsg"
+    (procedure "restoreDesign" line 33)
+
+  
+<CMD> restoreDesign post_pg_spare_prep.inn.dat /gpu
+#% Begin load design ... (date=05/14 02:04:07, mem=757.0M)
+Loading design 'gpu' saved by 'Innovus' '21.18-s099_1' on 'Thu May 14 01:19:28 2026'.
+% Begin Load MMMC data ... (date=05/14 02:04:07, mem=759.5M)
+% End Load MMMC data ... (date=05/14 02:04:07, total cpu=0:00:00.0, real=0:00:00.0, peak res=760.6M, current mem=760.6M)
+typical_rc
+
+Loading LEF file /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/libs/lef/gsclib045_tech.lef ...
+
+Loading LEF file /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/libs/lef/gsclib045_macro.lef ...
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/viewDefinition.tcl
+Reading slow_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib)
+Read 480 cells in library 'slow_vdd1v0' 
+Reading fast_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib)
+Read 480 cells in library 'fast_vdd1v0' 
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+*** End library_loading (cpu=0.02min, real=0.02min, mem=23.9M, fe_cpu=0.89min, fe_real=3.28min, fe_mem=1044.6M) ***
+% Begin Load netlist data ... (date=05/14 02:04:09, mem=781.4M)
+*** Begin netlist parsing (mem=1044.6M) ***
+Created 480 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/gpu.v.bin'
+
+*** Memory Usage v#1 (Current mem = 1053.656M, initial mem = 478.109M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1053.7M) ***
+% End Load netlist data ... (date=05/14 02:04:09, total cpu=0:00:00.0, real=0:00:00.0, peak res=794.1M, current mem=794.1M)
+Set top cell to gpu.
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+Hooked 960 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell gpu ...
+*** Netlist is unique.
+** info: there are 1055 modules.
+** info: there are 12364 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 1109.582M, initial mem = 478.109M) ***
+*info: set bottom ioPad orient R0
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Set Shrink Factor to 0.90000
+Loading preference file /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/gui.pref.tcl ...
+addRing command will ignore shorts while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will consider rows while creating rings.
+The ring targets are set to core/block ring wires.
+addStripe will allow jog to connect padcore ring and block ring.
+
+Stripes will not extend to closest target.
+When breaking rings, the power planner will consider the existence of blocks.
+addStripe will break automatically at non-default domains when generating global stripes over the core area or default domain.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+Stripes will not be created over regions without power planning wires.
+Offset for stripe breaking is set to 0.
+Stripes will stop at the boundary of the specified area.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Change floorplan default-technical-site to 'CoreSite'.
+*Info: initialize multi-corner CTS.
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+Reading floorplan file - /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat//gpu.fp.gz (mem = 1373.1M).
+% Begin Load floorplan data ... (date=05/14 02:04:11, mem=1096.5M)
+*info: reset 12815 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 473600 460180)
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+ ... processed partition successfully.
+Reading binary special route file /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat//gpu.fp.spr.gz (Created by Innovus v21.18-s099_1 on Thu May 14 01:19:27 2026, version: 1)
+Convert 0 swires and 0 svias from compressed groups
+22 swires and 100 svias were compressed
+22 swires and 100 svias were decompressed from small or sparse groups
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1097.4M, current mem=1097.4M)
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+% End Load floorplan data ... (date=05/14 02:04:12, total cpu=0:00:00.1, real=0:00:01.0, peak res=1098.3M, current mem=1098.3M)
+Reading congestion map file /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat//gpu.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=05/14 02:04:12, mem=1098.5M)
+% End Load SymbolTable ... (date=05/14 02:04:12, total cpu=0:00:00.1, real=0:00:00.0, peak res=1100.8M, current mem=1100.8M)
+Loading place ...
+% Begin Load placement data ... (date=05/14 02:04:12, mem=1100.8M)
+Reading placement file - /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat//gpu.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v21.18-s099_1 on Thu May 14 01:19:27 2026, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Completed restorePlace (cpu=0:00:00.0 real=0:00:00.0 mem=1376.1M) ***
+Total net length = 1.255e+01 (6.277e+00 6.277e+00) (ext = 0.000e+00)
+% End Load placement data ... (date=05/14 02:04:12, total cpu=0:00:00.0, real=0:00:00.0, peak res=1101.2M, current mem=1101.1M)
+% Begin Load routing data ... (date=05/14 02:04:12, mem=1101.1M)
+Reading routing file - /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat//gpu.route.gz.
+Reading Innovus routing data (Created by Innovus v21.18-s099_1 on Thu May 14 01:19:27 2026 Format: 20.1) ...
+*** Total 12739 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1373.1M) ***
+% End Load routing data ... (date=05/14 02:04:12, total cpu=0:00:00.0, real=0:00:00.0, peak res=1102.6M, current mem=1101.6M)
+TAT_INFO: restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+Reading property file /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat//gpu.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1376.1M) ***
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Capacitance Table File /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl ...
+Cap table was created using Encounter 10.10-b056_1.
+Process name: cln28hpl_1p10m+alrdl_5x2yu2yz_typical.
+Set Shrink Factor to 0.90000
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: setup_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+ 
+ Analysis View: hold_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Start generating vias ..
+#Skip building auto via since it is not turned on.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Via generation completed.
+% Begin Load power constraints ... (date=05/14 02:04:13, mem=1114.7M)
+% End Load power constraints ... (date=05/14 02:04:13, total cpu=0:00:00.0, real=0:00:00.0, peak res=1114.8M, current mem=1114.8M)
+slow_delay fast_delay
+% Begin load AAE data ... (date=05/14 02:04:13, mem=1162.4M)
+% End load AAE data ... (date=05/14 02:04:13, total cpu=0:00:00.0, real=0:00:00.0, peak res=1162.4M, current mem=1162.4M)
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+#% End load design ... (date=05/14 02:04:13, total cpu=0:00:04.0, real=0:00:06.0, peak res=1192.9M, current mem=1160.7M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+*** Message Summary: 8 warning(s), 0 error(s)
+
+<CMD> selectWire 18.2000 185.9500 218.6000 186.0700 1 VSS
+<CMD> fit
+<CMD> setPlaceMode -moduleAwareSpare true
+<CMD> createSpareModule -moduleName gpu_spare -cell {INVX1 INVX1 INVX1 INVX1 BUFX2 BUFX2 NAND2X1 NAND2X1 NOR2X1 NOR2X1}
+<CMD> placeSpareModule -moduleName gpu_spare -channel -minWidth 5 -maxWidth 10 -minLength 11 -stepx 10 -stepy 10 -util 0.7
+
+Usage: placeSpareModule [-help] [-area <box>] [-channel] [-maxWidth <float>] [-minLen <float>] [-minWidth <float>] -moduleName <moduleName>
+                        [-numModules <integer>] [-offsetx <float>] [-offsety <float>] [-powerDomain <string>] [-prefix <prefixName>] [-stepx <float>]
+                        [-stepy <float>] [-util <float>]
+
+**ERROR: (IMPTCM-48):	"-minLength" is not a legal option for command "placeSpareModule". Either the current option or an option prior to it is not specified correctly.
+
+<CMD> placeSpareModule -moduleName gpu_spare -channel -minWidth 5 -maxWidth 10 -minLen 11 -stepx 10 -stepy 10 -util 0.7
+Info: Power domain is not defined, option -ignorePDBox will not work!
+Info: Detected unplaced standard instances in the design. This command needs to be followed by placement.
+*INFO: Total number of spare module instances added: 0
+*INFO: Total number of channels                    : 0
+*INFO: Total number of channels skipped            : 0
+*INFO: Minimum number of module in a channel       : 0
+*INFO: Maximum number of module in a channel       : 0
+**WARN: (IMPSP-5531):	No spare module is added. It's recommended to create spare module with fewer cells and increase the spare module number for better distribution.
+<CMD> placeSpareModule -moduleName gpu_spare -stepx 20 -stepy 20 -util 0.5
+Info: Power domain is not defined, option -ignorePDBox will not work!
+Info: Detected unplaced standard instances in the design. This command needs to be followed by placement.
+Estimated cell power/ground rail width = 0.160 um
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (15.000 15.010 19.529 19.540). 
+150.48% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (35.000 15.010 39.529 19.540). 
+75.51% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (55.000 15.010 59.529 19.540). 
+77.67% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (75.000 15.010 79.529 19.540). 
+75.51% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (95.000 15.010 99.529 19.540). 
+77.67% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (115.000 15.010 119.529 19.540). 
+75.51% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (135.000 15.010 139.530 19.540). 
+77.67% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (155.000 15.010 159.530 19.540). 
+75.51% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (175.000 15.010 179.530 19.540). 
+77.67% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (195.000 15.010 199.530 19.540). 
+75.51% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (215.000 15.010 219.530 19.540). 
+100.35% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (15.000 35.010 19.529 39.540). 
+88.31% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (215.000 35.010 219.530 39.540). 
+38.18% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (15.000 55.010 19.529 59.540). 
+88.31% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (215.000 55.010 219.530 59.540). 
+38.18% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (15.000 75.010 19.529 79.540). 
+88.31% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (215.000 75.010 219.530 79.540). 
+38.18% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (15.000 95.010 19.529 99.540). 
+88.31% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (215.000 95.010 219.530 99.540). 
+38.18% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (15.000 115.010 19.529 119.540). 
+88.31% of spare module is overlapped with obstructions and allowed overlap is 30.00%
+**WARN: (EMS-27):	Message (IMPSP-5509) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Current (total cpu=0:02:27, real=0:11:36, peak res=1315.6M, current mem=1304.6M)
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1318.6M, current mem=1318.6M)
+Current (total cpu=0:02:27, real=0:11:36, peak res=1318.6M, current mem=1318.6M)
+*INFO: Total number of spare module instances added: 81
+<CMD> zoomBox -119.25500 -57.78700 272.06000 292.52350
+<CMD> zoomBox -33.14200 -31.23700 249.58350 221.86250
+<CMD> zoomBox 74.02650 1.80500 221.61100 133.92450
+<CMD> fit
+<CMD> zoomBox 66.56950 33.26900 214.15400 165.38850
+<CMD> zoomBox 142.24650 79.33350 171.30250 105.34500
+<CMD> setPlaceMode -moduleAwareSpare true
+<CMD> createSpareModule -moduleName gpu_spare_small -cell {INVX1 BUFX2}
+<CMD> placeSpareModule -moduleName gpu_spare_small -stepx 40 -stepy 40 -util 0.2
+Info: Power domain is not defined, option -ignorePDBox will not work!
+Info: Detected unplaced standard instances in the design. This command needs to be followed by placement.
+
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (15.000 15.010 18.460 18.470). 
+191.44% of spare module is overlapped with obstructions and allowed overlap is 60.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (55.000 15.010 58.459 18.470). 
+98.99% of spare module is overlapped with obstructions and allowed overlap is 60.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (95.000 15.010 98.460 18.470). 
+98.99% of spare module is overlapped with obstructions and allowed overlap is 60.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (135.000 15.010 138.459 18.470). 
+98.99% of spare module is overlapped with obstructions and allowed overlap is 60.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (175.000 15.010 178.459 18.470). 
+98.99% of spare module is overlapped with obstructions and allowed overlap is 60.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (215.000 15.010 218.459 18.470). 
+99.08% of spare module is overlapped with obstructions and allowed overlap is 60.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (15.000 55.010 18.460 58.470). 
+100.00% of spare module is overlapped with obstructions and allowed overlap is 60.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (15.000 95.010 18.460 98.469). 
+100.00% of spare module is overlapped with obstructions and allowed overlap is 60.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (15.000 135.010 18.460 138.470). 
+100.00% of spare module is overlapped with obstructions and allowed overlap is 60.00%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (15.000 175.010 18.460 178.470). 
+100.00% of spare module is overlapped with obstructions and allowed overlap is 60.00%
+Current (total cpu=0:03:09, real=0:15:17, peak res=1324.8M, current mem=1307.6M)
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1320.8M, current mem=1320.8M)
+Current (total cpu=0:03:09, real=0:15:17, peak res=1324.8M, current mem=1320.8M)
+*INFO: Total number of spare module instances added: 20
+<CMD> zoomBox 125.97200 70.94850 173.28600 113.30450
+<CMD> zoomBox 109.84450 62.60250 175.33100 121.22700
+<CMD> zoomBox 87.52250 51.05100 178.16200 132.19250
+<CMD> zoomBox 56.76250 35.06300 182.21550 147.37000
+<CMD> zoomBox -44.44150 -18.13950 195.88800 197.00650
+<CMD> zoomBox -125.76200 -60.88950 206.87400 236.89050
+<CMD> zoomBox -238.22700 -119.47400 222.16900 292.67850
+<CMD> zoomBox -44.63800 -18.69350 195.69250 196.45350
+<CMD> zoomBox 40.13500 24.73600 187.72750 156.86300
+<CMD> zoomBox -83.47450 -38.55500 199.26700 214.55900
+<CMD> zoomBox -1138.41050 -577.30150 297.74650 708.36550
+<CMD> zoomBox -1370.21100 -695.00500 319.38550 817.54450
+<CMD> zoomBox -229.40700 -140.12900 230.99200 272.02650
+<CMD> zoomBox -21.58100 -41.05600 218.75050 174.09200
+<CMD> zoomBox -21.82050 -74.01450 310.81850 223.76850
+<CMD> fit
+<CMD> zoomBox -157.86300 -112.95600 302.50700 299.17350
+<CMD> zoomBox -377.52550 -275.51200 372.11000 395.57200
+<CMD> zoomBox -186.67800 -141.81350 273.69250 270.31650
+<CMD> deselectAll
+<CMD> fit
+<CMD> place_design
+*** placeDesign #1 [begin] : totSession cpu/real = 0:04:29.5/0:22:26.7 (0.2), mem = 2007.0M
+*** Starting placeDesign default flow ***
+*** Start deleteBufferTree ***
+Info: Detect buffers to remove automatically.
+Analyzing netlist ...
+Updating netlist
+
+*summary: 257 instances (buffers/inverters) removed
+*** Finish deleteBufferTree (0:00:00.7) ***
+**INFO: Enable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 101.
+**WARN: (IMPDC-1629):	The default delay limit was set to 101. This is less than the default of 1000 and may result in inaccurate delay calculation for nets with a fanout higher than the setting.  If needed, the default delay limit may be adjusted by running the command 'set delaycal_use_default_delay_limit'.
+Set Default Net Delay as 0 ps.
+Set Default Net Load as 0 pF. 
+Set Default Input Pin Transition as 1 ps.
+**INFO: Analyzing IO path groups for slack adjustment
+Effort level <high> specified for reg2reg_tmp.67220 path_group
+AAE_INFO: opIsDesignInPostRouteState() is 0
+AAE DB initialization (MEM=2158.6 CPU=0:00:00.0 REAL=0:00:00.0) 
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: gpu
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in Single mode...
+Start delay calculation (fullDC) (1 T). (MEM=2161.61)
+siFlow : Timing analysis mode is single, using late cdB files
+Total number of fetched objects 13340
+End delay calculation. (MEM=2321.21 CPU=0:00:01.3 REAL=0:00:01.0)
+End delay calculation (fullDC). (MEM=2284.59 CPU=0:00:01.7 REAL=0:00:01.0)
+**INFO: Disable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 1000.
+Set Default Net Delay as 1000 ps.
+Set Default Input Pin Transition as 0.1 ps.
+Set Default Net Load as 0.5 pF. 
+**INFO: Pre-place timing setting for timing analysis already disabled
+Deleted 0 physical inst  (cell - / prefix -).
+Did not delete 904 physical insts as they were marked preplaced.
+INFO: #ExclusiveGroups=0
+INFO: There are no Exclusive Groups.
+*** Starting "NanoPlace(TM) placement v#4 (mem=2275.1M)" ...
+*** Build Buffered Sizing Timing Model
+(cpu=0:00:01.3 mem=2283.1M) ***
+*** Build Virtual Sizing Timing Model
+(cpu=0:00:01.4 mem=2283.1M) ***
+No user-set net weight.
+Net fanout histogram:
+2		: 7363 (59.0%) nets
+3		: 1789 (14.3%) nets
+4     -	14	: 3130 (25.1%) nets
+15    -	39	: 190 (1.5%) nets
+40    -	79	: 9 (0.1%) nets
+80    -	159	: 0 (0.0%) nets
+160   -	319	: 2 (0.0%) nets
+320   -	639	: 0 (0.0%) nets
+640   -	1279	: 0 (0.0%) nets
+1280  -	2559	: 1 (0.0%) nets
+2560  -	5119	: 0 (0.0%) nets
+5120+		: 0 (0.0%) nets
+Options: timingDriven clkGateAware ignoreScan pinGuide congEffort=auto gpeffort=medium 
+Scan chains were not defined.
+#std cell=13871 (904 fixed + 12967 movable) #buf cell=182 #inv cell=1172 #block=0 (0 floating + 0 preplaced)
+#ioInst=0 #net=12484 #term=46329 #term/net=3.71, #fixedIo=0, #floatIo=0, #fixedPin=0, #floatPin=183
+stdCell: 13871 single + 0 double + 0 multi
+Total standard cell length = 17.6246 (mm), area = 0.0301 (mm^2)
+
+Average module density = 0.775.
+Density for module 'spr_82' = 0.925.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 8 sites (3 um^2).
+Density for module 'spr_83' = 0.925.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 8 sites (3 um^2).
+Density for module 'spr_84' = 0.925.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 8 sites (3 um^2).
+Density for module 'spr_85' = 0.925.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 8 sites (3 um^2).
+Density for module 'spr_86' = 0.774.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 9 sites (3 um^2).
+Density for module 'spr_87' = 0.925.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 8 sites (3 um^2).
+Density for module 'spr_88' = 0.925.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 8 sites (3 um^2).
+Density for module 'spr_89' = 0.925.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 8 sites (3 um^2).
+Density for module 'spr_90' = 0.925.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 8 sites (3 um^2).
+Density for module 'spr_91' = 0.774.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 9 sites (3 um^2).
+Density for module 'spr_92' = 0.925.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 8 sites (3 um^2).
+Density for module 'spr_93' = 0.925.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 8 sites (3 um^2).
+Density for module 'spr_94' = 0.925.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 8 sites (3 um^2).
+Density for module 'spr_95' = 0.925.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 8 sites (3 um^2).
+Density for module 'spr_96' = 0.774.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 9 sites (3 um^2).
+Density for module 'spr_97' = 0.925.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 8 sites (3 um^2).
+Density for module 'spr_98' = 0.925.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 8 sites (3 um^2).
+Density for module 'spr_99' = 0.925.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 8 sites (3 um^2).
+Density for module 'spr_100' = 0.925.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 8 sites (3 um^2).
+Density for module 'spr_101' = 0.774.
+       = stdcell_area 7 sites (2 um^2) / alloc_area 9 sites (3 um^2).
+Density for module 'spr_1' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_2' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_3' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_4' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_5' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_6' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_7' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_8' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_9' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_10' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_11' = 0.925.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 32 sites (11 um^2).
+Density for module 'spr_12' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_13' = 0.925.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 32 sites (11 um^2).
+Density for module 'spr_14' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_15' = 0.925.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 32 sites (11 um^2).
+Density for module 'spr_16' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_17' = 0.925.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 32 sites (11 um^2).
+Density for module 'spr_18' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_19' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_20' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_21' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_22' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_23' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_24' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_25' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_26' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_27' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_28' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_29' = 0.925.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 32 sites (11 um^2).
+Density for module 'spr_30' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_31' = 0.925.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 32 sites (11 um^2).
+Density for module 'spr_32' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_33' = 0.925.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 32 sites (11 um^2).
+Density for module 'spr_34' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_35' = 0.925.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 32 sites (11 um^2).
+Density for module 'spr_36' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_37' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_38' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_39' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_40' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_41' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_42' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_43' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_44' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_45' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_46' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_47' = 0.925.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 32 sites (11 um^2).
+Density for module 'spr_48' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_49' = 0.925.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 32 sites (11 um^2).
+Density for module 'spr_50' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_51' = 0.925.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 32 sites (11 um^2).
+Density for module 'spr_52' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_53' = 0.925.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 32 sites (11 um^2).
+Density for module 'spr_54' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_55' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_56' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_57' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_58' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_59' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_60' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_61' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_62' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_63' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_64' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_65' = 0.925.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 32 sites (11 um^2).
+Density for module 'spr_66' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_67' = 0.925.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 32 sites (11 um^2).
+Density for module 'spr_68' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_69' = 0.925.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 32 sites (11 um^2).
+Density for module 'spr_70' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_71' = 0.925.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 32 sites (11 um^2).
+Density for module 'spr_72' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_73' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_74' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_75' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_76' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_77' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_78' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_79' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_80' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for module 'spr_81' = 0.774.
+       = stdcell_area 30 sites (10 um^2) / alloc_area 39 sites (13 um^2).
+Density for the rest of the design = 0.774.
+       = stdcell_area 83745 sites (28641 um^2) / alloc_area 108222 sites (37012 um^2).
+Density for the design = 0.775.
+       = stdcell_area 86315 sites (29520 um^2) / alloc_area 111418 sites (38105 um^2).
+Pin Density = 0.3830.
+            = total # of pins 46329 / total area 120978.
+No spares found within logical modules, disabling '-moduleAwareSpare'.
+Identified 850 spare or floating instances, with no clusters.
+
+
+
+
+
+=== lastAutoLevel = 8 
+Clock gating cells determined by native netlist tracing.
+Iteration  1: Total net bbox = 3.068e+04 (4.84e+03 2.58e+04)
+              Est.  stn bbox = 3.356e+04 (5.87e+03 2.77e+04)
+              cpu = 0:00:00.1 real = 0:00:00.0 mem = 2349.8M
+Iteration  2: Total net bbox = 3.068e+04 (4.84e+03 2.58e+04)
+              Est.  stn bbox = 3.356e+04 (5.87e+03 2.77e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 2350.8M
+Iteration  3: Total net bbox = 3.121e+04 (5.04e+03 2.62e+04)
+              Est.  stn bbox = 3.698e+04 (6.53e+03 3.05e+04)
+              cpu = 0:00:01.1 real = 0:00:01.0 mem = 2391.0M
+Active setup views:
+    setup_view
+Iteration  4: Total net bbox = 1.370e+05 (4.78e+04 8.92e+04)
+              Est.  stn bbox = 1.678e+05 (5.77e+04 1.10e+05)
+              cpu = 0:00:05.2 real = 0:00:06.0 mem = 2391.0M
+Iteration  5: Total net bbox = 1.385e+05 (5.18e+04 8.66e+04)
+              Est.  stn bbox = 1.730e+05 (6.23e+04 1.11e+05)
+              cpu = 0:00:03.6 real = 0:00:03.0 mem = 2391.0M
+Iteration  6: Total net bbox = 1.608e+05 (6.43e+04 9.65e+04)
+              Est.  stn bbox = 1.984e+05 (7.60e+04 1.22e+05)
+              cpu = 0:00:07.4 real = 0:00:08.0 mem = 2411.7M
+Iteration  7: Total net bbox = 1.629e+05 (6.59e+04 9.70e+04)
+              Est.  stn bbox = 2.006e+05 (7.77e+04 1.23e+05)
+              cpu = 0:00:00.4 real = 0:00:00.0 mem = 2411.7M
+Iteration  8: Total net bbox = 1.630e+05 (6.59e+04 9.71e+04)
+              Est.  stn bbox = 2.007e+05 (7.77e+04 1.23e+05)
+              cpu = 0:00:03.9 real = 0:00:04.0 mem = 2411.7M
+Iteration  9: Total net bbox = 1.732e+05 (7.03e+04 1.03e+05)
+              Est.  stn bbox = 2.114e+05 (8.20e+04 1.29e+05)
+              cpu = 0:00:07.6 real = 0:00:07.0 mem = 2411.7M
+Iteration 10: Total net bbox = 1.732e+05 (7.04e+04 1.03e+05)
+              Est.  stn bbox = 2.114e+05 (8.20e+04 1.29e+05)
+              cpu = 0:00:03.8 real = 0:00:04.0 mem = 2411.7M
+Iteration 11: Total net bbox = 1.761e+05 (7.02e+04 1.06e+05)
+              Est.  stn bbox = 2.133e+05 (8.11e+04 1.32e+05)
+              cpu = 0:00:23.1 real = 0:00:23.0 mem = 2411.7M
+Iteration 12: Total net bbox = 1.761e+05 (7.02e+04 1.06e+05)
+              Est.  stn bbox = 2.133e+05 (8.11e+04 1.32e+05)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 2411.7M
+Iteration 13: Total net bbox = 1.761e+05 (7.02e+04 1.06e+05)
+              Est.  stn bbox = 2.133e+05 (8.11e+04 1.32e+05)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 2411.7M
+*** cost = 1.761e+05 (7.02e+04 1.06e+05) (cpu for global=0:00:56.8) real=0:00:57.0***
+Info: 0 clock gating cells identified, 0 (on average) moved 0/5
+Solver runtime cpu: 0:00:46.4 real: 0:00:46.0
+Core Placement runtime cpu: 0:00:48.2 real: 0:00:49.0
+**WARN: (IMPSP-9025):	No scan chain specified/traced.
+Type 'man IMPSP-9025' for more detail.
+
+*** Starting refinePlace (0:05:34 mem=2411.7M) ***
+Total net bbox length = 1.761e+05 (7.016e+04 1.059e+05) (ext = 1.260e+04)
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_82/spr_gate0' (Cell BUFX2).
+Type 'man IMPSP-2020' for more detail.
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_83/spr_gate0' (Cell BUFX2).
+Type 'man IMPSP-2020' for more detail.
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_84/spr_gate0' (Cell BUFX2).
+Type 'man IMPSP-2020' for more detail.
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_85/spr_gate0' (Cell BUFX2).
+Type 'man IMPSP-2020' for more detail.
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_87/spr_gate0' (Cell BUFX2).
+Type 'man IMPSP-2020' for more detail.
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_88/spr_gate0' (Cell BUFX2).
+Type 'man IMPSP-2020' for more detail.
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_89/spr_gate0' (Cell BUFX2).
+Type 'man IMPSP-2020' for more detail.
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_90/spr_gate0' (Cell BUFX2).
+Type 'man IMPSP-2020' for more detail.
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_92/spr_gate0' (Cell BUFX2).
+Type 'man IMPSP-2020' for more detail.
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_93/spr_gate0' (Cell BUFX2).
+Type 'man IMPSP-2020' for more detail.
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_94/spr_gate0' (Cell BUFX2).
+Type 'man IMPSP-2020' for more detail.
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_95/spr_gate0' (Cell BUFX2).
+Type 'man IMPSP-2020' for more detail.
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_97/spr_gate0' (Cell BUFX2).
+Type 'man IMPSP-2020' for more detail.
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_98/spr_gate0' (Cell BUFX2).
+Type 'man IMPSP-2020' for more detail.
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_99/spr_gate0' (Cell BUFX2).
+Type 'man IMPSP-2020' for more detail.
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_100/spr_gate0' (Cell BUFX2).
+Type 'man IMPSP-2020' for more detail.
+**WARN: (IMPSP-2020):	Cannot find a legal location for instance 'spr_94/spr_gate1' (Cell INVX1).
+Type 'man IMPSP-2020' for more detail.
+**ERROR: (IMPSP-2021):	Could not legalize <17> instances in the design. Check warning message IMPSP-270, IMPSP-452, IMPSP-2024, IMPSP-2039, IMPSP-2040, IMPSP-2042, or IMPSP-2020 in the log file for more details.Type 'man IMPSP-2021' for more detail.
+Move report: Detail placement moves 12967 insts, mean move: 0.75 um, max move: 16.23 um 
+	Max move on inst (cores[0].core_instance_g96192): (70.53, 187.72) --> (56.00, 186.01)
+	Runtime: CPU: 0:00:01.8 REAL: 0:00:02.0 MEM: 2379.7MB
+Summary Report:
+Instances move: 12967 (out of 12967 movable)
+Instances flipped: 0
+Mean displacement: 0.75 um
+Max displacement: 16.23 um (Instance: cores[0].core_instance_g96192) (70.528, 187.715) -> (56, 186.01)
+	Length: 6 sites, height: 1 rows, site name: CoreSite, cell type: AOI22X1
+Total net bbox length = 1.773e+05 (7.060e+04 1.067e+05) (ext = 1.263e+04)
+Runtime: CPU: 0:00:01.8 REAL: 0:00:02.0 MEM: 2379.7MB
+*** Finished refinePlace (0:05:36 mem=2379.7M) ***
+*** End of Placement (cpu=0:01:02, real=0:01:02, mem=2348.7M) ***
+
+default core: bins with density > 0.750 = 52.56 % ( 82 / 156 )
+Density distribution unevenness ratio = 4.801%
+*** Free Virtual Timing Model ...(mem=2364.7M)
+**INFO: Enable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 101.
+**WARN: (IMPDC-1629):	The default delay limit was set to 101. This is less than the default of 1000 and may result in inaccurate delay calculation for nets with a fanout higher than the setting.  If needed, the default delay limit may be adjusted by running the command 'set delaycal_use_default_delay_limit'.
+Set Default Net Delay as 0 ps.
+Set Default Net Load as 0 pF. 
+**INFO: Analyzing IO path groups for slack adjustment
+Effort level <high> specified for reg2reg_tmp.67220 path_group
+AAE_INFO: opIsDesignInPostRouteState() is 0
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: gpu
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in Single mode...
+Start delay calculation (fullDC) (1 T). (MEM=2355.23)
+Total number of fetched objects 13340
+End delay calculation. (MEM=2406.44 CPU=0:00:01.3 REAL=0:00:01.0)
+End delay calculation (fullDC). (MEM=2406.44 CPU=0:00:01.6 REAL=0:00:01.0)
+**INFO: Disable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 1000.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Info: Disable timing driven in postCTS congRepair.
+
+Starting congRepair ...
+[NR-eGR] Track table information for default rule: 
+[NR-eGR] Metal1 has single uniform track structure
+[NR-eGR] Metal2 has single uniform track structure
+[NR-eGR] Metal3 has single uniform track structure
+[NR-eGR] Metal4 has single uniform track structure
+[NR-eGR] Metal5 has single uniform track structure
+[NR-eGR] Metal6 has single uniform track structure
+[NR-eGR] Metal7 has single uniform track structure
+[NR-eGR] Metal8 has single uniform track structure
+[NR-eGR] Metal9 has single uniform track structure
+[NR-eGR] Metal10 has single uniform track structure
+[NR-eGR] Metal11 has single uniform track structure
+[NR-eGR] Read 11375 PG shapes
+[NR-eGR] Read 0 clock shapes
+[NR-eGR] Read 0 other shapes
+[NR-eGR] #Routing Blockages  : 4
+[NR-eGR] #Instance Blockages : 0
+[NR-eGR] #PG Blockages       : 11375
+[NR-eGR] #Halo Blockages     : 0
+[NR-eGR] #Boundary Blockages : 0
+[NR-eGR] #Clock Blockages    : 0
+[NR-eGR] #Other Blockages    : 0
+[NR-eGR] Num Prerouted Nets = 0  Num Prerouted Wires = 0
+[NR-eGR] Read 12484 nets ( ignored 0 )
+[NR-eGR] There are 1 clock nets ( 0 with NDR ).
+[NR-eGR] ============ Routing rule table ============
+[NR-eGR] Rule id: 0  Nets: 12484
+[NR-eGR] ========================================
+[NR-eGR] 
+[NR-eGR] Layer group 1: route 12484 net(s) in layer range [2, 11]
+[NR-eGR] Early Global Route overflow of layer group 1: 0.01% H + 0.07% V. EstWL: 1.987208e+05um
+[NR-eGR] Congestion Analysis By layer: (blocked Gcells are excluded) 
+[NR-eGR]                        OverCon           OverCon            
+[NR-eGR]                         #Gcell            #Gcell     %Gcell
+[NR-eGR]        Layer             (1-2)             (3-4)    OverCon
+[NR-eGR] ---------------------------------------------------------------
+[NR-eGR]  Metal1 ( 1)         0( 0.00%)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal2 ( 2)       113( 0.62%)        12( 0.07%)   ( 0.68%) 
+[NR-eGR]  Metal3 ( 3)        15( 0.08%)         1( 0.01%)   ( 0.09%) 
+[NR-eGR]  Metal4 ( 4)         4( 0.02%)         0( 0.00%)   ( 0.02%) 
+[NR-eGR]  Metal5 ( 5)         0( 0.00%)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal6 ( 6)         0( 0.00%)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal7 ( 7)         2( 0.01%)         0( 0.00%)   ( 0.01%) 
+[NR-eGR]  Metal8 ( 8)         0( 0.00%)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal9 ( 9)         0( 0.00%)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] Metal10 (10)         0( 0.00%)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] Metal11 (11)         0( 0.00%)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] ---------------------------------------------------------------
+[NR-eGR]        Total       134( 0.07%)        13( 0.01%)   ( 0.08%) 
+[NR-eGR] 
+[NR-eGR] Overflow after Early Global Route 0.00% H + 0.00% V
+Early Global Route congestion estimation runtime: 0.27 seconds, mem = 2404.9M
+Local HotSpot Analysis: normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+Skipped repairing congestion.
+[NR-eGR]                  Length (um)    Vias 
+[NR-eGR] -------------------------------------
+[NR-eGR]  Metal1   (1H)             0   46146 
+[NR-eGR]  Metal2   (2V)         61215   65131 
+[NR-eGR]  Metal3   (3H)         70903    9800 
+[NR-eGR]  Metal4   (4V)         40818    4140 
+[NR-eGR]  Metal5   (5H)         15110    1476 
+[NR-eGR]  Metal6   (6V)         17815     252 
+[NR-eGR]  Metal7   (7H)           996     167 
+[NR-eGR]  Metal8   (8V)          3447      44 
+[NR-eGR]  Metal9   (9H)           177      31 
+[NR-eGR]  Metal10  (10V)          895       8 
+[NR-eGR]  Metal11  (11H)           29       0 
+[NR-eGR] -------------------------------------
+[NR-eGR]           Total       211404  127195 
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total half perimeter of net bounding box: 177296um
+[NR-eGR] Total length: 211404um, number of vias: 127195
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total eGR-routed clock nets wire length: 6119um, number of vias: 5195
+[NR-eGR] --------------------------------------------------------------------------
+Early Global Route wiring runtime: 0.30 seconds, mem = 2370.9M
+Tdgp not successfully inited but do clear! skip clearing
+End of congRepair (cpu=0:00:00.6, real=0:00:00.0)
+*** Finishing placeDesign default flow ***
+**placeDesign ... cpu = 0: 1: 9, real = 0: 1:10, mem = 2363.9M **
+Tdgp not successfully inited but do clear! skip clearing
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPDC-1629           2  The default delay limit was set to %d. T...
+WARNING   IMPSP-9025           1  No scan chain specified/traced.          
+ERROR     IMPSP-2021           1  Could not legalize <%d> instances in the...
+WARNING   IMPSP-2020          17  Cannot find a legal location for instanc...
+*** Message Summary: 20 warning(s), 1 error(s)
+
+*** placeDesign #1 [finish] : cpu/real = 0:01:09.4/0:01:09.9 (1.0), totSession cpu/real = 0:05:38.9/0:23:36.6 (0.2), mem = 2363.9M
+<CMD> zoomBox -68.78900 -35.64450 263.82900 262.11950
+<CMD> zoomBox -122.47450 -64.04400 268.84050 286.26650
+<CMD> zoomBox -40.43550 -32.15550 242.29000 220.94400
+<CMD> zoomBox 105.90650 32.36250 182.94650 101.32950
+<CMD> zoomBox 130.36600 53.84450 159.42200 79.85600
+<CMD> zoomBox 140.10100 64.03800 148.01900 71.12650
+<CMD> zoomBox 141.50750 65.51200 146.37100 69.86600
+<CMD> zoomBox 142.58700 66.63350 145.12600 68.90650
+<CMD> zoomBox 143.04150 67.10600 144.60150 68.50250
+<CMD> zoomBox 143.44900 67.52500 144.14100 68.14450
+invalid command name "placed"
+<CMD> verify_drc
+#-check_same_via_cell true               # bool, default=false, user setting
+ *** Starting Verify DRC (MEM: 2374.1) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+**WARN: (IMPVFG-1103):	VERIFY DRC did not complete: Number of violations exceeds the Error Limit [1000]
+
+  Verification Complete : 1000 Viols.
+
+**WARN: (IMPTCM-70):	Option "-droute_vio_display_type_num" for command getNanoRouteMode is obsolete and has been replaced by "-drouteVioDisplayTypeNum". The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, update your script to use "-drouteVioDisplayTypeNum".
+ Violation Summary By Layer and Type:
+
+	            Mar   MaxStk   AdjCut   Totals
+	Metal2      970        0        0      970
+	Via2          0        0        9        9
+	Via4          0       20        0       20
+	Via5          0        1        0        1
+	Totals      970       21        9     1000
+
+ *** End Verify DRC (CPU: 0:00:00.5  ELAPSED TIME: 1.00  MEM: 269.1M) ***
+
+
+*** Memory Usage v#1 (Current mem = 2381.121M, initial mem = 478.109M) ***
+*** Message Summary: 70 warning(s), 3 error(s)
+
+--- Ending "Innovus" (totcpu=0:05:55, real=0:24:55, mem=2381.1M) ---

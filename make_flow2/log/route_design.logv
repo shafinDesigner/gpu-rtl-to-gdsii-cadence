@@ -1,0 +1,891 @@
+[05/21 01:02:02      0s] 
+[05/21 01:02:02      0s] Cadence Innovus(TM) Implementation System.
+[05/21 01:02:02      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/21 01:02:02      0s] 
+[05/21 01:02:02      0s] Version:	v21.18-s099_1, built Tue Jul 18 13:03:50 PDT 2023
+[05/21 01:02:02      0s] Options:	-overwrite -init scripts/route_design.tcl -log log/route_design.log 
+[05/21 01:02:02      0s] Date:		Thu May 21 01:02:02 2026
+[05/21 01:02:02      0s] Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+[05/21 01:02:02      0s] OS:		Red Hat Enterprise Linux Server 7.9 (Maipo)
+[05/21 01:02:02      0s] 
+[05/21 01:02:02      0s] License:
+[05/21 01:02:02      0s] 		[01:02:02.389417] Configured Lic search path (21.01-s002): 5280@vlsi
+
+[05/21 01:02:02      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[05/21 01:02:02      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[05/21 01:02:19     15s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.18-s099_1 (64bit) 07/18/2023 13:03 (Linux 3.10.0-693.el7.x86_64)
+[05/21 01:02:22     17s] @(#)CDS: NanoRoute 21.18-s099_1 NR230707-1955/21_18-UB (database version 18.20.605) {superthreading v2.17}
+[05/21 01:02:22     17s] @(#)CDS: AAE 21.18-s017 (64bit) 07/18/2023 (Linux 3.10.0-693.el7.x86_64)
+[05/21 01:02:22     17s] @(#)CDS: CTE 21.18-s022_1 () Jul 11 2023 23:10:24 ( )
+[05/21 01:02:22     17s] @(#)CDS: SYNTECH 21.18-s010_1 () Jul  5 2023 06:32:03 ( )
+[05/21 01:02:22     17s] @(#)CDS: CPE v21.18-s053
+[05/21 01:02:22     17s] @(#)CDS: IQuantus/TQuantus 21.1.1-s966 (64bit) Wed Mar 8 10:22:20 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+[05/21 01:02:22     17s] @(#)CDS: OA 22.60-p087 Thu Feb  9 09:35:26 2023
+[05/21 01:02:22     17s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[05/21 01:02:22     17s] @(#)CDS: RCDB 11.15.0
+[05/21 01:02:22     17s] @(#)CDS: STYLUS 21.12-s019_1 (12/20/2022 05:13 PST)
+[05/21 01:02:22     17s] @(#)CDS: SystemPlanner-21.18-10439 (21.18) (2023-03-01 15:40:03+0800)
+[05/21 01:02:22     17s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_80058_vlsi_user_77_u9Pofr.
+
+[05/21 01:02:22     17s] The soft stacksize limit is either up to the hard limit or larger than 0.2% of RAM. No change is needed.
+[05/21 01:02:25     19s] 
+[05/21 01:02:25     19s] **INFO:  MMMC transition support version v31-84 
+[05/21 01:02:25     19s] 
+[05/21 01:02:25     19s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[05/21 01:02:25     20s] <CMD> suppressMessage ENCEXT-2799
+[05/21 01:02:25     20s] <CMD> getVersion
+[05/21 01:02:25     20s] <CMD> define_proc_arguments ViaFillQor -info {This procedure extracts Viafill details from innovus db} -define_args {
+		{-window "window coordinates" "" list optional}
+		{-window_size "window size in microns" "" string optional}
+	
+	}
+[05/21 01:02:26     20s] [INFO] Loading Pegasus 22.20 fill procedures
+[05/21 01:02:26     20s] <CMD> define_proc_arguments ProcessFills -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+[05/21 01:02:26     20s] <CMD> define_proc_arguments FillQor -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+[05/21 01:02:26     20s] <CMD> define_proc_arguments ProcessFills_fast -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+[05/21 01:02:26     20s] <CMD> define_proc_arguments FillQor_fast -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+[05/21 01:02:26     20s] <CMD> define_proc_arguments ProcessFills_fast_stampOnly -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+	
+}
+[05/21 01:02:26     20s] <CMD> define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+}
+[05/21 01:02:26     20s] Sourcing file "scripts/route_design.tcl" ...
+[05/21 01:02:26     20s] <CMD> setDesignMode -process 45
+[05/21 01:02:26     20s] ##  Process: 45            (User Set)               
+[05/21 01:02:26     20s] ##     Node: (not set)                           
+[05/21 01:02:26     20s] 
+##  Check design process and node:  
+##  Design tech node is not set.
+
+[05/21 01:02:26     20s] Applying the recommended capacitance filtering threshold values for 45nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+[05/21 01:02:26     20s] 	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+[05/21 01:02:26     20s] 	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+[05/21 01:02:26     20s] 	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+[05/21 01:02:26     20s] 	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+[05/21 01:02:26     20s] <CMD> restoreDesign GPU_DESIGN_LIBRARY/clock_opt.inn.dat gpu
+[05/21 01:02:26     20s] #% Begin load design ... (date=05/21 01:02:26, mem=749.0M)
+[05/21 01:02:26     20s] Set Default Input Pin Transition as 0.1 ps.
+[05/21 01:02:27     21s] Loading design 'gpu' saved by 'Innovus' '21.18-s099_1' on 'Thu May 21 01:02:00 2026'.
+[05/21 01:02:27     21s] % Begin Load MMMC data ... (date=05/21 01:02:27, mem=750.2M)
+[05/21 01:02:27     21s] % End Load MMMC data ... (date=05/21 01:02:27, total cpu=0:00:00.0, real=0:00:00.0, peak res=751.4M, current mem=751.4M)
+[05/21 01:02:27     21s] 
+[05/21 01:02:27     21s] Loading LEF file /home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/libs/lef/gsclib045_tech.lef ...
+[05/21 01:02:27     21s] 
+[05/21 01:02:27     21s] Loading LEF file /home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/libs/lef/gsclib045_macro.lef ...
+[05/21 01:02:27     21s] Set DBUPerIGU to M2 pitch 400.
+[05/21 01:02:27     21s] **WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/21 01:02:27     21s] Type 'man IMPLF-200' for more detail.
+[05/21 01:02:27     21s] 
+##  Check design process and node:  
+##  Design tech node is not set.
+
+[05/21 01:02:27     21s] Loading view definition file from /home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/viewDefinition.tcl
+[05/21 01:02:27     21s] Reading slow_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib' ...
+[05/21 01:02:28     22s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib)
+[05/21 01:02:28     22s] Read 480 cells in library 'slow_vdd1v0' 
+[05/21 01:02:28     22s] Reading fast_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib' ...
+[05/21 01:02:28     22s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib)
+[05/21 01:02:28     22s] Read 480 cells in library 'fast_vdd1v0' 
+[05/21 01:02:28     22s] Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+[05/21 01:02:28     22s] late library set: slow_lib
+[05/21 01:02:28     22s] early library set: fast_lib
+[05/21 01:02:28     22s] Completed consistency checks. Status: Successful
+[05/21 01:02:28     22s] Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+[05/21 01:02:28     22s] late library set: fast_lib
+[05/21 01:02:28     22s] early library set: slow_lib
+[05/21 01:02:28     22s] Completed consistency checks. Status: Successful
+[05/21 01:02:28     22s] Ending "PreSetAnalysisView" (total cpu=0:00:01.1, real=0:00:01.0, peak res=824.3M, current mem=771.5M)
+[05/21 01:02:28     22s] *** End library_loading (cpu=0.02min, real=0.02min, mem=18.9M, fe_cpu=0.38min, fe_real=0.43min, fe_mem=2101.4M) ***
+[05/21 01:02:28     22s] % Begin Load netlist data ... (date=05/21 01:02:28, mem=771.5M)
+[05/21 01:02:28     22s] *** Begin netlist parsing (mem=2101.4M) ***
+[05/21 01:02:28     22s] Created 480 new cells from 2 timing libraries.
+[05/21 01:02:28     22s] Reading netlist ...
+[05/21 01:02:28     22s] Backslashed names will retain backslash and a trailing blank character.
+[05/21 01:02:28     22s] Reading verilogBinary netlist '/home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/gpu.v.bin'
+[05/21 01:02:28     22s] 
+[05/21 01:02:28     22s] *** Memory Usage v#1 (Current mem = 2108.402M, initial mem = 716.109M) ***
+[05/21 01:02:28     22s] *** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=2108.4M) ***
+[05/21 01:02:28     22s] % End Load netlist data ... (date=05/21 01:02:28, total cpu=0:00:00.1, real=0:00:00.0, peak res=785.5M, current mem=785.5M)
+[05/21 01:02:28     22s] Set top cell to gpu.
+[05/21 01:02:29     22s] Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+[05/21 01:02:29     22s] late library set: slow_lib
+[05/21 01:02:29     22s] early library set: fast_lib
+[05/21 01:02:29     22s] Completed consistency checks. Status: Successful
+[05/21 01:02:29     22s] Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+[05/21 01:02:29     22s] late library set: fast_lib
+[05/21 01:02:29     22s] early library set: slow_lib
+[05/21 01:02:29     22s] Completed consistency checks. Status: Successful
+[05/21 01:02:29     22s] Hooked 960 DB cells to tlib cells.
+[05/21 01:02:29     22s] Ending "BindLib:" (total cpu=0:00:00.1, real=0:00:00.0, peak res=800.7M, current mem=800.7M)
+[05/21 01:02:29     22s] Starting recursive module instantiation check.
+[05/21 01:02:29     22s] No recursion found.
+[05/21 01:02:29     22s] Building hierarchical netlist for Cell gpu ...
+[05/21 01:02:29     22s] *** Netlist is unique.
+[05/21 01:02:29     22s] Setting Std. cell height to 3420 DBU (smallest netlist inst).
+[05/21 01:02:29     22s] ** info: there are 1055 modules.
+[05/21 01:02:29     22s] ** info: there are 17124 stdCell insts.
+[05/21 01:02:29     23s] 
+[05/21 01:02:29     23s] *** Memory Usage v#1 (Current mem = 2143.316M, initial mem = 716.109M) ***
+[05/21 01:02:29     23s] *info: set bottom ioPad orient R0
+[05/21 01:02:29     23s] **WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/21 01:02:29     23s] Type 'man IMPFP-3961' for more detail.
+[05/21 01:02:29     23s] **WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/21 01:02:29     23s] Type 'man IMPFP-3961' for more detail.
+[05/21 01:02:29     23s] Start create_tracks
+[05/21 01:02:29     23s] Set Default Input Pin Transition as 0.1 ps.
+[05/21 01:02:29     23s] Set Shrink Factor to 0.90000
+[05/21 01:02:29     23s] Loading preference file /home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/gui.pref.tcl ...
+[05/21 01:02:29     23s] ##  Process: 45            (User Set)               
+[05/21 01:02:29     23s] ##     Node: (not set)                           
+[05/21 01:02:29     23s] 
+##  Check design process and node:  
+##  Design tech node is not set.
+
+[05/21 01:02:29     23s] Applying the recommended capacitance filtering threshold values for 45nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+[05/21 01:02:29     23s] 	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+[05/21 01:02:29     23s] 	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+[05/21 01:02:29     23s] 	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+[05/21 01:02:29     23s] 	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+[05/21 01:02:29     23s] **WARN: (IMPOPT-3602):	The specified path group name reg2reg is not defined.
+[05/21 01:02:29     23s] Type 'man IMPOPT-3602' for more detail.
+[05/21 01:02:29     23s] Effort level <high> specified for reg2reg path_group
+[05/21 01:02:29     23s] Slack adjustment of -0 applied on reg2reg path_group
+[05/21 01:02:29     23s] Slack adjustment of -0 applied on <default> path group
+[05/21 01:02:29     23s] Change floorplan default-technical-site to 'CoreSite'.
+[05/21 01:02:29     23s] Extraction setup Delayed 
+[05/21 01:02:29     23s] *Info: initialize multi-corner CTS.
+[05/21 01:02:29     23s] Ending "SetAnalysisView" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1085.8M, current mem=830.5M)
+[05/21 01:02:29     23s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[05/21 01:02:29     23s] 
+[05/21 01:02:29     23s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign Begin ...
+[05/21 01:02:29     23s] SBFF Setting to complicate: SMDFFHQX8 complicate code: 30.1
+[05/21 01:02:29     23s] SBFF Setting to complicate: SMDFFHQX4 complicate code: 30.1
+[05/21 01:02:29     23s] SBFF Setting to complicate: SMDFFHQX2 complicate code: 30.1
+[05/21 01:02:29     23s] SBFF Setting to complicate: SMDFFHQX1 complicate code: 30.1
+[05/21 01:02:29     23s] SBFF Setting to complicate: SEDFFTRXL complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: SEDFFTRX4 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: SEDFFTRX2 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: SEDFFTRX1 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: SEDFFHQX8 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: SEDFFHQX4 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: SEDFFHQX2 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: SEDFFHQX1 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: EDFFTRXL complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: EDFFTRX4 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: EDFFTRX2 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: EDFFTRX1 complicate code: 30.05
+[05/21 01:02:29     23s] Summary for sequential cells identification: 
+[05/21 01:02:29     23s]   Identified SBFF number: 104
+[05/21 01:02:29     23s]   Identified MBFF number: 0
+[05/21 01:02:29     23s]   Identified SB Latch number: 0
+[05/21 01:02:29     23s]   Identified MB Latch number: 0
+[05/21 01:02:29     23s]   Not identified SBFF number: 16
+[05/21 01:02:29     23s]   Not identified MBFF number: 0
+[05/21 01:02:29     23s]   Not identified SB Latch number: 0
+[05/21 01:02:29     23s]   Not identified MB Latch number: 0
+[05/21 01:02:29     23s]   Number of sequential cells which are not FFs: 32
+[05/21 01:02:29     23s] Total number of combinational cells: 318
+[05/21 01:02:29     23s] Total number of sequential cells: 152
+[05/21 01:02:29     23s] Total number of tristate cells: 10
+[05/21 01:02:29     23s] Total number of level shifter cells: 0
+[05/21 01:02:29     23s] Total number of power gating cells: 0
+[05/21 01:02:29     23s] Total number of isolation cells: 0
+[05/21 01:02:29     23s] Total number of power switch cells: 0
+[05/21 01:02:29     23s] Total number of pulse generator cells: 0
+[05/21 01:02:29     23s] Total number of always on buffers: 0
+[05/21 01:02:29     23s] Total number of retention cells: 0
+[05/21 01:02:29     23s] Total number of physical cells: 0
+[05/21 01:02:29     23s] List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+[05/21 01:02:29     23s] Total number of usable buffers: 16
+[05/21 01:02:29     23s] List of unusable buffers:
+[05/21 01:02:29     23s] Total number of unusable buffers: 0
+[05/21 01:02:29     23s] List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+[05/21 01:02:29     23s] Total number of usable inverters: 19
+[05/21 01:02:29     23s] List of unusable inverters:
+[05/21 01:02:29     23s] Total number of unusable inverters: 0
+[05/21 01:02:29     23s] List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+[05/21 01:02:29     23s] Total number of identified usable delay cells: 8
+[05/21 01:02:29     23s] List of identified unusable delay cells:
+[05/21 01:02:29     23s] Total number of identified unusable delay cells: 0
+[05/21 01:02:29     23s] 
+[05/21 01:02:29     23s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign End ...
+[05/21 01:02:29     23s] 
+[05/21 01:02:29     23s] TimeStamp Deleting Cell Server Begin ...
+[05/21 01:02:29     23s] 
+[05/21 01:02:29     23s] TimeStamp Deleting Cell Server End ...
+[05/21 01:02:29     23s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1093.4M, current mem=1093.3M)
+[05/21 01:02:29     23s] 
+[05/21 01:02:29     23s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign Begin ...
+[05/21 01:02:29     23s] SBFF Setting to complicate: SMDFFHQX8 complicate code: 30.1
+[05/21 01:02:29     23s] SBFF Setting to complicate: SMDFFHQX4 complicate code: 30.1
+[05/21 01:02:29     23s] SBFF Setting to complicate: SMDFFHQX2 complicate code: 30.1
+[05/21 01:02:29     23s] SBFF Setting to complicate: SMDFFHQX1 complicate code: 30.1
+[05/21 01:02:29     23s] SBFF Setting to complicate: SEDFFTRXL complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: SEDFFTRX4 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: SEDFFTRX2 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: SEDFFTRX1 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: SEDFFHQX8 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: SEDFFHQX4 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: SEDFFHQX2 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: SEDFFHQX1 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: EDFFTRXL complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: EDFFTRX4 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: EDFFTRX2 complicate code: 30.05
+[05/21 01:02:29     23s] SBFF Setting to complicate: EDFFTRX1 complicate code: 30.05
+[05/21 01:02:29     23s] Summary for sequential cells identification: 
+[05/21 01:02:29     23s]   Identified SBFF number: 104
+[05/21 01:02:29     23s]   Identified MBFF number: 0
+[05/21 01:02:29     23s]   Identified SB Latch number: 0
+[05/21 01:02:29     23s]   Identified MB Latch number: 0
+[05/21 01:02:29     23s]   Not identified SBFF number: 16
+[05/21 01:02:29     23s]   Not identified MBFF number: 0
+[05/21 01:02:29     23s]   Not identified SB Latch number: 0
+[05/21 01:02:29     23s]   Not identified MB Latch number: 0
+[05/21 01:02:29     23s]   Number of sequential cells which are not FFs: 32
+[05/21 01:02:29     23s] 
+[05/21 01:02:29     23s] Trim Metal Layers:
+[05/21 01:02:29     23s]  Visiting view : setup_view
+[05/21 01:02:29     23s]    : PowerDomain = none : Weighted F : unweighted  = 37.60 (1.000) with rcCorner = 0
+[05/21 01:02:29     23s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = -1
+[05/21 01:02:29     23s]  Visiting view : hold_view
+[05/21 01:02:29     23s]    : PowerDomain = none : Weighted F : unweighted  = 11.90 (1.000) with rcCorner = 0
+[05/21 01:02:29     23s]    : PowerDomain = none : Weighted F : unweighted  = 5.30 (1.000) with rcCorner = -1
+[05/21 01:02:29     23s] 
+[05/21 01:02:29     23s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign End ...
+[05/21 01:02:29     23s] 
+[05/21 01:02:29     23s] TimeStamp Deleting Cell Server Begin ...
+[05/21 01:02:29     23s] 
+[05/21 01:02:29     23s] TimeStamp Deleting Cell Server End ...
+[05/21 01:02:30     23s] % Begin Load MMMC data post ... (date=05/21 01:02:29, mem=1093.9M)
+[05/21 01:02:30     23s] % End Load MMMC data post ... (date=05/21 01:02:30, total cpu=0:00:00.0, real=0:00:01.0, peak res=1094.0M, current mem=1094.0M)
+[05/21 01:02:30     23s] Reading floorplan file - /home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/gpu.fp.gz (mem = 2410.6M).
+[05/21 01:02:30     23s] % Begin Load floorplan data ... (date=05/21 01:02:30, mem=1094.1M)
+[05/21 01:02:30     23s] *info: reset 17515 existing net BottomPreferredLayer and AvoidDetour
+[05/21 01:02:30     23s] Deleting old partition specification.
+[05/21 01:02:30     23s] Set FPlanBox to (0 0 482000 474620)
+[05/21 01:02:30     23s] **WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/21 01:02:30     23s] Type 'man IMPFP-3961' for more detail.
+[05/21 01:02:30     23s] **WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/21 01:02:30     23s] Type 'man IMPFP-3961' for more detail.
+[05/21 01:02:30     23s] Start create_tracks
+[05/21 01:02:30     23s]  ... processed partition successfully.
+[05/21 01:02:30     23s] Reading binary special route file /home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/gpu.fp.spr.gz (Created by Innovus v21.18-s099_1 on Thu May 21 01:01:57 2026, version: 1)
+[05/21 01:02:30     23s] Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1094.9M, current mem=1094.9M)
+[05/21 01:02:30     23s] There are 195 nets with weight being set
+[05/21 01:02:30     23s] There are 200 nets with bottomPreferredRoutingLayer being set
+[05/21 01:02:30     23s] There are 195 nets with avoidDetour being set
+[05/21 01:02:30     23s] Extracting standard cell pins and blockage ...... 
+[05/21 01:02:30     23s] Pin and blockage extraction finished
+[05/21 01:02:30     23s] % End Load floorplan data ... (date=05/21 01:02:30, total cpu=0:00:00.1, real=0:00:00.0, peak res=1095.9M, current mem=1095.9M)
+[05/21 01:02:30     23s] Reading congestion map file /home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/gpu.route.congmap.gz ...
+[05/21 01:02:30     23s] % Begin Load SymbolTable ... (date=05/21 01:02:30, mem=1097.0M)
+[05/21 01:02:31     23s] Suppress "**WARN ..." messages.
+[05/21 01:02:31     23s] routingBox: (0 0) (482000 474620)
+[05/21 01:02:31     23s] coreBox:    (20000 20140) (462000 454480)
+[05/21 01:02:31     23s] Un-suppress "**WARN ..." messages.
+[05/21 01:02:31     24s] % End Load SymbolTable ... (date=05/21 01:02:31, total cpu=0:00:00.1, real=0:00:01.0, peak res=1100.7M, current mem=1100.7M)
+[05/21 01:02:31     24s] Loading place ...
+[05/21 01:02:31     24s] % Begin Load placement data ... (date=05/21 01:02:31, mem=1100.7M)
+[05/21 01:02:31     24s] Reading placement file - /home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/gpu.place.gz.
+[05/21 01:02:31     24s] ** Reading stdCellPlacement_binary (Created by Innovus v21.18-s099_1 on Thu May 21 01:01:58 2026, version# 2) ...
+[05/21 01:02:31     24s] Read Views for adaptive view pruning ...
+[05/21 01:02:31     24s] Read 0 views from Binary DB for adaptive view pruning
+[05/21 01:02:31     24s] *** Checked 2 GNC rules.
+[05/21 01:02:31     24s] *** applyConnectGlobalNets disabled.
+[05/21 01:02:31     24s] *** Completed restorePlace (cpu=0:00:00.1 real=0:00:00.0 mem=2548.6M) ***
+[05/21 01:02:31     24s] Total net length = 2.343e+05 (1.302e+05 1.041e+05) (ext = 1.234e+04)
+[05/21 01:02:31     24s] % End Load placement data ... (date=05/21 01:02:31, total cpu=0:00:00.1, real=0:00:00.0, peak res=1105.8M, current mem=1105.0M)
+[05/21 01:02:31     24s] Reading PG file /home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/gpu.pg.gz, version#2, (Created by Innovus v21.18-s099_1 on       Thu May 21 01:01:57 2026)
+[05/21 01:02:31     24s] *** Completed restorePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=2545.6M) ***
+[05/21 01:02:31     24s] % Begin Load routing data ... (date=05/21 01:02:31, mem=1105.5M)
+[05/21 01:02:31     24s] Reading routing file - /home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/gpu.route.gz.
+[05/21 01:02:32     24s] Reading Innovus routing data (Created by Innovus v21.18-s099_1 on Thu May 21 01:01:58 2026 Format: 20.1) ...
+[05/21 01:02:32     24s] *** Total 17439 nets are successfully restored.
+[05/21 01:02:32     24s] *** Completed restoreRoute (cpu=0:00:00.1 real=0:00:01.0 mem=2566.6M) ***
+[05/21 01:02:32     24s] % End Load routing data ... (date=05/21 01:02:32, total cpu=0:00:00.2, real=0:00:01.0, peak res=1127.2M, current mem=1126.2M)
+[05/21 01:02:32     24s] Loading Drc markers ...
+[05/21 01:02:32     24s] ... 8 markers are loaded ...
+[05/21 01:02:32     24s] ... 0 geometry drc markers are loaded ...
+[05/21 01:02:32     24s] ... 0 antenna drc markers are loaded ...
+[05/21 01:02:32     24s] TAT_INFO: restoreCongMap REAL = 1 : CPU = 0 : MEM = 0.
+[05/21 01:02:32     24s] Reading property file /home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/gpu.prop
+[05/21 01:02:32     24s] *** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=2443.6M) ***
+[05/21 01:02:33     24s] Reading dirtyarea snapshot file /home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/gpu.db.da.gz (Create by Innovus v21.18-s099_1 on Thu May 21 01:01:58 2026, version: 4).
+[05/21 01:02:33     24s] Set Default Input Pin Transition as 0.1 ps.
+[05/21 01:02:33     25s] eee: readRCCornerMetaData, file read unsuccessful: /home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/extraction/extractionMetaData.gz
+[05/21 01:02:33     25s] Extraction setup Started 
+[05/21 01:02:33     25s] 
+[05/21 01:02:33     25s] Trim Metal Layers:
+[05/21 01:02:33     25s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[05/21 01:02:33     25s] **WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+[05/21 01:02:33     25s] Type 'man IMPEXT-6202' for more detail.
+[05/21 01:02:33     25s] Reading Capacitance Table File /home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl ...
+[05/21 01:02:33     25s] Cap table was created using Encounter 10.10-b056_1.
+[05/21 01:02:33     25s] Process name: cln28hpl_1p10m+alrdl_5x2yu2yz_typical.
+[05/21 01:02:33     25s] Set Shrink Factor to 0.90000
+[05/21 01:02:33     25s] Importing multi-corner RC tables ... 
+[05/21 01:02:33     25s] Summary of Active RC-Corners : 
+[05/21 01:02:33     25s]  
+[05/21 01:02:33     25s]  Analysis View: setup_view
+[05/21 01:02:33     25s]     RC-Corner Name        : typical_rc
+[05/21 01:02:33     25s]     RC-Corner Index       : 0
+[05/21 01:02:33     25s]     RC-Corner Temperature : 25 Celsius
+[05/21 01:02:33     25s]     RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+[05/21 01:02:33     25s]     RC-Corner PreRoute Res Factor         : 1
+[05/21 01:02:33     25s]     RC-Corner PreRoute Cap Factor         : 1
+[05/21 01:02:33     25s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/21 01:02:33     25s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/21 01:02:33     25s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/21 01:02:33     25s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/21 01:02:33     25s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/21 01:02:33     25s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[05/21 01:02:33     25s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[05/21 01:02:33     25s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/21 01:02:33     25s]     RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+[05/21 01:02:33     25s]  
+[05/21 01:02:33     25s]  Analysis View: hold_view
+[05/21 01:02:33     25s]     RC-Corner Name        : typical_rc
+[05/21 01:02:33     25s]     RC-Corner Index       : 0
+[05/21 01:02:33     25s]     RC-Corner Temperature : 25 Celsius
+[05/21 01:02:33     25s]     RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+[05/21 01:02:33     25s]     RC-Corner PreRoute Res Factor         : 1
+[05/21 01:02:33     25s]     RC-Corner PreRoute Cap Factor         : 1
+[05/21 01:02:33     25s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/21 01:02:33     25s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/21 01:02:33     25s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/21 01:02:33     25s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/21 01:02:33     25s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/21 01:02:33     25s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[05/21 01:02:33     25s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[05/21 01:02:33     25s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/21 01:02:33     25s]     RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+[05/21 01:02:33     25s] 
+[05/21 01:02:33     25s] Trim Metal Layers:
+[05/21 01:02:33     25s] LayerId::1 widthSet size::4
+[05/21 01:02:33     25s] LayerId::2 widthSet size::4
+[05/21 01:02:33     25s] LayerId::3 widthSet size::4
+[05/21 01:02:33     25s] LayerId::4 widthSet size::4
+[05/21 01:02:33     25s] LayerId::5 widthSet size::4
+[05/21 01:02:33     25s] LayerId::6 widthSet size::4
+[05/21 01:02:33     25s] LayerId::7 widthSet size::5
+[05/21 01:02:33     25s] LayerId::8 widthSet size::5
+[05/21 01:02:33     25s] LayerId::9 widthSet size::5
+[05/21 01:02:33     25s] LayerId::10 widthSet size::4
+[05/21 01:02:33     25s] LayerId::11 widthSet size::3
+[05/21 01:02:33     25s] eee: readRCGridDensityData file read unsuccessful:extractionRCGridDensityData.gz
+[05/21 01:02:33     25s] Restore PreRoute RC Grid data failed.LayerId::1 widthSet size::4
+[05/21 01:02:33     25s] LayerId::2 widthSet size::4
+[05/21 01:02:33     25s] LayerId::3 widthSet size::4
+[05/21 01:02:33     25s] LayerId::4 widthSet size::4
+[05/21 01:02:33     25s] LayerId::5 widthSet size::4
+[05/21 01:02:33     25s] LayerId::6 widthSet size::4
+[05/21 01:02:33     25s] LayerId::7 widthSet size::5
+[05/21 01:02:33     25s] LayerId::8 widthSet size::5
+[05/21 01:02:33     25s] LayerId::9 widthSet size::5
+[05/21 01:02:33     25s] LayerId::10 widthSet size::4
+[05/21 01:02:33     25s] LayerId::11 widthSet size::3
+[05/21 01:02:33     25s] Updating RC grid for preRoute extraction ...
+[05/21 01:02:33     25s] eee: pegSigSF::1.070000
+[05/21 01:02:33     25s] Initializing multi-corner capacitance tables ... 
+[05/21 01:02:34     25s] Initializing multi-corner resistance tables ...
+[05/21 01:02:34     25s] Creating RPSQ from WeeR and WRes ...
+[05/21 01:02:34     25s] Loading rc congestion map /home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/gpu.congmap.gz ...
+[05/21 01:02:34     25s] eee: l::1 avDens::0.098220 usedTrk::1711.914006 availTrk::17429.387932 sigTrk::1711.914006
+[05/21 01:02:34     25s] eee: l::2 avDens::0.240377 usedTrk::4123.255265 availTrk::17153.309137 sigTrk::4123.255265
+[05/21 01:02:34     25s] eee: l::3 avDens::0.295061 usedTrk::5514.505434 availTrk::18689.387932 sigTrk::5514.505434
+[05/21 01:02:34     25s] eee: l::4 avDens::0.149374 usedTrk::2651.650464 availTrk::17751.809137 sigTrk::2651.650464
+[05/21 01:02:34     25s] eee: l::5 avDens::0.148997 usedTrk::2516.467253 availTrk::16889.387932 sigTrk::2516.467253
+[05/21 01:02:34     25s] eee: l::6 avDens::0.047573 usedTrk::647.485583 availTrk::13610.350977 sigTrk::647.485583
+[05/21 01:02:34     25s] eee: l::7 avDens::0.033023 usedTrk::361.583510 availTrk::10949.387932 sigTrk::361.583510
+[05/21 01:02:34     25s] eee: l::8 avDens::0.015592 usedTrk::106.768947 availTrk::6847.478048 sigTrk::106.768947
+[05/21 01:02:34     25s] eee: l::9 avDens::0.007154 usedTrk::6.438596 availTrk::900.000000 sigTrk::6.438596
+[05/21 01:02:34     25s] eee: l::10 avDens::0.011046 usedTrk::2.266667 availTrk::205.200000 sigTrk::2.266667
+[05/21 01:02:34     25s] eee: l::11 avDens::0.008731 usedTrk::1.257310 availTrk::144.000000 sigTrk::1.257310
+[05/21 01:02:34     25s] {RT typical_rc 0 11 11 {7 0} {10 0} 2}
+[05/21 01:02:34     25s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.280045 uaWl=0.000000 uaWlH=0.000000 aWlH=0.000000 lMod=0 pMax=0.843000 pMod=81 wcR=0.772700 newSi=0.001600 wHLS=1.935230 siPrev=0 viaL=0.000000 crit=0.002322 shortMod=0.011610 fMod=0.000580 
+[05/21 01:02:34     25s] {RT typical_rc 0 11 11 {7 0} {10 0} 2}
+[05/21 01:02:34     25s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.280045 uaWl=0.000000 uaWlH=0.000000 aWlH=0.000000 lMod=0 pMax=0.843000 pMod=81 wcR=0.772700 newSi=0.001600 wHLS=1.935230 siPrev=0 viaL=0.000000 crit=0.002322 shortMod=0.011610 fMod=0.000580 
+[05/21 01:02:34     25s] The lower process node is set using setDesignMode and the technology file for TQuantus extraction specified. Therefore, the default value for PostRoute extraction mode's effortLevel(-effortLeveloption of the setExtractRCMode) changed from 'low' to 'medium'.
+[05/21 01:02:34     25s] Start generating vias ..
+[05/21 01:02:34     25s] #create default rule from bind_ndr_rule rule=0x7f226bc96530 0x7f223a412568
+[05/21 01:02:34     25s] ### import design signature (1): route=1 fixed_route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1 via=610195162 routing_via=1
+[05/21 01:02:34     25s] #Skip building auto via since it is not turned on.
+[05/21 01:02:34     25s] Extracting standard cell pins and blockage ...... 
+[05/21 01:02:34     25s] Pin and blockage extraction finished
+[05/21 01:02:34     25s] Via generation completed.
+[05/21 01:02:34     25s] % Begin Load power constraints ... (date=05/21 01:02:34, mem=1175.8M)
+[05/21 01:02:34     25s] % End Load power constraints ... (date=05/21 01:02:34, total cpu=0:00:00.0, real=0:00:00.0, peak res=1182.3M, current mem=1182.3M)
+[05/21 01:02:35     26s] % Begin load AAE data ... (date=05/21 01:02:34, mem=1226.4M)
+[05/21 01:02:35     26s] AAE DB initialization (MEM=2710.3 CPU=0:00:00.0 REAL=0:00:00.0) 
+[05/21 01:02:35     26s] % End load AAE data ... (date=05/21 01:02:35, total cpu=0:00:00.6, real=0:00:00.0, peak res=1235.2M, current mem=1235.2M)
+[05/21 01:02:35     26s] Restoring CCOpt config...
+[05/21 01:02:35     26s] 
+[05/21 01:02:35     26s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign Begin ...
+[05/21 01:02:35     26s] SBFF Setting to complicate: SMDFFHQX8 complicate code: 30.1
+[05/21 01:02:35     26s] SBFF Setting to complicate: SMDFFHQX4 complicate code: 30.1
+[05/21 01:02:35     26s] SBFF Setting to complicate: SMDFFHQX2 complicate code: 30.1
+[05/21 01:02:35     26s] SBFF Setting to complicate: SMDFFHQX1 complicate code: 30.1
+[05/21 01:02:35     26s] SBFF Setting to complicate: SEDFFTRXL complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: SEDFFTRX4 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: SEDFFTRX2 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: SEDFFTRX1 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: SEDFFHQX8 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: SEDFFHQX4 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: SEDFFHQX2 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: SEDFFHQX1 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: EDFFTRXL complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: EDFFTRX4 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: EDFFTRX2 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: EDFFTRX1 complicate code: 30.05
+[05/21 01:02:35     26s] Summary for sequential cells identification: 
+[05/21 01:02:35     26s]   Identified SBFF number: 104
+[05/21 01:02:35     26s]   Identified MBFF number: 0
+[05/21 01:02:35     26s]   Identified SB Latch number: 0
+[05/21 01:02:35     26s]   Identified MB Latch number: 0
+[05/21 01:02:35     26s]   Not identified SBFF number: 16
+[05/21 01:02:35     26s]   Not identified MBFF number: 0
+[05/21 01:02:35     26s]   Not identified SB Latch number: 0
+[05/21 01:02:35     26s]   Not identified MB Latch number: 0
+[05/21 01:02:35     26s]   Number of sequential cells which are not FFs: 32
+[05/21 01:02:35     26s]  Visiting view : setup_view
+[05/21 01:02:35     26s]    : PowerDomain = none : Weighted F : unweighted  = 36.80 (1.000) with rcCorner = 0
+[05/21 01:02:35     26s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = -1
+[05/21 01:02:35     26s]  Visiting view : hold_view
+[05/21 01:02:35     26s]    : PowerDomain = none : Weighted F : unweighted  = 11.90 (1.000) with rcCorner = 0
+[05/21 01:02:35     26s]    : PowerDomain = none : Weighted F : unweighted  = 5.30 (1.000) with rcCorner = -1
+[05/21 01:02:35     26s] 
+[05/21 01:02:35     26s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign End ...
+[05/21 01:02:35     26s]   Extracting original clock gating for clk...
+[05/21 01:02:35     26s]     clock_tree clk contains 1827 sinks and 0 clock gates.
+[05/21 01:02:35     26s]   Extracting original clock gating for clk done.
+[05/21 01:02:35     26s]   The skew group clk/func_mode was created. It contains 1827 sinks and 1 sources.
+[05/21 01:02:35     26s]   The skew group clk/func_mode was created. It contains 1827 sinks and 1 sources.
+[05/21 01:02:35     26s] Restoring CCOpt config done.
+[05/21 01:02:35     26s] 
+[05/21 01:02:35     26s] TimeStamp Deleting Cell Server Begin ...
+[05/21 01:02:35     26s] 
+[05/21 01:02:35     26s] TimeStamp Deleting Cell Server End ...
+[05/21 01:02:35     26s] 
+[05/21 01:02:35     26s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign Begin ...
+[05/21 01:02:35     26s] SBFF Setting to complicate: SMDFFHQX8 complicate code: 30.1
+[05/21 01:02:35     26s] SBFF Setting to complicate: SMDFFHQX4 complicate code: 30.1
+[05/21 01:02:35     26s] SBFF Setting to complicate: SMDFFHQX2 complicate code: 30.1
+[05/21 01:02:35     26s] SBFF Setting to complicate: SMDFFHQX1 complicate code: 30.1
+[05/21 01:02:35     26s] SBFF Setting to complicate: SEDFFTRXL complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: SEDFFTRX4 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: SEDFFTRX2 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: SEDFFTRX1 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: SEDFFHQX8 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: SEDFFHQX4 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: SEDFFHQX2 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: SEDFFHQX1 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: EDFFTRXL complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: EDFFTRX4 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: EDFFTRX2 complicate code: 30.05
+[05/21 01:02:35     26s] SBFF Setting to complicate: EDFFTRX1 complicate code: 30.05
+[05/21 01:02:35     26s] Summary for sequential cells identification: 
+[05/21 01:02:35     26s]   Identified SBFF number: 104
+[05/21 01:02:35     26s]   Identified MBFF number: 0
+[05/21 01:02:35     26s]   Identified SB Latch number: 0
+[05/21 01:02:35     26s]   Identified MB Latch number: 0
+[05/21 01:02:35     26s]   Not identified SBFF number: 16
+[05/21 01:02:35     26s]   Not identified MBFF number: 0
+[05/21 01:02:35     26s]   Not identified SB Latch number: 0
+[05/21 01:02:35     26s]   Not identified MB Latch number: 0
+[05/21 01:02:35     26s]   Number of sequential cells which are not FFs: 32
+[05/21 01:02:35     26s] Total number of combinational cells: 318
+[05/21 01:02:35     26s] Total number of sequential cells: 152
+[05/21 01:02:35     26s] Total number of tristate cells: 10
+[05/21 01:02:35     26s] Total number of level shifter cells: 0
+[05/21 01:02:35     26s] Total number of power gating cells: 0
+[05/21 01:02:35     26s] Total number of isolation cells: 0
+[05/21 01:02:35     26s] Total number of power switch cells: 0
+[05/21 01:02:35     26s] Total number of pulse generator cells: 0
+[05/21 01:02:35     26s] Total number of always on buffers: 0
+[05/21 01:02:35     26s] Total number of retention cells: 0
+[05/21 01:02:35     26s] Total number of physical cells: 0
+[05/21 01:02:35     26s] List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+[05/21 01:02:35     26s] Total number of usable buffers: 16
+[05/21 01:02:35     26s] List of unusable buffers:
+[05/21 01:02:35     26s] Total number of unusable buffers: 0
+[05/21 01:02:35     26s] List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+[05/21 01:02:35     26s] Total number of usable inverters: 19
+[05/21 01:02:35     26s] List of unusable inverters:
+[05/21 01:02:35     26s] Total number of unusable inverters: 0
+[05/21 01:02:35     26s] List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+[05/21 01:02:35     26s] Total number of identified usable delay cells: 8
+[05/21 01:02:35     26s] List of identified unusable delay cells:
+[05/21 01:02:35     26s] Total number of identified unusable delay cells: 0
+[05/21 01:02:35     26s] 
+[05/21 01:02:35     26s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign End ...
+[05/21 01:02:35     26s] 
+[05/21 01:02:35     26s] TimeStamp Deleting Cell Server Begin ...
+[05/21 01:02:35     26s] 
+[05/21 01:02:35     26s] TimeStamp Deleting Cell Server End ...
+[05/21 01:02:35     26s] **WARN: (IMPCTE-107):	The following globals have been obsoleted since version . They will be removed in the next release. 
+[05/21 01:02:35     26s] timing_enable_separate_device_slew_effect_sensitivities
+[05/21 01:02:35     26s] #% End load design ... (date=05/21 01:02:35, total cpu=0:00:06.1, real=0:00:09.0, peak res=1257.3M, current mem=1243.0M)
+[05/21 01:02:35     26s] 
+[05/21 01:02:35     26s] *** Summary of all messages that are not suppressed in this session:
+[05/21 01:02:35     26s] Severity  ID               Count  Summary                                  
+[05/21 01:02:35     26s] WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[05/21 01:02:35     26s] WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+[05/21 01:02:35     26s] WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+[05/21 01:02:35     26s] WARNING   IMPOPT-3602          1  The specified path group name %s is not ...
+[05/21 01:02:35     26s] WARNING   IMPCTE-107           1  The following globals have been obsolete...
+[05/21 01:02:35     26s] WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+[05/21 01:02:35     26s] *** Message Summary: 10 warning(s), 0 error(s)
+[05/21 01:02:35     26s] 
+[05/21 01:02:35     26s] <CMD> all_constraint_modes -active
+[05/21 01:02:35     26s] <CMD> set_interactive_constraint_modes [all_constraint_modes -active]
+[05/21 01:02:35     26s] <CMD> current_design
+[05/21 01:02:35     26s] <CMD> set_max_capacitance $MAX_CAP [current_design]
+[05/21 01:02:35     26s] <CMD> set_propagated_clock [all_clocks]
+[05/21 01:02:35     26s] <CMD> reset_clock_uncertainty -from [all_clocks] -to [all_clocks]
+[05/21 01:02:35     26s] <CMD> set_clock_uncertainty -setup $SETUP_CLOCK_UNCERTAINTY [all_clocks]
+[05/21 01:02:35     26s] <CMD> set_clock_uncertainty -hold  $HOLD_CLOCK_UNCERTAINTY  [all_clocks]
+[05/21 01:02:35     26s] <CMD> set_max_transition $MAX_TRANSITION_DATA  -data_path  [all_clocks]
+[05/21 01:02:35     26s] <CMD> set_max_transition $MAX_TRANSITION_CLOCK -clock_path [all_clocks]
+[05/21 01:02:35     26s] <CMD> current_design
+[05/21 01:02:35     26s] <CMD> set_max_fanout $MAX_FANOUT [current_design]
+[05/21 01:02:35     26s] <CMD> setAnalysisMode -analysisType onChipVariation
+[05/21 01:02:35     26s] <CMD> setAnalysisMode -cppr both
+[05/21 01:02:35     26s] <CMD> setNanoRouteMode -routeWithTimingDriven true
+[05/21 01:02:35     26s] <CMD> setNanoRouteMode -routeInsertAntennaDiode true
+[05/21 01:02:35     26s] <CMD> setNanoRouteMode -routeTopRoutingLayer 5
+[05/21 01:02:35     26s] #WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+[05/21 01:02:35     26s] <CMD> setNanoRouteMode -routeBottomRoutingLayer 1
+[05/21 01:02:35     26s] #WARNING (NRIF-90) Option setNanoRouteMode -routeBottomRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -bottomRoutingLayer instead.
+[05/21 01:02:35     26s] <CMD> routeDesign
+[05/21 01:02:35     26s] #% Begin routeDesign (date=05/21 01:02:35, mem=1242.8M)
+[05/21 01:02:35     26s] ### Time Record (routeDesign) is installed.
+[05/21 01:02:35     26s] #routeDesign: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1242.80 (MB), peak = 1257.34 (MB)
+[05/21 01:02:35     26s] AAE_INFO: Pre Route call back at the beginning of routeDesign
+[05/21 01:02:35     26s] #**INFO: setDesignMode -flowEffort standard
+[05/21 01:02:35     26s] #**INFO: setDesignMode -powerEffort none
+[05/21 01:02:35     26s] **INFO: User settings:
+[05/21 01:02:35     26s] setNanoRouteMode -extractThirdPartyCompatible  false
+[05/21 01:02:35     26s] setNanoRouteMode -grouteExpTdStdDelay          38.8
+[05/21 01:02:35     26s] setNanoRouteMode -routeBottomRoutingLayer      1
+[05/21 01:02:35     26s] setNanoRouteMode -routeInsertAntennaDiode      true
+[05/21 01:02:35     26s] setNanoRouteMode -routeTopRoutingLayer         5
+[05/21 01:02:35     26s] setNanoRouteMode -routeWithTimingDriven        true
+[05/21 01:02:35     26s] setDesignMode -process                         45
+[05/21 01:02:35     26s] setExtractRCMode -coupling_c_th                3
+[05/21 01:02:35     26s] setExtractRCMode -engine                       preRoute
+[05/21 01:02:35     26s] setExtractRCMode -relative_c_th                0.03
+[05/21 01:02:35     26s] setExtractRCMode -total_c_th                   5
+[05/21 01:02:35     26s] setDelayCalMode -enable_high_fanout            true
+[05/21 01:02:35     26s] setDelayCalMode -engine                        aae
+[05/21 01:02:35     26s] setDelayCalMode -ignoreNetLoad                 false
+[05/21 01:02:35     26s] setDelayCalMode -socv_accuracy_mode            low
+[05/21 01:02:35     26s] setSIMode -separate_delta_delay_on_data        true
+[05/21 01:02:35     26s] 
+[05/21 01:02:35     26s] #Failed to read tech file /home/user_77/backup_extract/my_project/project/make_flow2/GPU_DESIGN_LIBRARY/clock_opt.inn.dat/libs/mmmc/typical_rc/gpdk045.tch. Timing related functionality might be disabled.
+[05/21 01:02:35     26s] #No active RC corner or QRC tech file is missing.
+[05/21 01:02:35     26s] #**INFO: multi-cut via swapping will be performed after routing.
+[05/21 01:02:35     26s] #**INFO: All auto set options tuned by routeDesign will be restored to their original settings on command completion.
+[05/21 01:02:35     26s] OPERPROF: Starting checkPlace at level 1, MEM:2714.3M, EPOCH TIME: 1779303755.850230
+[05/21 01:02:35     26s] # Init pin-track-align, new floorplan.
+[05/21 01:02:35     26s] Processing tracks to init pin-track alignment.
+[05/21 01:02:35     26s] z: 2, totalTracks: 1
+[05/21 01:02:35     26s] z: 4, totalTracks: 1
+[05/21 01:02:35     26s] z: 6, totalTracks: 1
+[05/21 01:02:35     26s] z: 8, totalTracks: 1
+[05/21 01:02:35     26s] #spOpts: N=45 hrOri=1 hrSnap=1 rpCkHalo=4 
+[05/21 01:02:35     26s] All LLGs are deleted
+[05/21 01:02:35     26s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/21 01:02:35     26s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/21 01:02:35     26s] OPERPROF:   Starting spSiteCleanup(true) at level 2, MEM:2722.3M, EPOCH TIME: 1779303755.974205
+[05/21 01:02:35     26s] OPERPROF:   Finished spSiteCleanup(true) at level 2, CPU:0.000, REAL:0.000, MEM:2722.3M, EPOCH TIME: 1779303755.974429
+[05/21 01:02:35     26s] # Building gpu llgBox search-tree.
+[05/21 01:02:35     26s] OPERPROF:   Starting spInitSiteArr at level 2, MEM:2722.3M, EPOCH TIME: 1779303755.975049
+[05/21 01:02:35     26s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/21 01:02:35     26s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/21 01:02:35     26s] OPERPROF:     Starting spiInitFpSiteArr at level 3, MEM:2722.3M, EPOCH TIME: 1779303755.976860
+[05/21 01:02:35     26s] Max number of tech site patterns supported in site array is 256.
+[05/21 01:02:35     26s] Core basic site is CoreSite
+[05/21 01:02:35     26s] OPERPROF:       Starting spiCheckSiteIfFastDPInitAvailable at level 4, MEM:2722.3M, EPOCH TIME: 1779303755.977620
+[05/21 01:02:35     26s] SY_THREAD_POOL_QUEUE SY-GLB-THREAD-POOL (0x3df646a0): Create thread pool 0x7f223a5a7760.
+[05/21 01:02:35     26s] SY_THREAD_POOL_QUEUE SY-GLB-THREAD-POOL (0x3df646a0): 0 out of 1 thread pools are available.
+[05/21 01:02:35     26s] After signature check, allow fast init is false, keep pre-filter is false.
+[05/21 01:02:35     26s] After signature check and other controls, allow fast init is false, keep pre-filter is false.
+[05/21 01:02:35     26s] OPERPROF:       Finished spiCheckSiteIfFastDPInitAvailable at level 4, CPU:0.010, REAL:0.007, MEM:3739.3M, EPOCH TIME: 1779303755.984285
+[05/21 01:02:35     26s] Use non-trimmed site array because memory saving is not enough.
+[05/21 01:02:35     26s] SiteArray: non-trimmed site array dimensions = 127 x 1105
+[05/21 01:02:35     26s] SiteArray: use 815,104 bytes
+[05/21 01:02:35     26s] SiteArray: current memory after site array memory allocation 3740.1M
+[05/21 01:02:35     26s] SiteArray: FP blocked sites are writable
+[05/21 01:02:35     26s] SiteArray: number of non floorplan blocked sites for llg default is 136875
+[05/21 01:02:35     26s] Atter site array init, number of instance map data is 0.
+[05/21 01:02:35     26s] OPERPROF:     Finished spiInitFpSiteArr at level 3, CPU:0.010, REAL:0.015, MEM:3740.1M, EPOCH TIME: 1779303755.991797
+[05/21 01:02:35     26s] 
+[05/21 01:02:35     26s]  Pre_CCE_Colorizing is not ON! (0:0:574:0)
+[05/21 01:02:35     26s] OPERPROF:   Finished spInitSiteArr at level 2, CPU:0.030, REAL:0.023, MEM:3741.1M, EPOCH TIME: 1779303755.997657
+[05/21 01:02:35     26s] Begin checking placement ... (start mem=2714.3M, init mem=3741.1M)
+[05/21 01:02:35     26s] Begin checking exclusive groups violation ...
+[05/21 01:02:35     26s] There are 0 groups to check, max #box is 0, total #box is 0
+[05/21 01:02:35     26s] Finished checking exclusive groups violations. Found 0 Vio.
+[05/21 01:02:36     27s] 
+[05/21 01:02:36     27s] Running CheckPlace using 1 thread in normal mode...
+[05/21 01:02:36     27s] 
+[05/21 01:02:36     27s] ...checkPlace normal is done!
+[05/21 01:02:36     27s] OPERPROF:   Starting checkPlace/Vio-Check at level 2, MEM:3746.1M, EPOCH TIME: 1779303756.167585
+[05/21 01:02:36     27s] OPERPROF:   Finished checkPlace/Vio-Check at level 2, CPU:0.010, REAL:0.011, MEM:3746.1M, EPOCH TIME: 1779303756.178316
+[05/21 01:02:36     27s] *info: Placed = 18874          (Fixed = 1853)
+[05/21 01:02:36     27s] *info: Unplaced = 0           
+[05/21 01:02:36     27s] Placement Density:95.12%(43389/45614)
+[05/21 01:02:36     27s] Placement Density (including fixed std cells):95.25%(44586/46811)
+[05/21 01:02:36     27s] All LLGs are deleted
+[05/21 01:02:36     27s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:19126).
+[05/21 01:02:36     27s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/21 01:02:36     27s] OPERPROF:   Starting spSiteCleanup(true) at level 2, MEM:3746.1M, EPOCH TIME: 1779303756.184566
+[05/21 01:02:36     27s] OPERPROF:   Finished spSiteCleanup(true) at level 2, CPU:0.000, REAL:0.000, MEM:3746.1M, EPOCH TIME: 1779303756.184794
+[05/21 01:02:36     27s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/21 01:02:36     27s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/21 01:02:36     27s] Finished checkPlace (total: cpu=0:00:00.3, real=0:00:01.0; vio checks: cpu=0:00:00.2, real=0:00:01.0; mem=3746.1M)
+[05/21 01:02:36     27s] OPERPROF: Finished checkPlace at level 1, CPU:0.340, REAL:0.336, MEM:3746.1M, EPOCH TIME: 1779303756.185807
+[05/21 01:02:36     27s] 
+[05/21 01:02:36     27s] changeUseClockNetStatus Option :  -noFixedNetWires 
+[05/21 01:02:36     27s] *** Changed status on (111) nets in Clock.
+[05/21 01:02:36     27s] *** End changeUseClockNetStatus (cpu=0:00:00.0, real=0:00:00.0, mem=3746.1M) ***
+[05/21 01:02:36     27s] #Start route 195 clock and analog nets...
+[05/21 01:02:36     27s] % Begin globalDetailRoute (date=05/21 01:02:36, mem=1267.2M)
+[05/21 01:02:36     27s] 
+[05/21 01:02:36     27s] globalDetailRoute
+[05/21 01:02:36     27s] 
+[05/21 01:02:36     27s] #Start globalDetailRoute on Thu May 21 01:02:36 2026
+[05/21 01:02:36     27s] #
+[05/21 01:02:36     27s] ### Time Record (globalDetailRoute) is installed.
+[05/21 01:02:36     27s] ### Time Record (Pre Callback) is installed.
+[05/21 01:02:36     27s] RC Grid backup saved.
+[05/21 01:02:36     27s] ### Time Record (Pre Callback) is uninstalled.
+[05/21 01:02:36     27s] ### Time Record (DB Import) is installed.
+[05/21 01:02:36     27s] ### Time Record (Timing Data Generation) is installed.
+[05/21 01:02:36     27s] ### Time Record (Timing Data Generation) is uninstalled.
+[05/21 01:02:36     27s] #create default rule from bind_ndr_rule rule=0x7f226bc96530 0x7f223b4b2568
+[05/21 01:02:36     27s] 
+[05/21 01:02:36     27s] Trim Metal Layers:
+[05/21 01:02:36     27s] LayerId::1 widthSet size::4
+[05/21 01:02:36     27s] LayerId::2 widthSet size::4
+[05/21 01:02:36     27s] LayerId::3 widthSet size::4
+[05/21 01:02:36     27s] LayerId::4 widthSet size::4
+[05/21 01:02:36     27s] LayerId::5 widthSet size::4
+[05/21 01:02:36     27s] LayerId::6 widthSet size::4
+[05/21 01:02:36     27s] LayerId::7 widthSet size::5
+[05/21 01:02:36     27s] LayerId::8 widthSet size::5
+[05/21 01:02:36     27s] LayerId::9 widthSet size::5
+[05/21 01:02:36     27s] LayerId::10 widthSet size::4
+[05/21 01:02:36     27s] LayerId::11 widthSet size::3
+[05/21 01:02:36     27s] Skipped RC grid update for preRoute extraction.
+[05/21 01:02:36     27s] eee: pegSigSF::1.070000
+[05/21 01:02:36     27s] Initializing multi-corner capacitance tables ... 
+[05/21 01:02:37     28s] Initializing multi-corner resistance tables ...
+[05/21 01:02:37     28s] Creating RPSQ from WeeR and WRes ...
+[05/21 01:02:37     28s] eee: l::1 avDens::0.098220 usedTrk::1711.914006 availTrk::17429.387932 sigTrk::1711.914006
+[05/21 01:02:37     28s] eee: l::2 avDens::0.240377 usedTrk::4123.255265 availTrk::17153.309137 sigTrk::4123.255265
+[05/21 01:02:37     28s] eee: l::3 avDens::0.295061 usedTrk::5514.505434 availTrk::18689.387932 sigTrk::5514.505434
+[05/21 01:02:37     28s] eee: l::4 avDens::0.149374 usedTrk::2651.650464 availTrk::17751.809137 sigTrk::2651.650464
+[05/21 01:02:37     28s] eee: l::5 avDens::0.148997 usedTrk::2516.467253 availTrk::16889.387932 sigTrk::2516.467253
+[05/21 01:02:37     28s] eee: l::6 avDens::0.047573 usedTrk::647.485583 availTrk::13610.350977 sigTrk::647.485583
+[05/21 01:02:37     28s] eee: l::7 avDens::0.033023 usedTrk::361.583510 availTrk::10949.387932 sigTrk::361.583510
+[05/21 01:02:37     28s] eee: l::8 avDens::0.015592 usedTrk::106.768947 availTrk::6847.478048 sigTrk::106.768947
+[05/21 01:02:37     28s] eee: l::9 avDens::0.007154 usedTrk::6.438596 availTrk::900.000000 sigTrk::6.438596
+[05/21 01:02:37     28s] eee: l::10 avDens::0.011046 usedTrk::2.266667 availTrk::205.200000 sigTrk::2.266667
+[05/21 01:02:37     28s] eee: l::11 avDens::0.008731 usedTrk::1.257310 availTrk::144.000000 sigTrk::1.257310
+[05/21 01:02:37     28s] {RT typical_rc 0 5 5 0}
+[05/21 01:02:37     28s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.280045 uaWl=0.000000 uaWlH=0.000000 aWlH=0.000000 lMod=0 pMax=0.843000 pMod=81 wcR=0.772700 newSi=0.001600 wHLS=1.935230 siPrev=0 viaL=0.000000 crit=0.002322 shortMod=0.011610 fMod=0.000580 
+[05/21 01:02:37     28s] #WARNING (NRIG-1303) The congestion map does not match the GCELL grid. Clearing the map.
+[05/21 01:02:37     28s] ### Net info: total nets: 17515
+[05/21 01:02:37     28s] ### Net info: dirty nets: 1135
+[05/21 01:02:37     28s] ### Net info: marked as disconnected nets: 0
+[05/21 01:02:37     28s] #num needed restored net=17320
+[05/21 01:02:37     28s] #need_extraction net=0 (total=17515)
+[05/21 01:02:37     28s] ### Net info: fully routed nets: 111
+[05/21 01:02:37     28s] ### Net info: trivial (< 2 pins) nets: 82
+[05/21 01:02:37     28s] ### Net info: unrouted nets: 17322
+[05/21 01:02:37     28s] ### Net info: re-extraction nets: 0
+[05/21 01:02:37     28s] ### Net info: ignored nets: 0
+[05/21 01:02:37     28s] ### Net info: skip routing nets: 17320
+[05/21 01:02:37     28s] ### import design signature (2): route=1278001809 fixed_route=1589316377 flt_obj=0 vio=1905142130 swire=282492057 shield_wire=1 net_attr=1891810024 dirty_area=0 del_dirty_area=0 cell=559527734 placement=2140321706 pin_access=1 inst_pattern=1 via=610195162 routing_via=1
+[05/21 01:02:37     28s] ### Time Record (DB Import) is uninstalled.
+[05/21 01:02:37     28s] #NanoRoute Version 21.18-s099_1 NR230707-1955/21_18-UB
+[05/21 01:02:37     28s] #RTESIG:78da95d3414bc330140770cf7e8a47b743856dbef7d2a6c955f0aa32d4ebc86cda15ba14
+[05/21 01:02:37     28s] #       9af4e0b7b7220893daacb9e6c7ff3dfe21abf5fbe31e12a61da9ad47ad0f044f7b165860
+[05/21 01:02:37     28s] #       b1259de7f74c87f1eaed21b95dad9f5f5e0b059569bd85f4d875ed06ca4f67cecd0794b6
+[05/21 01:02:37     28s] #       32431bc0db101a57dffd68161a72481b176c6dfb0d0cdef67f88405c92289482d00fbf7a
+[05/21 01:02:37     28s] #       22319302707ea8ceb2254309495cfa894c2271b95a249372b18c174bb8401ddf382f2408
+[05/21 01:02:37     28s] #       b553f87d20addace84692951c46a2749578c940ae3a8d00434ff82a391909c9afa9440ea
+[05/21 01:02:37     28s] #       433fde4c3ba511121f8c2b4d5f8ed6bae1fc9f24485ce7ec9c62428e35c1c479dc288e7d
+[05/21 01:02:37     28s] #       0d261d6d9d19c7ade73b180d5f9133b7f3cd17e47b48bc
+[05/21 01:02:37     28s] #
+[05/21 01:02:37     28s] #Skip comparing routing design signature in db-snapshot flow
+[05/21 01:02:37     28s] ### Time Record (Data Preparation) is installed.
+[05/21 01:02:37     28s] #RTESIG:78da9593c14ac43010863dfb1443760f1576d79949d32657c1abcaa25e9768d36ea19b42
+[05/21 01:02:37     28s] #       9b1e7c7bab82b0529b6daef3f1ff5f2664b57ebddf8360da91def668cc81e061cf1273cc
+[05/21 01:02:37     28s] #       b76494ba653a8ca3973b71bd5a3f3e3de71a4adbf40e92b7b66d36507c787baadfa170a5
+[05/21 01:02:37     28s] #       1d9a00bd0ba1f6d5cd0fcdd28082a4f6c155aedbc0d0bbee0f221197244aad2174c32f3d
+[05/21 01:02:37     28s] #       9198661270bed4a4e992524292e7fc4426913c578b649292cbf07c092ed1c48d559e81d4
+[05/21 01:02:37     28s] #       3b8d5f0792b2696d98263394b1b553461754661ae3506e0868fe0547260371acaba380a4
+[05/21 01:02:37     28s] #       0fdd3899e6b441107db0beb05d31b2ce0fa7ff4802e15bef6629231588ef1bcc173321c7
+[05/21 01:02:37     28s] #       56c6c42ace688efd211eada2398ce3f522ce7c8133e39cf3d527a78b5572
+[05/21 01:02:37     28s] #
+[05/21 01:02:37     28s] ### Time Record (Data Preparation) is uninstalled.
+[05/21 01:02:37     28s] ### Time Record (Global Routing) is installed.
+[05/21 01:02:37     28s] ### Time Record (Global Routing) is uninstalled.
+[05/21 01:02:37     28s] #Total number of trivial nets (e.g. < 2 pins) = 82 (skipped).
+[05/21 01:02:37     28s] #Total number of nets with skipped attribute = 17238 (skipped).
+[05/21 01:02:37     28s] #Total number of routable nets = 195.
+[05/21 01:02:37     28s] #Total number of nets in the design = 17515.
+[05/21 01:02:37     28s] #188 routable nets do not have any wires.
+[05/21 01:02:37     28s] #7 routable nets have routed wires.
+[05/21 01:02:37     28s] #17238 skipped nets have only detail routed wires.
+[05/21 01:02:37     28s] #188 nets will be global routed.
+[05/21 01:02:37     28s] #188 global routed or unrouted (routable) nets have been constrained (e.g. have preferred extra spacing, require shielding etc.)
+[05/21 01:02:37     28s] #7 detail routed (routable) nets have been constrained (e.g. have preferred extra spacing, require shielding etc.)
+[05/21 01:02:37     28s] ### Time Record (Data Preparation) is installed.
+[05/21 01:02:37     28s] #Start routing data preparation on Thu May 21 01:02:37 2026
+[05/21 01:02:37     28s] #
+[05/21 01:02:37     28s] #Minimum voltage of a net in the design = 0.000.
+[05/21 01:02:37     28s] #Maximum voltage of a net in the design = 1.100.
+[05/21 01:02:37     28s] #Voltage range [0.000 - 1.100] has 17513 nets.
+[05/21 01:02:37     28s] #Voltage range [0.900 - 1.100] has 1 net.
+[05/21 01:02:37     28s] #Voltage range [0.000 - 0.000] has 1 net.
+[05/21 01:02:37     28s] #Build and mark too close pins for the same net.
+[05/21 01:02:37     28s] ### Time Record (Cell Pin Access) is installed.
+[05/21 01:02:37     28s] #Rebuild pin access data for design.
+[05/21 01:02:37     28s] #WARNING (NRDB-1028) Some option affecting pin access calculation is set by the user. Pin access is to be recalculated. This incurs runtime.
+[05/21 01:02:37     28s] #Initial pin access analysis.
+[05/21 01:02:49     40s] #Detail pin access analysis.
+[05/21 01:02:49     40s] ### Time Record (Cell Pin Access) is uninstalled.
+[05/21 01:02:49     40s] # Metal1       H   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.13000
+[05/21 01:02:49     40s] # Metal2       V   Track-Pitch = 0.20000    Line-2-Via Pitch = 0.15000
+[05/21 01:02:49     40s] # Metal3       H   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.15000
+[05/21 01:02:49     40s] # Metal4       V   Track-Pitch = 0.20000    Line-2-Via Pitch = 0.15000
+[05/21 01:02:49     40s] # Metal5       H   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.15000
+[05/21 01:02:49     40s] # Metal6       V   Track-Pitch = 0.20000    Line-2-Via Pitch = 0.15000
+[05/21 01:02:49     40s] # Metal7       H   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.15000
+[05/21 01:02:49     40s] # Metal8       V   Track-Pitch = 0.20000    Line-2-Via Pitch = 0.15000
+[05/21 01:02:49     40s] # Metal9       H   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.15000
+[05/21 01:02:49     40s] # Metal10      V   Track-Pitch = 0.50000    Line-2-Via Pitch = 0.42000
+[05/21 01:02:49     40s] # Metal11      H   Track-Pitch = 0.47500    Line-2-Via Pitch = 0.43000
+[05/21 01:02:49     40s] #Bottom routing layer index=1(Metal1), bottom routing layer for shielding=1(Metal1), bottom shield layer=1(Metal1)
+[05/21 01:02:49     40s] #shield_bottom_stripe_layer=1(Metal1), shield_top_stripe_layer=5(Metal5)
+[05/21 01:02:49     40s] #pin_access_rlayer=2(Metal2)
+[05/21 01:02:49     40s] #shield_top_dpt_rlayer=-1 top_rlayer=5 top_trim_metal_rlayer=-1 rlayer_lowest=1 bottom_rlayer=1
+[05/21 01:02:49     40s] #enable_trim_layer_shield=F enable_dpt_layer_shield=F has_line_end_grid=F
+[05/21 01:02:49     40s] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1350.41 (MB), peak = 1382.75 (MB)
+[05/21 01:02:49     40s] #ERROR (NRDB-954) Invalid  option  value -routeTopRoutingLayer 5. It conflicts with the existing routed wires on layer 8. You must specify a layer equal to or above the top-most layer for existing routes.
+[05/21 01:02:49     40s] ### Time Record (Data Preparation) is uninstalled.
+[05/21 01:02:49     40s] #Cpu time = 00:00:14
+[05/21 01:02:49     40s] #Elapsed time = 00:00:14
+[05/21 01:02:49     40s] #Increased memory = 76.85 (MB)
+[05/21 01:02:49     40s] #Total memory = 1344.19 (MB)
+[05/21 01:02:49     40s] #Peak memory = 1382.75 (MB)
+[05/21 01:02:49     40s] #WARNING (NRIF-19) Check ERROR messages in log file and correct them if possible.
+[05/21 01:02:49     40s] ### Time Record (globalDetailRoute) is uninstalled.
+[05/21 01:02:49     40s] % End globalDetailRoute (date=05/21 01:02:49, total cpu=0:00:13.7, real=0:00:13.0, peak res=1382.8M, current mem=1343.6M)
+[05/21 01:02:49     40s] #routeDesign: cpu time = 00:00:14, elapsed time = 00:00:14, memory = 1343.58 (MB), peak = 1382.75 (MB)
+[05/21 01:02:49     40s] 
+[05/21 01:02:49     40s] *** Summary of all messages that are not suppressed in this session:
+[05/21 01:02:49     40s] Severity  ID               Count  Summary                                  
+[05/21 01:02:49     40s] WARNING   NRDB-1028            2  Some option affecting pin access calcula...
+[05/21 01:02:49     40s] ERROR     NRDB-954             2  Invalid  option  value -routeTopRoutingL...
+[05/21 01:02:49     40s] WARNING   NRIG-1303            2  The congestion map does not match the GC...
+[05/21 01:02:49     40s] WARNING   NRIF-19              2  Check ERROR messages in log file and cor...
+[05/21 01:02:49     40s] WARNING   NRIF-90              1  Option setNanoRouteMode -routeBottomRout...
+[05/21 01:02:49     40s] WARNING   NRIF-91              1  Option setNanoRouteMode -routeTopRouting...
+[05/21 01:02:49     40s] *** Message Summary: 5 warning(s), 1 error(s)
+[05/21 01:02:49     40s] 
+[05/21 01:02:49     40s] ### Time Record (routeDesign) is uninstalled.
+[05/21 01:02:49     40s] ### 
+[05/21 01:02:49     40s] ###   Scalability Statistics
+[05/21 01:02:49     40s] ### 
+[05/21 01:02:49     40s] ### --------------------------------+----------------+----------------+----------------+
+[05/21 01:02:49     40s] ###   routeDesign                   |        cpu time|    elapsed time|     scalability|
+[05/21 01:02:49     40s] ### --------------------------------+----------------+----------------+----------------+
+[05/21 01:02:49     40s] ###   Pre Callback                  |        00:00:00|        00:00:00|             1.0|
+[05/21 01:02:49     40s] ###   Timing Data Generation        |        00:00:00|        00:00:00|             1.0|
+[05/21 01:02:49     40s] ###   DB Import                     |        00:00:01|        00:00:01|             1.0|
+[05/21 01:02:49     40s] ###   Cell Pin Access               |        00:00:12|        00:00:12|             1.0|
+[05/21 01:02:49     40s] ###   Data Preparation              |        00:00:01|        00:00:01|             1.0|
+[05/21 01:02:49     40s] ###   Global Routing                |        00:00:00|        00:00:00|             1.0|
+[05/21 01:02:49     40s] ###   Entire Command                |        00:00:14|        00:00:14|             1.0|
+[05/21 01:02:49     40s] ### --------------------------------+----------------+----------------+----------------+
+[05/21 01:02:49     40s] ### 
+[05/21 01:02:50     40s] #% End routeDesign (date=05/21 01:02:49, total cpu=0:00:14.2, real=0:00:15.0, peak res=1382.8M, current mem=1343.6M)
+[05/21 01:02:50     40s] **ERROR: (IMPSYT-6692):	Invalid return code while executing 'scripts/route_design.tcl' was returned and script processing was stopped. Review the following error in 'scripts/route_design.tcl' then restart.
+[05/21 01:02:50     40s] **ERROR: (IMPSYT-6693):	Error message: scripts/route_design.tcl: 0.
+[05/21 01:02:50     40s] <CMD> win
+[05/21 01:04:27     55s] <CMD> selectInst {cores[0].core_instance_g96212}
+[05/21 01:04:29     55s] <CMD> deselectAll
+[05/21 01:04:32     56s] <CMD> zoomBox 6.24050 37.55800 220.19500 229.09300
+[05/21 01:04:33     56s] <CMD> zoomBox 40.63150 89.99900 172.02600 207.62500
+[05/21 01:04:34     56s] <CMD> zoomBox 78.02400 147.39600 120.14700 185.10500
+[05/21 01:04:34     56s] <CMD> zoomBox 82.92300 154.92600 113.35750 182.17150
+[05/21 01:04:35     56s] <CMD> zoomBox 87.78450 162.49150 106.47550 179.22400
+[05/21 01:04:35     56s] <CMD> zoomBox 75.24350 142.66800 124.80500 187.03600
+[05/21 01:04:36     56s] <CMD> zoomBox 21.75350 58.16350 203.63800 220.98900
+[05/21 01:04:37     56s] <CMD> zoomBox -6.35300 13.74850 245.39050 239.11250
+[05/21 01:04:37     57s] <CMD> zoomBox -24.22650 -14.41300 271.94250 250.72150
+[05/21 01:04:38     57s] <CMD> zoomBox -132.63600 -185.41900 434.73150 322.49600
+[05/21 01:04:38     57s] <CMD> zoomBox -218.31350 -320.84250 566.97000 382.15400
+[05/21 01:04:39     57s] <CMD> zoomBox 24.48900 47.90200 206.37450 210.72850
+[05/21 01:04:39     57s] <CMD> zoomBox 44.92550 78.65600 176.33850 196.29850
+[05/21 01:04:40     57s] <CMD> zoomBox 65.45750 109.55300 146.16200 181.80100
+[05/21 01:04:41     57s] <CMD> zoomBox 74.52500 123.25700 132.83450 175.45650
+[05/21 01:04:42     57s] <CMD> zoomBox 87.74300 143.23000 113.61600 166.39200
+[05/21 01:04:43     57s] <CMD> zoomBox 81.20700 133.19450 123.33700 170.91000
+[05/21 01:04:43     57s] <CMD> zoomBox 65.63450 109.17850 146.34450 181.43100
+[05/21 01:04:44     58s] <CMD> zoomBox -32.37000 -56.65550 316.09450 255.29450
+[05/21 01:04:45     58s] <CMD> zoomBox -141.83950 -243.31350 525.71100 354.28650
+[05/21 01:10:22    109s] <CMD> fit
+[05/21 01:10:24    109s] <CMD> zoomBox 35.94950 85.82600 188.16550 222.09200
+[05/21 01:10:24    109s] <CMD> zoomBox 55.73050 112.21900 165.70650 210.67100
+[05/21 01:10:25    109s] <CMD> zoomBox 63.45550 122.52650 156.93550 206.21100
+[05/21 01:10:25    109s] <CMD> zoomBox 80.34750 145.06500 137.75650 196.45850
+[05/21 01:10:25    109s] <CMD> zoomBox 93.19750 162.21100 123.16600 189.03900
+[05/21 01:10:26    110s] <CMD> zoomBox 98.62750 169.43600 117.03250 185.91250
+[05/21 01:10:26    110s] <CMD> zoomBox 102.75800 174.93250 112.36600 183.53350
+[05/21 01:38:18    388s] 
+[05/21 01:38:18    388s] *** Memory Usage v#1 (Current mem = 9161.508M, initial mem = 716.109M) ***
+[05/21 01:38:18    388s] 
+[05/21 01:38:18    388s] *** Summary of all messages that are not suppressed in this session:
+[05/21 01:38:18    388s] Severity  ID               Count  Summary                                  
+[05/21 01:38:18    388s] WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[05/21 01:38:18    388s] WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+[05/21 01:38:18    388s] WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+[05/21 01:38:18    388s] ERROR     IMPSYT-6692          1  Invalid return code while executing '%s'...
+[05/21 01:38:18    388s] ERROR     IMPSYT-6693          1  Error message: %s: %s.                   
+[05/21 01:38:18    388s] WARNING   IMPOPT-3602          1  The specified path group name %s is not ...
+[05/21 01:38:18    388s] WARNING   NRDB-1028            1  Some option affecting pin access calcula...
+[05/21 01:38:18    388s] ERROR     NRDB-954             1  Invalid  option  value -routeTopRoutingL...
+[05/21 01:38:18    388s] WARNING   NRIG-1303            1  The congestion map does not match the GC...
+[05/21 01:38:18    388s] WARNING   NRIF-19              1  Check ERROR messages in log file and cor...
+[05/21 01:38:18    388s] WARNING   IMPCTE-107           1  The following globals have been obsolete...
+[05/21 01:38:18    388s] WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+[05/21 01:38:18    388s] *** Message Summary: 13 warning(s), 3 error(s)
+[05/21 01:38:18    388s] 
+[05/21 01:38:18    388s] --- Ending "Innovus" (totcpu=0:06:28, real=0:36:16, mem=9161.5M) ---

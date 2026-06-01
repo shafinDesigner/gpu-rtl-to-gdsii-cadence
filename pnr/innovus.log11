@@ -1,0 +1,431 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.18-s099_1, built Tue Jul 18 13:03:50 PDT 2023
+Options:	
+Date:		Thu May 14 21:00:35 2026
+Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+OS:		Red Hat Enterprise Linux Server 7.9 (Maipo)
+
+License:
+		[21:00:35.389465] Configured Lic search path (21.01-s002): 5280@vlsi
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+<CMD> define_proc_arguments ViaFillQor -info {This procedure extracts Viafill details from innovus db} -define_args {
+		{-window "window coordinates" "" list optional}
+		{-window_size "window size in microns" "" string optional}
+	
+	}
+[INFO] Loading Pegasus 22.20 fill procedures
+<CMD> define_proc_arguments ProcessFills -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+<CMD> define_proc_arguments FillQor -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+<CMD> define_proc_arguments ProcessFills_fast -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+<CMD> define_proc_arguments FillQor_fast -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+<CMD> define_proc_arguments ProcessFills_fast_stampOnly -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+	
+}
+<CMD> define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+}
+<CMD> win
+<CMD> restoreDesign post_pg_spare_prep.inn.dat /gpu
+#% Begin load design ... (date=05/14 21:01:33, mem=758.7M)
+Loading design 'gpu' saved by 'Innovus' '21.18-s099_1' on 'Thu May 14 01:19:28 2026'.
+% Begin Load MMMC data ... (date=05/14 21:01:33, mem=761.2M)
+% End Load MMMC data ... (date=05/14 21:01:33, total cpu=0:00:00.0, real=0:00:00.0, peak res=762.3M, current mem=762.3M)
+typical_rc
+
+Loading LEF file /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/libs/lef/gsclib045_tech.lef ...
+
+Loading LEF file /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/libs/lef/gsclib045_macro.lef ...
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/viewDefinition.tcl
+Reading slow_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib)
+Read 480 cells in library 'slow_vdd1v0' 
+Reading fast_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib)
+Read 480 cells in library 'fast_vdd1v0' 
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+*** End library_loading (cpu=0.02min, real=0.03min, mem=23.9M, fe_cpu=0.47min, fe_real=1.00min, fe_mem=1044.8M) ***
+% Begin Load netlist data ... (date=05/14 21:01:35, mem=783.1M)
+*** Begin netlist parsing (mem=1044.8M) ***
+Created 480 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/gpu.v.bin'
+
+*** Memory Usage v#1 (Current mem = 1053.797M, initial mem = 478.109M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1053.8M) ***
+% End Load netlist data ... (date=05/14 21:01:35, total cpu=0:00:00.1, real=0:00:00.0, peak res=795.8M, current mem=795.8M)
+Set top cell to gpu.
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+Hooked 960 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell gpu ...
+*** Netlist is unique.
+** info: there are 1055 modules.
+** info: there are 12364 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 1110.723M, initial mem = 478.109M) ***
+*info: set bottom ioPad orient R0
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Set Shrink Factor to 0.90000
+Loading preference file /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/gui.pref.tcl ...
+addRing command will ignore shorts while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will consider rows while creating rings.
+The ring targets are set to core/block ring wires.
+addStripe will allow jog to connect padcore ring and block ring.
+
+Stripes will not extend to closest target.
+When breaking rings, the power planner will consider the existence of blocks.
+addStripe will break automatically at non-default domains when generating global stripes over the core area or default domain.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+Stripes will not be created over regions without power planning wires.
+Offset for stripe breaking is set to 0.
+Stripes will stop at the boundary of the specified area.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Change floorplan default-technical-site to 'CoreSite'.
+*Info: initialize multi-corner CTS.
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+Reading floorplan file - /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat//gpu.fp.gz (mem = 1373.2M).
+% Begin Load floorplan data ... (date=05/14 21:01:37, mem=1099.1M)
+*info: reset 12815 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 473600 460180)
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+ ... processed partition successfully.
+Reading binary special route file /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat//gpu.fp.spr.gz (Created by Innovus v21.18-s099_1 on Thu May 14 01:19:27 2026, version: 1)
+Convert 0 swires and 0 svias from compressed groups
+22 swires and 100 svias were compressed
+22 swires and 100 svias were decompressed from small or sparse groups
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1099.9M, current mem=1099.9M)
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+% End Load floorplan data ... (date=05/14 21:01:38, total cpu=0:00:00.1, real=0:00:01.0, peak res=1100.9M, current mem=1100.9M)
+Reading congestion map file /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat//gpu.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=05/14 21:01:38, mem=1101.3M)
+% End Load SymbolTable ... (date=05/14 21:01:38, total cpu=0:00:00.1, real=0:00:00.0, peak res=1103.4M, current mem=1103.4M)
+Loading place ...
+% Begin Load placement data ... (date=05/14 21:01:38, mem=1103.4M)
+Reading placement file - /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat//gpu.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v21.18-s099_1 on Thu May 14 01:19:27 2026, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Completed restorePlace (cpu=0:00:00.0 real=0:00:00.0 mem=1376.2M) ***
+Total net length = 1.255e+01 (6.277e+00 6.277e+00) (ext = 0.000e+00)
+% End Load placement data ... (date=05/14 21:01:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=1103.8M, current mem=1103.6M)
+% Begin Load routing data ... (date=05/14 21:01:38, mem=1103.6M)
+Reading routing file - /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat//gpu.route.gz.
+Reading Innovus routing data (Created by Innovus v21.18-s099_1 on Thu May 14 01:19:27 2026 Format: 20.1) ...
+*** Total 12739 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.0 real=0:00:01.0 mem=1373.2M) ***
+% End Load routing data ... (date=05/14 21:01:39, total cpu=0:00:00.0, real=0:00:01.0, peak res=1105.2M, current mem=1104.2M)
+TAT_INFO: restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+Reading property file /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat//gpu.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1376.2M) ***
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Capacitance Table File /home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl ...
+Cap table was created using Encounter 10.10-b056_1.
+Process name: cln28hpl_1p10m+alrdl_5x2yu2yz_typical.
+Set Shrink Factor to 0.90000
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: setup_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+ 
+ Analysis View: hold_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/pnr/post_pg_spare_prep.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Start generating vias ..
+#Skip building auto via since it is not turned on.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Via generation completed.
+% Begin Load power constraints ... (date=05/14 21:01:39, mem=1116.6M)
+% End Load power constraints ... (date=05/14 21:01:39, total cpu=0:00:00.0, real=0:00:00.0, peak res=1116.6M, current mem=1116.6M)
+slow_delay fast_delay
+% Begin load AAE data ... (date=05/14 21:01:39, mem=1164.3M)
+% End load AAE data ... (date=05/14 21:01:39, total cpu=0:00:00.0, real=0:00:00.0, peak res=1164.3M, current mem=1164.3M)
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+#% End load design ... (date=05/14 21:01:39, total cpu=0:00:04.5, real=0:00:06.0, peak res=1194.8M, current mem=1162.6M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+*** Message Summary: 8 warning(s), 0 error(s)
+
+<CMD> fit
+<CMD> fit
+<CMD> createSpareModule -moduleName spare_pg -cell {INVX1 5}
+<CMD> zoomBox -37.11950 32.60200 283.52700 188.03650
+<CMD> zoomBox -113.33450 -52.33650 500.92400 245.42750
+<CMD> zoomBox -89.27350 -25.89800 432.84650 227.20150
+<CMD> fit
+<CMD> zoomBox -80.01450 29.84350 297.21650 212.70750
+<CMD> zoomBox -12.22400 82.40200 184.69350 177.85850
+<CMD> zoomBox 7.30050 98.85100 149.57400 167.81850
+<CMD> zoomBox 19.58600 109.43850 122.37950 159.26800
+<CMD> zoomBox 28.46250 117.08800 102.73100 153.09000
+<CMD> zoomBox -48.35000 51.01150 272.31000 206.45250
+<CMD> zoomBox -24.45550 79.16350 172.47150 174.62450
+<CMD> zoomBox -13.81700 91.81000 128.46300 160.78100
+<CMD> zoomBox 6.80250 116.07150 45.57350 134.86600
+<CMD> zoomBox 9.79650 119.59250 33.60700 131.13450
+<CMD> zoomBox 12.10050 122.29750 24.53000 128.32250
+<CMD> selectInst ENDCAP_125
+<CMD> zoomBox 14.54100 123.50450 22.17500 127.20500
+<CMD> zoomBox 16.04050 124.24600 20.72850 126.51850
+<CMD> zoomBox 17.18050 124.80950 19.62800 125.99600
+<CMD> zoomBox 16.70150 124.57250 20.09000 126.21500
+<CMD> zoomBox 15.61750 124.03650 21.13600 126.71150
+<CMD> zoomBox 14.53850 123.50300 22.17650 127.20550
+<CMD> zoomBox 9.66350 121.09100 26.87900 129.43650
+<CMD> zoomBox -1.32500 115.65650 37.47750 134.46600
+<CMD> zoomBox -54.05600 89.57450 88.34500 158.60400
+<CMD> zoomBox -120.42700 56.74600 152.37050 188.98550
+<CMD> zoomBox -209.68300 11.18000 234.52300 226.51050
+<CMD> zoomBox -102.87150 13.72600 169.92700 145.96600
+<CMD> zoomBox -21.61600 15.66300 120.78650 84.69300
+<CMD> zoomBox 12.53000 16.55850 99.98300 58.95150
+<CMD> zoomBox 17.40650 16.97550 80.59100 47.60450
+<CMD> zoomBox 19.28800 17.16050 72.99550 43.19550
+<CMD> zoomBox 18.82000 16.82200 93.15600 52.85650
+<CMD> zoomBox 18.17200 16.35300 121.05950 66.22800
+<CMD> zoomBox 17.27600 15.70400 159.68100 84.73550
+<CMD> zoomBox 16.03500 14.80600 213.13650 110.35150
+<CMD> zoomBox 13.22700 12.77200 334.17400 168.35250
+<CMD> fit
+<CMD> zoomBox -50.90200 16.24950 326.33000 199.11400
+<CMD> zoomBox 42.19500 44.20250 273.86300 156.50450
+<CMD> zoomBox 99.64700 61.74550 241.92150 130.71350
+<CMD> zoomBox 125.02100 69.58600 227.81450 119.41550
+<CMD> zoomBox -50.72550 15.93450 326.51550 198.80350
+<CMD> placeSpareModule -moduleName spare_pg -stepx 50 -stepy 50 -offsetx 5 -offsety 5
+Info: Power domain is not defined, option -ignorePDBox will not work!
+Info: Detected unplaced standard instances in the design. This command needs to be followed by placement.
+Estimated cell power/ground rail width = 0.160 um
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (220.000 20.010 270.000 70.010). 
+100.00% of spare module is overlapped with obstructions and allowed overlap is 79.86%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (220.000 70.010 270.000 120.010). 
+100.00% of spare module is overlapped with obstructions and allowed overlap is 79.86%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (220.000 120.010 270.000 170.010). 
+100.00% of spare module is overlapped with obstructions and allowed overlap is 79.86%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (220.000 170.010 270.000 220.010). 
+100.25% of spare module is overlapped with obstructions and allowed overlap is 79.86%
+Current (total cpu=0:01:03, real=0:05:18, peak res=1427.7M, current mem=1400.1M)
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1414.2M, current mem=1414.2M)
+Current (total cpu=0:01:03, real=0:05:18, peak res=1427.7M, current mem=1414.2M)
+*INFO: Total number of spare module instances added: 16
+<CMD> placeSpareModule -moduleName spare_pg -stepx 50 -stepy 50 -offsetx 5 -offsety 5
+Info: Power domain is not defined, option -ignorePDBox will not work!
+Info: Detected unplaced standard instances in the design. This command needs to be followed by placement.
+
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (220.000 20.010 270.000 70.010). 
+100.00% of spare module is overlapped with obstructions and allowed overlap is 79.86%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (220.000 70.010 270.000 120.010). 
+100.00% of spare module is overlapped with obstructions and allowed overlap is 79.86%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (220.000 120.010 270.000 170.010). 
+100.00% of spare module is overlapped with obstructions and allowed overlap is 79.86%
+**WARN: (IMPSP-5509):	Unable to place a spare module in region (220.000 170.010 270.000 220.010). 
+100.25% of spare module is overlapped with obstructions and allowed overlap is 79.86%
+Current (total cpu=0:01:03, real=0:05:21, peak res=1427.7M, current mem=1402.3M)
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1415.6M, current mem=1415.6M)
+Current (total cpu=0:01:03, real=0:05:21, peak res=1427.7M, current mem=1415.6M)
+*INFO: Total number of spare module instances added: 16
+<CMD> zoomBox -18.86350 67.39350 178.05900 162.85250
+<CMD> zoomBox 5.31000 105.45100 68.43950 136.05350
+<CMD> zoomBox 10.95000 114.06900 43.90500 130.04400
+<CMD> zoomBox 13.45500 117.78050 33.69350 127.59100
+<CMD> zoomBox -7.71550 100.69550 66.56250 136.70200
+<CMD> zoomBox -62.76150 83.33000 104.64300 164.48000
+<CMD> fit
+<CMD> ::uiSetTool defineArea ::Rda_Placement::Spare::setWindow
+<CMD> ::uiSetTool defineArea ::Rda_Placement::Spare::setWindow
+<CMD> zoomBox -32.60700 82.70500 239.94250 214.82450
+<CMD> zoomBox 70.75950 170.51500 109.52900 189.30850
+<CMD> zoomBox 79.07550 177.45500 99.31450 187.26600
+<CMD> zoomBox 84.73200 182.17600 92.36600 185.87650
+<CMD> uiSetTool select
+<CMD> deselectAll
+<CMD> gui_select -rect {87.01800 185.60200 91.38100 184.68300}
+<CMD> zoomBox 83.03800 179.72750 97.66150 186.81650
+<CMD> zoomBox 79.79000 175.07850 107.80650 188.65950
+<CMD> gui_select -rect {84.14900 188.11200 90.91750 176.67750}
+<CMD> zoomBox 65.23300 166.98300 128.37850 197.59300
+<CMD> zoomBox 31.15150 149.13450 173.46750 218.12250
+<CMD> gui_select -rect {85.89700 204.77000 102.81000 167.27150}
+<CMD> deselectAll
+<CMD> ::uiSetTool defineArea ::Rda_Placement::Spare::setWindow
+<CMD> uiSetTool select
+<CMD> placeSpareModule -moduleName spare_pg -stepx 50 -stepy 50 -offsetx 5 -offsety 5 -area {84.4505 152.0275 111.9345 204.881}
+Info: Power domain is not defined, option -ignorePDBox will not work!
+Info: Detected unplaced standard instances in the design. This command needs to be followed by placement.
+
+Current (total cpu=0:01:24, real=0:08:16, peak res=1427.7M, current mem=1402.6M)
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1416.0M, current mem=1416.0M)
+Current (total cpu=0:01:24, real=0:08:16, peak res=1427.7M, current mem=1416.0M)
+*INFO: Total number of spare module instances added: 1
+<CMD> zoomBox 55.45350 159.26750 142.85350 201.63500
+<CMD> zoomBox 87.73750 172.45100 102.36550 179.54200
+<CMD> zoomBox 90.84700 173.69200 98.48400 177.39400
+<CMD> zoomBox 92.16200 174.21700 96.85300 176.49100
+<CMD> zoomBox 90.84350 173.68950 98.48250 177.39250
+<CMD> zoomBox 85.19100 171.45950 105.44600 181.27800
+<CMD> zoomBox 76.14150 169.59950 109.12400 185.58800
+<CMD> zoomBox 67.24250 168.01850 112.89350 190.14800
+<CMD> zoomBox 61.59200 167.06100 115.29950 193.09600
+<CMD> zoomBox 37.92450 163.08700 125.37850 205.48050
+<CMD> zoomBox 14.39300 159.38400 135.43700 218.06050
+<CMD> zoomBox -165.51050 131.10150 212.07400 314.13700
+<CMD> zoomBox -212.13800 123.86000 232.07950 339.19600
+<CMD> fit
+<CMD> zoomBox 7.59000 37.31500 280.13900 169.43400
+<CMD> zoomBox 85.81700 63.08450 228.09000 132.05200
+
+*** Memory Usage v#1 (Current mem = 2099.367M, initial mem = 478.109M) ***
+*** Message Summary: 16 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:57:29, real=5:41:30, mem=2099.4M) ---

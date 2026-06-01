@@ -1,0 +1,1653 @@
+[05/23 23:07:09      0s] 
+[05/23 23:07:09      0s] Cadence Innovus(TM) Implementation System.
+[05/23 23:07:09      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/23 23:07:09      0s] 
+[05/23 23:07:09      0s] Version:	v21.18-s099_1, built Tue Jul 18 13:03:50 PDT 2023
+[05/23 23:07:09      0s] Options:	-log log/route_design.debug.log 
+[05/23 23:07:09      0s] Date:		Sat May 23 23:07:09 2026
+[05/23 23:07:09      0s] Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+[05/23 23:07:09      0s] OS:		Red Hat Enterprise Linux Server 7.9 (Maipo)
+[05/23 23:07:09      0s] 
+[05/23 23:07:09      0s] License:
+[05/23 23:07:09      0s] 		[23:07:09.389545] Configured Lic search path (21.01-s002): 5280@vlsi
+
+[05/23 23:07:09      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[05/23 23:07:09      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[05/23 23:07:25     15s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.18-s099_1 (64bit) 07/18/2023 13:03 (Linux 3.10.0-693.el7.x86_64)
+[05/23 23:07:28     18s] @(#)CDS: NanoRoute 21.18-s099_1 NR230707-1955/21_18-UB (database version 18.20.605) {superthreading v2.17}
+[05/23 23:07:28     18s] @(#)CDS: AAE 21.18-s017 (64bit) 07/18/2023 (Linux 3.10.0-693.el7.x86_64)
+[05/23 23:07:28     18s] @(#)CDS: CTE 21.18-s022_1 () Jul 11 2023 23:10:24 ( )
+[05/23 23:07:28     18s] @(#)CDS: SYNTECH 21.18-s010_1 () Jul  5 2023 06:32:03 ( )
+[05/23 23:07:28     18s] @(#)CDS: CPE v21.18-s053
+[05/23 23:07:28     18s] @(#)CDS: IQuantus/TQuantus 21.1.1-s966 (64bit) Wed Mar 8 10:22:20 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+[05/23 23:07:28     18s] @(#)CDS: OA 22.60-p087 Thu Feb  9 09:35:26 2023
+[05/23 23:07:28     18s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[05/23 23:07:28     18s] @(#)CDS: RCDB 11.15.0
+[05/23 23:07:28     18s] @(#)CDS: STYLUS 21.12-s019_1 (12/20/2022 05:13 PST)
+[05/23 23:07:28     18s] @(#)CDS: SystemPlanner-21.18-10439 (21.18) (2023-03-01 15:40:03+0800)
+[05/23 23:07:28     18s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_21952_vlsi_user_77_ix7bMz.
+
+[05/23 23:07:28     18s] Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+[05/23 23:07:30     20s] 
+[05/23 23:07:30     20s] **INFO:  MMMC transition support version v31-84 
+[05/23 23:07:30     20s] 
+[05/23 23:07:30     20s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[05/23 23:07:30     20s] <CMD> suppressMessage ENCEXT-2799
+[05/23 23:07:31     20s] <CMD> getVersion
+[05/23 23:07:31     20s] <CMD> define_proc_arguments ViaFillQor -info {This procedure extracts Viafill details from innovus db} -define_args {
+		{-window "window coordinates" "" list optional}
+		{-window_size "window size in microns" "" string optional}
+	
+	}
+[05/23 23:07:31     21s] [INFO] Loading Pegasus 22.20 fill procedures
+[05/23 23:07:31     21s] <CMD> define_proc_arguments ProcessFills -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+[05/23 23:07:31     21s] <CMD> define_proc_arguments FillQor -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+[05/23 23:07:31     21s] <CMD> define_proc_arguments ProcessFills_fast -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+[05/23 23:07:31     21s] <CMD> define_proc_arguments FillQor_fast -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+[05/23 23:07:31     21s] <CMD> define_proc_arguments ProcessFills_fast_stampOnly -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+	
+}
+[05/23 23:07:31     21s] <CMD> define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+}
+[05/23 23:07:32     21s] <CMD> win
+[05/23 23:09:18     32s] <CMD> restoreDesign db
+[05/23 23:09:18     32s] **ERROR: (IMPTCM-113):	Option "<design>" is required when option "<session>" is specified. Type 'man restoreDesign' for more details.
+
+[05/23 23:09:18     32s] 
+[05/23 23:09:18     32s] ERROR:   
+[05/23 23:09:18     32s] 
+[05/23 23:09:18     32s]   
+[05/23 23:09:18     32s]     while executing
+[05/23 23:09:18     32s] "error $catchMsg"
+[05/23 23:09:18     32s]     (procedure "restoreDesign" line 33)
+[05/23 23:09:18     32s] 
+[05/23 23:09:18     32s]   
+[05/23 23:09:45     37s] <CMD> restoreDesign DESIGN/route_design.inn.dat/ gpu
+[05/23 23:09:45     37s] #% Begin load design ... (date=05/23 23:09:45, mem=754.7M)
+[05/23 23:09:46     37s] Set Default Input Pin Transition as 0.1 ps.
+[05/23 23:09:46     37s] INFO: You have enabled new technology 'legacy_fects_final_release' that has been internally qualified at Cadence but has only limited customer testing. You are encouraged to work with Cadence directly to qualify your usage and make sure it meets your needs before deploying it widely. Final production licensing of this feature is subject to change.
+[05/23 23:09:46     37s] Loading design 'gpu' saved by 'Innovus' '21.18-s099_1' on 'Sat May 23 03:26:34 2026'.
+[05/23 23:09:46     37s] % Begin Load MMMC data ... (date=05/23 23:09:46, mem=758.7M)
+[05/23 23:09:46     37s] % End Load MMMC data ... (date=05/23 23:09:46, total cpu=0:00:00.0, real=0:00:00.0, peak res=759.0M, current mem=759.0M)
+[05/23 23:09:46     37s] 
+[05/23 23:09:46     37s] Loading LEF file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/libs/lef/gsclib045_tech.lef ...
+[05/23 23:09:46     37s] 
+[05/23 23:09:46     37s] Loading LEF file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/libs/lef/gsclib045_macro.lef ...
+[05/23 23:09:46     37s] Set DBUPerIGU to M2 pitch 400.
+[05/23 23:09:46     38s] **WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/23 23:09:46     38s] Type 'man IMPLF-200' for more detail.
+[05/23 23:09:46     38s] 
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[05/23 23:09:46     38s] Loading view definition file from /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/viewDefinition.tcl
+[05/23 23:09:46     38s] Reading slow_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib' ...
+[05/23 23:09:47     38s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib)
+[05/23 23:09:47     38s] Read 480 cells in library 'slow_vdd1v0' 
+[05/23 23:09:47     38s] Reading fast_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib' ...
+[05/23 23:09:47     39s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib)
+[05/23 23:09:47     39s] Read 480 cells in library 'fast_vdd1v0' 
+[05/23 23:09:47     39s] Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+[05/23 23:09:47     39s] late library set: slow_lib
+[05/23 23:09:47     39s] early library set: fast_lib
+[05/23 23:09:47     39s] Completed consistency checks. Status: Successful
+[05/23 23:09:47     39s] Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+[05/23 23:09:47     39s] late library set: fast_lib
+[05/23 23:09:47     39s] early library set: slow_lib
+[05/23 23:09:47     39s] Completed consistency checks. Status: Successful
+[05/23 23:09:47     39s] Ending "PreSetAnalysisView" (total cpu=0:00:01.1, real=0:00:01.0, peak res=831.8M, current mem=779.1M)
+[05/23 23:09:47     39s] *** End library_loading (cpu=0.02min, real=0.02min, mem=23.9M, fe_cpu=0.66min, fe_real=2.63min, fe_mem=1045.2M) ***
+[05/23 23:09:47     39s] % Begin Load netlist data ... (date=05/23 23:09:47, mem=779.1M)
+[05/23 23:09:47     39s] *** Begin netlist parsing (mem=1045.2M) ***
+[05/23 23:09:47     39s] Created 480 new cells from 2 timing libraries.
+[05/23 23:09:47     39s] Reading netlist ...
+[05/23 23:09:47     39s] Backslashed names will retain backslash and a trailing blank character.
+[05/23 23:09:47     39s] Reading verilogBinary netlist '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/gpu.v.bin'
+[05/23 23:09:48     39s] 
+[05/23 23:09:48     39s] *** Memory Usage v#1 (Current mem = 1053.180M, initial mem = 478.109M) ***
+[05/23 23:09:48     39s] *** End netlist parsing (cpu=0:00:00.1, real=0:00:01.0, mem=1053.2M) ***
+[05/23 23:09:48     39s] % End Load netlist data ... (date=05/23 23:09:48, total cpu=0:00:00.1, real=0:00:01.0, peak res=791.7M, current mem=791.7M)
+[05/23 23:09:48     39s] Set top cell to gpu.
+[05/23 23:09:48     39s] Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+[05/23 23:09:48     39s] late library set: slow_lib
+[05/23 23:09:48     39s] early library set: fast_lib
+[05/23 23:09:48     39s] Completed consistency checks. Status: Successful
+[05/23 23:09:48     39s] Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+[05/23 23:09:48     39s] late library set: fast_lib
+[05/23 23:09:48     39s] early library set: slow_lib
+[05/23 23:09:48     39s] Completed consistency checks. Status: Successful
+[05/23 23:09:48     39s] Hooked 960 DB cells to tlib cells.
+[05/23 23:09:48     39s] Ending "BindLib:" (total cpu=0:00:00.1, real=0:00:00.0, peak res=807.0M, current mem=807.0M)
+[05/23 23:09:48     39s] Starting recursive module instantiation check.
+[05/23 23:09:48     39s] No recursion found.
+[05/23 23:09:48     39s] Building hierarchical netlist for Cell gpu ...
+[05/23 23:09:48     39s] *** Netlist is unique.
+[05/23 23:09:48     39s] Setting Std. cell height to 3420 DBU (smallest netlist inst).
+[05/23 23:09:48     39s] ** info: there are 1055 modules.
+[05/23 23:09:48     39s] ** info: there are 14320 stdCell insts.
+[05/23 23:09:48     39s] 
+[05/23 23:09:48     39s] *** Memory Usage v#1 (Current mem = 1110.105M, initial mem = 478.109M) ***
+[05/23 23:09:48     39s] *info: set bottom ioPad orient R0
+[05/23 23:09:48     39s] **WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/23 23:09:48     39s] Type 'man IMPFP-3961' for more detail.
+[05/23 23:09:48     39s] **WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/23 23:09:48     39s] Type 'man IMPFP-3961' for more detail.
+[05/23 23:09:48     39s] Start create_tracks
+[05/23 23:09:48     39s] Set Default Input Pin Transition as 0.1 ps.
+[05/23 23:09:48     39s] Set Shrink Factor to 0.90000
+[05/23 23:09:48     39s] Loading preference file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/gui.pref.tcl ...
+[05/23 23:09:48     40s] Slack adjustment of -0 applied on <default> path group
+[05/23 23:09:48     40s] **WARN: (IMPOPT-3602):	The specified path group name reg2reg is not defined.
+[05/23 23:09:48     40s] Type 'man IMPOPT-3602' for more detail.
+[05/23 23:09:48     40s] Effort level <high> specified for reg2reg path_group
+[05/23 23:09:48     40s] Slack adjustment of -0 applied on reg2reg path_group
+[05/23 23:09:48     40s] **WARN: (IMPOPT-3602):	The specified path group name reg2out is not defined.
+[05/23 23:09:48     40s] Type 'man IMPOPT-3602' for more detail.
+[05/23 23:09:48     40s] Effort level <high> specified for reg2out path_group
+[05/23 23:09:48     40s] Slack adjustment of 0 applied on reg2out path_group
+[05/23 23:09:48     40s] **WARN: (IMPOPT-3602):	The specified path group name in2reg is not defined.
+[05/23 23:09:48     40s] Type 'man IMPOPT-3602' for more detail.
+[05/23 23:09:48     40s] Effort level <high> specified for in2reg path_group
+[05/23 23:09:48     40s] Slack adjustment of 0 applied on in2reg path_group
+[05/23 23:09:48     40s] **WARN: (IMPOPT-3602):	The specified path group name in2out is not defined.
+[05/23 23:09:48     40s] Type 'man IMPOPT-3602' for more detail.
+[05/23 23:09:48     40s] Effort level <high> specified for in2out path_group
+[05/23 23:09:48     40s] Slack adjustment of -0 applied on in2out path_group
+[05/23 23:09:48     40s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[05/23 23:09:48     40s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[05/23 23:09:48     40s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[05/23 23:09:48     40s] **WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+[05/23 23:09:48     40s] #WARNING (NRIF-90) Option setNanoRouteMode -routeBottomRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -bottomRoutingLayer instead.
+[05/23 23:09:48     40s] #WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+[05/23 23:09:48     40s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[05/23 23:09:48     40s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[05/23 23:09:48     40s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[05/23 23:09:48     40s] AAE_INFO: switching -siAware from false to true ...
+[05/23 23:09:48     40s] AAE_INFO: The setting is changed from false to true in setDelayCalMode -SIAware
+[05/23 23:09:48     40s] **WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+[05/23 23:09:48     40s] **WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMaxRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -topRoutingLayer' instead.
+[05/23 23:09:48     40s] **WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMinRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -bottomRoutingLayer' instead.
+[05/23 23:09:48     40s] Change floorplan default-technical-site to 'CoreSite'.
+[05/23 23:09:48     40s] Extraction setup Delayed 
+[05/23 23:09:48     40s] *Info: initialize multi-corner CTS.
+[05/23 23:09:48     40s] Ending "SetAnalysisView" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1089.0M, current mem=833.7M)
+[05/23 23:09:49     40s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[05/23 23:09:49     40s] 
+[05/23 23:09:49     40s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign Begin ...
+[05/23 23:09:49     40s] SBFF Setting to complicate: SMDFFHQX8 complicate code: 30.1
+[05/23 23:09:49     40s] SBFF Setting to complicate: SMDFFHQX4 complicate code: 30.1
+[05/23 23:09:49     40s] SBFF Setting to complicate: SMDFFHQX2 complicate code: 30.1
+[05/23 23:09:49     40s] SBFF Setting to complicate: SMDFFHQX1 complicate code: 30.1
+[05/23 23:09:49     40s] SBFF Setting to complicate: SEDFFTRXL complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: SEDFFTRX4 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: SEDFFTRX2 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: SEDFFTRX1 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: SEDFFHQX8 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: SEDFFHQX4 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: SEDFFHQX2 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: SEDFFHQX1 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: EDFFTRXL complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: EDFFTRX4 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: EDFFTRX2 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: EDFFTRX1 complicate code: 30.05
+[05/23 23:09:49     40s] Summary for sequential cells identification: 
+[05/23 23:09:49     40s]   Identified SBFF number: 104
+[05/23 23:09:49     40s]   Identified MBFF number: 0
+[05/23 23:09:49     40s]   Identified SB Latch number: 0
+[05/23 23:09:49     40s]   Identified MB Latch number: 0
+[05/23 23:09:49     40s]   Not identified SBFF number: 16
+[05/23 23:09:49     40s]   Not identified MBFF number: 0
+[05/23 23:09:49     40s]   Not identified SB Latch number: 0
+[05/23 23:09:49     40s]   Not identified MB Latch number: 0
+[05/23 23:09:49     40s]   Number of sequential cells which are not FFs: 32
+[05/23 23:09:49     40s] Total number of combinational cells: 318
+[05/23 23:09:49     40s] Total number of sequential cells: 152
+[05/23 23:09:49     40s] Total number of tristate cells: 10
+[05/23 23:09:49     40s] Total number of level shifter cells: 0
+[05/23 23:09:49     40s] Total number of power gating cells: 0
+[05/23 23:09:49     40s] Total number of isolation cells: 0
+[05/23 23:09:49     40s] Total number of power switch cells: 0
+[05/23 23:09:49     40s] Total number of pulse generator cells: 0
+[05/23 23:09:49     40s] Total number of always on buffers: 0
+[05/23 23:09:49     40s] Total number of retention cells: 0
+[05/23 23:09:49     40s] Total number of physical cells: 0
+[05/23 23:09:49     40s] List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+[05/23 23:09:49     40s] Total number of usable buffers: 16
+[05/23 23:09:49     40s] List of unusable buffers:
+[05/23 23:09:49     40s] Total number of unusable buffers: 0
+[05/23 23:09:49     40s] List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+[05/23 23:09:49     40s] Total number of usable inverters: 19
+[05/23 23:09:49     40s] List of unusable inverters:
+[05/23 23:09:49     40s] Total number of unusable inverters: 0
+[05/23 23:09:49     40s] List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+[05/23 23:09:49     40s] Total number of identified usable delay cells: 8
+[05/23 23:09:49     40s] List of identified unusable delay cells:
+[05/23 23:09:49     40s] Total number of identified unusable delay cells: 0
+[05/23 23:09:49     40s] 
+[05/23 23:09:49     40s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign End ...
+[05/23 23:09:49     40s] 
+[05/23 23:09:49     40s] TimeStamp Deleting Cell Server Begin ...
+[05/23 23:09:49     40s] 
+[05/23 23:09:49     40s] TimeStamp Deleting Cell Server End ...
+[05/23 23:09:49     40s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1096.6M, current mem=1096.5M)
+[05/23 23:09:49     40s] 
+[05/23 23:09:49     40s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign Begin ...
+[05/23 23:09:49     40s] SBFF Setting to complicate: SMDFFHQX8 complicate code: 30.1
+[05/23 23:09:49     40s] SBFF Setting to complicate: SMDFFHQX4 complicate code: 30.1
+[05/23 23:09:49     40s] SBFF Setting to complicate: SMDFFHQX2 complicate code: 30.1
+[05/23 23:09:49     40s] SBFF Setting to complicate: SMDFFHQX1 complicate code: 30.1
+[05/23 23:09:49     40s] SBFF Setting to complicate: SEDFFTRXL complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: SEDFFTRX4 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: SEDFFTRX2 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: SEDFFTRX1 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: SEDFFHQX8 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: SEDFFHQX4 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: SEDFFHQX2 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: SEDFFHQX1 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: EDFFTRXL complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: EDFFTRX4 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: EDFFTRX2 complicate code: 30.05
+[05/23 23:09:49     40s] SBFF Setting to complicate: EDFFTRX1 complicate code: 30.05
+[05/23 23:09:49     40s] Summary for sequential cells identification: 
+[05/23 23:09:49     40s]   Identified SBFF number: 104
+[05/23 23:09:49     40s]   Identified MBFF number: 0
+[05/23 23:09:49     40s]   Identified SB Latch number: 0
+[05/23 23:09:49     40s]   Identified MB Latch number: 0
+[05/23 23:09:49     40s]   Not identified SBFF number: 16
+[05/23 23:09:49     40s]   Not identified MBFF number: 0
+[05/23 23:09:49     40s]   Not identified SB Latch number: 0
+[05/23 23:09:49     40s]   Not identified MB Latch number: 0
+[05/23 23:09:49     40s]   Number of sequential cells which are not FFs: 32
+[05/23 23:09:49     40s] 
+[05/23 23:09:49     40s] Trim Metal Layers:
+[05/23 23:09:49     40s]  Visiting view : setup_view
+[05/23 23:09:49     40s]    : PowerDomain = none : Weighted F : unweighted  = 37.60 (1.000) with rcCorner = 0
+[05/23 23:09:49     40s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = -1
+[05/23 23:09:49     40s]  Visiting view : hold_view
+[05/23 23:09:49     40s]    : PowerDomain = none : Weighted F : unweighted  = 11.90 (1.000) with rcCorner = 0
+[05/23 23:09:49     40s]    : PowerDomain = none : Weighted F : unweighted  = 5.30 (1.000) with rcCorner = -1
+[05/23 23:09:49     40s] 
+[05/23 23:09:49     40s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign End ...
+[05/23 23:09:49     40s] 
+[05/23 23:09:49     40s] TimeStamp Deleting Cell Server Begin ...
+[05/23 23:09:49     40s] 
+[05/23 23:09:49     40s] TimeStamp Deleting Cell Server End ...
+[05/23 23:09:49     40s] % Begin Load MMMC data post ... (date=05/23 23:09:49, mem=1097.1M)
+[05/23 23:09:49     40s] % End Load MMMC data post ... (date=05/23 23:09:49, total cpu=0:00:00.0, real=0:00:00.0, peak res=1097.1M, current mem=1097.1M)
+[05/23 23:09:49     40s] Reading floorplan file - /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/gpu.fp.gz (mem = 1369.6M).
+[05/23 23:09:49     40s] % Begin Load floorplan data ... (date=05/23 23:09:49, mem=1097.2M)
+[05/23 23:09:49     40s] *info: reset 14791 existing net BottomPreferredLayer and AvoidDetour
+[05/23 23:09:49     40s] Deleting old partition specification.
+[05/23 23:09:49     40s] Set FPlanBox to (0 0 482000 474620)
+[05/23 23:09:49     40s] **WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/23 23:09:49     40s] Type 'man IMPFP-3961' for more detail.
+[05/23 23:09:49     40s] **WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/23 23:09:49     40s] Type 'man IMPFP-3961' for more detail.
+[05/23 23:09:49     40s] Start create_tracks
+[05/23 23:09:49     40s]  ... processed partition successfully.
+[05/23 23:09:49     40s] Reading binary special route file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/gpu.fp.spr.gz (Created by Innovus v21.18-s099_1 on Sat May 23 03:26:31 2026, version: 1)
+[05/23 23:09:49     40s] Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1098.0M, current mem=1098.0M)
+[05/23 23:09:49     40s] There are 143 nets with weight being set
+[05/23 23:09:49     40s] There are 146 nets with bottomPreferredRoutingLayer being set
+[05/23 23:09:49     40s] There are 143 nets with avoidDetour being set
+[05/23 23:09:49     40s] Extracting standard cell pins and blockage ...... 
+[05/23 23:09:49     40s] Pin and blockage extraction finished
+[05/23 23:09:49     40s] % End Load floorplan data ... (date=05/23 23:09:49, total cpu=0:00:00.1, real=0:00:00.0, peak res=1099.2M, current mem=1099.2M)
+[05/23 23:09:49     40s] Reading congestion map file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/gpu.route.congmap.gz ...
+[05/23 23:09:49     40s] % Begin Load SymbolTable ... (date=05/23 23:09:49, mem=1099.4M)
+[05/23 23:09:50     40s] Suppress "**WARN ..." messages.
+[05/23 23:09:50     40s] routingBox: (0 0) (482000 474620)
+[05/23 23:09:50     40s] coreBox:    (20000 20140) (462000 454480)
+[05/23 23:09:50     40s] Un-suppress "**WARN ..." messages.
+[05/23 23:09:50     40s] % End Load SymbolTable ... (date=05/23 23:09:50, total cpu=0:00:00.1, real=0:00:01.0, peak res=1102.5M, current mem=1102.4M)
+[05/23 23:09:50     40s] Loading place ...
+[05/23 23:09:50     40s] % Begin Load placement data ... (date=05/23 23:09:50, mem=1102.4M)
+[05/23 23:09:50     40s] Reading placement file - /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/gpu.place.gz.
+[05/23 23:09:50     40s] ** Reading stdCellPlacement_binary (Created by Innovus v21.18-s099_1 on Sat May 23 03:26:32 2026, version# 2) ...
+[05/23 23:09:50     40s] Read Views for adaptive view pruning ...
+[05/23 23:09:50     40s] Read 0 views from Binary DB for adaptive view pruning
+[05/23 23:09:50     41s] *** Completed restorePlace (cpu=0:00:00.0 real=0:00:00.0 mem=1378.6M) ***
+[05/23 23:09:50     41s] Total net length = 2.141e+05 (1.144e+05 9.966e+04) (ext = 1.337e+04)
+[05/23 23:09:50     41s] % End Load placement data ... (date=05/23 23:09:50, total cpu=0:00:00.1, real=0:00:00.0, peak res=1106.7M, current mem=1106.0M)
+[05/23 23:09:50     41s] % Begin Load routing data ... (date=05/23 23:09:50, mem=1106.0M)
+[05/23 23:09:50     41s] Reading routing file - /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/gpu.route.gz.
+[05/23 23:09:50     41s] Reading Innovus routing data (Created by Innovus v21.18-s099_1 on Sat May 23 03:26:32 2026 Format: 20.1) ...
+[05/23 23:09:50     41s] *** Total 14715 nets are successfully restored.
+[05/23 23:09:50     41s] *** Completed restoreRoute (cpu=0:00:00.1 real=0:00:00.0 mem=1395.6M) ***
+[05/23 23:09:50     41s] % End Load routing data ... (date=05/23 23:09:50, total cpu=0:00:00.2, real=0:00:00.0, peak res=1126.9M, current mem=1125.9M)
+[05/23 23:09:50     41s] Loading Drc markers ...
+[05/23 23:09:51     41s] ... 8 markers are loaded ...
+[05/23 23:09:51     41s] ... 0 geometry drc markers are loaded ...
+[05/23 23:09:51     41s] ... 0 antenna drc markers are loaded ...
+[05/23 23:09:51     41s] TAT_INFO: restoreCongMap REAL = 1 : CPU = 0 : MEM = 0.
+[05/23 23:09:51     41s] Reading property file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/gpu.prop
+[05/23 23:09:51     41s] *** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1398.6M) ***
+[05/23 23:09:51     41s] Reading dirtyarea snapshot file /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/gpu.db.da.gz (Create by Innovus v21.18-s099_1 on Sat May 23 03:26:32 2026, version: 4).
+[05/23 23:09:52     41s] Set Default Input Pin Transition as 0.1 ps.
+[05/23 23:09:52     41s] eee: readRCCornerMetaData, file read unsuccessful: /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/extraction/extractionMetaData.gz
+[05/23 23:09:52     41s] Extraction setup Started 
+[05/23 23:09:52     41s] 
+[05/23 23:09:52     41s] Trim Metal Layers:
+[05/23 23:09:52     41s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[05/23 23:09:52     41s] **WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+[05/23 23:09:52     41s] Type 'man IMPEXT-6202' for more detail.
+[05/23 23:09:52     41s] Reading Capacitance Table File /home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl ...
+[05/23 23:09:52     41s] Cap table was created using Encounter 10.10-b056_1.
+[05/23 23:09:52     41s] Process name: cln28hpl_1p10m+alrdl_5x2yu2yz_typical.
+[05/23 23:09:52     41s] Set Shrink Factor to 0.90000
+[05/23 23:09:52     41s] Importing multi-corner RC tables ... 
+[05/23 23:09:52     41s] Summary of Active RC-Corners : 
+[05/23 23:09:52     41s]  
+[05/23 23:09:52     41s]  Analysis View: setup_view
+[05/23 23:09:52     41s]     RC-Corner Name        : typical_rc
+[05/23 23:09:52     41s]     RC-Corner Index       : 0
+[05/23 23:09:52     41s]     RC-Corner Temperature : 25 Celsius
+[05/23 23:09:52     41s]     RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+[05/23 23:09:52     41s]     RC-Corner PreRoute Res Factor         : 1
+[05/23 23:09:52     41s]     RC-Corner PreRoute Cap Factor         : 1
+[05/23 23:09:52     41s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/23 23:09:52     41s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/23 23:09:52     41s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/23 23:09:52     41s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/23 23:09:52     41s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/23 23:09:52     41s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[05/23 23:09:52     41s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[05/23 23:09:52     41s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/23 23:09:52     41s]     RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+[05/23 23:09:52     41s]  
+[05/23 23:09:52     41s]  Analysis View: hold_view
+[05/23 23:09:52     41s]     RC-Corner Name        : typical_rc
+[05/23 23:09:52     41s]     RC-Corner Index       : 0
+[05/23 23:09:52     41s]     RC-Corner Temperature : 25 Celsius
+[05/23 23:09:52     41s]     RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+[05/23 23:09:52     41s]     RC-Corner PreRoute Res Factor         : 1
+[05/23 23:09:52     41s]     RC-Corner PreRoute Cap Factor         : 1
+[05/23 23:09:52     41s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/23 23:09:52     41s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/23 23:09:52     41s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/23 23:09:52     41s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/23 23:09:52     41s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/23 23:09:52     41s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[05/23 23:09:52     41s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[05/23 23:09:52     41s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/23 23:09:52     41s]     RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/make_flow_last_rev/DESIGN/route_design.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+[05/23 23:09:52     41s] 
+[05/23 23:09:52     41s] Trim Metal Layers:
+[05/23 23:09:52     41s] LayerId::1 widthSet size::4
+[05/23 23:09:52     41s] LayerId::2 widthSet size::4
+[05/23 23:09:52     41s] LayerId::3 widthSet size::4
+[05/23 23:09:52     41s] LayerId::4 widthSet size::4
+[05/23 23:09:52     41s] LayerId::5 widthSet size::4
+[05/23 23:09:52     41s] LayerId::6 widthSet size::4
+[05/23 23:09:52     41s] LayerId::7 widthSet size::5
+[05/23 23:09:52     41s] LayerId::8 widthSet size::5
+[05/23 23:09:52     41s] LayerId::9 widthSet size::5
+[05/23 23:09:52     41s] LayerId::10 widthSet size::4
+[05/23 23:09:52     41s] LayerId::11 widthSet size::3
+[05/23 23:09:52     41s] eee: pegSigSF::1.070000
+[05/23 23:09:52     41s] Initializing multi-corner capacitance tables ... 
+[05/23 23:09:52     41s] Initializing multi-corner resistance tables ...
+[05/23 23:09:52     41s] Creating RPSQ from WeeR and WRes ...
+[05/23 23:09:52     42s] eee: l::1 avDens::0.113967 usedTrk::1996.635672 availTrk::17519.387932 sigTrk::1996.635672
+[05/23 23:09:52     42s] eee: l::2 avDens::0.195143 usedTrk::3431.991401 availTrk::17587.102268 sigTrk::3431.991401
+[05/23 23:09:52     42s] eee: l::3 avDens::0.238292 usedTrk::4453.531983 availTrk::18689.387932 sigTrk::4453.531983
+[05/23 23:09:52     42s] eee: l::4 avDens::0.182375 usedTrk::3100.087360 availTrk::16998.414720 sigTrk::3100.087360
+[05/23 23:09:52     42s] eee: l::5 avDens::0.158918 usedTrk::2490.505022 availTrk::15671.598730 sigTrk::2490.505022
+[05/23 23:09:52     42s] eee: l::6 avDens::0.085070 usedTrk::1097.892809 availTrk::12905.774969 sigTrk::1097.892809
+[05/23 23:09:52     42s] eee: l::7 avDens::0.045429 usedTrk::481.069418 availTrk::10589.387932 sigTrk::481.069418
+[05/23 23:09:52     42s] eee: l::8 avDens::0.022810 usedTrk::104.050847 availTrk::4561.578122 sigTrk::104.050847
+[05/23 23:09:52     42s] eee: l::9 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 23:09:52     42s] eee: l::10 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 23:09:52     42s] eee: l::11 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 23:09:52     42s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.274067 uaWl=0.998695 uaWlH=0.468405 aWlH=0.000910 lMod=0 pMax=0.863400 pMod=80 wcR=0.772700 newSi=0.001600 wHLS=1.933517 siPrev=0 viaL=0.000000 crit=0.001178 shortMod=0.005889 fMod=0.000294 
+[05/23 23:09:52     42s] Start generating vias ..
+[05/23 23:09:52     42s] #create default rule from bind_ndr_rule rule=0x7f036c7e0110 0x7f0351544568
+[05/23 23:09:52     42s] ### import design signature (1): route=1 fixed_route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1 via=610195162 routing_via=1
+[05/23 23:09:52     42s] #Skip building auto via since it is not turned on.
+[05/23 23:09:52     42s] Extracting standard cell pins and blockage ...... 
+[05/23 23:09:52     42s] Pin and blockage extraction finished
+[05/23 23:09:52     42s] Via generation completed.
+[05/23 23:09:52     42s] % Begin Load power constraints ... (date=05/23 23:09:52, mem=1142.7M)
+[05/23 23:09:52     42s] % End Load power constraints ... (date=05/23 23:09:52, total cpu=0:00:00.0, real=0:00:00.0, peak res=1149.2M, current mem=1149.2M)
+[05/23 23:09:52     42s] % Begin load AAE data ... (date=05/23 23:09:52, mem=1194.3M)
+[05/23 23:09:53     42s] AAE DB initialization (MEM=1501.5 CPU=0:00:00.0 REAL=0:00:00.0) 
+[05/23 23:09:53     43s] % End load AAE data ... (date=05/23 23:09:53, total cpu=0:00:00.6, real=0:00:01.0, peak res=1201.6M, current mem=1201.6M)
+[05/23 23:09:53     43s] Restoring CCOpt config...
+[05/23 23:09:53     43s] 
+[05/23 23:09:53     43s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign Begin ...
+[05/23 23:09:53     43s] SBFF Setting to complicate: SMDFFHQX8 complicate code: 30.1
+[05/23 23:09:53     43s] SBFF Setting to complicate: SMDFFHQX4 complicate code: 30.1
+[05/23 23:09:53     43s] SBFF Setting to complicate: SMDFFHQX2 complicate code: 30.1
+[05/23 23:09:53     43s] SBFF Setting to complicate: SMDFFHQX1 complicate code: 30.1
+[05/23 23:09:53     43s] SBFF Setting to complicate: SEDFFTRXL complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: SEDFFTRX4 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: SEDFFTRX2 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: SEDFFTRX1 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: SEDFFHQX8 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: SEDFFHQX4 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: SEDFFHQX2 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: SEDFFHQX1 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: EDFFTRXL complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: EDFFTRX4 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: EDFFTRX2 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: EDFFTRX1 complicate code: 30.05
+[05/23 23:09:53     43s] Summary for sequential cells identification: 
+[05/23 23:09:53     43s]   Identified SBFF number: 104
+[05/23 23:09:53     43s]   Identified MBFF number: 0
+[05/23 23:09:53     43s]   Identified SB Latch number: 0
+[05/23 23:09:53     43s]   Identified MB Latch number: 0
+[05/23 23:09:53     43s]   Not identified SBFF number: 16
+[05/23 23:09:53     43s]   Not identified MBFF number: 0
+[05/23 23:09:53     43s]   Not identified SB Latch number: 0
+[05/23 23:09:53     43s]   Not identified MB Latch number: 0
+[05/23 23:09:53     43s]   Number of sequential cells which are not FFs: 32
+[05/23 23:09:53     43s]  Visiting view : setup_view
+[05/23 23:09:53     43s]    : PowerDomain = none : Weighted F : unweighted  = 36.80 (1.000) with rcCorner = 0
+[05/23 23:09:53     43s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = -1
+[05/23 23:09:53     43s]  Visiting view : hold_view
+[05/23 23:09:53     43s]    : PowerDomain = none : Weighted F : unweighted  = 11.90 (1.000) with rcCorner = 0
+[05/23 23:09:53     43s]    : PowerDomain = none : Weighted F : unweighted  = 5.30 (1.000) with rcCorner = -1
+[05/23 23:09:53     43s] 
+[05/23 23:09:53     43s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign End ...
+[05/23 23:09:53     43s]   Extracting original clock gating for clk...
+[05/23 23:09:53     43s]     clock_tree clk contains 1827 sinks and 0 clock gates.
+[05/23 23:09:53     43s]   Extracting original clock gating for clk done.
+[05/23 23:09:53     43s]   The skew group clk/func_mode was created. It contains 1827 sinks and 1 sources.
+[05/23 23:09:53     43s]   The skew group clk/func_mode was created. It contains 1827 sinks and 1 sources.
+[05/23 23:09:53     43s] Restoring CCOpt config done.
+[05/23 23:09:53     43s] 
+[05/23 23:09:53     43s] TimeStamp Deleting Cell Server Begin ...
+[05/23 23:09:53     43s] 
+[05/23 23:09:53     43s] TimeStamp Deleting Cell Server End ...
+[05/23 23:09:53     43s] 
+[05/23 23:09:53     43s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign Begin ...
+[05/23 23:09:53     43s] SBFF Setting to complicate: SMDFFHQX8 complicate code: 30.1
+[05/23 23:09:53     43s] SBFF Setting to complicate: SMDFFHQX4 complicate code: 30.1
+[05/23 23:09:53     43s] SBFF Setting to complicate: SMDFFHQX2 complicate code: 30.1
+[05/23 23:09:53     43s] SBFF Setting to complicate: SMDFFHQX1 complicate code: 30.1
+[05/23 23:09:53     43s] SBFF Setting to complicate: SEDFFTRXL complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: SEDFFTRX4 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: SEDFFTRX2 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: SEDFFTRX1 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: SEDFFHQX8 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: SEDFFHQX4 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: SEDFFHQX2 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: SEDFFHQX1 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: EDFFTRXL complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: EDFFTRX4 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: EDFFTRX2 complicate code: 30.05
+[05/23 23:09:53     43s] SBFF Setting to complicate: EDFFTRX1 complicate code: 30.05
+[05/23 23:09:53     43s] Summary for sequential cells identification: 
+[05/23 23:09:53     43s]   Identified SBFF number: 104
+[05/23 23:09:53     43s]   Identified MBFF number: 0
+[05/23 23:09:53     43s]   Identified SB Latch number: 0
+[05/23 23:09:53     43s]   Identified MB Latch number: 0
+[05/23 23:09:53     43s]   Not identified SBFF number: 16
+[05/23 23:09:53     43s]   Not identified MBFF number: 0
+[05/23 23:09:53     43s]   Not identified SB Latch number: 0
+[05/23 23:09:53     43s]   Not identified MB Latch number: 0
+[05/23 23:09:53     43s]   Number of sequential cells which are not FFs: 32
+[05/23 23:09:53     43s] Total number of combinational cells: 318
+[05/23 23:09:53     43s] Total number of sequential cells: 152
+[05/23 23:09:53     43s] Total number of tristate cells: 10
+[05/23 23:09:53     43s] Total number of level shifter cells: 0
+[05/23 23:09:53     43s] Total number of power gating cells: 0
+[05/23 23:09:53     43s] Total number of isolation cells: 0
+[05/23 23:09:53     43s] Total number of power switch cells: 0
+[05/23 23:09:53     43s] Total number of pulse generator cells: 0
+[05/23 23:09:53     43s] Total number of always on buffers: 0
+[05/23 23:09:53     43s] Total number of retention cells: 0
+[05/23 23:09:53     43s] Total number of physical cells: 0
+[05/23 23:09:53     43s] List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+[05/23 23:09:53     43s] Total number of usable buffers: 16
+[05/23 23:09:53     43s] List of unusable buffers:
+[05/23 23:09:53     43s] Total number of unusable buffers: 0
+[05/23 23:09:53     43s] List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+[05/23 23:09:53     43s] Total number of usable inverters: 19
+[05/23 23:09:53     43s] List of unusable inverters:
+[05/23 23:09:53     43s] Total number of unusable inverters: 0
+[05/23 23:09:53     43s] List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+[05/23 23:09:53     43s] Total number of identified usable delay cells: 8
+[05/23 23:09:53     43s] List of identified unusable delay cells:
+[05/23 23:09:53     43s] Total number of identified unusable delay cells: 0
+[05/23 23:09:53     43s] 
+[05/23 23:09:53     43s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign End ...
+[05/23 23:09:53     43s] 
+[05/23 23:09:53     43s] TimeStamp Deleting Cell Server Begin ...
+[05/23 23:09:53     43s] 
+[05/23 23:09:53     43s] TimeStamp Deleting Cell Server End ...
+[05/23 23:09:53     43s] **WARN: (IMPCTE-107):	The following globals have been obsoleted since version . They will be removed in the next release. 
+[05/23 23:09:53     43s] timing_enable_separate_device_slew_effect_sensitivities
+[05/23 23:09:53     43s] #% End load design ... (date=05/23 23:09:53, total cpu=0:00:05.9, real=0:00:08.0, peak res=1225.2M, current mem=1208.0M)
+[05/23 23:09:53     43s] 
+[05/23 23:09:53     43s] *** Summary of all messages that are not suppressed in this session:
+[05/23 23:09:53     43s] Severity  ID               Count  Summary                                  
+[05/23 23:09:53     43s] WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[05/23 23:09:53     43s] WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+[05/23 23:09:53     43s] WARNING   IMPPTN-867           1  Found use of %s. This will continue to w...
+[05/23 23:09:53     43s] WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+[05/23 23:09:53     43s] WARNING   IMPOPT-3602          4  The specified path group name %s is not ...
+[05/23 23:09:53     43s] WARNING   NRIF-90              1  Option setNanoRouteMode -routeBottomRout...
+[05/23 23:09:53     43s] WARNING   NRIF-91              1  Option setNanoRouteMode -routeTopRouting...
+[05/23 23:09:53     43s] WARNING   IMPCTE-107           1  The following globals have been obsolete...
+[05/23 23:09:53     43s] WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+[05/23 23:09:53     43s] WARNING   IMPPSP-1003          2  Found use of '%s'. This will continue to...
+[05/23 23:09:53     43s] WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+[05/23 23:09:53     43s] *** Message Summary: 19 warning(s), 0 error(s)
+[05/23 23:09:53     43s] 
+[05/23 23:10:09     46s] <CMD> timeDesign -postRoute
+[05/23 23:10:09     46s] *** timeDesign #1 [begin] : totSession cpu/real = 0:00:46.4/0:02:58.3 (0.3), mem = 1932.5M
+[05/23 23:10:09     46s]  Reset EOS DB
+[05/23 23:10:09     46s] Ignoring AAE DB Resetting ...
+[05/23 23:10:09     46s] Extraction called for design 'gpu' of instances=16070 and nets=14791 using extraction engine 'postRoute' at effort level 'low' .
+[05/23 23:10:09     46s] **WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+[05/23 23:10:09     46s] Type 'man IMPEXT-3530' for more detail.
+[05/23 23:10:09     46s] PostRoute (effortLevel low) RC Extraction called for design gpu.
+[05/23 23:10:09     46s] RC Extraction called in multi-corner(1) mode.
+[05/23 23:10:09     46s] Process corner(s) are loaded.
+[05/23 23:10:09     46s]  Corner: typical_rc
+[05/23 23:10:09     46s] Metal density calculation for erosion effect completed (CPU=0:00:00.2  MEM=1932.52M)
+[05/23 23:10:09     46s] extractDetailRC Option : -outfile /tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d  -extended
+[05/23 23:10:09     46s] RC Mode: PostRoute -effortLevel low [Extended CapTable, RC Table Resistances]
+[05/23 23:10:09     46s]       RC Corner Indexes            0   
+[05/23 23:10:09     46s] Capacitance Scaling Factor   : 1.00000 
+[05/23 23:10:09     46s] Coupling Cap. Scaling Factor : 1.00000 
+[05/23 23:10:09     46s] Resistance Scaling Factor    : 1.00000 
+[05/23 23:10:09     46s] Clock Cap. Scaling Factor    : 1.00000 
+[05/23 23:10:09     46s] Clock Res. Scaling Factor    : 1.00000 
+[05/23 23:10:09     46s] Shrink Factor                : 0.90000
+[05/23 23:10:09     46s] 
+[05/23 23:10:09     46s] Trim Metal Layers:
+[05/23 23:10:09     46s] LayerId::1 widthSet size::4
+[05/23 23:10:09     46s] LayerId::2 widthSet size::4
+[05/23 23:10:09     46s] LayerId::3 widthSet size::4
+[05/23 23:10:09     46s] LayerId::4 widthSet size::4
+[05/23 23:10:09     46s] LayerId::5 widthSet size::4
+[05/23 23:10:09     46s] LayerId::6 widthSet size::4
+[05/23 23:10:09     46s] LayerId::7 widthSet size::5
+[05/23 23:10:09     46s] LayerId::8 widthSet size::5
+[05/23 23:10:09     46s] LayerId::9 widthSet size::5
+[05/23 23:10:09     46s] LayerId::10 widthSet size::4
+[05/23 23:10:09     46s] LayerId::11 widthSet size::3
+[05/23 23:10:09     46s] eee: pegSigSF::1.070000
+[05/23 23:10:09     46s] Initializing multi-corner capacitance tables ... 
+[05/23 23:10:09     46s] Initializing multi-corner resistance tables ...
+[05/23 23:10:09     46s] Creating RPSQ from WeeR and WRes ...
+[05/23 23:10:09     46s] eee: l::1 avDens::0.113967 usedTrk::1996.635672 availTrk::17519.387932 sigTrk::1996.635672
+[05/23 23:10:09     46s] eee: l::2 avDens::0.195143 usedTrk::3431.991401 availTrk::17587.102268 sigTrk::3431.991401
+[05/23 23:10:09     46s] eee: l::3 avDens::0.238292 usedTrk::4453.531983 availTrk::18689.387932 sigTrk::4453.531983
+[05/23 23:10:09     46s] eee: l::4 avDens::0.182375 usedTrk::3100.087360 availTrk::16998.414720 sigTrk::3100.087360
+[05/23 23:10:09     46s] eee: l::5 avDens::0.158918 usedTrk::2490.505022 availTrk::15671.598730 sigTrk::2490.505022
+[05/23 23:10:09     46s] eee: l::6 avDens::0.085070 usedTrk::1097.892809 availTrk::12905.774969 sigTrk::1097.892809
+[05/23 23:10:09     46s] eee: l::7 avDens::0.045429 usedTrk::481.069418 availTrk::10589.387932 sigTrk::481.069418
+[05/23 23:10:09     46s] eee: l::8 avDens::0.022810 usedTrk::104.050847 availTrk::4561.578122 sigTrk::104.050847
+[05/23 23:10:09     46s] eee: l::9 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 23:10:09     46s] eee: l::10 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 23:10:09     46s] eee: l::11 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 23:10:09     46s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.274067 uaWl=0.998695 uaWlH=0.468405 aWlH=0.000910 lMod=0 pMax=0.863400 pMod=80 wcR=0.772700 newSi=0.001600 wHLS=1.933517 siPrev=0 viaL=0.000000 crit=0.001178 shortMod=0.005889 fMod=0.000294 
+[05/23 23:10:09     46s] Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 1936.5M)
+[05/23 23:10:09     46s] Creating parasitic data file '/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d' for storing RC.
+[05/23 23:10:09     46s] Extracted 10.0008% (CPU Time= 0:00:00.4  MEM= 2022.0M)
+[05/23 23:10:09     47s] Extracted 20.0009% (CPU Time= 0:00:00.4  MEM= 2025.0M)
+[05/23 23:10:10     47s] Extracted 30.001% (CPU Time= 0:00:00.5  MEM= 2028.0M)
+[05/23 23:10:10     47s] Extracted 40.0012% (CPU Time= 0:00:00.7  MEM= 2030.0M)
+[05/23 23:10:10     47s] Extracted 50.0013% (CPU Time= 0:00:00.8  MEM= 2032.0M)
+[05/23 23:10:10     47s] Extracted 60.0008% (CPU Time= 0:00:00.9  MEM= 2034.0M)
+[05/23 23:10:10     47s] Extracted 70.0009% (CPU Time= 0:00:01.1  MEM= 2036.0M)
+[05/23 23:10:10     47s] Extracted 80.001% (CPU Time= 0:00:01.3  MEM= 2037.0M)
+[05/23 23:10:10     48s] Extracted 90.0012% (CPU Time= 0:00:01.5  MEM= 2039.0M)
+[05/23 23:10:11     48s] Extracted 100% (CPU Time= 0:00:02.0  MEM= 2045.0M)
+[05/23 23:10:11     48s] Number of Extracted Resistors     : 274935
+[05/23 23:10:11     48s] Number of Extracted Ground Cap.   : 275649
+[05/23 23:10:11     48s] Number of Extracted Coupling Cap. : 441224
+[05/23 23:10:11     48s] Opening parasitic data file '/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d' for reading (mem: 2029.016M)
+[05/23 23:10:11     48s] Filtering XCap in 'relativeOnly' mode using values relative_c_threshold=0.03 and total_c_threshold=5fF.
+[05/23 23:10:11     48s]  Corner: typical_rc
+[05/23 23:10:11     48s] Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 2029.0M)
+[05/23 23:10:11     48s] Creating parasitic data file '/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb_Filter.rcdb.d' for storing RC.
+[05/23 23:10:11     48s] Closing parasitic data file '/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d': 14713 access done (mem: 2029.016M)
+[05/23 23:10:12     48s] Lumped Parasitic Loading Started (total cpu=0:00:00.0, real=0:00:00.0, current mem=2029.016M)
+[05/23 23:10:12     48s] Opening parasitic data file '/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d' for reading (mem: 2029.016M)
+[05/23 23:10:12     49s] processing rcdb (/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d) for hinst (top) of cell (gpu);
+[05/23 23:10:12     49s] Closing parasitic data file '/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d': 0 access done (mem: 2029.016M)
+[05/23 23:10:12     49s] Lumped Parasitic Loading Completed (total cpu=0:00:00.8, real=0:00:00.0, current mem=2029.016M)
+[05/23 23:10:12     49s] PostRoute (effortLevel low) RC Extraction DONE (CPU Time: 0:00:03.4  Real Time: 0:00:03.0  MEM: 2029.016M)
+[05/23 23:10:12     49s] Starting delay calculation for Setup views
+[05/23 23:10:12     49s] AAE_INFO: opIsDesignInPostRouteState() is 1
+[05/23 23:10:12     49s] AAE_INFO: resetNetProps viewIdx 0 
+[05/23 23:10:12     49s] Starting SI iteration 1 using Infinite Timing Windows
+[05/23 23:10:12     49s] #################################################################################
+[05/23 23:10:12     49s] # Design Stage: PostRoute
+[05/23 23:10:12     49s] # Design Name: gpu
+[05/23 23:10:12     49s] # Design Mode: 90nm
+[05/23 23:10:12     49s] # Analysis Mode: MMMC OCV 
+[05/23 23:10:12     49s] # Parasitics Mode: SPEF/RCDB 
+[05/23 23:10:12     49s] # Signoff Settings: SI On 
+[05/23 23:10:12     49s] #################################################################################
+[05/23 23:10:13     50s] AAE_INFO: 1 threads acquired from CTE.
+[05/23 23:10:13     50s] Setting infinite Tws ...
+[05/23 23:10:13     50s] First Iteration Infinite Tw... 
+[05/23 23:10:13     50s] Calculate early delays in OCV mode...
+[05/23 23:10:13     50s] Calculate late delays in OCV mode...
+[05/23 23:10:13     50s] Topological Sorting (REAL = 0:00:00.0, MEM = 2039.0M, InitMEM = 2038.0M)
+[05/23 23:10:13     50s] Start delay calculation (fullDC) (1 T). (MEM=2039.04)
+[05/23 23:10:13     50s] 
+[05/23 23:10:13     50s] Trim Metal Layers:
+[05/23 23:10:13     50s] LayerId::1 widthSet size::4
+[05/23 23:10:13     50s] LayerId::2 widthSet size::4
+[05/23 23:10:13     50s] LayerId::3 widthSet size::4
+[05/23 23:10:13     50s] LayerId::4 widthSet size::4
+[05/23 23:10:13     50s] LayerId::5 widthSet size::4
+[05/23 23:10:13     50s] LayerId::6 widthSet size::4
+[05/23 23:10:13     50s] LayerId::7 widthSet size::5
+[05/23 23:10:13     50s] LayerId::8 widthSet size::5
+[05/23 23:10:13     50s] LayerId::9 widthSet size::5
+[05/23 23:10:13     50s] LayerId::10 widthSet size::4
+[05/23 23:10:13     50s] LayerId::11 widthSet size::3
+[05/23 23:10:13     50s] eee: pegSigSF::1.070000
+[05/23 23:10:13     50s] Initializing multi-corner capacitance tables ... 
+[05/23 23:10:13     50s] Initializing multi-corner resistance tables ...
+[05/23 23:10:13     50s] Creating RPSQ from WeeR and WRes ...
+[05/23 23:10:13     50s] eee: l::1 avDens::0.113967 usedTrk::1996.635672 availTrk::17519.387932 sigTrk::1996.635672
+[05/23 23:10:13     50s] eee: l::2 avDens::0.195143 usedTrk::3431.991401 availTrk::17587.102268 sigTrk::3431.991401
+[05/23 23:10:13     50s] eee: l::3 avDens::0.238292 usedTrk::4453.531983 availTrk::18689.387932 sigTrk::4453.531983
+[05/23 23:10:13     50s] eee: l::4 avDens::0.182375 usedTrk::3100.087360 availTrk::16998.414720 sigTrk::3100.087360
+[05/23 23:10:13     50s] eee: l::5 avDens::0.158918 usedTrk::2490.505022 availTrk::15671.598730 sigTrk::2490.505022
+[05/23 23:10:13     50s] eee: l::6 avDens::0.085070 usedTrk::1097.892809 availTrk::12905.774969 sigTrk::1097.892809
+[05/23 23:10:13     50s] eee: l::7 avDens::0.045429 usedTrk::481.069418 availTrk::10589.387932 sigTrk::481.069418
+[05/23 23:10:13     50s] eee: l::8 avDens::0.022810 usedTrk::104.050847 availTrk::4561.578122 sigTrk::104.050847
+[05/23 23:10:13     50s] eee: l::9 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 23:10:13     50s] eee: l::10 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 23:10:13     50s] eee: l::11 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 23:10:13     50s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.274067 uaWl=0.998695 uaWlH=0.468405 aWlH=0.000910 lMod=0 pMax=0.863400 pMod=80 wcR=0.772700 newSi=0.001600 wHLS=1.933517 siPrev=0 viaL=0.000000 crit=0.001178 shortMod=0.005889 fMod=0.000294 
+[05/23 23:10:13     50s] Start AAE Lib Loading. (MEM=2055.65)
+[05/23 23:10:13     50s] End AAE Lib Loading. (MEM=2093.8 CPU=0:00:00.0 Real=0:00:00.0)
+[05/23 23:10:13     50s] End AAE Lib Interpolated Model. (MEM=2093.8 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[05/23 23:10:13     50s] Opening parasitic data file '/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d' for reading (mem: 2131.961M)
+[05/23 23:10:13     50s] RC Database In Completed (CPU Time= 0:00:00.0  Real Time=0:00:00.0  MEM= 2134.0M)
+[05/23 23:10:16     53s] Total number of fetched objects 14713
+[05/23 23:10:16     53s] AAE_INFO-618: Total number of nets in the design is 14791,  99.5 percent of the nets selected for SI analysis
+[05/23 23:10:18     55s] Total number of fetched objects 14713
+[05/23 23:10:18     55s] AAE_INFO-618: Total number of nets in the design is 14791,  99.5 percent of the nets selected for SI analysis
+[05/23 23:10:18     55s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[05/23 23:10:18     55s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[05/23 23:10:18     55s] End delay calculation. (MEM=2207.79 CPU=0:00:04.5 REAL=0:00:04.0)
+[05/23 23:10:18     55s] End delay calculation (fullDC). (MEM=2171.17 CPU=0:00:05.1 REAL=0:00:05.0)
+[05/23 23:10:18     55s] *** CDM Built up (cpu=0:00:05.8  real=0:00:06.0  mem= 2171.2M) ***
+[05/23 23:10:19     56s] Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2195.2M)
+[05/23 23:10:19     56s] Add other clocks and setupCteToAAEClockMapping during iter 1
+[05/23 23:10:19     56s] Loading CTE timing window is completed (CPU = 0:00:00.1, REAL = 0:00:00.0, MEM = 2195.2M)
+[05/23 23:10:19     56s] Starting SI iteration 2
+[05/23 23:10:19     56s] Calculate early delays in OCV mode...
+[05/23 23:10:19     56s] Calculate late delays in OCV mode...
+[05/23 23:10:19     56s] Start delay calculation (fullDC) (1 T). (MEM=2147.29)
+[05/23 23:10:19     56s] End AAE Lib Interpolated Model. (MEM=2147.29 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[05/23 23:10:20     57s] Glitch Analysis: View setup_view -- Total Number of Nets Skipped = 0. 
+[05/23 23:10:20     57s] Glitch Analysis: View setup_view -- Total Number of Nets Analyzed = 0. 
+[05/23 23:10:20     57s] Total number of fetched objects 14713
+[05/23 23:10:20     57s] AAE_INFO-618: Total number of nets in the design is 14791,  0.9 percent of the nets selected for SI analysis
+[05/23 23:10:20     57s] Total number of fetched objects 14713
+[05/23 23:10:20     57s] AAE_INFO-618: Total number of nets in the design is 14791,  1.5 percent of the nets selected for SI analysis
+[05/23 23:10:20     57s] End delay calculation. (MEM=2198.51 CPU=0:00:00.4 REAL=0:00:01.0)
+[05/23 23:10:20     57s] End delay calculation (fullDC). (MEM=2198.51 CPU=0:00:00.4 REAL=0:00:01.0)
+[05/23 23:10:20     57s] *** CDM Built up (cpu=0:00:00.4  real=0:00:01.0  mem= 2198.5M) ***
+[05/23 23:10:20     57s] *** Done Building Timing Graph (cpu=0:00:08.1 real=0:00:08.0 totSessionCpu=0:00:57.9 mem=2222.5M)
+[05/23 23:10:20     58s] All LLGs are deleted
+[05/23 23:10:20     58s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:20     58s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:20     58s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:2184.5M, EPOCH TIME: 1779556220.933108
+[05/23 23:10:20     58s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.000, MEM:2184.5M, EPOCH TIME: 1779556220.933404
+[05/23 23:10:20     58s] OPERPROF: Starting spInitSiteArr at level 1, MEM:2184.5M, EPOCH TIME: 1779556220.937740
+[05/23 23:10:20     58s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:20     58s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:20     58s] OPERPROF:   Starting spiInitFpSiteArr at level 2, MEM:2184.5M, EPOCH TIME: 1779556220.939229
+[05/23 23:10:20     58s] Max number of tech site patterns supported in site array is 256.
+[05/23 23:10:20     58s] Core basic site is CoreSite
+[05/23 23:10:20     58s] OPERPROF:     Starting spiCheckSiteIfFastDPInitAvailable at level 3, MEM:2184.5M, EPOCH TIME: 1779556220.964752
+[05/23 23:10:20     58s] SY_THREAD_POOL_QUEUE SY-GLB-THREAD-POOL (0x3df646a0): Create thread pool 0x7f0363c0b480.
+[05/23 23:10:20     58s] SY_THREAD_POOL_QUEUE SY-GLB-THREAD-POOL (0x3df646a0): 0 out of 1 thread pools are available.
+[05/23 23:10:20     58s] After signature check, allow fast init is false, keep pre-filter is false.
+[05/23 23:10:20     58s] After signature check and other controls, allow fast init is false, keep pre-filter is false.
+[05/23 23:10:20     58s] OPERPROF:     Finished spiCheckSiteIfFastDPInitAvailable at level 3, CPU:0.010, REAL:0.008, MEM:2313.5M, EPOCH TIME: 1779556220.972487
+[05/23 23:10:20     58s] Use non-trimmed site array because memory saving is not enough.
+[05/23 23:10:20     58s] SiteArray: non-trimmed site array dimensions = 127 x 1105
+[05/23 23:10:20     58s] SiteArray: use 815,104 bytes
+[05/23 23:10:20     58s] SiteArray: current memory after site array memory allocation 2314.3M
+[05/23 23:10:20     58s] SiteArray: FP blocked sites are writable
+[05/23 23:10:20     58s] OPERPROF:     Starting RoutingBlockageFromWireViaStBox at level 3, MEM:2314.3M, EPOCH TIME: 1779556220.977806
+[05/23 23:10:20     58s] OPERPROF:     Finished RoutingBlockageFromWireViaStBox at level 3, CPU:0.020, REAL:0.009, MEM:2314.3M, EPOCH TIME: 1779556220.986507
+[05/23 23:10:20     58s] SiteArray: number of non floorplan blocked sites for llg default is 136875
+[05/23 23:10:20     58s] Atter site array init, number of instance map data is 0.
+[05/23 23:10:20     58s] OPERPROF:   Finished spiInitFpSiteArr at level 2, CPU:0.060, REAL:0.053, MEM:2314.3M, EPOCH TIME: 1779556220.991842
+[05/23 23:10:20     58s] 
+[05/23 23:10:20     58s]  Pre_CCE_Colorizing is not ON! (0:0:574:0)
+[05/23 23:10:21     58s] OPERPROF: Finished spInitSiteArr at level 1, CPU:0.070, REAL:0.065, MEM:2315.3M, EPOCH TIME: 1779556221.002390
+[05/23 23:10:21     58s] All LLGs are deleted
+[05/23 23:10:21     58s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:2144).
+[05/23 23:10:21     58s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:21     58s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:2315.3M, EPOCH TIME: 1779556221.009331
+[05/23 23:10:21     58s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.000, MEM:2315.3M, EPOCH TIME: 1779556221.009542
+[05/23 23:10:24     59s] 
+------------------------------------------------------------------
+          timeDesign Summary
+------------------------------------------------------------------
+
+Setup views included:
+ setup_view 
+
++--------------------+---------+---------+---------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | in2reg  | reg2out | in2out  | default |
++--------------------+---------+---------+---------+---------+---------+---------+
+|           WNS (ns):| -0.026  | -0.026  |  1.869  |  2.630  |   N/A   |  0.000  |
+|           TNS (ns):| -0.026  | -0.026  |  0.000  |  0.000  |   N/A   |  0.000  |
+|    Violating Paths:|    1    |    1    |    0    |    0    |   N/A   |    0    |
+|          All Paths:|  1832   |  1831   |   184   |    1    |   N/A   |    0    |
++--------------------+---------+---------+---------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |      0 (0)       |   0.000    |      0 (0)       |
+|   max_tran     |     23 (46)      |   -0.220   |     23 (46)      |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Tech dependent Parameter, Build TLibAnalyzer for: HybridTechSiteEnabled
+[05/23 23:10:24     59s] All LLGs are deleted
+[05/23 23:10:24     59s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:24     59s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:24     59s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:2341.6M, EPOCH TIME: 1779556224.142889
+[05/23 23:10:24     59s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.000, MEM:2341.6M, EPOCH TIME: 1779556224.143217
+[05/23 23:10:24     59s] OPERPROF: Starting spInitSiteArr at level 1, MEM:2342.6M, EPOCH TIME: 1779556224.147872
+[05/23 23:10:24     59s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:24     59s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:24     59s] OPERPROF:   Starting spiInitFpSiteArr at level 2, MEM:2342.6M, EPOCH TIME: 1779556224.149413
+[05/23 23:10:24     59s] Max number of tech site patterns supported in site array is 256.
+[05/23 23:10:24     59s] Core basic site is CoreSite
+[05/23 23:10:24     59s] OPERPROF:     Starting spiCheckSiteIfFastDPInitAvailable at level 3, MEM:2342.6M, EPOCH TIME: 1779556224.175896
+[05/23 23:10:24     59s] After signature check, allow fast init is true, keep pre-filter is true.
+[05/23 23:10:24     59s] After signature check and other controls, allow fast init is true, keep pre-filter is true.
+[05/23 23:10:24     59s] OPERPROF:     Finished spiCheckSiteIfFastDPInitAvailable at level 3, CPU:0.010, REAL:0.005, MEM:2342.6M, EPOCH TIME: 1779556224.181166
+[05/23 23:10:24     59s] Fast DP-INIT is on for default
+[05/23 23:10:24     59s] Atter site array init, number of instance map data is 0.
+[05/23 23:10:24     59s] OPERPROF:   Finished spiInitFpSiteArr at level 2, CPU:0.030, REAL:0.037, MEM:2342.6M, EPOCH TIME: 1779556224.186216
+[05/23 23:10:24     59s] 
+[05/23 23:10:24     59s]  Pre_CCE_Colorizing is not ON! (0:0:574:0)
+[05/23 23:10:24     59s] OPERPROF: Finished spInitSiteArr at level 1, CPU:0.050, REAL:0.046, MEM:2342.6M, EPOCH TIME: 1779556224.193515
+[05/23 23:10:24     59s] All LLGs are deleted
+[05/23 23:10:24     59s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:2144).
+[05/23 23:10:24     59s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:24     59s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:2342.6M, EPOCH TIME: 1779556224.200401
+[05/23 23:10:24     59s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.000, MEM:2342.6M, EPOCH TIME: 1779556224.200650
+[05/23 23:10:24     59s] Density: 72.451%
+------------------------------------------------------------------
+
+[05/23 23:10:24     59s] All LLGs are deleted
+[05/23 23:10:24     59s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:24     59s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:24     59s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:2342.6M, EPOCH TIME: 1779556224.210029
+[05/23 23:10:24     59s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.000, MEM:2342.6M, EPOCH TIME: 1779556224.210267
+[05/23 23:10:24     59s] OPERPROF: Starting spInitSiteArr at level 1, MEM:2342.6M, EPOCH TIME: 1779556224.215445
+[05/23 23:10:24     59s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:24     59s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:24     59s] OPERPROF:   Starting spiInitFpSiteArr at level 2, MEM:2342.6M, EPOCH TIME: 1779556224.216856
+[05/23 23:10:24     59s] Max number of tech site patterns supported in site array is 256.
+[05/23 23:10:24     59s] Core basic site is CoreSite
+[05/23 23:10:24     59s] OPERPROF:     Starting spiCheckSiteIfFastDPInitAvailable at level 3, MEM:2342.6M, EPOCH TIME: 1779556224.242089
+[05/23 23:10:24     59s] After signature check, allow fast init is true, keep pre-filter is true.
+[05/23 23:10:24     59s] After signature check and other controls, allow fast init is true, keep pre-filter is true.
+[05/23 23:10:24     59s] OPERPROF:     Finished spiCheckSiteIfFastDPInitAvailable at level 3, CPU:0.000, REAL:0.004, MEM:2342.6M, EPOCH TIME: 1779556224.246364
+[05/23 23:10:24     59s] Fast DP-INIT is on for default
+[05/23 23:10:24     59s] Atter site array init, number of instance map data is 0.
+[05/23 23:10:24     59s] OPERPROF:   Finished spiInitFpSiteArr at level 2, CPU:0.040, REAL:0.035, MEM:2342.6M, EPOCH TIME: 1779556224.252004
+[05/23 23:10:24     59s] 
+[05/23 23:10:24     59s]  Pre_CCE_Colorizing is not ON! (0:0:574:0)
+[05/23 23:10:24     59s] OPERPROF: Finished spInitSiteArr at level 1, CPU:0.040, REAL:0.044, MEM:2342.6M, EPOCH TIME: 1779556224.258948
+[05/23 23:10:24     59s] All LLGs are deleted
+[05/23 23:10:24     59s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:2144).
+[05/23 23:10:24     59s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:24     59s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:2342.6M, EPOCH TIME: 1779556224.265800
+[05/23 23:10:24     59s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.000, MEM:2342.6M, EPOCH TIME: 1779556224.266061
+[05/23 23:10:24     59s] Reported timing to dir ./timingReports
+[05/23 23:10:24     59s] Total CPU time: 13.16 sec
+[05/23 23:10:24     59s] Total Real time: 15.0 sec
+[05/23 23:10:24     59s] Total Memory Usage: 2342.640625 Mbytes
+[05/23 23:10:24     59s] Reset AAE Options
+[05/23 23:10:24     59s] Info: pop threads available for lower-level modules during optimization.
+[05/23 23:10:24     59s] *** timeDesign #1 [finish] : cpu/real = 0:00:13.1/0:00:15.0 (0.9), totSession cpu/real = 0:00:59.5/0:03:13.4 (0.3), mem = 2342.6M
+[05/23 23:10:24     59s] 
+[05/23 23:10:24     59s] =============================================================================================
+[05/23 23:10:24     59s]  Final TAT Report : timeDesign #1                                               21.18-s099_1
+[05/23 23:10:24     59s] =============================================================================================
+[05/23 23:10:24     59s]  Step Name                  Count        Real  (       % )      Step Total Real / CPU  Scale
+[05/23 23:10:24     59s] ---------------------------------------------------------------------------------------------
+[05/23 23:10:24     59s] [ ViewPruning            ]      1   0:00:00.0  (   0.0 % )     0:00:00.0 /  0:00:00.0    0.0
+[05/23 23:10:24     59s] [ OptSummaryReport       ]      1   0:00:00.4  (   2.4 % )     0:00:03.5 /  0:00:01.6    0.4
+[05/23 23:10:24     59s] [ DrvReport              ]      1   0:00:02.7  (  17.9 % )     0:00:02.7 /  0:00:00.8    0.3
+[05/23 23:10:24     59s] [ ExtractRC              ]      1   0:00:03.5  (  23.2 % )     0:00:03.5 /  0:00:03.4    1.0
+[05/23 23:10:24     59s] [ TimingUpdate           ]      2   0:00:02.0  (  13.0 % )     0:00:08.0 /  0:00:08.1    1.0
+[05/23 23:10:24     59s] [ FullDelayCalc          ]      2   0:00:06.1  (  40.4 % )     0:00:06.1 /  0:00:06.2    1.0
+[05/23 23:10:24     59s] [ TimingReport           ]      1   0:00:00.1  (   0.6 % )     0:00:00.1 /  0:00:00.1    1.1
+[05/23 23:10:24     59s] [ GenerateReports        ]      1   0:00:00.3  (   2.2 % )     0:00:00.3 /  0:00:00.3    1.0
+[05/23 23:10:24     59s] [ MISC                   ]          0:00:00.1  (   0.3 % )     0:00:00.1 /  0:00:00.0    1.0
+[05/23 23:10:24     59s] ---------------------------------------------------------------------------------------------
+[05/23 23:10:24     59s]  timeDesign #1 TOTAL                0:00:15.0  ( 100.0 % )     0:00:15.0 /  0:00:13.1    0.9
+[05/23 23:10:24     59s] ---------------------------------------------------------------------------------------------
+[05/23 23:10:24     59s] 
+[05/23 23:10:42     62s] <CMD> timeDesign -postRoute -hold
+[05/23 23:10:42     62s] *** timeDesign #2 [begin] : totSession cpu/real = 0:01:02.4/0:03:31.7 (0.3), mem = 2342.6M
+[05/23 23:10:42     62s]  Reset EOS DB
+[05/23 23:10:42     62s] Ignoring AAE DB Resetting ...
+[05/23 23:10:42     62s] Closing parasitic data file '/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d': 14713 access done (mem: 2342.641M)
+[05/23 23:10:42     62s] Extraction called for design 'gpu' of instances=16070 and nets=14791 using extraction engine 'postRoute' at effort level 'low' .
+[05/23 23:10:42     62s] **WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+[05/23 23:10:42     62s] Type 'man IMPEXT-3530' for more detail.
+[05/23 23:10:42     62s] PostRoute (effortLevel low) RC Extraction called for design gpu.
+[05/23 23:10:42     62s] RC Extraction called in multi-corner(1) mode.
+[05/23 23:10:42     62s] Process corner(s) are loaded.
+[05/23 23:10:42     62s]  Corner: typical_rc
+[05/23 23:10:42     62s] Metal density calculation for erosion effect completed (CPU=0:00:00.2  MEM=2342.64M)
+[05/23 23:10:42     62s] extractDetailRC Option : -outfile /tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d -maxResLength 222.222  -extended
+[05/23 23:10:42     62s] RC Mode: PostRoute -effortLevel low [Extended CapTable, RC Table Resistances]
+[05/23 23:10:42     62s]       RC Corner Indexes            0   
+[05/23 23:10:42     62s] Capacitance Scaling Factor   : 1.00000 
+[05/23 23:10:42     62s] Coupling Cap. Scaling Factor : 1.00000 
+[05/23 23:10:42     62s] Resistance Scaling Factor    : 1.00000 
+[05/23 23:10:42     62s] Clock Cap. Scaling Factor    : 1.00000 
+[05/23 23:10:42     62s] Clock Res. Scaling Factor    : 1.00000 
+[05/23 23:10:42     62s] Shrink Factor                : 0.90000
+[05/23 23:10:42     62s] 
+[05/23 23:10:42     62s] Trim Metal Layers:
+[05/23 23:10:42     62s] LayerId::1 widthSet size::4
+[05/23 23:10:42     62s] LayerId::2 widthSet size::4
+[05/23 23:10:42     62s] LayerId::3 widthSet size::4
+[05/23 23:10:42     62s] LayerId::4 widthSet size::4
+[05/23 23:10:42     62s] LayerId::5 widthSet size::4
+[05/23 23:10:42     62s] LayerId::6 widthSet size::4
+[05/23 23:10:42     62s] LayerId::7 widthSet size::5
+[05/23 23:10:42     62s] LayerId::8 widthSet size::5
+[05/23 23:10:42     62s] LayerId::9 widthSet size::5
+[05/23 23:10:42     62s] LayerId::10 widthSet size::4
+[05/23 23:10:42     62s] LayerId::11 widthSet size::3
+[05/23 23:10:42     62s] eee: pegSigSF::1.070000
+[05/23 23:10:42     62s] Initializing multi-corner capacitance tables ... 
+[05/23 23:10:42     62s] Initializing multi-corner resistance tables ...
+[05/23 23:10:42     62s] Creating RPSQ from WeeR and WRes ...
+[05/23 23:10:43     62s] eee: l::1 avDens::0.113967 usedTrk::1996.635672 availTrk::17519.387932 sigTrk::1996.635672
+[05/23 23:10:43     62s] eee: l::2 avDens::0.195143 usedTrk::3431.991401 availTrk::17587.102268 sigTrk::3431.991401
+[05/23 23:10:43     62s] eee: l::3 avDens::0.238292 usedTrk::4453.531983 availTrk::18689.387932 sigTrk::4453.531983
+[05/23 23:10:43     62s] eee: l::4 avDens::0.182375 usedTrk::3100.087360 availTrk::16998.414720 sigTrk::3100.087360
+[05/23 23:10:43     62s] eee: l::5 avDens::0.158918 usedTrk::2490.505022 availTrk::15671.598730 sigTrk::2490.505022
+[05/23 23:10:43     62s] eee: l::6 avDens::0.085070 usedTrk::1097.892809 availTrk::12905.774969 sigTrk::1097.892809
+[05/23 23:10:43     62s] eee: l::7 avDens::0.045429 usedTrk::481.069418 availTrk::10589.387932 sigTrk::481.069418
+[05/23 23:10:43     62s] eee: l::8 avDens::0.022810 usedTrk::104.050847 availTrk::4561.578122 sigTrk::104.050847
+[05/23 23:10:43     62s] eee: l::9 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 23:10:43     62s] eee: l::10 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 23:10:43     62s] eee: l::11 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 23:10:43     62s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.274067 uaWl=0.998695 uaWlH=0.468405 aWlH=0.000910 lMod=0 pMax=0.863400 pMod=80 wcR=0.772700 newSi=0.001600 wHLS=1.933517 siPrev=0 viaL=0.000000 crit=0.001178 shortMod=0.005889 fMod=0.000294 
+[05/23 23:10:43     62s] Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 2340.6M)
+[05/23 23:10:43     63s] Creating parasitic data file '/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d' for storing RC.
+[05/23 23:10:43     63s] Extracted 10.0008% (CPU Time= 0:00:00.4  MEM= 2409.2M)
+[05/23 23:10:43     63s] Extracted 20.0009% (CPU Time= 0:00:00.5  MEM= 2409.2M)
+[05/23 23:10:43     63s] Extracted 30.001% (CPU Time= 0:00:00.6  MEM= 2409.2M)
+[05/23 23:10:43     63s] Extracted 40.0012% (CPU Time= 0:00:00.8  MEM= 2409.2M)
+[05/23 23:10:43     63s] Extracted 50.0013% (CPU Time= 0:00:00.9  MEM= 2412.2M)
+[05/23 23:10:43     63s] Extracted 60.0008% (CPU Time= 0:00:01.0  MEM= 2413.2M)
+[05/23 23:10:44     63s] Extracted 70.0009% (CPU Time= 0:00:01.2  MEM= 2415.2M)
+[05/23 23:10:44     64s] Extracted 80.001% (CPU Time= 0:00:01.4  MEM= 2417.2M)
+[05/23 23:10:44     64s] Extracted 90.0012% (CPU Time= 0:00:01.7  MEM= 2418.2M)
+[05/23 23:10:45     64s] Extracted 100% (CPU Time= 0:00:02.2  MEM= 2424.2M)
+[05/23 23:10:45     64s] Number of Extracted Resistors     : 274935
+[05/23 23:10:45     64s] Number of Extracted Ground Cap.   : 275649
+[05/23 23:10:45     64s] Number of Extracted Coupling Cap. : 441224
+[05/23 23:10:45     64s] Opening parasitic data file '/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d' for reading (mem: 2400.137M)
+[05/23 23:10:45     64s] Filtering XCap in 'relativeOnly' mode using values relative_c_threshold=0.03 and total_c_threshold=5fF.
+[05/23 23:10:45     64s]  Corner: typical_rc
+[05/23 23:10:45     64s] Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 2400.1M)
+[05/23 23:10:45     64s] Creating parasitic data file '/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb_Filter.rcdb.d' for storing RC.
+[05/23 23:10:45     65s] Closing parasitic data file '/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d': 14713 access done (mem: 2404.137M)
+[05/23 23:10:45     65s] Lumped Parasitic Loading Started (total cpu=0:00:00.0, real=0:00:00.0, current mem=2404.137M)
+[05/23 23:10:45     65s] Opening parasitic data file '/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d' for reading (mem: 2404.137M)
+[05/23 23:10:45     65s] processing rcdb (/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d) for hinst (top) of cell (gpu);
+[05/23 23:10:46     65s] Closing parasitic data file '/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d': 0 access done (mem: 2404.137M)
+[05/23 23:10:46     65s] Lumped Parasitic Loading Completed (total cpu=0:00:00.8, real=0:00:01.0, current mem=2404.137M)
+[05/23 23:10:46     65s] PostRoute (effortLevel low) RC Extraction DONE (CPU Time: 0:00:03.5  Real Time: 0:00:04.0  MEM: 2404.137M)
+[05/23 23:10:46     66s] All LLGs are deleted
+[05/23 23:10:46     66s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:46     66s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:46     66s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:2299.4M, EPOCH TIME: 1779556246.549591
+[05/23 23:10:46     66s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.000, MEM:2299.4M, EPOCH TIME: 1779556246.549801
+[05/23 23:10:46     66s] OPERPROF: Starting spInitSiteArr at level 1, MEM:2299.4M, EPOCH TIME: 1779556246.554281
+[05/23 23:10:46     66s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:46     66s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:46     66s] OPERPROF:   Starting spiInitFpSiteArr at level 2, MEM:2299.4M, EPOCH TIME: 1779556246.555893
+[05/23 23:10:46     66s] Max number of tech site patterns supported in site array is 256.
+[05/23 23:10:46     66s] Core basic site is CoreSite
+[05/23 23:10:46     66s] OPERPROF:     Starting spiCheckSiteIfFastDPInitAvailable at level 3, MEM:2299.4M, EPOCH TIME: 1779556246.582045
+[05/23 23:10:46     66s] After signature check, allow fast init is true, keep pre-filter is true.
+[05/23 23:10:46     66s] After signature check and other controls, allow fast init is true, keep pre-filter is true.
+[05/23 23:10:46     66s] OPERPROF:     Finished spiCheckSiteIfFastDPInitAvailable at level 3, CPU:0.010, REAL:0.005, MEM:2299.4M, EPOCH TIME: 1779556246.587269
+[05/23 23:10:46     66s] Fast DP-INIT is on for default
+[05/23 23:10:46     66s] Atter site array init, number of instance map data is 0.
+[05/23 23:10:46     66s] OPERPROF:   Finished spiInitFpSiteArr at level 2, CPU:0.030, REAL:0.037, MEM:2299.4M, EPOCH TIME: 1779556246.592976
+[05/23 23:10:46     66s] 
+[05/23 23:10:46     66s]  Pre_CCE_Colorizing is not ON! (0:0:574:0)
+[05/23 23:10:46     66s] OPERPROF: Finished spInitSiteArr at level 1, CPU:0.040, REAL:0.045, MEM:2299.4M, EPOCH TIME: 1779556246.599616
+[05/23 23:10:46     66s] All LLGs are deleted
+[05/23 23:10:46     66s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:2144).
+[05/23 23:10:46     66s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:46     66s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:2299.4M, EPOCH TIME: 1779556246.606412
+[05/23 23:10:46     66s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.000, MEM:2299.4M, EPOCH TIME: 1779556246.606564
+[05/23 23:10:46     66s] OPTC: user 20.0
+[05/23 23:10:46     66s] Starting delay calculation for Hold views
+[05/23 23:10:46     66s] AAE_INFO: opIsDesignInPostRouteState() is 1
+[05/23 23:10:46     66s] AAE_INFO: resetNetProps viewIdx 1 
+[05/23 23:10:46     66s] Starting SI iteration 1 using Infinite Timing Windows
+[05/23 23:10:46     66s] #################################################################################
+[05/23 23:10:46     66s] # Design Stage: PostRoute
+[05/23 23:10:46     66s] # Design Name: gpu
+[05/23 23:10:46     66s] # Design Mode: 90nm
+[05/23 23:10:46     66s] # Analysis Mode: MMMC OCV 
+[05/23 23:10:46     66s] # Parasitics Mode: SPEF/RCDB 
+[05/23 23:10:46     66s] # Signoff Settings: SI On 
+[05/23 23:10:46     66s] #################################################################################
+[05/23 23:10:47     66s] AAE_INFO: 1 threads acquired from CTE.
+[05/23 23:10:47     66s] Setting infinite Tws ...
+[05/23 23:10:47     66s] First Iteration Infinite Tw... 
+[05/23 23:10:47     66s] Calculate late delays in OCV mode...
+[05/23 23:10:47     66s] Calculate early delays in OCV mode...
+[05/23 23:10:47     66s] Topological Sorting (REAL = 0:00:00.0, MEM = 2310.5M, InitMEM = 2310.5M)
+[05/23 23:10:47     66s] Start delay calculation (fullDC) (1 T). (MEM=2310.48)
+[05/23 23:10:47     66s] 
+[05/23 23:10:47     66s] Trim Metal Layers:
+[05/23 23:10:47     67s] LayerId::1 widthSet size::4
+[05/23 23:10:47     67s] LayerId::2 widthSet size::4
+[05/23 23:10:47     67s] LayerId::3 widthSet size::4
+[05/23 23:10:47     67s] LayerId::4 widthSet size::4
+[05/23 23:10:47     67s] LayerId::5 widthSet size::4
+[05/23 23:10:47     67s] LayerId::6 widthSet size::4
+[05/23 23:10:47     67s] LayerId::7 widthSet size::5
+[05/23 23:10:47     67s] LayerId::8 widthSet size::5
+[05/23 23:10:47     67s] LayerId::9 widthSet size::5
+[05/23 23:10:47     67s] LayerId::10 widthSet size::4
+[05/23 23:10:47     67s] LayerId::11 widthSet size::3
+[05/23 23:10:47     67s] eee: pegSigSF::1.070000
+[05/23 23:10:47     67s] Initializing multi-corner capacitance tables ... 
+[05/23 23:10:47     67s] Initializing multi-corner resistance tables ...
+[05/23 23:10:47     67s] Creating RPSQ from WeeR and WRes ...
+[05/23 23:10:47     67s] eee: l::1 avDens::0.113967 usedTrk::1996.635672 availTrk::17519.387932 sigTrk::1996.635672
+[05/23 23:10:47     67s] eee: l::2 avDens::0.195143 usedTrk::3431.991401 availTrk::17587.102268 sigTrk::3431.991401
+[05/23 23:10:47     67s] eee: l::3 avDens::0.238292 usedTrk::4453.531983 availTrk::18689.387932 sigTrk::4453.531983
+[05/23 23:10:47     67s] eee: l::4 avDens::0.182375 usedTrk::3100.087360 availTrk::16998.414720 sigTrk::3100.087360
+[05/23 23:10:47     67s] eee: l::5 avDens::0.158918 usedTrk::2490.505022 availTrk::15671.598730 sigTrk::2490.505022
+[05/23 23:10:47     67s] eee: l::6 avDens::0.085070 usedTrk::1097.892809 availTrk::12905.774969 sigTrk::1097.892809
+[05/23 23:10:47     67s] eee: l::7 avDens::0.045429 usedTrk::481.069418 availTrk::10589.387932 sigTrk::481.069418
+[05/23 23:10:47     67s] eee: l::8 avDens::0.022810 usedTrk::104.050847 availTrk::4561.578122 sigTrk::104.050847
+[05/23 23:10:47     67s] eee: l::9 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 23:10:47     67s] eee: l::10 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 23:10:47     67s] eee: l::11 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/23 23:10:47     67s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.274067 uaWl=0.998695 uaWlH=0.468405 aWlH=0.000910 lMod=0 pMax=0.863400 pMod=80 wcR=0.772700 newSi=0.001600 wHLS=1.933517 siPrev=0 viaL=0.000000 crit=0.001178 shortMod=0.005889 fMod=0.000294 
+[05/23 23:10:47     67s] End AAE Lib Interpolated Model. (MEM=2322.09 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[05/23 23:10:47     67s] Opening parasitic data file '/tmp/innovus_temp_21952_vlsi_user_77_ix7bMz/gpu_21952_iyoeDV.rcdb.d' for reading (mem: 2322.094M)
+[05/23 23:10:47     67s] RC Database In Completed (CPU Time= 0:00:00.0  Real Time=0:00:00.0  MEM= 2324.1M)
+[05/23 23:10:49     69s] Total number of fetched objects 14713
+[05/23 23:10:49     69s] AAE_INFO-618: Total number of nets in the design is 14791,  99.5 percent of the nets selected for SI analysis
+[05/23 23:10:51     71s] Total number of fetched objects 14713
+[05/23 23:10:51     71s] AAE_INFO-618: Total number of nets in the design is 14791,  99.5 percent of the nets selected for SI analysis
+[05/23 23:10:52     71s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:01.0)
+[05/23 23:10:52     71s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[05/23 23:10:52     71s] End delay calculation. (MEM=2345.3 CPU=0:00:04.3 REAL=0:00:05.0)
+[05/23 23:10:52     71s] End delay calculation (fullDC). (MEM=2345.3 CPU=0:00:04.8 REAL=0:00:05.0)
+[05/23 23:10:52     71s] *** CDM Built up (cpu=0:00:05.3  real=0:00:06.0  mem= 2345.3M) ***
+[05/23 23:10:52     72s] Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2353.3M)
+[05/23 23:10:52     72s] Add other clocks and setupCteToAAEClockMapping during iter 1
+[05/23 23:10:52     72s] Loading CTE timing window is completed (CPU = 0:00:00.1, REAL = 0:00:00.0, MEM = 2353.3M)
+[05/23 23:10:52     72s] Starting SI iteration 2
+[05/23 23:10:53     72s] Calculate late delays in OCV mode...
+[05/23 23:10:53     72s] Calculate early delays in OCV mode...
+[05/23 23:10:53     72s] Start delay calculation (fullDC) (1 T). (MEM=2311.42)
+[05/23 23:10:53     72s] End AAE Lib Interpolated Model. (MEM=2311.42 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[05/23 23:10:53     72s] Total number of fetched objects 14713
+[05/23 23:10:53     72s] AAE_INFO-618: Total number of nets in the design is 14791,  0.2 percent of the nets selected for SI analysis
+[05/23 23:10:53     73s] Glitch Analysis: View hold_view -- Total Number of Nets Skipped = 0. 
+[05/23 23:10:53     73s] Glitch Analysis: View hold_view -- Total Number of Nets Analyzed = 14713. 
+[05/23 23:10:53     73s] Total number of fetched objects 14713
+[05/23 23:10:53     73s] AAE_INFO-618: Total number of nets in the design is 14791,  0.2 percent of the nets selected for SI analysis
+[05/23 23:10:53     73s] End delay calculation. (MEM=2362.65 CPU=0:00:00.2 REAL=0:00:00.0)
+[05/23 23:10:53     73s] End delay calculation (fullDC). (MEM=2362.65 CPU=0:00:00.2 REAL=0:00:00.0)
+[05/23 23:10:53     73s] *** CDM Built up (cpu=0:00:00.3  real=0:00:00.0  mem= 2362.6M) ***
+[05/23 23:10:53     73s] *** Done Building Timing Graph (cpu=0:00:07.3 real=0:00:07.0 totSessionCpu=0:01:14 mem=2370.6M)
+[05/23 23:10:54     73s] 
+------------------------------------------------------------------
+          timeDesign Summary
+------------------------------------------------------------------
+
+Hold views included:
+ hold_view 
+
++--------------------+---------+---------+---------+---------+---------+---------+
+|     Hold mode      |   all   | reg2reg | in2reg  | reg2out | in2out  | default |
++--------------------+---------+---------+---------+---------+---------+---------+
+|           WNS (ns):|  0.721  |  1.508  |  0.721  |   N/A   |   N/A   |  0.000  |
+|           TNS (ns):|  0.000  |  0.000  |  0.000  |   N/A   |   N/A   |  0.000  |
+|    Violating Paths:|    0    |    0    |    0    |   N/A   |   N/A   |    0    |
+|          All Paths:|  1831   |  1831   |   184   |   N/A   |   N/A   |    0    |
++--------------------+---------+---------+---------+---------+---------+---------+
+
+Tech dependent Parameter, Build TLibAnalyzer for: HybridTechSiteEnabled
+[05/23 23:10:54     73s] All LLGs are deleted
+[05/23 23:10:54     73s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:54     73s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:54     73s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:2328.6M, EPOCH TIME: 1779556254.127039
+[05/23 23:10:54     73s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.000, MEM:2328.6M, EPOCH TIME: 1779556254.127314
+[05/23 23:10:54     73s] OPERPROF: Starting spInitSiteArr at level 1, MEM:2328.6M, EPOCH TIME: 1779556254.131704
+[05/23 23:10:54     73s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:54     73s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:54     73s] OPERPROF:   Starting spiInitFpSiteArr at level 2, MEM:2328.6M, EPOCH TIME: 1779556254.133291
+[05/23 23:10:54     73s] Max number of tech site patterns supported in site array is 256.
+[05/23 23:10:54     73s] Core basic site is CoreSite
+[05/23 23:10:54     73s] OPERPROF:     Starting spiCheckSiteIfFastDPInitAvailable at level 3, MEM:2328.6M, EPOCH TIME: 1779556254.159564
+[05/23 23:10:54     73s] After signature check, allow fast init is true, keep pre-filter is true.
+[05/23 23:10:54     73s] After signature check and other controls, allow fast init is true, keep pre-filter is true.
+[05/23 23:10:54     73s] OPERPROF:     Finished spiCheckSiteIfFastDPInitAvailable at level 3, CPU:0.000, REAL:0.003, MEM:2328.6M, EPOCH TIME: 1779556254.162874
+[05/23 23:10:54     73s] Fast DP-INIT is on for default
+[05/23 23:10:54     73s] Atter site array init, number of instance map data is 0.
+[05/23 23:10:54     73s] OPERPROF:   Finished spiInitFpSiteArr at level 2, CPU:0.040, REAL:0.035, MEM:2328.6M, EPOCH TIME: 1779556254.168124
+[05/23 23:10:54     73s] 
+[05/23 23:10:54     73s]  Pre_CCE_Colorizing is not ON! (0:0:574:0)
+[05/23 23:10:54     73s] OPERPROF: Finished spInitSiteArr at level 1, CPU:0.040, REAL:0.043, MEM:2328.6M, EPOCH TIME: 1779556254.174670
+[05/23 23:10:54     73s] All LLGs are deleted
+[05/23 23:10:54     73s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:2144).
+[05/23 23:10:54     73s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:54     73s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:2328.6M, EPOCH TIME: 1779556254.180721
+[05/23 23:10:54     73s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.000, MEM:2328.6M, EPOCH TIME: 1779556254.180886
+[05/23 23:10:54     73s] Density: 72.451%
+------------------------------------------------------------------
+
+[05/23 23:10:54     73s] All LLGs are deleted
+[05/23 23:10:54     73s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:54     73s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:54     73s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:2328.6M, EPOCH TIME: 1779556254.189596
+[05/23 23:10:54     73s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.000, MEM:2328.6M, EPOCH TIME: 1779556254.189763
+[05/23 23:10:54     73s] OPERPROF: Starting spInitSiteArr at level 1, MEM:2328.6M, EPOCH TIME: 1779556254.194066
+[05/23 23:10:54     73s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:54     73s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:54     73s] OPERPROF:   Starting spiInitFpSiteArr at level 2, MEM:2328.6M, EPOCH TIME: 1779556254.195499
+[05/23 23:10:54     73s] Max number of tech site patterns supported in site array is 256.
+[05/23 23:10:54     73s] Core basic site is CoreSite
+[05/23 23:10:54     73s] OPERPROF:     Starting spiCheckSiteIfFastDPInitAvailable at level 3, MEM:2328.6M, EPOCH TIME: 1779556254.220384
+[05/23 23:10:54     73s] After signature check, allow fast init is true, keep pre-filter is true.
+[05/23 23:10:54     73s] After signature check and other controls, allow fast init is true, keep pre-filter is true.
+[05/23 23:10:54     73s] OPERPROF:     Finished spiCheckSiteIfFastDPInitAvailable at level 3, CPU:0.000, REAL:0.003, MEM:2328.6M, EPOCH TIME: 1779556254.223814
+[05/23 23:10:54     73s] Fast DP-INIT is on for default
+[05/23 23:10:54     73s] Atter site array init, number of instance map data is 0.
+[05/23 23:10:54     73s] OPERPROF:   Finished spiInitFpSiteArr at level 2, CPU:0.030, REAL:0.033, MEM:2328.6M, EPOCH TIME: 1779556254.228543
+[05/23 23:10:54     73s] 
+[05/23 23:10:54     73s]  Pre_CCE_Colorizing is not ON! (0:0:574:0)
+[05/23 23:10:54     73s] OPERPROF: Finished spInitSiteArr at level 1, CPU:0.040, REAL:0.041, MEM:2328.6M, EPOCH TIME: 1779556254.234859
+[05/23 23:10:54     73s] All LLGs are deleted
+[05/23 23:10:54     73s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:2144).
+[05/23 23:10:54     73s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:10:54     73s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:2328.6M, EPOCH TIME: 1779556254.240776
+[05/23 23:10:54     73s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.000, MEM:2328.6M, EPOCH TIME: 1779556254.240976
+[05/23 23:10:54     74s] Reported timing to dir ./timingReports
+[05/23 23:10:54     74s] Total CPU time: 11.69 sec
+[05/23 23:10:54     74s] Total Real time: 12.0 sec
+[05/23 23:10:54     74s] Total Memory Usage: 2280.917969 Mbytes
+[05/23 23:10:54     74s] Reset AAE Options
+[05/23 23:10:54     74s] *** timeDesign #2 [finish] : cpu/real = 0:00:11.7/0:00:11.7 (1.0), totSession cpu/real = 0:01:14.1/0:03:43.5 (0.3), mem = 2280.9M
+[05/23 23:10:54     74s] 
+[05/23 23:10:54     74s] =============================================================================================
+[05/23 23:10:54     74s]  Final TAT Report : timeDesign #2                                               21.18-s099_1
+[05/23 23:10:54     74s] =============================================================================================
+[05/23 23:10:54     74s]  Step Name                  Count        Real  (       % )      Step Total Real / CPU  Scale
+[05/23 23:10:54     74s] ---------------------------------------------------------------------------------------------
+[05/23 23:10:54     74s] [ ViewPruning            ]      2   0:00:00.0  (   0.0 % )     0:00:00.0 /  0:00:00.0    0.0
+[05/23 23:10:54     74s] [ OptSummaryReport       ]      1   0:00:00.2  (   1.7 % )     0:00:07.7 /  0:00:07.8    1.0
+[05/23 23:10:54     74s] [ ExtractRC              ]      1   0:00:03.8  (  32.6 % )     0:00:03.8 /  0:00:03.7    1.0
+[05/23 23:10:54     74s] [ TimingUpdate           ]      1   0:00:01.7  (  14.9 % )     0:00:07.3 /  0:00:07.3    1.0
+[05/23 23:10:54     74s] [ FullDelayCalc          ]      2   0:00:05.5  (  46.9 % )     0:00:05.5 /  0:00:05.6    1.0
+[05/23 23:10:54     74s] [ TimingReport           ]      1   0:00:00.1  (   0.7 % )     0:00:00.1 /  0:00:00.1    1.0
+[05/23 23:10:54     74s] [ GenerateReports        ]      1   0:00:00.2  (   1.4 % )     0:00:00.2 /  0:00:00.2    0.9
+[05/23 23:10:54     74s] [ MISC                   ]          0:00:00.2  (   1.7 % )     0:00:00.2 /  0:00:00.2    1.0
+[05/23 23:10:54     74s] ---------------------------------------------------------------------------------------------
+[05/23 23:10:54     74s]  timeDesign #2 TOTAL                0:00:11.7  ( 100.0 % )     0:00:11.7 /  0:00:11.7    1.0
+[05/23 23:10:54     74s] ---------------------------------------------------------------------------------------------
+[05/23 23:10:54     74s] 
+[05/23 23:11:08     76s] <CMD> report_timing 
+[05/23 23:11:09     77s] AAE_INFO: opIsDesignInPostRouteState() is 1
+[05/23 23:11:09     77s] AAE_INFO: resetNetProps viewIdx 0 
+[05/23 23:11:09     77s] Starting SI iteration 1 using Infinite Timing Windows
+[05/23 23:11:09     77s] #################################################################################
+[05/23 23:11:09     77s] # Design Stage: PostRoute
+[05/23 23:11:09     77s] # Design Name: gpu
+[05/23 23:11:09     77s] # Design Mode: 90nm
+[05/23 23:11:09     77s] # Analysis Mode: MMMC OCV 
+[05/23 23:11:09     77s] # Parasitics Mode: SPEF/RCDB 
+[05/23 23:11:09     77s] # Signoff Settings: SI On 
+[05/23 23:11:09     77s] #################################################################################
+[05/23 23:11:09     77s] AAE_INFO: 1 threads acquired from CTE.
+[05/23 23:11:09     77s] Setting infinite Tws ...
+[05/23 23:11:09     77s] First Iteration Infinite Tw... 
+[05/23 23:11:09     77s] Calculate early delays in OCV mode...
+[05/23 23:11:09     77s] Calculate late delays in OCV mode...
+[05/23 23:11:09     77s] Topological Sorting (REAL = 0:00:00.0, MEM = 2291.7M, InitMEM = 2291.7M)
+[05/23 23:11:09     77s] Start delay calculation (fullDC) (1 T). (MEM=2291.73)
+[05/23 23:11:09     77s] End AAE Lib Interpolated Model. (MEM=2303.34 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[05/23 23:11:12     80s] Total number of fetched objects 14713
+[05/23 23:11:12     80s] AAE_INFO-618: Total number of nets in the design is 14791,  99.5 percent of the nets selected for SI analysis
+[05/23 23:11:14     82s] Total number of fetched objects 14713
+[05/23 23:11:14     82s] AAE_INFO-618: Total number of nets in the design is 14791,  99.5 percent of the nets selected for SI analysis
+[05/23 23:11:14     82s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[05/23 23:11:14     82s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[05/23 23:11:14     82s] End delay calculation. (MEM=2361.09 CPU=0:00:04.3 REAL=0:00:05.0)
+[05/23 23:11:14     82s] End delay calculation (fullDC). (MEM=2361.09 CPU=0:00:04.7 REAL=0:00:05.0)
+[05/23 23:11:14     82s] *** CDM Built up (cpu=0:00:05.1  real=0:00:05.0  mem= 2361.1M) ***
+[05/23 23:11:15     83s] Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2385.1M)
+[05/23 23:11:15     83s] Add other clocks and setupCteToAAEClockMapping during iter 1
+[05/23 23:11:15     83s] Loading CTE timing window is completed (CPU = 0:00:00.1, REAL = 0:00:00.0, MEM = 2385.1M)
+[05/23 23:11:15     83s] Starting SI iteration 2
+[05/23 23:11:15     83s] Calculate early delays in OCV mode...
+[05/23 23:11:15     83s] Calculate late delays in OCV mode...
+[05/23 23:11:15     83s] Start delay calculation (fullDC) (1 T). (MEM=2328.21)
+[05/23 23:11:15     83s] End AAE Lib Interpolated Model. (MEM=2328.21 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[05/23 23:11:15     83s] Glitch Analysis: View setup_view -- Total Number of Nets Skipped = 0. 
+[05/23 23:11:15     83s] Glitch Analysis: View setup_view -- Total Number of Nets Analyzed = 0. 
+[05/23 23:11:15     83s] Total number of fetched objects 14713
+[05/23 23:11:15     83s] AAE_INFO-618: Total number of nets in the design is 14791,  0.9 percent of the nets selected for SI analysis
+[05/23 23:11:15     83s] Total number of fetched objects 14713
+[05/23 23:11:15     83s] AAE_INFO-618: Total number of nets in the design is 14791,  1.5 percent of the nets selected for SI analysis
+[05/23 23:11:15     83s] End delay calculation. (MEM=2378.43 CPU=0:00:00.4 REAL=0:00:00.0)
+[05/23 23:11:15     83s] End delay calculation (fullDC). (MEM=2378.43 CPU=0:00:00.4 REAL=0:00:00.0)
+[05/23 23:11:15     83s] *** CDM Built up (cpu=0:00:00.4  real=0:00:00.0  mem= 2378.4M) ***
+[05/23 23:14:46    122s] <CMD> report_timing -path_type full_clock 
+[05/23 23:17:53    151s] <CMD> help *sdc*
+[05/23 23:17:53    151s] Multiple matches found:
+[05/23 23:17:53    151s]       checkPartitionSdc
+[05/23 23:17:53    151s]       get_sdc_mode
+[05/23 23:17:53    151s]       timing_enable_sdc_compatible_data_check_mcp
+[05/23 23:17:53    151s] 
+[05/23 23:18:38    158s] <CMD> help *propagated*
+[05/23 23:18:38    158s] Multiple matches found:
+[05/23 23:18:38    158s]       get_propagated_clock
+[05/23 23:18:38    158s]       reset_propagated_clock
+[05/23 23:18:38    158s]       set_propagated_clock
+[05/23 23:18:38    158s]       timing_create_clock_default_propagated
+[05/23 23:18:38    158s] 
+[05/23 23:18:48    160s] <CMD> get_propagated_clock 
+[05/23 23:18:48    160s] 
+[05/23 23:18:48    160s] Usage: get_propagated_clock [-help] [-clock <clock_list>] [-pin <pin_list>] [> <filename>]
+[05/23 23:18:48    160s] 
+[05/23 23:18:48    160s] 
+[05/23 23:18:58    161s] <CMD> get_propagated_clock -clock clk
+[05/23 23:26:15    231s] <CMD> report_timing -path_type full_clock 
+[05/23 23:27:46    245s] <CMD> report_timing -path_type full_clock -to cores[1].core_instance_threads[3].alu_instance_alu_out_reg[0]/D
+[05/23 23:28:12    249s] <CMD> ecoChangeCell -inst ctsFE_OFC460_cores_1__core_instance_rt_29 -upsize
+[05/23 23:28:12    249s]    _____________________________________________________________
+[05/23 23:28:12    249s]   /  Design State
+[05/23 23:28:12    249s]  +--------------------------------------------------------------
+[05/23 23:28:12    249s]  | signal nets: 
+[05/23 23:28:12    249s]  |    routed nets:    14570 (100.0% routed)
+[05/23 23:28:12    249s]  |     total nets:    14570
+[05/23 23:28:12    249s]  | clock nets: 
+[05/23 23:28:12    249s]  |    routed nets:      143 (100.0% routed)
+[05/23 23:28:12    249s]  |     total nets:      143
+[05/23 23:28:12    249s]  +--------------------------------------------------------------
+[05/23 23:28:12    249s] #################################################################################
+[05/23 23:28:12    249s] # Design Stage: PostRoute
+[05/23 23:28:12    249s] # Design Name: gpu
+[05/23 23:28:12    249s] # Design Mode: 90nm
+[05/23 23:28:12    249s] # Analysis Mode: MMMC OCV 
+[05/23 23:28:12    249s] # Parasitics Mode: SPEF/RCDB 
+[05/23 23:28:12    249s] # Signoff Settings: SI On 
+[05/23 23:28:12    249s] #################################################################################
+[05/23 23:28:12    249s] OPERPROF: Starting RefinePlaceInit at level 1, MEM:2402.4M, EPOCH TIME: 1779557292.647696
+[05/23 23:28:12    249s] OPERPROF:   Starting DPlace-Init at level 2, MEM:2402.4M, EPOCH TIME: 1779557292.648092
+[05/23 23:28:12    249s] Processing tracks to init pin-track alignment.
+[05/23 23:28:12    249s] z: 2, totalTracks: 1
+[05/23 23:28:12    249s] z: 4, totalTracks: 1
+[05/23 23:28:12    249s] z: 6, totalTracks: 1
+[05/23 23:28:12    249s] z: 8, totalTracks: 1
+[05/23 23:28:12    249s] #spOpts: mergeVia=F hrOri=1 hrSnap=1 rpCkHalo=4 
+[05/23 23:28:12    249s] All LLGs are deleted
+[05/23 23:28:12    249s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:28:12    249s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:28:12    249s] OPERPROF:     Starting spSiteCleanup(true) at level 3, MEM:2402.4M, EPOCH TIME: 1779557292.662846
+[05/23 23:28:12    249s] OPERPROF:     Finished spSiteCleanup(true) at level 3, CPU:0.000, REAL:0.000, MEM:2402.4M, EPOCH TIME: 1779557292.663069
+[05/23 23:28:12    249s] OPERPROF:     Starting spInitSiteArr at level 3, MEM:2402.4M, EPOCH TIME: 1779557292.667600
+[05/23 23:28:12    249s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:28:12    249s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:28:12    249s] OPERPROF:       Starting spiInitFpSiteArr at level 4, MEM:2402.4M, EPOCH TIME: 1779557292.669607
+[05/23 23:28:12    249s] Max number of tech site patterns supported in site array is 256.
+[05/23 23:28:12    249s] Core basic site is CoreSite
+[05/23 23:28:12    249s] OPERPROF:         Starting spiCheckSiteIfFastDPInitAvailable at level 5, MEM:2402.4M, EPOCH TIME: 1779557292.695700
+[05/23 23:28:12    249s] After signature check, allow fast init is true, keep pre-filter is true.
+[05/23 23:28:12    249s] After signature check and other controls, allow fast init is true, keep pre-filter is true.
+[05/23 23:28:12    249s] OPERPROF:         Finished spiCheckSiteIfFastDPInitAvailable at level 5, CPU:0.010, REAL:0.007, MEM:2402.4M, EPOCH TIME: 1779557292.702582
+[05/23 23:28:12    249s] Fast DP-INIT is on for default
+[05/23 23:28:12    249s] Layer info - lib-1st H=1, V=2.  Cell-FPin=1. Top-pin=2
+[05/23 23:28:12    249s] Atter site array init, number of instance map data is 0.
+[05/23 23:28:12    249s] OPERPROF:       Finished spiInitFpSiteArr at level 4, CPU:0.030, REAL:0.038, MEM:2402.4M, EPOCH TIME: 1779557292.707980
+[05/23 23:28:12    249s] 
+[05/23 23:28:12    249s]  Pre_CCE_Colorizing is not ON! (0:0:574:0)
+[05/23 23:28:12    249s] OPERPROF:       Starting CMU at level 4, MEM:2402.4M, EPOCH TIME: 1779557292.714784
+[05/23 23:28:12    249s] OPERPROF:       Finished CMU at level 4, CPU:0.000, REAL:0.002, MEM:2402.4M, EPOCH TIME: 1779557292.717152
+[05/23 23:28:12    249s] 
+[05/23 23:28:12    249s] Bad Lib Cell Checking (CMU) is done! (0)
+[05/23 23:28:12    249s] OPERPROF:     Finished spInitSiteArr at level 3, CPU:0.040, REAL:0.052, MEM:2402.4M, EPOCH TIME: 1779557292.719100
+[05/23 23:28:12    249s] OPERPROF:     Starting PlacementInitSBTree at level 3, MEM:2402.4M, EPOCH TIME: 1779557292.719186
+[05/23 23:28:12    249s] OPERPROF:     Finished PlacementInitSBTree at level 3, CPU:0.010, REAL:0.001, MEM:2418.4M, EPOCH TIME: 1779557292.720287
+[05/23 23:28:12    249s] [CPU] DPlace-Init (cpu=0:00:00.1, real=0:00:00.0, mem=2418.4MB).
+[05/23 23:28:12    249s] OPERPROF:   Finished DPlace-Init at level 2, CPU:0.070, REAL:0.075, MEM:2418.4M, EPOCH TIME: 1779557292.723445
+[05/23 23:28:12    249s] OPERPROF: Finished RefinePlaceInit at level 1, CPU:0.070, REAL:0.076, MEM:2418.4M, EPOCH TIME: 1779557292.723544
+[05/23 23:28:12    249s] TDRefine: refinePlace mode is spiral
+[05/23 23:28:12    249s] GigaOpt Checkpoint: Intermediate DB Saving Point beforeRefinePlace.21952.1
+[05/23 23:28:12    249s] OPERPROF: Starting RefinePlace at level 1, MEM:2418.4M, EPOCH TIME: 1779557292.727781
+[05/23 23:28:12    249s] *** Starting refinePlace (0:04:10 mem=2418.4M) ***
+[05/23 23:28:12    249s] Total net bbox length = 2.141e+05 (1.144e+05 9.967e+04) (ext = 1.125e+04)
+[05/23 23:28:12    249s] 
+[05/23 23:28:12    249s]  Pre_CCE_Colorizing is not ON! (0:0:574:0)
+[05/23 23:28:12    249s] Move report: placeLevelShifters moves 0 insts, mean move: 0.00 um, max move: 0.00 um 
+[05/23 23:28:12    249s] (I)      Default pattern map key = gpu_default.
+[05/23 23:28:12    249s] (I)      Default pattern map key = gpu_default.
+[05/23 23:28:12    249s] OPERPROF:   Starting RefinePlace2 at level 2, MEM:2418.4M, EPOCH TIME: 1779557292.750068
+[05/23 23:28:12    249s] Starting refinePlace ...
+[05/23 23:28:12    249s] (I)      Default pattern map key = gpu_default.
+[05/23 23:28:12    249s] One DDP V2 for no tweak run.
+[05/23 23:28:12    249s] (I)      Default pattern map key = gpu_default.
+[05/23 23:28:12    249s] OPERPROF:     Starting AdvanceDataManager::initSiteMarkMT at level 3, MEM:2418.4M, EPOCH TIME: 1779557292.784651
+[05/23 23:28:12    249s] DDP initSite1 nrRow 127 nrJob 127
+[05/23 23:28:12    249s] OPERPROF:       Starting AdvanceDataManager::initSite1 at level 4, MEM:2418.4M, EPOCH TIME: 1779557292.784794
+[05/23 23:28:12    249s] OPERPROF:       Finished AdvanceDataManager::initSite1 at level 4, CPU:0.000, REAL:0.000, MEM:2418.4M, EPOCH TIME: 1779557292.785242
+[05/23 23:28:12    249s] OPERPROF:       Starting AdvanceDataManager::markSite at level 4, MEM:2418.4M, EPOCH TIME: 1779557292.785311
+[05/23 23:28:12    249s] DDP markSite nrRow 127 nrJob 127
+[05/23 23:28:12    249s] OPERPROF:       Finished AdvanceDataManager::markSite at level 4, CPU:0.000, REAL:0.001, MEM:2418.4M, EPOCH TIME: 1779557292.786425
+[05/23 23:28:12    249s] OPERPROF:     Finished AdvanceDataManager::initSiteMarkMT at level 3, CPU:0.000, REAL:0.002, MEM:2418.4M, EPOCH TIME: 1779557292.786490
+[05/23 23:28:12    249s]   Spread Effort: high, post-route mode, useDDP on.
+[05/23 23:28:12    249s] [CPU] RefinePlace/preRPlace (cpu=0:00:00.0, real=0:00:00.0, mem=2418.4MB) @(0:04:10 - 0:04:10).
+[05/23 23:28:12    249s] Move report: preRPlace moves 0 insts, mean move: 0.00 um, max move: 0.00 um 
+[05/23 23:28:12    249s] wireLenOptFixPriorityInst 1827 inst fixed
+[05/23 23:28:12    249s] 
+[05/23 23:28:12    249s] Running Spiral with 1 thread in Normal Mode  fetchWidth=36 
+[05/23 23:28:13    250s] SY_THREAD_POOL_QUEUE SY-GLB-THREAD-POOL (0x3df646a0): Rebuild thread pool 0x7f0363c0b480.
+[05/23 23:28:13    250s] SY_THREAD_POOL_QUEUE SY-GLB-THREAD-POOL (0x3df646a0): 0 out of 1 thread pools are available.
+[05/23 23:28:13    250s] Move report: legalization moves 1 insts, mean move: 2.31 um, max move: 2.31 um spiral
+[05/23 23:28:13    250s] 	Max move on inst (cores[1].core_instance_g95641): (136.20, 25.46) --> (136.80, 27.17)
+[05/23 23:28:13    250s] [CPU] RefinePlace/Spiral (cpu=0:00:00.2, real=0:00:00.0)
+[05/23 23:28:13    250s] [CPU] RefinePlace/Commit (cpu=0:00:00.3, real=0:00:01.0), EEQ(cpu=0:00:00.0, real=0:00:00.0), MTComit(cpu=0:00:00.3, real=0:00:01.0), leftOver(cpu=0:00:00.0, real=0:00:00.0)
+[05/23 23:28:13    250s] [CPU] RefinePlace/Legalization (cpu=0:00:00.6, real=0:00:01.0, mem=2402.4MB) @(0:04:10 - 0:04:10).
+[05/23 23:28:13    250s] Move report: Detail placement moves 1 insts, mean move: 2.31 um, max move: 2.31 um 
+[05/23 23:28:13    250s] 	Max move on inst (cores[1].core_instance_g95641): (136.20, 25.46) --> (136.80, 27.17)
+[05/23 23:28:13    250s] 	Runtime: CPU: 0:00:00.6 REAL: 0:00:01.0 MEM: 2402.4MB
+[05/23 23:28:13    250s] Statistics of distance of Instance movement in refine placement:
+[05/23 23:28:13    250s]   maximum (X+Y) =         2.31 um
+[05/23 23:28:13    250s]   inst (cores[1].core_instance_g95641) with max move: (136.2, 25.46) -> (136.8, 27.17)
+[05/23 23:28:13    250s]   mean    (X+Y) =         2.31 um
+[05/23 23:28:13    250s] Summary Report:
+[05/23 23:28:13    250s] Instances move: 1 (out of 14178 movable)
+[05/23 23:28:13    250s] Instances flipped: 0
+[05/23 23:28:13    250s] Mean displacement: 2.31 um
+[05/23 23:28:13    250s] Max displacement: 2.31 um (Instance: cores[1].core_instance_g95641) (136.2, 25.46) -> (136.8, 27.17)
+[05/23 23:28:13    250s] 	Length: 2 sites, height: 1 rows, site name: CoreSite, cell type: INVX1
+[05/23 23:28:13    250s] Total instances moved : 1
+[05/23 23:28:13    250s] OPERPROF:   Finished RefinePlace2 at level 2, CPU:0.640, REAL:0.631, MEM:2402.4M, EPOCH TIME: 1779557293.380765
+[05/23 23:28:13    250s] Total net bbox length = 2.141e+05 (1.144e+05 9.967e+04) (ext = 1.125e+04)
+[05/23 23:28:13    250s] Runtime: CPU: 0:00:00.7 REAL: 0:00:01.0 MEM: 2402.4MB
+[05/23 23:28:13    250s] [CPU] RefinePlace/total (cpu=0:00:00.7, real=0:00:01.0, mem=2402.4MB) @(0:04:10 - 0:04:10).
+[05/23 23:28:13    250s] *** Finished refinePlace (0:04:10 mem=2402.4M) ***
+[05/23 23:28:13    250s] GigaOpt Checkpoint: Intermediate DB Saving Point afterRefinePlace.21952.1
+[05/23 23:28:13    250s] OPERPROF: Finished RefinePlace at level 1, CPU:0.670, REAL:0.659, MEM:2402.4M, EPOCH TIME: 1779557293.386634
+[05/23 23:28:13    250s] OPERPROF: Starting spDPlaceCleanup(partial) at level 1, MEM:2402.4M, EPOCH TIME: 1779557293.386702
+[05/23 23:28:13    250s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:16322).
+[05/23 23:28:13    250s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:28:13    250s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:28:13    250s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:28:13    250s] OPERPROF:   Starting spSiteCleanup(false) at level 2, MEM:2402.4M, EPOCH TIME: 1779557293.428695
+[05/23 23:28:13    250s] OPERPROF:   Finished spSiteCleanup(false) at level 2, CPU:0.000, REAL:0.000, MEM:2402.4M, EPOCH TIME: 1779557293.428955
+[05/23 23:28:13    250s] OPERPROF: Finished spDPlaceCleanup(partial) at level 1, CPU:0.040, REAL:0.045, MEM:2364.4M, EPOCH TIME: 1779557293.431535
+[05/23 23:28:13    250s] Resize ctsFE_OFC460_cores_1__core_instance_rt_29 (BUFX3) to CLKBUFX4.
+[05/23 23:28:29    254s] <CMD> report_timing -path_type full_clock -to cores[1].core_instance_threads[3].alu_instance_alu_out_reg[0]/D
+[05/23 23:29:17    262s] <CMD> report_timing -path_type full_clock -to cores[1].core_instance_threads[3].alu_instance_alu_out_reg[0]/D -from cores[1].core_instance_threads[3].register_instance_rt_reg[5]/Q
+[05/23 23:30:40    276s] <CMD> report_timing -path_type summary_slack_only -max_paths 10 -nworst 1
+[05/23 23:30:59    279s] <CMD> report_timing -path_type full_clock -to cores[1].core_instance_threads[3].alu_instance_alu_out_reg[0]/D
+[05/23 23:31:40    285s] <CMD> ecoChangeCell -inst ctsFE_OFC449_cores_1__core_instance_rt_27 -upsize
+[05/23 23:31:40    285s]    _____________________________________________________________
+[05/23 23:31:40    285s]   /  Design State
+[05/23 23:31:40    285s]  +--------------------------------------------------------------
+[05/23 23:31:40    285s]  | signal nets: 
+[05/23 23:31:40    285s]  |    routed nets:    14570 (100.0% routed)
+[05/23 23:31:40    285s]  |     total nets:    14570
+[05/23 23:31:40    285s]  | clock nets: 
+[05/23 23:31:40    285s]  |    routed nets:      143 (100.0% routed)
+[05/23 23:31:40    285s]  |     total nets:      143
+[05/23 23:31:40    285s]  +--------------------------------------------------------------
+[05/23 23:31:40    285s] #################################################################################
+[05/23 23:31:40    285s] # Design Stage: PostRoute
+[05/23 23:31:40    285s] # Design Name: gpu
+[05/23 23:31:40    285s] # Design Mode: 90nm
+[05/23 23:31:40    285s] # Analysis Mode: MMMC OCV 
+[05/23 23:31:40    285s] # Parasitics Mode: SPEF/RCDB 
+[05/23 23:31:40    285s] # Signoff Settings: SI On 
+[05/23 23:31:40    285s] #################################################################################
+[05/23 23:31:40    285s] OPERPROF: Starting RefinePlaceInit at level 1, MEM:2446.2M, EPOCH TIME: 1779557500.527819
+[05/23 23:31:40    285s] OPERPROF:   Starting DPlace-Init at level 2, MEM:2446.2M, EPOCH TIME: 1779557500.528015
+[05/23 23:31:40    285s] Processing tracks to init pin-track alignment.
+[05/23 23:31:40    285s] z: 2, totalTracks: 1
+[05/23 23:31:40    285s] z: 4, totalTracks: 1
+[05/23 23:31:40    285s] z: 6, totalTracks: 1
+[05/23 23:31:40    285s] z: 8, totalTracks: 1
+[05/23 23:31:40    285s] #spOpts: mergeVia=F hrOri=1 hrSnap=1 rpCkHalo=4 
+[05/23 23:31:40    285s] All LLGs are deleted
+[05/23 23:31:40    285s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:31:40    285s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:31:40    285s] OPERPROF:     Starting spSiteCleanup(true) at level 3, MEM:2446.2M, EPOCH TIME: 1779557500.542118
+[05/23 23:31:40    285s] OPERPROF:     Finished spSiteCleanup(true) at level 3, CPU:0.000, REAL:0.000, MEM:2446.2M, EPOCH TIME: 1779557500.542369
+[05/23 23:31:40    285s] OPERPROF:     Starting spInitSiteArr at level 3, MEM:2446.2M, EPOCH TIME: 1779557500.546759
+[05/23 23:31:40    285s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:31:40    285s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:31:40    285s] OPERPROF:       Starting spiInitFpSiteArr at level 4, MEM:2446.2M, EPOCH TIME: 1779557500.548783
+[05/23 23:31:40    285s] Max number of tech site patterns supported in site array is 256.
+[05/23 23:31:40    285s] Core basic site is CoreSite
+[05/23 23:31:40    285s] OPERPROF:         Starting spiCheckSiteIfFastDPInitAvailable at level 5, MEM:2446.2M, EPOCH TIME: 1779557500.575411
+[05/23 23:31:40    285s] After signature check, allow fast init is true, keep pre-filter is true.
+[05/23 23:31:40    285s] After signature check and other controls, allow fast init is true, keep pre-filter is true.
+[05/23 23:31:40    285s] OPERPROF:         Finished spiCheckSiteIfFastDPInitAvailable at level 5, CPU:0.000, REAL:0.005, MEM:2446.2M, EPOCH TIME: 1779557500.580275
+[05/23 23:31:40    285s] Fast DP-INIT is on for default
+[05/23 23:31:40    285s] Layer info - lib-1st H=1, V=2.  Cell-FPin=1. Top-pin=2
+[05/23 23:31:40    285s] Atter site array init, number of instance map data is 0.
+[05/23 23:31:40    285s] OPERPROF:       Finished spiInitFpSiteArr at level 4, CPU:0.040, REAL:0.037, MEM:2446.2M, EPOCH TIME: 1779557500.585458
+[05/23 23:31:40    285s] 
+[05/23 23:31:40    285s]  Pre_CCE_Colorizing is not ON! (0:0:574:0)
+[05/23 23:31:40    285s] OPERPROF:       Starting CMU at level 4, MEM:2446.2M, EPOCH TIME: 1779557500.592656
+[05/23 23:31:40    285s] OPERPROF:       Finished CMU at level 4, CPU:0.010, REAL:0.002, MEM:2446.2M, EPOCH TIME: 1779557500.594946
+[05/23 23:31:40    285s] 
+[05/23 23:31:40    285s] Bad Lib Cell Checking (CMU) is done! (0)
+[05/23 23:31:40    285s] OPERPROF:     Finished spInitSiteArr at level 3, CPU:0.050, REAL:0.050, MEM:2446.2M, EPOCH TIME: 1779557500.597000
+[05/23 23:31:40    285s] OPERPROF:     Starting PlacementInitSBTree at level 3, MEM:2446.2M, EPOCH TIME: 1779557500.597083
+[05/23 23:31:40    285s] OPERPROF:     Finished PlacementInitSBTree at level 3, CPU:0.000, REAL:0.001, MEM:2446.2M, EPOCH TIME: 1779557500.597965
+[05/23 23:31:40    285s] [CPU] DPlace-Init (cpu=0:00:00.1, real=0:00:00.0, mem=2446.2MB).
+[05/23 23:31:40    285s] OPERPROF:   Finished DPlace-Init at level 2, CPU:0.070, REAL:0.073, MEM:2446.2M, EPOCH TIME: 1779557500.601044
+[05/23 23:31:40    285s] OPERPROF: Finished RefinePlaceInit at level 1, CPU:0.070, REAL:0.073, MEM:2446.2M, EPOCH TIME: 1779557500.601103
+[05/23 23:31:40    285s] TDRefine: refinePlace mode is spiral
+[05/23 23:31:40    285s] GigaOpt Checkpoint: Intermediate DB Saving Point beforeRefinePlace.21952.2
+[05/23 23:31:40    285s] OPERPROF: Starting RefinePlace at level 1, MEM:2446.2M, EPOCH TIME: 1779557500.601383
+[05/23 23:31:40    285s] *** Starting refinePlace (0:04:46 mem=2446.2M) ***
+[05/23 23:31:40    285s] Total net bbox length = 2.141e+05 (1.144e+05 9.967e+04) (ext = 1.125e+04)
+[05/23 23:31:40    285s] 
+[05/23 23:31:40    285s]  Pre_CCE_Colorizing is not ON! (0:0:574:0)
+[05/23 23:31:40    285s] Move report: placeLevelShifters moves 0 insts, mean move: 0.00 um, max move: 0.00 um 
+[05/23 23:31:40    285s] (I)      Default pattern map key = gpu_default.
+[05/23 23:31:40    285s] (I)      Default pattern map key = gpu_default.
+[05/23 23:31:40    285s] OPERPROF:   Starting RefinePlace2 at level 2, MEM:2446.2M, EPOCH TIME: 1779557500.623511
+[05/23 23:31:40    285s] Starting refinePlace ...
+[05/23 23:31:40    285s] (I)      Default pattern map key = gpu_default.
+[05/23 23:31:40    285s] One DDP V2 for no tweak run.
+[05/23 23:31:40    285s] (I)      Default pattern map key = gpu_default.
+[05/23 23:31:40    285s] OPERPROF:     Starting AdvanceDataManager::initSiteMarkMT at level 3, MEM:2446.2M, EPOCH TIME: 1779557500.657897
+[05/23 23:31:40    285s] DDP initSite1 nrRow 127 nrJob 127
+[05/23 23:31:40    285s] OPERPROF:       Starting AdvanceDataManager::initSite1 at level 4, MEM:2446.2M, EPOCH TIME: 1779557500.658045
+[05/23 23:31:40    285s] OPERPROF:       Finished AdvanceDataManager::initSite1 at level 4, CPU:0.000, REAL:0.001, MEM:2446.2M, EPOCH TIME: 1779557500.658663
+[05/23 23:31:40    285s] OPERPROF:       Starting AdvanceDataManager::markSite at level 4, MEM:2446.2M, EPOCH TIME: 1779557500.658730
+[05/23 23:31:40    285s] DDP markSite nrRow 127 nrJob 127
+[05/23 23:31:40    285s] OPERPROF:       Finished AdvanceDataManager::markSite at level 4, CPU:0.000, REAL:0.001, MEM:2446.2M, EPOCH TIME: 1779557500.659916
+[05/23 23:31:40    285s] OPERPROF:     Finished AdvanceDataManager::initSiteMarkMT at level 3, CPU:0.000, REAL:0.002, MEM:2446.2M, EPOCH TIME: 1779557500.659983
+[05/23 23:31:40    285s]   Spread Effort: high, post-route mode, useDDP on.
+[05/23 23:31:40    285s] [CPU] RefinePlace/preRPlace (cpu=0:00:00.0, real=0:00:00.0, mem=2446.2MB) @(0:04:46 - 0:04:46).
+[05/23 23:31:40    285s] Move report: preRPlace moves 0 insts, mean move: 0.00 um, max move: 0.00 um 
+[05/23 23:31:40    285s] wireLenOptFixPriorityInst 1827 inst fixed
+[05/23 23:31:40    286s] 
+[05/23 23:31:40    286s] Running Spiral with 1 thread in Normal Mode  fetchWidth=36 
+[05/23 23:31:41    286s] SY_THREAD_POOL_QUEUE SY-GLB-THREAD-POOL (0x3df646a0): Rebuild thread pool 0x7f0363c0b480.
+[05/23 23:31:41    286s] SY_THREAD_POOL_QUEUE SY-GLB-THREAD-POOL (0x3df646a0): 0 out of 1 thread pools are available.
+[05/23 23:31:41    286s] Move report: legalization moves 0 insts, mean move: 0.00 um, max move: 0.00 um spiral
+[05/23 23:31:41    286s] [CPU] RefinePlace/Spiral (cpu=0:00:00.2, real=0:00:01.0)
+[05/23 23:31:41    286s] [CPU] RefinePlace/Commit (cpu=0:00:00.2, real=0:00:00.0), EEQ(cpu=0:00:00.0, real=0:00:00.0), MTComit(cpu=0:00:00.2, real=0:00:00.0), leftOver(cpu=0:00:00.0, real=0:00:00.0)
+[05/23 23:31:41    286s] [CPU] RefinePlace/Legalization (cpu=0:00:00.5, real=0:00:01.0, mem=2430.2MB) @(0:04:46 - 0:04:46).
+[05/23 23:31:41    286s] Move report: Detail placement moves 0 insts, mean move: 0.00 um, max move: 0.00 um 
+[05/23 23:31:41    286s] 	Runtime: CPU: 0:00:00.6 REAL: 0:00:01.0 MEM: 2430.2MB
+[05/23 23:31:41    286s] Statistics of distance of Instance movement in refine placement:
+[05/23 23:31:41    286s]   maximum (X+Y) =         0.00 um
+[05/23 23:31:41    286s]   mean    (X+Y) =         0.00 um
+[05/23 23:31:41    286s] Summary Report:
+[05/23 23:31:41    286s] Instances move: 0 (out of 14178 movable)
+[05/23 23:31:41    286s] Instances flipped: 0
+[05/23 23:31:41    286s] Mean displacement: 0.00 um
+[05/23 23:31:41    286s] Max displacement: 0.00 um 
+[05/23 23:31:41    286s] Total instances moved : 0
+[05/23 23:31:41    286s] OPERPROF:   Finished RefinePlace2 at level 2, CPU:0.550, REAL:0.523, MEM:2430.2M, EPOCH TIME: 1779557501.146898
+[05/23 23:31:41    286s] Total net bbox length = 2.141e+05 (1.144e+05 9.967e+04) (ext = 1.125e+04)
+[05/23 23:31:41    286s] Runtime: CPU: 0:00:00.6 REAL: 0:00:01.0 MEM: 2430.2MB
+[05/23 23:31:41    286s] [CPU] RefinePlace/total (cpu=0:00:00.6, real=0:00:01.0, mem=2430.2MB) @(0:04:46 - 0:04:46).
+[05/23 23:31:41    286s] *** Finished refinePlace (0:04:46 mem=2430.2M) ***
+[05/23 23:31:41    286s] GigaOpt Checkpoint: Intermediate DB Saving Point afterRefinePlace.21952.2
+[05/23 23:31:41    286s] OPERPROF: Finished RefinePlace at level 1, CPU:0.590, REAL:0.551, MEM:2430.2M, EPOCH TIME: 1779557501.152837
+[05/23 23:31:41    286s] OPERPROF: Starting spDPlaceCleanup(partial) at level 1, MEM:2430.2M, EPOCH TIME: 1779557501.152902
+[05/23 23:31:41    286s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:16322).
+[05/23 23:31:41    286s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:31:41    286s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:31:41    286s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:31:41    286s] OPERPROF:   Starting spSiteCleanup(false) at level 2, MEM:2430.2M, EPOCH TIME: 1779557501.198451
+[05/23 23:31:41    286s] OPERPROF:   Finished spSiteCleanup(false) at level 2, CPU:0.000, REAL:0.000, MEM:2430.2M, EPOCH TIME: 1779557501.198679
+[05/23 23:31:41    286s] OPERPROF: Finished spDPlaceCleanup(partial) at level 1, CPU:0.050, REAL:0.048, MEM:2371.2M, EPOCH TIME: 1779557501.200677
+[05/23 23:31:41    286s] Resize ctsFE_OFC449_cores_1__core_instance_rt_27 (BUFX3) to CLKBUFX4.
+[05/23 23:31:46    288s] <CMD> report_timing -path_type full_clock -to cores[1].core_instance_threads[3].alu_instance_alu_out_reg[0]/D
+[05/23 23:32:08    291s] <CMD> report_timing -path_type summary_slack_only -max_paths 10 -nworst 1
+[05/23 23:32:39    296s] <CMD> report_timing -path_type summary_slack_only -max_paths 10 
+[05/23 23:32:47    297s] <CMD> report_timing -path_type full_clock -to cores[1].core_instance_threads[3].alu_instance_alu_out_reg[0]/D
+[05/23 23:34:08    311s] <CMD> ecoChangeCell -inst {cores[1].core_instance_threads[3].alu_instance_div_43_40_g5459} -upsize
+[05/23 23:34:08    311s]    _____________________________________________________________
+[05/23 23:34:08    311s]   /  Design State
+[05/23 23:34:08    311s]  +--------------------------------------------------------------
+[05/23 23:34:08    311s]  | signal nets: 
+[05/23 23:34:08    311s]  |    routed nets:    14570 (100.0% routed)
+[05/23 23:34:08    311s]  |     total nets:    14570
+[05/23 23:34:08    311s]  | clock nets: 
+[05/23 23:34:08    311s]  |    routed nets:      143 (100.0% routed)
+[05/23 23:34:08    311s]  |     total nets:      143
+[05/23 23:34:08    311s]  +--------------------------------------------------------------
+[05/23 23:34:08    311s] #################################################################################
+[05/23 23:34:08    311s] # Design Stage: PostRoute
+[05/23 23:34:08    311s] # Design Name: gpu
+[05/23 23:34:08    311s] # Design Mode: 90nm
+[05/23 23:34:08    311s] # Analysis Mode: MMMC OCV 
+[05/23 23:34:08    311s] # Parasitics Mode: SPEF/RCDB 
+[05/23 23:34:08    311s] # Signoff Settings: SI On 
+[05/23 23:34:08    311s] #################################################################################
+[05/23 23:34:08    311s] OPERPROF: Starting RefinePlaceInit at level 1, MEM:2451.0M, EPOCH TIME: 1779557648.185960
+[05/23 23:34:08    311s] OPERPROF:   Starting DPlace-Init at level 2, MEM:2451.0M, EPOCH TIME: 1779557648.186155
+[05/23 23:34:08    311s] Processing tracks to init pin-track alignment.
+[05/23 23:34:08    311s] z: 2, totalTracks: 1
+[05/23 23:34:08    311s] z: 4, totalTracks: 1
+[05/23 23:34:08    311s] z: 6, totalTracks: 1
+[05/23 23:34:08    311s] z: 8, totalTracks: 1
+[05/23 23:34:08    311s] #spOpts: mergeVia=F hrOri=1 hrSnap=1 rpCkHalo=4 
+[05/23 23:34:08    311s] All LLGs are deleted
+[05/23 23:34:08    311s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:34:08    311s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:34:08    311s] OPERPROF:     Starting spSiteCleanup(true) at level 3, MEM:2451.0M, EPOCH TIME: 1779557648.200663
+[05/23 23:34:08    311s] OPERPROF:     Finished spSiteCleanup(true) at level 3, CPU:0.000, REAL:0.000, MEM:2451.0M, EPOCH TIME: 1779557648.200923
+[05/23 23:34:08    311s] OPERPROF:     Starting spInitSiteArr at level 3, MEM:2451.0M, EPOCH TIME: 1779557648.205380
+[05/23 23:34:08    311s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:34:08    311s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:34:08    311s] OPERPROF:       Starting spiInitFpSiteArr at level 4, MEM:2451.0M, EPOCH TIME: 1779557648.207374
+[05/23 23:34:08    311s] Max number of tech site patterns supported in site array is 256.
+[05/23 23:34:08    311s] Core basic site is CoreSite
+[05/23 23:34:08    311s] OPERPROF:         Starting spiCheckSiteIfFastDPInitAvailable at level 5, MEM:2451.0M, EPOCH TIME: 1779557648.234607
+[05/23 23:34:08    311s] After signature check, allow fast init is true, keep pre-filter is true.
+[05/23 23:34:08    311s] After signature check and other controls, allow fast init is true, keep pre-filter is true.
+[05/23 23:34:08    311s] OPERPROF:         Finished spiCheckSiteIfFastDPInitAvailable at level 5, CPU:0.010, REAL:0.006, MEM:2451.0M, EPOCH TIME: 1779557648.240190
+[05/23 23:34:08    311s] Fast DP-INIT is on for default
+[05/23 23:34:08    311s] Layer info - lib-1st H=1, V=2.  Cell-FPin=1. Top-pin=2
+[05/23 23:34:08    311s] Atter site array init, number of instance map data is 0.
+[05/23 23:34:08    311s] OPERPROF:       Finished spiInitFpSiteArr at level 4, CPU:0.030, REAL:0.038, MEM:2451.0M, EPOCH TIME: 1779557648.245463
+[05/23 23:34:08    311s] 
+[05/23 23:34:08    311s]  Pre_CCE_Colorizing is not ON! (0:0:574:0)
+[05/23 23:34:08    311s] OPERPROF:       Starting CMU at level 4, MEM:2451.0M, EPOCH TIME: 1779557648.252680
+[05/23 23:34:08    311s] OPERPROF:       Finished CMU at level 4, CPU:0.000, REAL:0.002, MEM:2451.0M, EPOCH TIME: 1779557648.254849
+[05/23 23:34:08    311s] 
+[05/23 23:34:08    311s] Bad Lib Cell Checking (CMU) is done! (0)
+[05/23 23:34:08    311s] OPERPROF:     Finished spInitSiteArr at level 3, CPU:0.060, REAL:0.052, MEM:2451.0M, EPOCH TIME: 1779557648.256897
+[05/23 23:34:08    311s] OPERPROF:     Starting PlacementInitSBTree at level 3, MEM:2451.0M, EPOCH TIME: 1779557648.256977
+[05/23 23:34:08    311s] OPERPROF:     Finished PlacementInitSBTree at level 3, CPU:0.000, REAL:0.001, MEM:2451.0M, EPOCH TIME: 1779557648.257833
+[05/23 23:34:08    311s] [CPU] DPlace-Init (cpu=0:00:00.1, real=0:00:00.0, mem=2451.0MB).
+[05/23 23:34:08    311s] OPERPROF:   Finished DPlace-Init at level 2, CPU:0.070, REAL:0.075, MEM:2451.0M, EPOCH TIME: 1779557648.260709
+[05/23 23:34:08    311s] OPERPROF: Finished RefinePlaceInit at level 1, CPU:0.070, REAL:0.075, MEM:2451.0M, EPOCH TIME: 1779557648.260768
+[05/23 23:34:08    311s] TDRefine: refinePlace mode is spiral
+[05/23 23:34:08    311s] GigaOpt Checkpoint: Intermediate DB Saving Point beforeRefinePlace.21952.3
+[05/23 23:34:08    311s] OPERPROF: Starting RefinePlace at level 1, MEM:2451.0M, EPOCH TIME: 1779557648.261044
+[05/23 23:34:08    311s] *** Starting refinePlace (0:05:12 mem=2451.0M) ***
+[05/23 23:34:08    311s] Total net bbox length = 2.141e+05 (1.144e+05 9.967e+04) (ext = 1.125e+04)
+[05/23 23:34:08    311s] 
+[05/23 23:34:08    311s]  Pre_CCE_Colorizing is not ON! (0:0:574:0)
+[05/23 23:34:08    311s] Move report: placeLevelShifters moves 0 insts, mean move: 0.00 um, max move: 0.00 um 
+[05/23 23:34:08    311s] (I)      Default pattern map key = gpu_default.
+[05/23 23:34:08    311s] (I)      Default pattern map key = gpu_default.
+[05/23 23:34:08    311s] OPERPROF:   Starting RefinePlace2 at level 2, MEM:2451.0M, EPOCH TIME: 1779557648.282861
+[05/23 23:34:08    311s] Starting refinePlace ...
+[05/23 23:34:08    311s] (I)      Default pattern map key = gpu_default.
+[05/23 23:34:08    311s] One DDP V2 for no tweak run.
+[05/23 23:34:08    311s] (I)      Default pattern map key = gpu_default.
+[05/23 23:34:08    311s] OPERPROF:     Starting AdvanceDataManager::initSiteMarkMT at level 3, MEM:2451.0M, EPOCH TIME: 1779557648.318093
+[05/23 23:34:08    311s] DDP initSite1 nrRow 127 nrJob 127
+[05/23 23:34:08    311s] OPERPROF:       Starting AdvanceDataManager::initSite1 at level 4, MEM:2451.0M, EPOCH TIME: 1779557648.318240
+[05/23 23:34:08    311s] OPERPROF:       Finished AdvanceDataManager::initSite1 at level 4, CPU:0.000, REAL:0.000, MEM:2451.0M, EPOCH TIME: 1779557648.318730
+[05/23 23:34:08    311s] OPERPROF:       Starting AdvanceDataManager::markSite at level 4, MEM:2451.0M, EPOCH TIME: 1779557648.318794
+[05/23 23:34:08    311s] DDP markSite nrRow 127 nrJob 127
+[05/23 23:34:08    311s] OPERPROF:       Finished AdvanceDataManager::markSite at level 4, CPU:0.000, REAL:0.001, MEM:2451.0M, EPOCH TIME: 1779557648.319796
+[05/23 23:34:08    311s] OPERPROF:     Finished AdvanceDataManager::initSiteMarkMT at level 3, CPU:0.000, REAL:0.002, MEM:2451.0M, EPOCH TIME: 1779557648.319862
+[05/23 23:34:08    311s]   Spread Effort: high, post-route mode, useDDP on.
+[05/23 23:34:08    311s] [CPU] RefinePlace/preRPlace (cpu=0:00:00.0, real=0:00:00.0, mem=2451.0MB) @(0:05:12 - 0:05:12).
+[05/23 23:34:08    311s] Move report: preRPlace moves 0 insts, mean move: 0.00 um, max move: 0.00 um 
+[05/23 23:34:08    311s] wireLenOptFixPriorityInst 1827 inst fixed
+[05/23 23:34:08    311s] 
+[05/23 23:34:08    311s] Running Spiral with 1 thread in Normal Mode  fetchWidth=36 
+[05/23 23:34:08    312s] SY_THREAD_POOL_QUEUE SY-GLB-THREAD-POOL (0x3df646a0): Rebuild thread pool 0x7f0363c0b480.
+[05/23 23:34:08    312s] SY_THREAD_POOL_QUEUE SY-GLB-THREAD-POOL (0x3df646a0): 0 out of 1 thread pools are available.
+[05/23 23:34:08    312s] Move report: legalization moves 3 insts, mean move: 1.47 um, max move: 1.91 um spiral
+[05/23 23:34:08    312s] 	Max move on inst (ctsFE_OFC648_cores_1__core_instance_threads_3__alu_instance_div_43_40_n_128): (173.80, 15.20) --> (174.00, 13.49)
+[05/23 23:34:08    312s] [CPU] RefinePlace/Spiral (cpu=0:00:00.3, real=0:00:00.0)
+[05/23 23:34:08    312s] [CPU] RefinePlace/Commit (cpu=0:00:00.2, real=0:00:00.0), EEQ(cpu=0:00:00.0, real=0:00:00.0), MTComit(cpu=0:00:00.2, real=0:00:00.0), leftOver(cpu=0:00:00.0, real=0:00:00.0)
+[05/23 23:34:08    312s] [CPU] RefinePlace/Legalization (cpu=0:00:00.5, real=0:00:00.0, mem=2434.9MB) @(0:05:12 - 0:05:12).
+[05/23 23:34:08    312s] Move report: Detail placement moves 3 insts, mean move: 1.47 um, max move: 1.91 um 
+[05/23 23:34:08    312s] 	Max move on inst (ctsFE_OFC648_cores_1__core_instance_threads_3__alu_instance_div_43_40_n_128): (173.80, 15.20) --> (174.00, 13.49)
+[05/23 23:34:08    312s] 	Runtime: CPU: 0:00:00.6 REAL: 0:00:00.0 MEM: 2434.9MB
+[05/23 23:34:08    312s] Statistics of distance of Instance movement in refine placement:
+[05/23 23:34:08    312s]   maximum (X+Y) =         1.91 um
+[05/23 23:34:08    312s]   inst (ctsFE_OFC648_cores_1__core_instance_threads_3__alu_instance_div_43_40_n_128) with max move: (173.8, 15.2) -> (174, 13.49)
+[05/23 23:34:08    312s]   mean    (X+Y) =         1.47 um
+[05/23 23:34:08    312s] Summary Report:
+[05/23 23:34:08    312s] Instances move: 3 (out of 14178 movable)
+[05/23 23:34:08    312s] Instances flipped: 0
+[05/23 23:34:08    312s] Mean displacement: 1.47 um
+[05/23 23:34:08    312s] Max displacement: 1.91 um (Instance: ctsFE_OFC648_cores_1__core_instance_threads_3__alu_instance_div_43_40_n_128) (173.8, 15.2) -> (174, 13.49)
+[05/23 23:34:08    312s] 	Length: 2 sites, height: 1 rows, site name: CoreSite, cell type: INVX1
+[05/23 23:34:08    312s] Total instances moved : 3
+[05/23 23:34:08    312s] OPERPROF:   Finished RefinePlace2 at level 2, CPU:0.600, REAL:0.594, MEM:2434.9M, EPOCH TIME: 1779557648.876393
+[05/23 23:34:08    312s] Total net bbox length = 2.141e+05 (1.144e+05 9.967e+04) (ext = 1.125e+04)
+[05/23 23:34:08    312s] Runtime: CPU: 0:00:00.6 REAL: 0:00:00.0 MEM: 2434.9MB
+[05/23 23:34:08    312s] [CPU] RefinePlace/total (cpu=0:00:00.6, real=0:00:00.0, mem=2434.9MB) @(0:05:12 - 0:05:12).
+[05/23 23:34:08    312s] *** Finished refinePlace (0:05:12 mem=2434.9M) ***
+[05/23 23:34:08    312s] GigaOpt Checkpoint: Intermediate DB Saving Point afterRefinePlace.21952.3
+[05/23 23:34:08    312s] OPERPROF: Finished RefinePlace at level 1, CPU:0.620, REAL:0.621, MEM:2434.9M, EPOCH TIME: 1779557648.882185
+[05/23 23:34:08    312s] OPERPROF: Starting spDPlaceCleanup(partial) at level 1, MEM:2434.9M, EPOCH TIME: 1779557648.882250
+[05/23 23:34:08    312s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:16322).
+[05/23 23:34:08    312s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:34:08    312s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:34:08    312s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/23 23:34:08    312s] OPERPROF:   Starting spSiteCleanup(false) at level 2, MEM:2434.9M, EPOCH TIME: 1779557648.930217
+[05/23 23:34:08    312s] OPERPROF:   Finished spSiteCleanup(false) at level 2, CPU:0.000, REAL:0.000, MEM:2434.9M, EPOCH TIME: 1779557648.930497
+[05/23 23:34:08    312s] OPERPROF: Finished spDPlaceCleanup(partial) at level 1, CPU:0.050, REAL:0.051, MEM:2377.9M, EPOCH TIME: 1779557648.933436
+[05/23 23:34:08    312s] Resize cores[1].core_instance_threads[3].alu_instance_div_43_40_g5459 (ADDFX1) to ADDFHX1.
+[05/23 23:34:15    314s] <CMD> report_timing -path_type summary_slack_only -max_paths 10 
+[05/23 23:35:44    328s] <CMD> report_constraint -all_violators -drv_violation_type max_transition
+[05/23 23:38:47    357s] <CMD> select_obj [get_pins ctsFE_OFC972_cores_1__core_instance_n_49511/A]
+[05/23 23:41:03    380s] <CMD> saveDesign DESIGN/route_design_setup_fix.inn
+[05/23 23:41:03    380s] The in-memory database contained RC information but was not saved. To save 
+[05/23 23:41:03    380s] the RC information, use saveDesign's -rc option. Note: Saving RC information can be quite large, 
+[05/23 23:41:03    380s] so it should only be saved when it is really desired.
+[05/23 23:41:03    380s] #% Begin save design ... (date=05/23 23:41:03, mem=1578.4M)
+[05/23 23:41:03    380s] % Begin Save ccopt configuration ... (date=05/23 23:41:03, mem=1578.4M)
+[05/23 23:41:03    380s] % End Save ccopt configuration ... (date=05/23 23:41:03, total cpu=0:00:00.1, real=0:00:00.0, peak res=1580.3M, current mem=1580.3M)
+[05/23 23:41:03    380s] % Begin Save netlist data ... (date=05/23 23:41:03, mem=1580.4M)
+[05/23 23:41:03    380s] Writing Binary DB to DESIGN/route_design_setup_fix.inn.dat/gpu.v.bin in single-threaded mode...
+[05/23 23:41:03    380s] % End Save netlist data ... (date=05/23 23:41:03, total cpu=0:00:00.1, real=0:00:00.0, peak res=1582.3M, current mem=1580.4M)
+[05/23 23:41:03    380s] Saving symbol-table file ...
+[05/23 23:41:04    380s] Saving congestion map file DESIGN/route_design_setup_fix.inn.dat/gpu.route.congmap.gz ...
+[05/23 23:41:04    380s] % Begin Save AAE data ... (date=05/23 23:41:04, mem=1580.6M)
+[05/23 23:41:04    380s] Saving AAE Data ...
+[05/23 23:41:04    380s] % End Save AAE data ... (date=05/23 23:41:04, total cpu=0:00:00.0, real=0:00:00.0, peak res=1580.7M, current mem=1580.7M)
+[05/23 23:41:04    380s] Saving preference file DESIGN/route_design_setup_fix.inn.dat/gui.pref.tcl ...
+[05/23 23:41:04    380s] Saving mode setting ...
+[05/23 23:41:04    380s] Saving global file ...
+[05/23 23:41:05    380s] % Begin Save floorplan data ... (date=05/23 23:41:05, mem=1584.9M)
+[05/23 23:41:05    380s] Saving floorplan file ...
+[05/23 23:41:05    380s] Convert 0 swires and 0 svias from compressed groups
+[05/23 23:41:05    380s] % End Save floorplan data ... (date=05/23 23:41:05, total cpu=0:00:00.1, real=0:00:00.0, peak res=1585.4M, current mem=1585.4M)
+[05/23 23:41:05    380s] Saving Drc markers ...
+[05/23 23:41:05    380s] ... 8 markers are saved ...
+[05/23 23:41:05    380s] ... 0 geometry drc markers are saved ...
+[05/23 23:41:05    380s] ... 0 antenna drc markers are saved ...
+[05/23 23:41:05    380s] % Begin Save placement data ... (date=05/23 23:41:05, mem=1585.4M)
+[05/23 23:41:05    380s] ** Saving stdCellPlacement_binary (version# 2) ...
+[05/23 23:41:05    380s] Save Adaptive View Pruning View Names to Binary file
+[05/23 23:41:05    380s] *** Completed savePlace (cpu=0:00:00.0 real=0:00:00.0 mem=2400.7M) ***
+[05/23 23:41:05    380s] % End Save placement data ... (date=05/23 23:41:05, total cpu=0:00:00.0, real=0:00:00.0, peak res=1585.4M, current mem=1585.4M)
+[05/23 23:41:05    380s] % Begin Save routing data ... (date=05/23 23:41:05, mem=1585.4M)
+[05/23 23:41:05    380s] Saving route file ...
+[05/23 23:41:06    380s] *** Completed saveRoute (cpu=0:00:00.1 real=0:00:01.0 mem=2397.7M) ***
+[05/23 23:41:06    381s] % End Save routing data ... (date=05/23 23:41:06, total cpu=0:00:00.2, real=0:00:01.0, peak res=1585.6M, current mem=1585.6M)
+[05/23 23:41:06    381s] Saving property file DESIGN/route_design_setup_fix.inn.dat/gpu.prop
+[05/23 23:41:06    381s] *** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=2400.7M) ***
+[05/23 23:41:06    381s] #Saving pin access data to file DESIGN/route_design_setup_fix.inn.dat/gpu.apa ...
+[05/23 23:41:06    381s] % Begin Save power constraints data ... (date=05/23 23:41:06, mem=1586.1M)
+[05/23 23:41:06    381s] % End Save power constraints data ... (date=05/23 23:41:06, total cpu=0:00:00.0, real=0:00:00.0, peak res=1586.2M, current mem=1586.2M)
+[05/23 23:41:07    381s] Generated self-contained design route_design_setup_fix.inn.dat
+[05/23 23:41:07    381s] #% End save design ... (date=05/23 23:41:07, total cpu=0:00:01.4, real=0:00:04.0, peak res=1615.9M, current mem=1588.8M)
+[05/23 23:41:07    381s] *** Message Summary: 0 warning(s), 0 error(s)
+[05/23 23:41:07    381s] 
+[05/23 23:41:18    383s] 
+[05/23 23:41:18    383s] *** Memory Usage v#1 (Current mem = 2445.133M, initial mem = 478.109M) ***
+[05/23 23:41:18    383s] 
+[05/23 23:41:18    383s] *** Summary of all messages that are not suppressed in this session:
+[05/23 23:41:18    383s] Severity  ID               Count  Summary                                  
+[05/23 23:41:18    383s] WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[05/23 23:41:18    383s] WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+[05/23 23:41:18    383s] WARNING   IMPPTN-867           1  Found use of %s. This will continue to w...
+[05/23 23:41:18    383s] WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+[05/23 23:41:18    383s] WARNING   IMPEXT-3530          2  The process node is not set. Use the com...
+[05/23 23:41:18    383s] WARNING   IMPOPT-3602          4  The specified path group name %s is not ...
+[05/23 23:41:18    383s] WARNING   NRIF-90              1  Option setNanoRouteMode -routeBottomRout...
+[05/23 23:41:18    383s] WARNING   NRIF-91              1  Option setNanoRouteMode -routeTopRouting...
+[05/23 23:41:18    383s] WARNING   IMPCTE-107           1  The following globals have been obsolete...
+[05/23 23:41:18    383s] WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+[05/23 23:41:18    383s] ERROR     IMPTCM-113           1  Option "%s" is required when option "%s"...
+[05/23 23:41:18    383s] WARNING   IMPPSP-1003          2  Found use of '%s'. This will continue to...
+[05/23 23:41:18    383s] WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+[05/23 23:41:18    383s] *** Message Summary: 21 warning(s), 1 error(s)
+[05/23 23:41:18    383s] 
+[05/23 23:41:18    383s] --- Ending "Innovus" (totcpu=0:06:23, real=0:34:09, mem=2445.1M) ---

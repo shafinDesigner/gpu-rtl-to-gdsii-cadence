@@ -1,0 +1,115 @@
+[04/28 21:15:04      0s] 
+[04/28 21:15:04      0s] Cadence Innovus(TM) Implementation System.
+[04/28 21:15:04      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[04/28 21:15:04      0s] 
+[04/28 21:15:04      0s] Version:	v21.18-s099_1, built Tue Jul 18 13:03:50 PDT 2023
+[04/28 21:15:04      0s] Options:	-files genus.tcl 
+[04/28 21:15:04      0s] Date:		Tue Apr 28 21:15:04 2026
+[04/28 21:15:04      0s] Host:		cad_vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (8cores*32cpus*Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz 11264KB)
+[04/28 21:15:04      0s] OS:		Red Hat Enterprise Linux Server 7.9 (Maipo)
+[04/28 21:15:04      0s] 
+[04/28 21:15:04      0s] License:
+[04/28 21:15:04      0s] 		[21:15:04.098153] Configured Lic search path (21.01-s002): 5280@cad_vlsi
+
+[04/28 21:15:04      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[04/28 21:15:04      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[04/28 21:15:41     37s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.18-s099_1 (64bit) 07/18/2023 13:03 (Linux 3.10.0-693.el7.x86_64)
+[04/28 21:15:47     43s] @(#)CDS: NanoRoute 21.18-s099_1 NR230707-1955/21_18-UB (database version 18.20.605) {superthreading v2.17}
+[04/28 21:15:47     43s] @(#)CDS: AAE 21.18-s017 (64bit) 07/18/2023 (Linux 3.10.0-693.el7.x86_64)
+[04/28 21:15:47     43s] @(#)CDS: CTE 21.18-s022_1 () Jul 11 2023 23:10:24 ( )
+[04/28 21:15:47     43s] @(#)CDS: SYNTECH 21.18-s010_1 () Jul  5 2023 06:32:03 ( )
+[04/28 21:15:47     43s] @(#)CDS: CPE v21.18-s053
+[04/28 21:15:47     43s] @(#)CDS: IQuantus/TQuantus 21.1.1-s966 (64bit) Wed Mar 8 10:22:20 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+[04/28 21:15:47     43s] @(#)CDS: OA 22.60-p087 Thu Feb  9 09:35:26 2023
+[04/28 21:15:47     43s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[04/28 21:15:47     43s] @(#)CDS: RCDB 11.15.0
+[04/28 21:15:47     43s] @(#)CDS: STYLUS 21.12-s019_1 (12/20/2022 05:13 PST)
+[04/28 21:15:47     43s] @(#)CDS: SystemPlanner-21.18-10439 (21.18) (2023-03-01 15:40:03+0800)
+[04/28 21:15:47     43s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_88401_cad_vlsi_techvlsi_07_q31bNF.
+
+[04/28 21:15:47     43s] Change the soft stacksize limit to 0.2%RAM (62 mbytes). Set global soft_stack_size_limit to change the value.
+[04/28 21:15:52     47s] 
+[04/28 21:15:52     47s] **INFO:  MMMC transition support version v31-84 
+[04/28 21:15:52     47s] 
+[04/28 21:15:52     47s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[04/28 21:15:52     47s] <CMD> suppressMessage ENCEXT-2799
+[04/28 21:15:52     47s] <CMD> getVersion
+[04/28 21:15:52     47s] <CMD> define_proc_arguments ViaFillQor -info {This procedure extracts Viafill details from innovus db} -define_args {
+		{-window "window coordinates" "" list optional}
+		{-window_size "window size in microns" "" string optional}
+	
+	}
+[04/28 21:15:53     48s] [INFO] Loading Pegasus 22.24 fill procedures
+[04/28 21:15:53     48s] <CMD> define_proc_arguments ProcessFills -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+[04/28 21:15:53     48s] <CMD> define_proc_arguments FillQor -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+[04/28 21:15:53     48s] <CMD> define_proc_arguments ProcessFills_fast -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+[04/28 21:15:53     48s] <CMD> define_proc_arguments FillQor_fast -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+[04/28 21:15:53     48s] <CMD> define_proc_arguments ProcessFills_fast_stampOnly -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+	
+}
+[04/28 21:15:53     48s] <CMD> define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+}
+[04/28 21:15:54     48s] Sourcing file "genus.tcl" ...
+[04/28 21:15:54     48s] **ERROR: (IMPDBTCL-247):	'init_hdl_search_path' is not a recognized object or root attribute. Run 'help root:' to get a list of all root attributes, or 'man get_db' for more information about accessing objects and attributes.
+**ERROR: (IMPSYT-6692):	Invalid return code while executing 'genus.tcl' was returned and script processing was stopped. Review the following error in 'genus.tcl' then restart.
+[04/28 21:15:54     48s] Error info: genus.tcl: 
+[04/28 21:15:54     48s]     while executing
+[04/28 21:15:54     48s] "set_db init_hdl_search_path ./src/"
+[04/28 21:15:54     48s]     (file "genus.tcl" line 2)
+[04/28 21:15:54     48s]     invoked from within
+[04/28 21:15:54     48s] "::se_source_orig genus.tcl"
+[04/28 21:15:54     48s]     ("uplevel" body line 1)
+[04/28 21:15:54     48s]     invoked from within
+[04/28 21:15:54     48s] "uplevel [concat ::se_source_orig $args]"
+[04/28 21:15:54     48s]     (procedure "source" line 194)
+[04/28 21:15:54     48s]     invoked from within
+[04/28 21:15:54     48s] "source genus.tcl"
+[04/28 21:15:54     48s]     ("uplevel" body line 1)
+[04/28 21:15:54     48s]     invoked from within
+[04/28 21:15:54     48s] "uplevel #0 source genus.tcl"
+[04/28 21:15:54     48s]     ("eval" body line 1)
+[04/28 21:15:54     48s]     invoked from within
+[04/28 21:15:54     48s] "eval {uplevel #0 source genus.tcl}"
+[04/28 21:15:54     48s]     (in namespace inscope "::" script line 1)
+[04/28 21:15:54     48s]     invoked from within
+[04/28 21:15:54     48s] "namespace inscope :: eval "uplevel #0 source $fileName"".
+[04/28 21:15:54     48s] <CMD> win
+[04/28 21:16:16     51s] 
+--------------------------------------------------------------------------------
+Exiting Innovus on Tue Apr 28 21:16:16 2026
+  Total CPU time:     0:00:53
+  Total real time:    0:01:14
+  Peak memory (main): 763.30MB
+
+[04/28 21:16:16     51s] 
+[04/28 21:16:16     51s] *** Memory Usage v#1 (Current mem = 1015.895M, initial mem = 478.109M) ***
+[04/28 21:16:16     51s] 
+[04/28 21:16:16     51s] *** Summary of all messages that are not suppressed in this session:
+[04/28 21:16:16     51s] Severity  ID               Count  Summary                                  
+[04/28 21:16:16     51s] ERROR     IMPDBTCL-247         1  '%s' is not a recognized object or root ...
+[04/28 21:16:16     51s] ERROR     IMPSYT-6692          1  Invalid return code while executing '%s'...
+[04/28 21:16:16     51s] *** Message Summary: 0 warning(s), 2 error(s)
+[04/28 21:16:16     51s] 
+[04/28 21:16:16     51s] --- Ending "Innovus" (totcpu=0:00:51.5, real=0:01:12, mem=1015.9M) ---

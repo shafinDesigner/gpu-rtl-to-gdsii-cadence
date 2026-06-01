@@ -1,0 +1,627 @@
+[05/23 04:59:23      0s] 
+[05/23 04:59:23      0s] Cadence Tempus(TM) Timing Solution.
+[05/23 04:59:23      0s] Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/23 04:59:23      0s] 
+[05/23 04:59:23      0s] Version:	v22.11-s001_1, built Fri Sep 16 15:45:21 PDT 2022
+[05/23 04:59:23      0s] Options:	
+[05/23 04:59:23      0s] Date:		Sat May 23 04:59:23 2026
+[05/23 04:59:23      0s] Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+[05/23 04:59:23      0s] OS:		Red Hat Enterprise Linux Server release 7.9 (Maipo)
+[05/23 04:59:23      0s] 
+[05/23 04:59:23      0s] License:
+[05/23 04:59:23      0s] 		[04:59:23.389561] Configured Lic search path (21.01-s002): 5280@vlsi
+
+[05/23 04:59:23      0s] 		tpsxl	Tempus Timing Signoff Solution XL	22.1	checkout succeeded
+[05/23 04:59:23      0s] 		16 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[05/23 04:59:39     14s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Tempus Timing Solution v22.11-s001_1 (64bit) 09/16/2022 15:45 (Linux 3.10.0-693.el7.x86_64)
+[05/23 04:59:46     21s] @(#)CDS: NanoRoute 22.11-s001_1 NR220910-1931/22_11-UB (database version 18.20.592) {superthreading v2.19}
+[05/23 04:59:46     21s] @(#)CDS: AAE 22.11-e006 (64bit) 09/16/2022 (Linux 3.10.0-693.el7.x86_64)
+[05/23 04:59:46     21s] @(#)CDS: CTE 22.11-e010_1 () Sep  5 2022 07:16:46 ( )
+[05/23 04:59:46     21s] @(#)CDS: SYNTECH 22.11-e002_1 () Aug  2 2022 07:54:00 ( )
+[05/23 04:59:46     21s] @(#)CDS: CPE v22.11-e028
+[05/23 04:59:46     21s] @(#)CDS: OA 22.60-p076 Wed May 18 13:45:29 2022
+[05/23 04:59:46     21s] @(#)CDS: SGN 21.20-d001 (11-Feb-2022) (64 bit executable, TkQt5.9.1)
+[05/23 04:59:46     21s] @(#)CDS: RCDB 11.15.0
+[05/23 04:59:46     21s] @(#)CDS: STYLUS 22.10-p002_1 (09/01/2022 08:10 PDT)
+[05/23 04:59:46     21s] Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+[05/23 04:59:47     21s] **INFO: (TMPDIR-1001): The environment variable TMPDIR is not set.
+Create and set the environment variable TMPDIR to '/tmp/ssv_tmpdir_204293_TrmsaH'.
+environment variable TMPDIR is '/tmp/ssv_tmpdir_204293_TrmsaH'.
+[05/23 04:59:58     24s] <CMD> read_lib -late ../LIB/slow_vdd1v0_basiccells.lib
+[05/23 04:59:58     24s] 
+[05/23 04:59:58     24s] Description:
+[05/23 04:59:58     24s] read librarys
+[05/23 04:59:58     24s] 
+[05/23 04:59:58     24s] Usage: read_lib [-help] [<libFiles <library_files>>] [-aocv <<aocv files>>] [-cdb <<typ.cdb files>>] [-lef <<.lef files>>]
+[05/23 04:59:58     24s]                 [-library_side_file <<side files>>] [-max <<max.lib files>>] [-max_aocv <<max_aocv files>>] [-max_cdb <<max.cdb files>>] [-min <<min.lib files>>]
+[05/23 04:59:58     24s]                 [-min_aocv <<min_aocv files>>] [-min_cdb <<min.cdb files>>] [-oaRef <<oaRefLib>>] [-pgv <<power grid lib files>>] [-socv <<socv files>>]
+[05/23 04:59:58     24s] 
+[05/23 04:59:58     24s] **ERROR: (IMPTCM-48):	"-late" is not a legal option for command "read_lib". Either the current option or an option prior to it is not specified correctly.
+<CMD> read_lib -max ../LIB/slow_vdd1v0_basiccells.lib
+[05/23 05:00:47     34s] <CMD> read_lib -min ../LIB/fast_vdd1v0_basicCells.lib
+[05/23 05:00:58     36s] <CMD> read_verilog gpu_signoff_netlist.v
+[05/23 05:01:04     38s] <CMD> current_design gpu
+[05/23 05:01:04     38s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'gpu'
+[05/23 05:01:04     38s] **ERROR: (TCLCMD-917):	Cannot find 'designs' that match 'gpu'
+<CMD> read_verilog gpu_signoff_netlist.v
+[05/23 05:01:37     44s] invalid command name "elaborate"
+[05/23 05:01:57     48s] <CMD> set_top_module gpu
+[05/23 05:01:57     48s] #% Begin Load MMMC data ... (date=05/23 05:01:57, mem=998.4M)
+[05/23 05:01:57     48s] Number of views requested 1 are allowed with the current licenses... continuing with set_analysis_view.
+[05/23 05:01:57     48s] #% End Load MMMC data ... (date=05/23 05:01:57, total cpu=0:00:00.0, real=0:00:00.0, peak res=999.2M, current mem=999.2M)
+[05/23 05:01:57     48s] Loading view definition file from .ssv_emulate_view_definition_204293.tcl
+[05/23 05:01:57     48s] Reading default_emulate_libset_max timing library '/home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib' ...
+[05/23 05:01:58     49s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib)
+[05/23 05:01:58     49s] Read 480 cells in library 'slow_vdd1v0' 
+[05/23 05:01:58     49s] Reading default_emulate_libset_min timing library '/home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib' ...
+[05/23 05:01:59     50s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib)
+[05/23 05:01:59     50s] Read 480 cells in library 'fast_vdd1v0' 
+[05/23 05:01:59     50s] Ending "PreSetAnalysisView" (total cpu=0:00:01.2, real=0:00:02.0, peak res=1056.4M, current mem=1007.4M)
+[05/23 05:01:59     50s] *** End library_loading (cpu=0.02min, real=0.03min, mem=13.9M, fe_cpu=0.84min, fe_real=2.60min, fe_mem=1263.6M) ***
+[05/23 05:01:59     50s] #% Begin Load netlist data ... (date=05/23 05:01:59, mem=1007.4M)
+[05/23 05:01:59     50s] *** Begin netlist parsing (mem=1263.6M) ***
+[05/23 05:01:59     50s] Reading verilog netlist 'gpu_signoff_netlist.v'
+[05/23 05:01:59     50s] 
+[05/23 05:01:59     50s] *** Memory Usage v#1 (Current mem = 1425.582M, initial mem = 620.184M) ***
+[05/23 05:01:59     50s] *** End netlist parsing (cpu=0:00:00.2, real=0:00:00.0, mem=1425.6M) ***
+[05/23 05:01:59     50s] #% End Load netlist data ... (date=05/23 05:01:59, total cpu=0:00:00.6, real=0:00:00.0, peak res=1124.1M, current mem=1114.2M)
+[05/23 05:01:59     50s] Set top cell to gpu.
+[05/23 05:01:59     50s] Starting consistency checks on late and early library sets of delay corner 'default_emulate_delay_corner'
+[05/23 05:01:59     50s] late library set: default_emulate_libset_max
+[05/23 05:01:59     50s] early library set: default_emulate_libset_min
+[05/23 05:01:59     50s] Completed consistency checks. Status: Successful
+[05/23 05:01:59     50s] Starting consistency checks on late and early library sets of delay corner 'default_emulate_delay_corner'
+[05/23 05:01:59     50s] late library set: default_emulate_libset_max
+[05/23 05:01:59     50s] early library set: default_emulate_libset_min
+[05/23 05:01:59     50s] Completed consistency checks. Status: Successful
+[05/23 05:01:59     50s] Ending "BindLib:" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1154.0M, current mem=1154.0M)
+[05/23 05:01:59     50s] Building hierarchical netlist for Cell gpu ...
+[05/23 05:01:59     50s] ***** UseNewTieNetMode *****.
+[05/23 05:02:00     51s] *** Netlist is unique.
+[05/23 05:02:00     51s] ** info: there are 961 modules.
+[05/23 05:02:00     51s] ** info: there are 14355 stdCell insts.
+[05/23 05:02:00     51s] 
+[05/23 05:02:00     51s] *** Memory Usage v#1 (Current mem = 1789.039M, initial mem = 620.184M) ***
+[05/23 05:02:00     51s] Set Default Input Pin Transition as 0.1 ps.
+[05/23 05:02:00     51s] Extraction setup Started 
+[05/23 05:02:00     51s] eee: Trim Metal Layers: { }
+[05/23 05:02:00     51s] eee: Trim Metal Layers: { }
+[05/23 05:02:00     51s] eee: Trim Metal Layers: { }
+[05/23 05:02:00     51s] eee: Trim Metal Layers: { }
+[05/23 05:02:00     51s] eee: Trim Metal Layers: { }
+[05/23 05:02:00     51s] eee: Trim Metal Layers: { }
+[05/23 05:02:00     51s] eee: Trim Metal Layers: { }
+[05/23 05:02:00     51s] eee: Trim Metal Layers: { }
+[05/23 05:02:00     51s] eee: Trim Metal Layers: { }
+[05/23 05:02:00     51s] eee: Trim Metal Layers: { }
+[05/23 05:02:00     51s] eee: Trim Metal Layers: { }
+[05/23 05:02:00     51s] eee: Trim Metal Layers: { }
+[05/23 05:02:00     51s] eee: Trim Metal Layers: { }
+[05/23 05:02:00     51s] eee: Trim Metal Layers: { }
+[05/23 05:02:00     51s] eee: Trim Metal Layers: { }
+[05/23 05:02:00     51s] Summary of Active RC-Corners : 
+[05/23 05:02:00     51s]  
+[05/23 05:02:00     51s]  Analysis View: default_emulate_view
+[05/23 05:02:00     51s]     RC-Corner Name        : default_emulate_rc_corner
+[05/23 05:02:00     51s]     RC-Corner Index       : 0
+[05/23 05:02:00     51s]     RC-Corner Temperature : 25 Celsius
+[05/23 05:02:00     51s]     RC-Corner Cap Table   : ''
+[05/23 05:02:00     51s]     RC-Corner PostRoute Res Factor        : 1
+[05/23 05:02:00     51s]     RC-Corner PostRoute Cap Factor        : 1
+[05/23 05:02:00     51s]     RC-Corner PostRoute XCap Factor       : 1
+[05/23 05:02:00     51s] Starting consistency checks on late and early library sets of delay corner 'default_emulate_delay_corner'
+[05/23 05:02:00     51s] late library set: default_emulate_libset_max
+[05/23 05:02:00     51s] early library set: default_emulate_libset_min
+[05/23 05:02:00     51s] Completed consistency checks. Status: Successful
+[05/23 05:02:00     51s] Ending "SetAnalysisView" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1646.8M, current mem=1395.8M)
+[05/23 05:02:01     52s] Reading timing constraints file '/dev/null' ...
+[05/23 05:02:01     52s] Current (total cpu=0:00:52.1, real=0:02:38, peak res=1735.6M, current mem=1735.6M)
+[05/23 05:02:01     52s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[05/23 05:02:01     52s] 
+[05/23 05:02:01     52s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) Begin ...
+[05/23 05:02:01     52s] Summary for sequential cells identification: 
+[05/23 05:02:01     52s]   Identified SBFF number: 104
+[05/23 05:02:01     52s]   Identified MBFF number: 0
+[05/23 05:02:01     52s]   Identified SB Latch number: 0
+[05/23 05:02:01     52s]   Identified MB Latch number: 0
+[05/23 05:02:01     52s]   Not identified SBFF number: 16
+[05/23 05:02:01     52s]   Not identified MBFF number: 0
+[05/23 05:02:01     52s]   Not identified SB Latch number: 0
+[05/23 05:02:01     52s]   Not identified MB Latch number: 0
+[05/23 05:02:01     52s]   Number of sequential cells which are not FFs: 32
+[05/23 05:02:01     52s] Total number of combinational cells: 314
+[05/23 05:02:01     52s] Total number of sequential cells: 152
+[05/23 05:02:01     52s] Total number of tristate cells: 10
+[05/23 05:02:01     52s] Total number of level shifter cells: 0
+[05/23 05:02:01     52s] Total number of power gating cells: 0
+[05/23 05:02:01     52s] Total number of isolation cells: 0
+[05/23 05:02:01     52s] Total number of power switch cells: 0
+[05/23 05:02:01     52s] Total number of pulse generator cells: 0
+[05/23 05:02:01     52s] Total number of always on buffers: 0
+[05/23 05:02:01     52s] Total number of retention cells: 0
+[05/23 05:02:01     52s] Total number of physical cells: 0
+[05/23 05:02:01     52s] List of usable buffers: BUFX12 BUFX16 BUFX2 BUFX20 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX2 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+[05/23 05:02:01     52s] Total number of usable buffers: 16
+[05/23 05:02:01     52s] List of unusable buffers:
+[05/23 05:02:01     52s] Total number of unusable buffers: 0
+[05/23 05:02:01     52s] List of usable inverters: CLKINVX1 CLKINVX12 CLKINVX16 CLKINVX2 CLKINVX20 CLKINVX3 CLKINVX4 CLKINVX6 CLKINVX8 INVX1 INVX12 INVX16 INVX2 INVX20 INVX3 INVX4 INVX6 INVXL INVX8
+[05/23 05:02:01     52s] Total number of usable inverters: 19
+[05/23 05:02:01     52s] List of unusable inverters:
+[05/23 05:02:01     52s] Total number of unusable inverters: 0
+[05/23 05:02:01     52s] List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X4 DLY4X1
+[05/23 05:02:01     52s] Total number of identified usable delay cells: 8
+[05/23 05:02:01     52s] List of identified unusable delay cells:
+[05/23 05:02:01     52s] Total number of identified unusable delay cells: 0
+[05/23 05:02:01     52s] 
+[05/23 05:02:01     52s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) End ...
+[05/23 05:02:01     52s] 
+[05/23 05:02:01     52s] TimeStamp Deleting Cell Server Begin ...
+[05/23 05:02:01     52s] 
+[05/23 05:02:01     52s] TimeStamp Deleting Cell Server End ...
+[05/23 05:02:01     52s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1765.7M, current mem=1765.6M)
+[05/23 05:02:01     52s] 
+[05/23 05:02:01     52s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) Begin ...
+[05/23 05:02:01     52s] Summary for sequential cells identification: 
+[05/23 05:02:01     52s]   Identified SBFF number: 104
+[05/23 05:02:01     52s]   Identified MBFF number: 0
+[05/23 05:02:01     52s]   Identified SB Latch number: 0
+[05/23 05:02:01     52s]   Identified MB Latch number: 0
+[05/23 05:02:01     52s]   Not identified SBFF number: 16
+[05/23 05:02:01     52s]   Not identified MBFF number: 0
+[05/23 05:02:01     52s]   Not identified SB Latch number: 0
+[05/23 05:02:01     52s]   Not identified MB Latch number: 0
+[05/23 05:02:01     52s]   Number of sequential cells which are not FFs: 32
+[05/23 05:02:01     52s]  Visiting view : default_emulate_view
+[05/23 05:02:01     52s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = 0
+[05/23 05:02:01     52s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = -1
+[05/23 05:02:01     52s]  Visiting view : default_emulate_view
+[05/23 05:02:01     52s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = 0
+[05/23 05:02:01     52s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = -1
+[05/23 05:02:01     52s] TLC MultiMap info (StdDelay):
+[05/23 05:02:01     52s]   : default_emulate_delay_corner + default_emulate_libset_max + 1 + no RcCorner := 20.1ps
+[05/23 05:02:01     52s]   : default_emulate_delay_corner + default_emulate_libset_max + 1 + default_emulate_rc_corner := 20.1ps
+[05/23 05:02:01     52s]  Setting StdDelay to: 20.1ps
+[05/23 05:02:01     52s] 
+[05/23 05:02:01     52s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) End ...
+[05/23 05:02:01     52s] 
+[05/23 05:02:01     52s] TimeStamp Deleting Cell Server Begin ...
+[05/23 05:02:01     52s] 
+[05/23 05:02:01     52s] TimeStamp Deleting Cell Server End ...
+[05/23 05:02:01     52s] Extraction setup Started 
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] Summary of Active RC-Corners : 
+[05/23 05:02:01     52s]  
+[05/23 05:02:01     52s]  Analysis View: default_emulate_view
+[05/23 05:02:01     52s]     RC-Corner Name        : default_emulate_rc_corner
+[05/23 05:02:01     52s]     RC-Corner Index       : 0
+[05/23 05:02:01     52s]     RC-Corner Temperature : 125 Celsius
+[05/23 05:02:01     52s]     RC-Corner Cap Table   : ''
+[05/23 05:02:01     52s]     RC-Corner PostRoute Res Factor        : 1
+[05/23 05:02:01     52s]     RC-Corner PostRoute Cap Factor        : 1
+[05/23 05:02:01     52s]     RC-Corner PostRoute XCap Factor       : 1
+[05/23 05:02:01     52s] Extraction setup Started 
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] Summary of Active RC-Corners : 
+[05/23 05:02:01     52s]  
+[05/23 05:02:01     52s]  Analysis View: default_emulate_view
+[05/23 05:02:01     52s]     RC-Corner Name        : default_emulate_rc_corner
+[05/23 05:02:01     52s]     RC-Corner Index       : 0
+[05/23 05:02:01     52s]     RC-Corner Temperature : 125 Celsius
+[05/23 05:02:01     52s]     RC-Corner Cap Table   : ''
+[05/23 05:02:01     52s]     RC-Corner PostRoute Res Factor        : 1
+[05/23 05:02:01     52s]     RC-Corner PostRoute Cap Factor        : 1
+[05/23 05:02:01     52s]     RC-Corner PostRoute XCap Factor       : 1
+[05/23 05:02:01     52s] Extraction setup Started 
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] eee: Trim Metal Layers: { }
+[05/23 05:02:01     52s] Summary of Active RC-Corners : 
+[05/23 05:02:01     52s]  
+[05/23 05:02:01     52s]  Analysis View: default_emulate_view
+[05/23 05:02:01     52s]     RC-Corner Name        : default_emulate_rc_corner
+[05/23 05:02:01     52s]     RC-Corner Index       : 0
+[05/23 05:02:01     52s]     RC-Corner Temperature : 125 Celsius
+[05/23 05:02:01     52s]     RC-Corner Cap Table   : ''
+[05/23 05:02:01     52s]     RC-Corner PostRoute Res Factor        : 1
+[05/23 05:02:01     52s]     RC-Corner PostRoute Cap Factor        : 1
+[05/23 05:02:01     52s]     RC-Corner PostRoute XCap Factor       : 1
+[05/23 05:03:26     82s] <CMD> read_sdc gpu_signoff_constraints.sdc
+[05/23 05:03:26     82s] Current (total cpu=0:01:23, real=0:04:03, peak res=1766.2M, current mem=1728.9M)
+[05/23 05:03:26     82s] INFO (CTE): Constraints read successfully.
+[05/23 05:03:26     82s] Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1734.8M, current mem=1734.8M)
+[05/23 05:03:26     82s] Current (total cpu=0:01:23, real=0:04:03, peak res=1766.2M, current mem=1734.8M)
+[05/23 05:03:31     85s] <CMD> read_spef gpu_signoff_parasitics.spef
+[05/23 05:03:31     85s] read_spef Option :  -rc_corner default_emulate_rc_corner gpu_signoff_parasitics.spef -noStarN 
+[05/23 05:03:31     85s] 
+[05/23 05:03:31     85s] SPEF files for RC Corner default_emulate_rc_corner:
+[05/23 05:03:31     85s] Top-level spef file 'gpu_signoff_parasitics.spef'.
+[05/23 05:03:31     85s] Start spef parsing (MEM=2124.98).
+[05/23 05:03:31     85s] Number of corners: 1
+[05/23 05:03:31     85s] Number of parallel threads processing the nets is: 1
+[05/23 05:03:31     85s] Maximum backlog used in parser: 50.
+[05/23 05:03:31     85s] Reading multiple SPEF files in parallel.
+[05/23 05:03:31     85s] RCDB /tmp/ssv_tmpdir_204293_TrmsaH/gpu_204293_0Bcxzs.rcdb.d/gpu.rcdb.d Creation Started (CPU Time= 0:00:00.0  MEM= 2133.0M)
+[05/23 05:03:31     85s] Creating parasitic data file '/tmp/ssv_tmpdir_204293_TrmsaH/gpu_204293_0Bcxzs.rcdb.d/gpu.rcdb.d' for storing RC.
+[05/23 05:03:32     87s] SPEF file gpu_signoff_parasitics.spef.
+[05/23 05:03:32     87s] Number of Resistors     : 277163
+[05/23 05:03:32     87s] Number of Ground Caps   : 277765
+[05/23 05:03:32     87s] Number of Coupling Caps : 5296
+[05/23 05:03:32     87s] 
+[05/23 05:03:32     87s] RCDB /tmp/ssv_tmpdir_204293_TrmsaH/gpu_204293_0Bcxzs.rcdb.d/gpu.rcdb.d Creation Completed (CPU Time= 0:00:02.0  MEM= 2174.0M)
+[05/23 05:03:32     87s] End spef parsing (MEM=2141.98 CPU=0:00:02.0 REAL=0:00:01.0).
+[05/23 05:03:32     87s] Spef for RC Corner 'default_emulate_rc_corner' was previously specified. Dropping the previous specification.
+[05/23 05:03:32     87s] Lumped Parasitic Loading Started (total cpu=0:00:00.0, real=0:00:00.0, current mem=2133.977M)
+[05/23 05:03:32     87s] Opening parasitic data file '/tmp/ssv_tmpdir_204293_TrmsaH/gpu_204293_0Bcxzs.rcdb.d/gpu.rcdb.d' for reading (mem: 2133.977M)
+[05/23 05:03:32     87s] Closing parasitic data file '/tmp/ssv_tmpdir_204293_TrmsaH/gpu_204293_0Bcxzs.rcdb.d/gpu.rcdb.d': 0 access done (mem: 2137.977M)
+[05/23 05:03:32     87s] Lumped Parasitic Loading Completed (total cpu=0:00:00.5, real=0:00:00.0, current mem=2137.977M)
+[05/23 05:03:36     89s] <CMD> report_timing
+[05/23 05:03:37     89s] AAE_INFO: opIsDesignInPostRouteState() is 0
+[05/23 05:03:37     90s] AAE DB initialization (MEM=2164.88 CPU=0:00:00.0 REAL=0:00:00.0) 
+[05/23 05:03:37     90s] #################################################################################
+[05/23 05:03:37     90s] # Design Name: gpu
+[05/23 05:03:37     90s] # Design Mode: 65nm
+[05/23 05:03:37     90s] # Analysis Mode: MMMC OCV 
+[05/23 05:03:37     90s] # Parasitics Mode: SPEF/RCDB 
+[05/23 05:03:37     90s] # Signoff Settings: SI Off 
+[05/23 05:03:37     90s] #################################################################################
+[05/23 05:03:38     90s] Topological Sorting (REAL = 0:00:00.0, MEM = 2019.9M, InitMEM = 2019.9M)
+[05/23 05:03:38     90s] Start delay calculation (fullDC) (1 T). (MEM=2019.88)
+[05/23 05:03:38     91s] eee: Trim Metal Layers: { }
+[05/23 05:03:38     91s] eee: Trim Metal Layers: { }
+[05/23 05:03:38     91s] eee: Trim Metal Layers: { }
+[05/23 05:03:38     91s] eee: Trim Metal Layers: { }
+[05/23 05:03:38     91s] Start AAE Lib Loading. (MEM=2019.88)
+[05/23 05:03:38     91s] End AAE Lib Loading. (MEM=2038.96 CPU=0:00:00.0 Real=0:00:00.0)
+[05/23 05:03:38     91s] End AAE Lib Interpolated Model. (MEM=2038.96 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[05/23 05:03:38     91s] Opening parasitic data file '/tmp/ssv_tmpdir_204293_TrmsaH/gpu_204293_0Bcxzs.rcdb.d/gpu.rcdb.d' for reading (mem: 2077.578M)
+[05/23 05:03:38     91s] eee: Trim Metal Layers: { }
+[05/23 05:03:38     91s] eee: Trim Metal Layers: { }
+[05/23 05:03:38     91s] eee: Trim Metal Layers: { }
+[05/23 05:03:38     91s] eee: Trim Metal Layers: { }
+[05/23 05:03:38     91s] eee: Trim Metal Layers: { }
+[05/23 05:03:38     91s] eee: Trim Metal Layers: { }
+[05/23 05:03:38     91s] eee: Trim Metal Layers: { }
+[05/23 05:03:38     91s] eee: Trim Metal Layers: { }
+[05/23 05:03:38     91s] eee: Trim Metal Layers: { }
+[05/23 05:03:38     91s] eee: Trim Metal Layers: { }
+[05/23 05:03:38     91s] eee: Trim Metal Layers: { }
+[05/23 05:03:38     91s] eee: Trim Metal Layers: { }
+[05/23 05:03:38     91s] RC Database In Completed (CPU Time= 0:00:00.0  Real Time=0:00:00.0  MEM= 2079.6M)
+[05/23 05:03:42     95s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[05/23 05:03:42     95s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[05/23 05:03:42     95s] End delay calculation. (MEM=2256.02 CPU=0:00:04.1 REAL=0:00:04.0)
+[05/23 05:03:42     95s] End delay calculation (fullDC). (MEM=2248.02 CPU=0:00:04.4 REAL=0:00:04.0)
+[05/23 05:03:42     95s] *** CDM Built up (cpu=0:00:05.1  real=0:00:05.0  mem= 2248.0M) ***
+[05/23 05:03:57    102s] <CMD> report_timing -early
+[05/23 05:05:17    142s] <CMD> set_db design_process_node 45
+[05/23 05:05:17    142s] ##  Process: 45            (User Set)               
+[05/23 05:05:17    142s] ##     Node: (not set)                           
+[05/23 05:05:17    142s] 
+##  Check design process and node:  
+##  Design tech node is not set.
+
+[05/23 05:05:39    154s] <CMD> report_annotated_parasitics -check
+[05/23 05:05:39    154s] 
+[05/23 05:05:39    154s] Usage: report_annotated_parasitics [-help] [-net_file <string>] [-nets <string>] [-view {viewName}] [> {write_fileName}] [>> {append_fileName}] [ { [-list_annotated ] [-list_broken_net ] [-list_float_net ] [-list_nodriver_net ] [-list_noload_net ] [-list_not_annotated ] [-list_real_net ] [-list_supply_net ] [-list_zero_cap_net ] [-list_extra_pin_net ] [-max_missing {max_missing_int}]}]
+[05/23 05:05:39    154s] 
+[05/23 05:05:39    154s] **ERROR: (IMPTCM-48):	"-check" is not a legal option for command "report_annotated_parasitics". Either the current option or an option prior to it is not specified correctly.
+
+[05/23 05:05:46    157s] <CMD> report_timing
+[05/23 05:05:46    157s] AAE_INFO: opIsDesignInPostRouteState() is 0
+[05/23 05:05:46    157s] #################################################################################
+[05/23 05:05:46    157s] # Design Name: gpu
+[05/23 05:05:46    157s] # Design Mode: 45nm
+[05/23 05:05:46    157s] # Analysis Mode: MMMC OCV 
+[05/23 05:05:46    157s] # Parasitics Mode: SPEF/RCDB 
+[05/23 05:05:46    157s] # Signoff Settings: SI Off 
+[05/23 05:05:46    157s] #################################################################################
+[05/23 05:05:47    158s] Topological Sorting (REAL = 0:00:00.0, MEM = 2248.0M, InitMEM = 2248.0M)
+[05/23 05:05:47    158s] Start delay calculation (fullDC) (1 T). (MEM=2248.02)
+[05/23 05:05:47    158s] End AAE Lib Interpolated Model. (MEM=2248.02 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[05/23 05:05:51    162s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[05/23 05:05:51    162s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[05/23 05:05:51    162s] End delay calculation. (MEM=2268.05 CPU=0:00:04.1 REAL=0:00:04.0)
+[05/23 05:05:51    162s] End delay calculation (fullDC). (MEM=2268.05 CPU=0:00:04.3 REAL=0:00:04.0)
+[05/23 05:05:51    162s] *** CDM Built up (cpu=0:00:04.9  real=0:00:05.0  mem= 2268.0M) ***
+[05/23 05:06:02    168s] <CMD> set_db design_process_node 90
+[05/23 05:06:02    168s] ##  Process: 90            (User Set)               
+[05/23 05:06:02    168s] ##     Node: (not set)                           
+[05/23 05:06:02    168s] 
+##  Check design process and node:  
+##  Design tech node is not set.
+
+[05/23 05:06:06    170s] <CMD> report_timing
+[05/23 05:06:06    170s] AAE_INFO: opIsDesignInPostRouteState() is 0
+[05/23 05:06:06    170s] #################################################################################
+[05/23 05:06:06    170s] # Design Name: gpu
+[05/23 05:06:06    170s] # Design Mode: 90nm
+[05/23 05:06:06    170s] # Analysis Mode: MMMC OCV 
+[05/23 05:06:06    170s] # Parasitics Mode: SPEF/RCDB 
+[05/23 05:06:06    170s] # Signoff Settings: SI Off 
+[05/23 05:06:06    170s] #################################################################################
+[05/23 05:06:06    171s] Topological Sorting (REAL = 0:00:00.0, MEM = 2268.0M, InitMEM = 2268.0M)
+[05/23 05:06:06    171s] Start delay calculation (fullDC) (1 T). (MEM=2268.05)
+[05/23 05:06:06    171s] End AAE Lib Interpolated Model. (MEM=2268.05 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[05/23 05:06:10    175s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[05/23 05:06:11    175s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:01.0)
+[05/23 05:06:11    175s] End delay calculation. (MEM=2295.14 CPU=0:00:04.0 REAL=0:00:04.0)
+[05/23 05:06:11    175s] End delay calculation (fullDC). (MEM=2295.14 CPU=0:00:04.2 REAL=0:00:05.0)
+[05/23 05:06:11    175s] *** CDM Built up (cpu=0:00:04.8  real=0:00:05.0  mem= 2295.1M) ***
+[05/23 05:07:22    215s] <CMD> create_rc_corner -name typical_rc -qx_tech_file ../QRC_tech/gpdk045.tch
+[05/23 05:07:27    218s] <CMD> create_rc_corner -name typical_rc -qx_tech_file ../QRC_tech/gpdk045.tch
+[05/23 05:07:27    218s] Extraction setup Started 
+[05/23 05:07:27    218s] eee: Trim Metal Layers: { }
+[05/23 05:07:27    218s] eee: Trim Metal Layers: { }
+[05/23 05:07:27    218s] eee: Trim Metal Layers: { }
+[05/23 05:07:27    218s] eee: Trim Metal Layers: { }
+[05/23 05:07:27    218s] eee: Trim Metal Layers: { }
+[05/23 05:07:27    218s] eee: Trim Metal Layers: { }
+[05/23 05:07:27    218s] eee: Trim Metal Layers: { }
+[05/23 05:07:27    218s] eee: Trim Metal Layers: { }
+[05/23 05:07:27    218s] eee: Trim Metal Layers: { }
+[05/23 05:07:27    218s] eee: Trim Metal Layers: { }
+[05/23 05:07:27    218s] eee: Trim Metal Layers: { }
+[05/23 05:07:27    218s] eee: Trim Metal Layers: { }
+[05/23 05:07:27    218s] eee: Trim Metal Layers: { }
+[05/23 05:07:27    218s] eee: Trim Metal Layers: { }
+[05/23 05:07:27    218s] eee: Trim Metal Layers: { }
+[05/23 05:07:27    218s] Summary of Active RC-Corners : 
+[05/23 05:07:27    218s]  
+[05/23 05:07:27    218s]  Analysis View: default_emulate_view
+[05/23 05:07:27    218s]     RC-Corner Name        : default_emulate_rc_corner
+[05/23 05:07:27    218s]     RC-Corner Index       : 0
+[05/23 05:07:27    218s]     RC-Corner Temperature : 125 Celsius
+[05/23 05:07:27    218s]     RC-Corner Cap Table   : ''
+[05/23 05:07:27    218s]     RC-Corner PostRoute Res Factor        : 1
+[05/23 05:07:27    218s]     RC-Corner PostRoute Cap Factor        : 1
+[05/23 05:07:27    218s]     RC-Corner PostRoute XCap Factor       : 1
+[05/23 05:07:27    218s] Closing parasitic data file '/tmp/ssv_tmpdir_204293_TrmsaH/gpu_204293_0Bcxzs.rcdb.d/gpu.rcdb.d': 88488 access done (mem: 2284.930M)
+[05/23 05:07:27    218s] set_analysis_view/update_rc_corner called to change MMMC setup. RC Corner setup information has remained the same. Therefore, parasitic data in the tool brought as per the previous MMMC setup is being maintained.
+[05/23 05:07:27    218s] <CMD> create_library_set -name slow_lib -timing {../LIB/slow_vdd1v0_basiccells.lib}
+[05/23 05:07:27    218s] <CMD> create_library_set -name fast_lib -timing {../LIB/fast_vdd1v0_basicCells.lib}
+[05/23 05:07:27    218s] <CMD> create_constraint_mode -name func_mode -sdc_files {gpu_signoff_constraints.sdc}
+[05/23 05:07:27    218s] <CMD> create_delay_corner -name slow_delay -rc_corner typical_rc -late_library_set slow_lib -early_library_set fast_lib
+[05/23 05:07:28    219s] <CMD> create_delay_corner -name fast_delay -rc_corner typical_rc -late_library_set fast_lib -early_library_set slow_lib
+[05/23 05:07:28    219s] <CMD> create_analysis_view -name setup_view -constraint_mode func_mode -delay_corner slow_delay
+[05/23 05:07:28    219s] <CMD> create_analysis_view -name hold_view  -constraint_mode func_mode -delay_corner fast_delay
+[05/23 05:07:31    220s] <CMD> set_analysis_view -setup {setup_view} -hold {hold_view}
+[05/23 05:07:31    220s] Number of views requested 1 are allowed with the current licenses... continuing with set_analysis_view.
+[05/23 05:07:32    221s] Extraction setup Started 
+[05/23 05:07:32    221s] eee: Trim Metal Layers: { }
+[05/23 05:07:32    221s] eee: Trim Metal Layers: { }
+[05/23 05:07:32    221s] eee: Trim Metal Layers: { }
+[05/23 05:07:32    221s] **WARN: (IMPEXT-3503):	The corner setup has changed in the MMMC flow. New RC corners 'typical_rc' have been added, therefore, no parasitic data exists for them. As a result, the parasitic data in the tool from the previous setup is deleted. Extract or restore the parasitic data for all the current corners by calling 'read_spef/read_rcdb'.
+[05/23 05:07:32    221s] eee: Trim Metal Layers: { }
+[05/23 05:07:32    221s] eee: Trim Metal Layers: { }
+[05/23 05:07:32    221s] eee: Trim Metal Layers: { }
+[05/23 05:07:32    221s] eee: Trim Metal Layers: { }
+[05/23 05:07:32    221s] eee: Trim Metal Layers: { }
+[05/23 05:07:32    221s] eee: Trim Metal Layers: { }
+[05/23 05:07:32    221s] eee: Trim Metal Layers: { }
+[05/23 05:07:32    221s] eee: Trim Metal Layers: { }
+[05/23 05:07:32    221s] eee: Trim Metal Layers: { }
+[05/23 05:07:32    221s] eee: Trim Metal Layers: { }
+[05/23 05:07:32    221s] eee: Trim Metal Layers: { }
+[05/23 05:07:32    221s] eee: Trim Metal Layers: { }
+[05/23 05:07:32    221s] Summary of Active RC-Corners : 
+[05/23 05:07:32    221s]  
+[05/23 05:07:32    221s]  Analysis View: setup_view
+[05/23 05:07:32    221s]     RC-Corner Name        : typical_rc
+[05/23 05:07:32    221s]     RC-Corner Index       : 0
+[05/23 05:07:32    221s]     RC-Corner Temperature : 25 Celsius
+[05/23 05:07:32    221s]     RC-Corner Cap Table   : ''
+[05/23 05:07:32    221s]     RC-Corner PostRoute Res Factor        : 1
+[05/23 05:07:32    221s]     RC-Corner PostRoute Cap Factor        : 1
+[05/23 05:07:32    221s]     RC-Corner PostRoute XCap Factor       : 1
+[05/23 05:07:32    221s]     RC-Corner Technology file: '../QRC_tech/gpdk045.tch'
+[05/23 05:07:32    221s]  
+[05/23 05:07:32    221s]  Analysis View: hold_view
+[05/23 05:07:32    221s]     RC-Corner Name        : typical_rc
+[05/23 05:07:32    221s]     RC-Corner Index       : 0
+[05/23 05:07:32    221s]     RC-Corner Temperature : 25 Celsius
+[05/23 05:07:32    221s]     RC-Corner Cap Table   : ''
+[05/23 05:07:32    221s]     RC-Corner PostRoute Res Factor        : 1
+[05/23 05:07:32    221s]     RC-Corner PostRoute Cap Factor        : 1
+[05/23 05:07:32    221s]     RC-Corner PostRoute XCap Factor       : 1
+[05/23 05:07:32    221s]     RC-Corner Technology file: '../QRC_tech/gpdk045.tch'
+[05/23 05:07:32    221s] **WARN: (IMPEXT-3494):	MMMC setup is changed by calling command set_analysis_view/update_rc_corner. Therefore, the existing parasitic data in the tool is deleted. Setting a new analysis view, updating the RC corner, changing extraction mode settings, or any other related setup changes will cause parasitics to be deleted. Read in the parasitics for each active corner again.
+[05/23 05:07:32    221s] Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+[05/23 05:07:32    221s] late library set: slow_lib
+[05/23 05:07:32    221s] early library set: fast_lib
+[05/23 05:07:32    221s] Completed consistency checks. Status: Successful
+[05/23 05:07:32    221s] Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+[05/23 05:07:32    221s] late library set: fast_lib
+[05/23 05:07:32    221s] early library set: slow_lib
+[05/23 05:07:32    221s] Completed consistency checks. Status: Successful
+[05/23 05:07:32    221s] Ending "SetAnalysisView" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1903.7M, current mem=1428.9M)
+[05/23 05:07:32    221s] Reading timing constraints file 'gpu_signoff_constraints.sdc' ...
+[05/23 05:07:32    221s] Current (total cpu=0:03:42, real=0:08:09, peak res=1947.4M, current mem=1736.3M)
+[05/23 05:07:32    221s] INFO (CTE): Constraints read successfully.
+[05/23 05:07:32    221s] Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1749.4M, current mem=1749.4M)
+[05/23 05:07:32    222s] Current (total cpu=0:03:42, real=0:08:09, peak res=1947.4M, current mem=1749.4M)
+[05/23 05:07:32    222s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[05/23 05:07:32    222s] 
+[05/23 05:07:32    222s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) Begin ...
+[05/23 05:07:32    222s] Summary for sequential cells identification: 
+[05/23 05:07:32    222s]   Identified SBFF number: 104
+[05/23 05:07:32    222s]   Identified MBFF number: 0
+[05/23 05:07:32    222s]   Identified SB Latch number: 0
+[05/23 05:07:32    222s]   Identified MB Latch number: 0
+[05/23 05:07:32    222s]   Not identified SBFF number: 16
+[05/23 05:07:32    222s]   Not identified MBFF number: 0
+[05/23 05:07:32    222s]   Not identified SB Latch number: 0
+[05/23 05:07:32    222s]   Not identified MB Latch number: 0
+[05/23 05:07:32    222s]   Number of sequential cells which are not FFs: 32
+[05/23 05:07:32    222s] Total number of combinational cells: 314
+[05/23 05:07:32    222s] Total number of sequential cells: 152
+[05/23 05:07:32    222s] Total number of tristate cells: 10
+[05/23 05:07:32    222s] Total number of level shifter cells: 0
+[05/23 05:07:32    222s] Total number of power gating cells: 0
+[05/23 05:07:32    222s] Total number of isolation cells: 0
+[05/23 05:07:32    222s] Total number of power switch cells: 0
+[05/23 05:07:32    222s] Total number of pulse generator cells: 0
+[05/23 05:07:32    222s] Total number of always on buffers: 0
+[05/23 05:07:32    222s] Total number of retention cells: 0
+[05/23 05:07:32    222s] Total number of physical cells: 0
+[05/23 05:07:32    222s] List of usable buffers: BUFX12 BUFX16 BUFX2 BUFX20 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX2 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+[05/23 05:07:32    222s] Total number of usable buffers: 16
+[05/23 05:07:32    222s] List of unusable buffers:
+[05/23 05:07:32    222s] Total number of unusable buffers: 0
+[05/23 05:07:32    222s] List of usable inverters: CLKINVX1 CLKINVX12 CLKINVX16 CLKINVX2 CLKINVX20 CLKINVX3 CLKINVX4 CLKINVX6 CLKINVX8 INVX1 INVX12 INVX16 INVX2 INVX20 INVX3 INVX4 INVX6 INVXL INVX8
+[05/23 05:07:32    222s] Total number of usable inverters: 19
+[05/23 05:07:32    222s] List of unusable inverters:
+[05/23 05:07:32    222s] Total number of unusable inverters: 0
+[05/23 05:07:32    222s] List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X4 DLY4X1
+[05/23 05:07:32    222s] Total number of identified usable delay cells: 8
+[05/23 05:07:32    222s] List of identified unusable delay cells:
+[05/23 05:07:32    222s] Total number of identified unusable delay cells: 0
+[05/23 05:07:32    222s] 
+[05/23 05:07:32    222s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) End ...
+[05/23 05:07:32    222s] 
+[05/23 05:07:32    222s] TimeStamp Deleting Cell Server Begin ...
+[05/23 05:07:32    222s] 
+[05/23 05:07:32    222s] TimeStamp Deleting Cell Server End ...
+[05/23 05:07:32    222s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1750.2M, current mem=1750.2M)
+[05/23 05:07:32    222s] 
+[05/23 05:07:32    222s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) Begin ...
+[05/23 05:07:32    222s] Summary for sequential cells identification: 
+[05/23 05:07:32    222s]   Identified SBFF number: 104
+[05/23 05:07:32    222s]   Identified MBFF number: 0
+[05/23 05:07:32    222s]   Identified SB Latch number: 0
+[05/23 05:07:32    222s]   Identified MB Latch number: 0
+[05/23 05:07:32    222s]   Not identified SBFF number: 16
+[05/23 05:07:32    222s]   Not identified MBFF number: 0
+[05/23 05:07:32    222s]   Not identified SB Latch number: 0
+[05/23 05:07:32    222s]   Not identified MB Latch number: 0
+[05/23 05:07:32    222s]   Number of sequential cells which are not FFs: 32
+[05/23 05:07:32    222s]  Visiting view : setup_view
+[05/23 05:07:32    222s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = 0
+[05/23 05:07:32    222s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = -1
+[05/23 05:07:32    222s]  Visiting view : hold_view
+[05/23 05:07:32    222s]    : PowerDomain = none : Weighted F : unweighted  = 5.30 (1.000) with rcCorner = 0
+[05/23 05:07:32    222s]    : PowerDomain = none : Weighted F : unweighted  = 5.30 (1.000) with rcCorner = -1
+[05/23 05:07:32    222s] TLC MultiMap info (StdDelay):
+[05/23 05:07:32    222s]   : fast_delay + fast_lib + 1 + typical_rc := 5.3ps
+[05/23 05:07:32    222s]   : slow_delay + slow_lib + 1 + no RcCorner := 20.1ps
+[05/23 05:07:32    222s]   : fast_delay + fast_lib + 1 + no RcCorner := 5.3ps
+[05/23 05:07:32    222s]   : slow_delay + slow_lib + 1 + typical_rc := 20.1ps
+[05/23 05:07:32    222s]  Setting StdDelay to: 20.1ps
+[05/23 05:07:32    222s] 
+[05/23 05:07:32    222s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) End ...
+[05/23 05:07:32    222s] 
+[05/23 05:07:32    222s] TimeStamp Deleting Cell Server Begin ...
+[05/23 05:07:32    222s] 
+[05/23 05:07:32    222s] TimeStamp Deleting Cell Server End ...
+[05/23 05:07:59    237s] <CMD> read_spef gpu_signoff_parasitics.spef
+[05/23 05:07:59    237s] Used active corner typical_rc for reading SPEF file as option '-rc_corner <cornerName>' is not specified in MMMC mode.
+[05/23 05:07:59    237s] read_spef Option :  gpu_signoff_parasitics.spef -noStarN 
+[05/23 05:07:59    237s] 
+[05/23 05:07:59    237s] SPEF files for RC Corner typical_rc:
+[05/23 05:07:59    237s] Top-level spef file 'gpu_signoff_parasitics.spef'.
+[05/23 05:07:59    237s] Start spef parsing (MEM=2060.39).
+[05/23 05:07:59    237s] Number of corners: 1
+[05/23 05:07:59    237s] Number of parallel threads processing the nets is: 1
+[05/23 05:07:59    237s] Maximum backlog used in parser: 50.
+[05/23 05:07:59    237s] Reading multiple SPEF files in parallel.
+[05/23 05:07:59    237s] RCDB /tmp/ssv_tmpdir_204293_TrmsaH/gpu_204293_pkYpTP.rcdb.d/gpu.rcdb.d Creation Started (CPU Time= 0:00:00.0  MEM= 2076.4M)
+[05/23 05:07:59    237s] Creating parasitic data file '/tmp/ssv_tmpdir_204293_TrmsaH/gpu_204293_pkYpTP.rcdb.d/gpu.rcdb.d' for storing RC.
+[05/23 05:08:00    239s] SPEF file gpu_signoff_parasitics.spef.
+[05/23 05:08:00    239s] Number of Resistors     : 277163
+[05/23 05:08:00    239s] Number of Ground Caps   : 277765
+[05/23 05:08:00    239s] Number of Coupling Caps : 5296
+[05/23 05:08:00    239s] 
+[05/23 05:08:00    239s] RCDB /tmp/ssv_tmpdir_204293_TrmsaH/gpu_204293_pkYpTP.rcdb.d/gpu.rcdb.d Creation Completed (CPU Time= 0:00:02.0  MEM= 2141.4M)
+[05/23 05:08:00    239s] End spef parsing (MEM=2109.41 CPU=0:00:02.1 REAL=0:00:01.0).
+[05/23 05:08:00    239s] Spef for RC Corner 'typical_rc' was previously specified. Dropping the previous specification.
+[05/23 05:08:00    239s] Lumped Parasitic Loading Started (total cpu=0:00:00.0, real=0:00:00.0, current mem=2101.406M)
+[05/23 05:08:00    239s] Opening parasitic data file '/tmp/ssv_tmpdir_204293_TrmsaH/gpu_204293_pkYpTP.rcdb.d/gpu.rcdb.d' for reading (mem: 2101.406M)
+[05/23 05:08:00    240s] Closing parasitic data file '/tmp/ssv_tmpdir_204293_TrmsaH/gpu_204293_pkYpTP.rcdb.d/gpu.rcdb.d': 0 access done (mem: 2101.406M)
+[05/23 05:08:00    240s] Lumped Parasitic Loading Completed (total cpu=0:00:00.5, real=0:00:00.0, current mem=2101.406M)
+[05/23 05:08:07    243s] <CMD> report_timing
+[05/23 05:08:07    243s] AAE_INFO: opIsDesignInPostRouteState() is 0
+[05/23 05:08:07    243s] AAE DB initialization (MEM=2114.95 CPU=0:00:00.0 REAL=0:00:00.0) 
+[05/23 05:08:07    243s] #################################################################################
+[05/23 05:08:07    243s] # Design Name: gpu
+[05/23 05:08:07    243s] # Design Mode: 90nm
+[05/23 05:08:07    243s] # Analysis Mode: MMMC OCV 
+[05/23 05:08:07    243s] # Parasitics Mode: SPEF/RCDB 
+[05/23 05:08:07    243s] # Signoff Settings: SI Off 
+[05/23 05:08:07    243s] #################################################################################
+[05/23 05:08:08    244s] Topological Sorting (REAL = 0:00:00.0, MEM = 2160.8M, InitMEM = 2160.8M)
+[05/23 05:08:08    244s] Start delay calculation (fullDC) (1 T). (MEM=2160.83)
+[05/23 05:08:08    244s] Start AAE Lib Loading. (MEM=2160.83)
+[05/23 05:08:08    244s] End AAE Lib Loading. (MEM=2179.91 CPU=0:00:00.0 Real=0:00:00.0)
+[05/23 05:08:08    244s] End AAE Lib Interpolated Model. (MEM=2179.91 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[05/23 05:08:08    244s] Opening parasitic data file '/tmp/ssv_tmpdir_204293_TrmsaH/gpu_204293_pkYpTP.rcdb.d/gpu.rcdb.d' for reading (mem: 2179.906M)
+[05/23 05:08:08    244s] eee: Trim Metal Layers: { }
+[05/23 05:08:08    244s] eee: Trim Metal Layers: { }
+[05/23 05:08:08    244s] eee: Trim Metal Layers: { }
+[05/23 05:08:08    244s] eee: Trim Metal Layers: { }
+[05/23 05:08:08    244s] RC Database In Completed (CPU Time= 0:00:00.0  Real Time=0:00:00.0  MEM= 2181.9M)
+[05/23 05:08:12    248s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[05/23 05:08:12    248s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[05/23 05:08:12    248s] End Timing Check Calculation. (CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[05/23 05:08:12    249s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[05/23 05:08:12    249s] End delay calculation. (MEM=2372.47 CPU=0:00:04.2 REAL=0:00:04.0)
+[05/23 05:08:12    249s] End delay calculation (fullDC). (MEM=2364.47 CPU=0:00:04.6 REAL=0:00:04.0)
+[05/23 05:08:12    249s] *** CDM Built up (cpu=0:00:05.3  real=0:00:05.0  mem= 2364.5M) ***
+[05/23 05:13:08    434s] invalid command name "ng"
+[05/23 05:13:20    442s] <CMD> set_eco_mode -fix_setup true -fix_hold true
+[05/23 05:13:20    442s] 
+[05/23 05:13:20    442s] Usage: set_eco_mode [-help] [-reset] [-add_port_as_needed {true|false}] [-honor_dont_touch {true|false}] [-honor_dont_use {true|false}]
+[05/23 05:13:20    442s]                     [-honor_fixed_net_wire {true|false}] [-honor_fixed_status {true|false}] [-honor_power_intent {true|false}] [-leq_check {true|false}]
+[05/23 05:13:20    442s]                     [-modify_only_layers <bottom-layer>:<top-layer>] [-prefix_name <prefix>] [-preserve_module_function {true|false}] [-refine_place {true|false}]
+[05/23 05:13:20    442s]                     [-si_effort <effort_level>] [-update_timing {true|false}] [{ -batch_mode {true|false} }] [{ -delay_calc_effort effort_level}]
+[05/23 05:13:20    442s] 
+[05/23 05:13:20    442s] **ERROR: (IMPTCM-48):	"-fix_setup" is not a legal option for command "set_eco_mode". Either the current option or an option prior to it is not specified correctly.
+
+[05/23 05:13:51    462s] <CMD> set_eco_mode -update_timing true
+[05/23 05:13:57    466s] invalid command name "fix_eco_timing"
+[05/23 05:14:30    488s] invalid command name "eco_fix_timing"
+[05/23 05:14:34    491s] invalid command name "fix_timing"
+[05/23 05:14:38    494s] No help is available for 'eco'.
+[05/23 05:14:38    494s]       You might have typed the command name incorrectly
+[05/23 05:14:38    494s]       (command names are case sensitive), or this is an
+[05/23 05:14:38    494s]       unknown or unsupported command.
+[05/23 05:14:38    494s] 
+[05/23 05:15:13    518s] <CMD> report_timing

@@ -1,0 +1,30 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.18-s099_1, built Tue Jul 18 13:03:50 PDT 2023
+Options:	-overwrite -init scripts/clock_opt.tcl -log log/clock_opt.log 
+Date:		Wed May 20 04:42:31 2026
+Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+OS:		Red Hat Enterprise Linux Server 7.9 (Maipo)
+
+License:
+		[04:42:31.389489] Configured Lic search path (21.01-s002): 5280@vlsi
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_189970_vlsi_user_77_7VRabI.
+
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+[INFO] Loading Pegasus 22.20 fill procedures
+**ERROR: (IMPSYT-6696):	Initfile (scripts/clock_opt.tcl) does not exist.
+innovus 1> exit
+
+*** Memory Usage v#1 (Current mem = 1013.379M, initial mem = 486.109M) ***
+*** Message Summary: 0 warning(s), 1 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:52.7, real=0:03:21, mem=1013.4M) ---
+

@@ -1,0 +1,54 @@
+[05/23 04:09:01      0s] 
+[05/23 04:09:01      0s] Cadence Tempus(TM) Timing Solution.
+[05/23 04:09:01      0s] Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/23 04:09:01      0s] 
+[05/23 04:09:01      0s] Version:	v22.11-s001_1, built Fri Sep 16 15:45:21 PDT 2022
+[05/23 04:09:01      0s] Options:	
+[05/23 04:09:01      0s] Date:		Sat May 23 04:09:01 2026
+[05/23 04:09:01      0s] Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+[05/23 04:09:01      0s] OS:		Red Hat Enterprise Linux Server release 7.9 (Maipo)
+[05/23 04:09:01      0s] 
+[05/23 04:09:01      0s] License:
+[05/23 04:09:01      0s] 		[04:09:01.389489] Configured Lic search path (21.01-s002): 5280@vlsi
+
+[05/23 04:09:01      0s] 		tpsxl	Tempus Timing Signoff Solution XL	22.1	checkout succeeded
+[05/23 04:09:01      0s] 		16 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[05/23 04:09:18     14s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Tempus Timing Solution v22.11-s001_1 (64bit) 09/16/2022 15:45 (Linux 3.10.0-693.el7.x86_64)
+[05/23 04:09:26     21s] @(#)CDS: NanoRoute 22.11-s001_1 NR220910-1931/22_11-UB (database version 18.20.592) {superthreading v2.19}
+[05/23 04:09:26     21s] @(#)CDS: AAE 22.11-e006 (64bit) 09/16/2022 (Linux 3.10.0-693.el7.x86_64)
+[05/23 04:09:26     21s] @(#)CDS: CTE 22.11-e010_1 () Sep  5 2022 07:16:46 ( )
+[05/23 04:09:26     21s] @(#)CDS: SYNTECH 22.11-e002_1 () Aug  2 2022 07:54:00 ( )
+[05/23 04:09:26     21s] @(#)CDS: CPE v22.11-e028
+[05/23 04:09:26     21s] @(#)CDS: OA 22.60-p076 Wed May 18 13:45:29 2022
+[05/23 04:09:26     21s] @(#)CDS: SGN 21.20-d001 (11-Feb-2022) (64 bit executable, TkQt5.9.1)
+[05/23 04:09:26     21s] @(#)CDS: RCDB 11.15.0
+[05/23 04:09:26     21s] @(#)CDS: STYLUS 22.10-p002_1 (09/01/2022 08:10 PDT)
+[05/23 04:09:26     21s] Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+[05/23 04:09:27     22s] **INFO: (TMPDIR-1001): The environment variable TMPDIR is not set.
+Create and set the environment variable TMPDIR to '/tmp/ssv_tmpdir_166859_vyPA3w'.
+environment variable TMPDIR is '/tmp/ssv_tmpdir_166859_vyPA3w'.
+[05/23 04:10:08     30s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib - *WARNING* '/home/user_77/cds.lib', Line 7: Skipping: '//UNDEFINE'.
+[05/23 04:10:08     30s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib -  gpdk045.
+[05/23 04:10:08     30s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib - 
+[05/23 04:10:08     30s] .
+[05/23 04:10:08     30s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib - Unable to open library analogLib at path /home/cadence/lnx/ssv_221/tools.lnx86/dfII/etc/cdslib/artist/analogLib: Invalid Lib Path..
+[05/23 04:11:09     42s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib - *WARNING* '/home/user_77/cds.lib', Line 7: Skipping: '//UNDEFINE'.
+[05/23 04:11:09     42s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib -  gpdk045.
+[05/23 04:11:09     42s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib - 
+[05/23 04:11:09     42s] .
+[05/23 04:11:09     42s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib - Unable to open library analogLib at path /home/cadence/lnx/ssv_221/tools.lnx86/dfII/etc/cdslib/artist/analogLib: Invalid Lib Path..
+[05/23 04:12:05     52s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib - *WARNING* '/home/user_77/cds.lib', Line 7: Skipping: '//UNDEFINE'.
+[05/23 04:12:05     52s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib -  gpdk045.
+[05/23 04:12:05     52s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib - 
+[05/23 04:12:05     52s] .
+[05/23 04:12:05     52s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/user_77/cds.lib - Unable to open library analogLib at path /home/cadence/lnx/ssv_221/tools.lnx86/dfII/etc/cdslib/artist/analogLib: Invalid Lib Path..
+[05/23 04:16:13     99s] <CMD> exit
+[05/23 04:16:14     99s] 
+[05/23 04:16:14     99s] *** Memory Usage v#1 (Current mem = 1260.164M, initial mem = 612.184M) ***
+[05/23 04:16:14     99s] 
+[05/23 04:16:14     99s] *** Summary of all messages that are not suppressed in this session:
+[05/23 04:16:14     99s] Severity  ID               Count  Summary                                  
+[05/23 04:16:14     99s] WARNING   IMPOAX-793          12  Problem in processing library definition...
+[05/23 04:16:14     99s] *** Message Summary: 12 warning(s), 0 error(s)
+[05/23 04:16:14     99s] 
+[05/23 04:16:14     99s] --- Ending "Tempus Timing Solution" (totcpu=0:01:39, real=0:07:13, mem=1260.2M) ---

@@ -1,0 +1,172 @@
+[05/21 02:59:09      0s] 
+[05/21 02:59:09      0s] Cadence Innovus(TM) Implementation System.
+[05/21 02:59:09      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/21 02:59:09      0s] 
+[05/21 02:59:09      0s] Version:	v21.18-s099_1, built Tue Jul 18 13:03:50 PDT 2023
+[05/21 02:59:09      0s] Options:	-overwrite -init scripts/init_design.tcl -log log/init_design.log 
+[05/21 02:59:09      0s] Date:		Thu May 21 02:59:09 2026
+[05/21 02:59:09      0s] Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+[05/21 02:59:09      0s] OS:		Red Hat Enterprise Linux Server 7.9 (Maipo)
+[05/21 02:59:09      0s] 
+[05/21 02:59:09      0s] License:
+[05/21 02:59:09      0s] 		[02:59:09.389577] Configured Lic search path (21.01-s002): 5280@vlsi
+
+[05/21 02:59:09      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[05/21 02:59:09      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[05/21 02:59:27     15s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.18-s099_1 (64bit) 07/18/2023 13:03 (Linux 3.10.0-693.el7.x86_64)
+[05/21 02:59:30     18s] @(#)CDS: NanoRoute 21.18-s099_1 NR230707-1955/21_18-UB (database version 18.20.605) {superthreading v2.17}
+[05/21 02:59:30     18s] @(#)CDS: AAE 21.18-s017 (64bit) 07/18/2023 (Linux 3.10.0-693.el7.x86_64)
+[05/21 02:59:30     18s] @(#)CDS: CTE 21.18-s022_1 () Jul 11 2023 23:10:24 ( )
+[05/21 02:59:30     18s] @(#)CDS: SYNTECH 21.18-s010_1 () Jul  5 2023 06:32:03 ( )
+[05/21 02:59:30     18s] @(#)CDS: CPE v21.18-s053
+[05/21 02:59:30     18s] @(#)CDS: IQuantus/TQuantus 21.1.1-s966 (64bit) Wed Mar 8 10:22:20 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+[05/21 02:59:30     18s] @(#)CDS: OA 22.60-p087 Thu Feb  9 09:35:26 2023
+[05/21 02:59:30     18s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[05/21 02:59:30     18s] @(#)CDS: RCDB 11.15.0
+[05/21 02:59:30     18s] @(#)CDS: STYLUS 21.12-s019_1 (12/20/2022 05:13 PST)
+[05/21 02:59:30     18s] @(#)CDS: SystemPlanner-21.18-10439 (21.18) (2023-03-01 15:40:03+0800)
+[05/21 02:59:30     18s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_19527_vlsi_user_77_d5SbLa.
+
+[05/21 02:59:30     18s] Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+[05/21 02:59:33     20s] 
+[05/21 02:59:33     20s] **INFO:  MMMC transition support version v31-84 
+[05/21 02:59:33     20s] 
+[05/21 02:59:33     20s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[05/21 02:59:33     20s] <CMD> suppressMessage ENCEXT-2799
+[05/21 02:59:33     20s] <CMD> getVersion
+[05/21 02:59:33     20s] <CMD> define_proc_arguments ViaFillQor -info {This procedure extracts Viafill details from innovus db} -define_args {
+		{-window "window coordinates" "" list optional}
+		{-window_size "window size in microns" "" string optional}
+	
+	}
+[05/21 02:59:34     20s] [INFO] Loading Pegasus 22.20 fill procedures
+[05/21 02:59:34     20s] <CMD> define_proc_arguments ProcessFills -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+[05/21 02:59:34     20s] <CMD> define_proc_arguments FillQor -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+[05/21 02:59:34     20s] <CMD> define_proc_arguments ProcessFills_fast -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+[05/21 02:59:34     20s] <CMD> define_proc_arguments FillQor_fast -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+[05/21 02:59:34     20s] <CMD> define_proc_arguments ProcessFills_fast_stampOnly -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+	
+}
+[05/21 02:59:34     20s] <CMD> define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+}
+[05/21 02:59:34     21s] Sourcing file "scripts/init_design.tcl" ...
+[05/21 02:59:34     21s] <CMD_INTERNAL> setUIVar rda_Input ui_settop 1
+[05/21 02:59:34     21s] <CMD_INTERNAL> setUIVar rda_Input ui_topcell gpu
+[05/21 02:59:34     21s] <CMD_INTERNAL> setUIVar rda_Input ui_netlist ./SYN/outputs/gpu_netlist.v
+[05/21 02:59:34     21s] <CMD_INTERNAL> setUIVar rda_Input ui_timelib,max /home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib
+[05/21 02:59:34     21s] <CMD_INTERNAL> setUIVar rda_Input ui_timelib,min /home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib
+[05/21 02:59:34     21s] <CMD_INTERNAL> setUIVar rda_Input ui_leffile {/home/user_77/backup_extract/my_project/project/LEF/gsclib045_tech.lef /home/user_77/backup_extract/my_project/project/LEF/gsclib045_macro.lef}
+[05/21 02:59:34     21s] <CMD_INTERNAL> setUIVar rda_Input ui_timingcon_file ./SYN/outputs/gpu_sdc.sdc
+[05/21 02:59:34     21s] <CMD_INTERNAL> setUIVar rda_Input ui_pwrnet VDD
+[05/21 02:59:34     21s] <CMD_INTERNAL> setUIVar rda_Input ui_gndnet VSS
+[05/21 02:59:34     21s] <CMD> init_design
+[05/21 02:59:34     21s] #% Begin Load MMMC data ... (date=05/21 02:59:34, mem=744.5M)
+[05/21 02:59:34     21s] #% End Load MMMC data ... (date=05/21 02:59:34, total cpu=0:00:00.0, real=0:00:00.0, peak res=745.6M, current mem=745.6M)
+[05/21 02:59:34     21s] 
+[05/21 02:59:34     21s] Loading LEF file /home/user_77/backup_extract/my_project/project/LEF/gsclib045_tech.lef ...
+[05/21 02:59:34     21s] 
+[05/21 02:59:34     21s] Loading LEF file /home/user_77/backup_extract/my_project/project/LEF/gsclib045_macro.lef ...
+[05/21 02:59:34     21s] Set DBUPerIGU to M2 pitch 400.
+[05/21 02:59:35     21s] **WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/21 02:59:35     21s] Type 'man IMPLF-200' for more detail.
+[05/21 02:59:35     21s] 
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[05/21 02:59:35     21s] Loading view definition file from input/mmmc.view
+[05/21 02:59:35     21s] Reading slow_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib' ...
+[05/21 02:59:35     22s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib)
+[05/21 02:59:35     22s] Read 480 cells in library 'slow_vdd1v0' 
+[05/21 02:59:35     22s] Reading fast_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib' ...
+[05/21 02:59:36     22s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib)
+[05/21 02:59:36     22s] Read 480 cells in library 'fast_vdd1v0' 
+[05/21 02:59:36     22s] Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+[05/21 02:59:36     22s] late library set: slow_lib
+[05/21 02:59:36     22s] early library set: fast_lib
+[05/21 02:59:36     22s] Completed consistency checks. Status: Successful
+[05/21 02:59:36     22s] Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+[05/21 02:59:36     22s] late library set: fast_lib
+[05/21 02:59:36     22s] early library set: slow_lib
+[05/21 02:59:36     22s] Completed consistency checks. Status: Successful
+[05/21 02:59:36     22s] Ending "PreSetAnalysisView" (total cpu=0:00:01.1, real=0:00:01.0, peak res=818.9M, current mem=766.4M)
+[05/21 02:59:36     22s] *** End library_loading (cpu=0.02min, real=0.02min, mem=22.9M, fe_cpu=0.38min, fe_real=0.45min, fe_mem=1033.8M) ***
+[05/21 02:59:36     22s] #% Begin Load netlist data ... (date=05/21 02:59:36, mem=766.4M)
+[05/21 02:59:36     22s] *** Begin netlist parsing (mem=1033.8M) ***
+[05/21 02:59:36     22s] Created 480 new cells from 2 timing libraries.
+[05/21 02:59:36     22s] Reading netlist ...
+[05/21 02:59:36     22s] Backslashed names will retain backslash and a trailing blank character.
+[05/21 02:59:36     22s] Reading verilog netlist './SYN/outputs/gpu_netlist.v'
+[05/21 02:59:36     22s] 
+[05/21 02:59:36     22s] *** Memory Usage v#1 (Current mem = 1036.820M, initial mem = 478.109M) ***
+[05/21 02:59:36     22s] *** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=1036.8M) ***
+[05/21 02:59:36     22s] #% End Load netlist data ... (date=05/21 02:59:36, total cpu=0:00:00.1, real=0:00:00.0, peak res=780.5M, current mem=780.5M)
+[05/21 02:59:36     22s] Set top cell to gpu.
+[05/21 02:59:36     22s] Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+[05/21 02:59:36     22s] late library set: slow_lib
+[05/21 02:59:36     22s] early library set: fast_lib
+[05/21 02:59:36     22s] Completed consistency checks. Status: Successful
+[05/21 02:59:36     22s] Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+[05/21 02:59:36     22s] late library set: fast_lib
+[05/21 02:59:36     22s] early library set: slow_lib
+[05/21 02:59:36     22s] Completed consistency checks. Status: Successful
+[05/21 02:59:36     22s] Hooked 960 DB cells to tlib cells.
+[05/21 02:59:36     22s] Ending "BindLib:" (total cpu=0:00:00.1, real=0:00:00.0, peak res=793.2M, current mem=793.2M)
+[05/21 02:59:36     22s] Starting recursive module instantiation check.
+[05/21 02:59:36     22s] No recursion found.
+[05/21 02:59:36     22s] Building hierarchical netlist for Cell gpu ...
+[05/21 02:59:36     23s] *** Netlist is unique.
+[05/21 02:59:36     23s] Setting Std. cell height to 3420 DBU (smallest netlist inst).
+[05/21 02:59:36     23s] ** info: there are 1055 modules.
+[05/21 02:59:36     23s] ** info: there are 12316 stdCell insts.
+[05/21 02:59:36     23s] 
+[05/21 02:59:36     23s] *** Memory Usage v#1 (Current mem = 1097.746M, initial mem = 478.109M) ***
+[05/21 02:59:36     23s] **WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/21 02:59:36     23s] Type 'man IMPFP-3961' for more detail.
+[05/21 02:59:36     23s] **WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/21 02:59:36     23s] Type 'man IMPFP-3961' for more detail.
+[05/21 02:59:36     23s] Start create_tracks
+[05/21 02:59:37     23s] Extraction setup Started 
+[05/21 02:59:37     23s] 
+[05/21 02:59:37     23s] Trim Metal Layers:
+[05/21 02:59:37     23s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[05/21 02:59:37     23s] Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+[05/21 02:59:37     23s] __QRC_SADV_USE_LE__ is set 0
+[05/21 02:59:37     23s] **ERROR: (IMPEXT-1211):	Extraction engine failed with the message: Failed to decrypt the file
+"../QRC_tech/gpdk045.tch".
+It contains binary characters after applying the decryption algorithm. If
+it were a valid encrypted file, it would not contain binary characters.
+.
+
+[05/21 02:59:37     23s] *** Memory Usage v#1 (Current mem = 1113.965M, initial mem = 478.109M) ***
+[05/21 02:59:37     23s] 
+[05/21 02:59:37     23s] *** Summary of all messages that are not suppressed in this session:
+[05/21 02:59:37     23s] Severity  ID               Count  Summary                                  
+[05/21 02:59:37     23s] WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[05/21 02:59:37     23s] WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+[05/21 02:59:37     23s] ERROR     IMPEXT-1211          1  Extraction engine failed with the messag...
+[05/21 02:59:37     23s] WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+[05/21 02:59:37     23s] *** Message Summary: 5 warning(s), 1 error(s)
+[05/21 02:59:37     23s] 
+[05/21 02:59:37     23s] --- Ending "Innovus" (totcpu=0:00:23.5, real=0:00:28.0, mem=1114.0M) ---

@@ -1,0 +1,1691 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.18-s099_1, built Tue Jul 18 13:03:50 PDT 2023
+Options:	-overwrite -init scripts/place_opt.tcl -log log/place_opt.log 
+Date:		Thu May 21 02:25:37 2026
+Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+OS:		Red Hat Enterprise Linux Server 7.9 (Maipo)
+
+License:
+		[02:25:37.389529] Configured Lic search path (21.01-s002): 5280@vlsi
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_256577_vlsi_user_77_brBt2a.
+
+The soft stacksize limit is either up to the hard limit or larger than 0.2% of RAM. No change is needed.
+
+**INFO:  MMMC transition support version v31-84 
+
+[INFO] Loading Pegasus 22.20 fill procedures
+Sourcing file "scripts/place_opt.tcl" ...
+RM-info: Starting time 02:26:02_21/05/26
+RM-info: Starting script.. scripts/soce_setup.tcl
+RM-info: Completed script.. scripts/soce_setup.tcl
+#% Begin load design ... (date=05/21 02:26:02, mem=744.9M)
+Set Default Input Pin Transition as 0.1 ps.
+Loading design 'gpu' saved by 'Innovus' '21.18-s099_1' on 'Thu May 21 02:25:34 2026'.
+% Begin Load MMMC data ... (date=05/21 02:26:02, mem=747.1M)
+% End Load MMMC data ... (date=05/21 02:26:02, total cpu=0:00:00.0, real=0:00:00.0, peak res=748.0M, current mem=748.0M)
+
+Loading LEF file /home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/libs/lef/gsclib045_tech.lef ...
+
+Loading LEF file /home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/libs/lef/gsclib045_macro.lef ...
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/viewDefinition.tcl
+Reading slow_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/slow_vdd1v0_basiccells.lib)
+Read 480 cells in library 'slow_vdd1v0' 
+Reading fast_lib timing library '/home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_77/backup_extract/my_project/project/LIB/fast_vdd1v0_basicCells.lib)
+Read 480 cells in library 'fast_vdd1v0' 
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+*** End library_loading (cpu=0.02min, real=0.02min, mem=16.9M, fe_cpu=0.38min, fe_real=0.45min, fe_mem=2099.3M) ***
+% Begin Load netlist data ... (date=05/21 02:26:04, mem=771.4M)
+*** Begin netlist parsing (mem=2099.3M) ***
+Created 480 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/gpu.v.bin'
+
+*** Memory Usage v#1 (Current mem = 2106.309M, initial mem = 716.109M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=2106.3M) ***
+% End Load netlist data ... (date=05/21 02:26:04, total cpu=0:00:00.1, real=0:00:00.0, peak res=783.9M, current mem=783.9M)
+Set top cell to gpu.
+Starting consistency checks on late and early library sets of delay corner 'slow_delay'
+late library set: slow_lib
+early library set: fast_lib
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'fast_delay'
+late library set: fast_lib
+early library set: slow_lib
+Completed consistency checks. Status: Successful
+Hooked 960 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell gpu ...
+*** Netlist is unique.
+** info: there are 1055 modules.
+** info: there are 12316 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 2139.223M, initial mem = 716.109M) ***
+*info: set bottom ioPad orient R0
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Set Default Input Pin Transition as 0.1 ps.
+Set Shrink Factor to 0.90000
+Loading preference file /home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/gui.pref.tcl ...
+Change floorplan default-technical-site to 'CoreSite'.
+*Info: initialize multi-corner CTS.
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+Reading floorplan file - /home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/gpu.fp.gz (mem = 2401.9M).
+% Begin Load floorplan data ... (date=05/21 02:26:05, mem=1085.6M)
+*info: reset 12774 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 482000 474620)
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+ ... processed partition successfully.
+Reading binary special route file /home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/gpu.fp.spr.gz (Created by Innovus v21.18-s099_1 on Thu May 21 02:25:32 2026, version: 1)
+Convert 0 swires and 0 svias from compressed groups
+22 swires and 52 svias were compressed
+22 swires and 52 svias were decompressed from small or sparse groups
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1086.5M, current mem=1086.5M)
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Delete all existing relative floorplan constraints.
+% End Load floorplan data ... (date=05/21 02:26:06, total cpu=0:00:00.1, real=0:00:01.0, peak res=1087.4M, current mem=1087.4M)
+Reading congestion map file /home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/gpu.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=05/21 02:26:06, mem=1088.2M)
+% End Load SymbolTable ... (date=05/21 02:26:06, total cpu=0:00:00.1, real=0:00:00.0, peak res=1090.7M, current mem=1090.7M)
+Loading place ...
+% Begin Load placement data ... (date=05/21 02:26:06, mem=1090.7M)
+Reading placement file - /home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/gpu.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v21.18-s099_1 on Thu May 21 02:25:34 2026, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Checked 2 GNC rules.
+*** applyConnectGlobalNets disabled.
+*** Completed restorePlace (cpu=0:00:00.0 real=0:00:00.0 mem=2532.0M) ***
+Total net length = 1.251e+01 (6.256e+00 6.256e+00) (ext = 0.000e+00)
+% End Load placement data ... (date=05/21 02:26:06, total cpu=0:00:00.0, real=0:00:00.0, peak res=1091.1M, current mem=1091.0M)
+Reading PG file /home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/gpu.pg.gz, version#2, (Created by Innovus v21.18-s099_1 on       Thu May 21 02:25:33 2026)
+*** Completed restorePGFile (cpu=0:00:00.0 real=0:00:01.0 mem=2528.0M) ***
+% Begin Load routing data ... (date=05/21 02:26:07, mem=1091.4M)
+Reading routing file - /home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/gpu.route.gz.
+Reading Innovus routing data (Created by Innovus v21.18-s099_1 on Thu May 21 02:25:34 2026 Format: 20.1) ...
+*** Total 12698 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.1 real=0:00:00.0 mem=2529.0M) ***
+% End Load routing data ... (date=05/21 02:26:07, total cpu=0:00:00.1, real=0:00:00.0, peak res=1092.7M, current mem=1091.7M)
+Loading Drc markers ...
+... 8 markers are loaded ...
+... 0 geometry drc markers are loaded ...
+... 0 antenna drc markers are loaded ...
+TAT_INFO: restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+Reading property file /home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/gpu.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=2406.0M) ***
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Capacitance Table File /home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl ...
+Cap table was created using Encounter 10.10-b056_1.
+Process name: cln28hpl_1p10m+alrdl_5x2yu2yz_typical.
+Set Shrink Factor to 0.90000
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: setup_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+ 
+ Analysis View: hold_view
+    RC-Corner Name        : typical_rc
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/libs/mmmc/typical_rc/gpdk045.tch'
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Start generating vias ..
+#Skip building auto via since it is not turned on.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Via generation completed.
+% Begin Load power constraints ... (date=05/21 02:26:08, mem=1102.9M)
+source /home/user_77/backup_extract/my_project/project/make_flow_latest/DESIGN/init_design.inn.dat/gpu_power_constraints.tcl
+% End Load power constraints ... (date=05/21 02:26:08, total cpu=0:00:00.1, real=0:00:00.0, peak res=1102.9M, current mem=1102.9M)
+% Begin load AAE data ... (date=05/21 02:26:08, mem=1147.6M)
+% End load AAE data ... (date=05/21 02:26:08, total cpu=0:00:00.0, real=0:00:00.0, peak res=1147.6M, current mem=1147.6M)
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+#% End load design ... (date=05/21 02:26:08, total cpu=0:00:04.3, real=0:00:06.0, peak res=1178.1M, current mem=1147.3M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+*** Message Summary: 8 warning(s), 0 error(s)
+
+Reading timing constraints file './SYN/outputs/gpu_sdc.sdc' ...
+Current (total cpu=0:00:25.7, real=0:00:32.0, peak res=1178.1M, current mem=1138.6M)
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ./SYN/outputs/gpu_sdc.sdc, Line 9).
+
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ./SYN/outputs/gpu_sdc.sdc, Line 10).
+
+gpu
+INFO (CTE): Reading of timing constraints file ./SYN/outputs/gpu_sdc.sdc completed, with 2 WARNING
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1152.5M, current mem=1152.5M)
+Current (total cpu=0:00:25.8, real=0:00:32.0, peak res=1178.1M, current mem=1152.5M)
+##  Process: 45            (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 45nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'medium'.
+Setting releaseMultiCpuLicenseMode to false.
+**WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMaxRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -topRoutingLayer' instead.
+**WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+#WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+**WARN: (IMPSYT-21024):	Command "setMaxRouteLayer" has become obsolete. It will be removed in the next release and is replaced by "setDesignMode -topRoutingLayer". The obsolete command still works in this release, but to avoid this warning and to ensure compatibility with future releases, update your scripts.
+Creating clock tree spec for modes (timing configs): func_mode
+extract_clock_generator_skew_groups=true: create_ccopt_clock_tree_spec will generate skew groups with a name prefix of "_clock_gen" to balance clock generator connected flops with the clock generator they drive.
+Reset timing graph...
+Ignoring AAE DB Resetting ...
+Reset timing graph done.
+Ignoring AAE DB Resetting ...
+Multithreaded Timing Analysis is initialized with 8 threads
+
+Analyzing clock structure...
+Analyzing clock structure done.
+Reset timing graph...
+Ignoring AAE DB Resetting ...
+Reset timing graph done.
+Wrote: data/ccopt.ctstch
+Extracting original clock gating for clk...
+  clock_tree clk contains 1827 sinks and 0 clock gates.
+Extracting original clock gating for clk done.
+The skew group clk/func_mode was created. It contains 1827 sinks and 1 sources.
+Checking clock tree convergence...
+Checking clock tree convergence done.
+INFO: You have enabled new technology 'legacy_fects_final_release' that has been internally qualified at Cadence but has only limited customer testing. You are encouraged to work with Cadence directly to qualify your usage and make sure it meets your needs before deploying it widely. Final production licensing of this feature is subject to change.
+Effort level <high> specified for reg2reg path_group
+Effort level <high> specified for in2reg path_group
+Effort level <high> specified for reg2out path_group
+Effort level <high> specified for in2out path_group
+**WARN: (IMPOPT-3602):	The specified path group name clkgate is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Slack adjustment of 0 applied on clkgate path_group
+Slack adjustment of 0 applied on in2reg path_group
+Slack adjustment of 0 applied on reg2out path_group
+TRACKS Y 1330 DO 499 STEP 950 LAYER  Metal11 ;   
+TRACKS X 1200 DO 481 STEP 1000 LAYER  Metal10 ;   
+TRACKS Y 190 DO 1249 STEP 380 LAYER  Metal9 ;   
+TRACKS X 200 DO 1205 STEP 400 LAYER  Metal8 ;   
+TRACKS Y 190 DO 1249 STEP 380 LAYER  Metal7 ;   
+TRACKS X 200 DO 1205 STEP 400 LAYER  Metal6 ;   
+TRACKS Y 190 DO 1249 STEP 380 LAYER  Metal5 ;   
+TRACKS X 200 DO 1205 STEP 400 LAYER  Metal4 ;   
+TRACKS Y 190 DO 1249 STEP 380 LAYER  Metal3 ;   
+TRACKS X 200 DO 1205 STEP 400 LAYER  Metal2 ;   
+TRACKS Y 190 DO 1249 STEP 380 LAYER  Metal1 ;   
+**INFO: User settings:
+setDesignMode -process                         45
+setDesignMode -topRoutingLayer                 Metal11
+setExtractRCMode -coupling_c_th                0.1
+setExtractRCMode -engine                       preRoute
+setExtractRCMode -relative_c_th                1
+setExtractRCMode -total_c_th                   0
+setDelayCalMode -engine                        aae
+setOptMode -fixFanoutLoad                      true
+setOptMode -fixGlitch                          true
+setOptMode -maxLength                          400
+setOptMode -simplifyNetlist                    false
+setOptMode -usefulSkew                         false
+setOptMode -usefulSkewPreCTS                   false
+setPlaceMode -place_global_clock_gate_aware    true
+setPlaceMode -place_global_cong_effort         high
+setPlaceMode -place_global_ignore_scan         true
+setPlaceMode -place_global_ignore_spare        true
+setPlaceMode -place_global_max_density         0.7
+setPlaceMode -place_global_module_aware_spare  false
+setPlaceMode -place_global_place_io_pins       false
+setPlaceMode -place_global_reorder_scan        true
+setPlaceMode -place_global_uniform_density     true
+setPlaceMode -place_opt_run_global_place       full
+setPlaceMode -softGuide                        true
+setAnalysisMode -analysisType                  onChipVariation
+setAnalysisMode -cppr                          both
+setAnalysisMode -timeBorrowing                 false
+setRouteMode -earlyGlobalMaxRouteLayer         11
+
+*** place_opt_design #1 [begin] : totSession cpu/real = 0:00:27.0/0:00:29.8 (0.9), mem = 3746.0M
+No user sequential activity specified, applying default sequential activity of "0.2" for Dynamic Power reporting.
+'set_default_switching_activity' finished successfully.
+*** Starting GigaPlace ***
+#optDebug: fT-E <X 2 3 1 0>
+*** GlobalPlace #1 [begin] (place_opt_design #1) : totSession cpu/real = 0:00:27.3/0:00:30.1 (0.9), mem = 4756.8M
+AAE_INFO: opIsDesignInPostRouteState() is 0
+AAE DB initialization (MEM=4783.73 CPU=0:00:00.0 REAL=0:00:00.0) 
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: gpu
+# Design Mode: 45nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Start delay calculation (fullDC) (8 T). (MEM=4805.09)
+Total number of fetched objects 12696
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+Total number of fetched objects 12696
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+End delay calculation. (MEM=5424.39 CPU=0:00:01.8 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=5265 CPU=0:00:02.4 REAL=0:00:01.0)
+*** Start deleteBufferTree ***
+Info: Detect buffers to remove automatically.
+Analyzing netlist ...
+Updating netlist
+
+*summary: 236 instances (buffers/inverters) removed
+*** Finish deleteBufferTree (0:00:00.7) ***
+Deleted 0 physical inst  (cell - / prefix -).
+Did not delete 1750 physical insts as they were marked preplaced.
+INFO: #ExclusiveGroups=0
+INFO: There are no Exclusive Groups.
+No user-set net weight.
+Net fanout histogram:
+2		: 7358 (59.0%) nets
+3		: 1780 (14.3%) nets
+4     -	14	: 3129 (25.1%) nets
+15    -	39	: 186 (1.5%) nets
+40    -	79	: 8 (0.1%) nets
+80    -	159	: 0 (0.0%) nets
+160   -	319	: 2 (0.0%) nets
+320   -	639	: 0 (0.0%) nets
+640   -	1279	: 0 (0.0%) nets
+1280  -	2559	: 1 (0.0%) nets
+2560  -	5119	: 0 (0.0%) nets
+5120+		: 0 (0.0%) nets
+**WARN: (IMPSP-196):	User sets both -place_global_uniform_density and -place_global_initial_padding_level options. Overriding -place_global_initial_padding_level to 5.
+Options: timingDriven clkGateAware ignoreScan softGuide ignoreSpare pinGuide congEffort=high gpeffort=medium 
+**WARN: (IMPSP-9042):	Scan chains were not defined, -place_global_ignore_scan option will be ignored.
+Define the scan chains before using this option.
+Type 'man IMPSP-9042' for more detail.
+#std cell=13838 (1750 fixed + 12088 movable) #buf cell=0 #inv cell=837 #block=0 (0 floating + 0 preplaced)
+#ioInst=0 #net=12464 #term=46240 #term/net=3.71, #fixedIo=0, #floatIo=0, #fixedPin=183, #floatPin=0
+stdCell: 13838 single + 0 double + 0 multi
+Total standard cell length = 17.4566 (mm), area = 0.0299 (mm^2)
+Average module density = 0.628.
+Density for the design = 0.628.
+       = stdcell_area 83783 sites (28654 um^2) / alloc_area 133375 sites (45614 um^2).
+Pin Density = 0.3295.
+            = total # of pins 46240 / total area 140335.
+Enabling multi-CPU acceleration with 8 CPU(s) for placement
+=== lastAutoLevel = 8 
+Clock gating cells determined by native netlist tracing.
+Iteration  1: Total net bbox = 5.345e+04 (3.24e+04 2.11e+04)
+              Est.  stn bbox = 5.722e+04 (3.47e+04 2.25e+04)
+              cpu = 0:00:00.1 real = 0:00:00.0 mem = 6124.5M
+Iteration  2: Total net bbox = 5.345e+04 (3.24e+04 2.11e+04)
+              Est.  stn bbox = 5.722e+04 (3.47e+04 2.25e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 6124.5M
+*** Finished SKP initialization (cpu=0:00:04.5, real=0:00:02.0)***
+Iteration  3: Total net bbox = 4.862e+04 (2.75e+04 2.12e+04)
+              Est.  stn bbox = 5.615e+04 (3.15e+04 2.47e+04)
+              cpu = 0:00:16.5 real = 0:00:05.0 mem = 11588.5M
+Iteration  4: Total net bbox = 1.406e+05 (8.47e+04 5.59e+04)
+              Est.  stn bbox = 1.738e+05 (1.07e+05 6.67e+04)
+              cpu = 0:00:30.4 real = 0:00:06.0 mem = 11616.2M
+Iteration  5: Total net bbox = 1.406e+05 (8.47e+04 5.59e+04)
+              Est.  stn bbox = 1.738e+05 (1.07e+05 6.67e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 11616.2M
+Iteration  6: Total net bbox = 1.714e+05 (9.77e+04 7.37e+04)
+              Est.  stn bbox = 2.106e+05 (1.22e+05 8.81e+04)
+              cpu = 0:00:17.0 real = 0:00:03.0 mem = 12598.2M
+
+Iteration  7: Total net bbox = 1.732e+05 (9.90e+04 7.41e+04)
+              Est.  stn bbox = 2.124e+05 (1.24e+05 8.86e+04)
+              cpu = 0:00:00.8 real = 0:00:00.0 mem = 10564.2M
+Iteration  8: Total net bbox = 1.732e+05 (9.90e+04 7.41e+04)
+              Est.  stn bbox = 2.124e+05 (1.24e+05 8.86e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 10564.2M
+Iteration  9: Total net bbox = 1.870e+05 (1.07e+05 8.02e+04)
+              Est.  stn bbox = 2.294e+05 (1.34e+05 9.58e+04)
+              cpu = 0:00:15.5 real = 0:00:04.0 mem = 10559.2M
+Iteration 10: Total net bbox = 1.870e+05 (1.07e+05 8.02e+04)
+              Est.  stn bbox = 2.294e+05 (1.34e+05 9.58e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 10559.2M
+Iteration 11: Total net bbox = 1.861e+05 (1.07e+05 7.92e+04)
+              Est.  stn bbox = 2.292e+05 (1.34e+05 9.50e+04)
+              cpu = 0:00:11.6 real = 0:00:03.0 mem = 10559.2M
+Iteration 12: Total net bbox = 1.861e+05 (1.07e+05 7.92e+04)
+              Est.  stn bbox = 2.292e+05 (1.34e+05 9.50e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 10559.2M
+Iteration 13: Total net bbox = 1.824e+05 (1.01e+05 8.11e+04)
+              Est.  stn bbox = 2.226e+05 (1.26e+05 9.64e+04)
+              cpu = 0:00:41.4 real = 0:00:08.0 mem = 10562.3M
+Iteration 14: Total net bbox = 1.824e+05 (1.01e+05 8.11e+04)
+              Est.  stn bbox = 2.226e+05 (1.26e+05 9.64e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 10562.3M
+Finished Global Placement (cpu=0:02:14, real=0:00:31.0, mem=10562.3M)
+Keep Tdgp Graph and DB for later use
+Info: 0 clock gating cells identified, 0 (on average) moved 0/7
+**WARN: (IMPSP-9025):	No scan chain specified/traced.
+Type 'man IMPSP-9025' for more detail.
+*** Starting refinePlace (0:02:47 mem=11578.4M) ***
+Total net bbox length = 1.824e+05 (1.013e+05 8.107e+04) (ext = 1.386e+04)
+Move report: Detail placement moves 12088 insts, mean move: 0.49 um, max move: 11.90 um 
+	Max move on inst (g97907): (134.79, 52.83) --> (124.60, 51.11)
+	Runtime: CPU: 0:00:02.7 REAL: 0:00:02.0 MEM: 12600.0MB
+Summary Report:
+Instances move: 12088 (out of 12088 movable)
+Instances flipped: 0
+Mean displacement: 0.49 um
+Max displacement: 11.90 um (Instance: g97907) (134.79, 52.8255) -> (124.6, 51.11)
+	Length: 3 sites, height: 1 rows, site name: CoreSite, cell type: NOR2X1
+Total net bbox length = 1.827e+05 (1.015e+05 8.119e+04) (ext = 1.388e+04)
+Runtime: CPU: 0:00:02.7 REAL: 0:00:02.0 MEM: 12600.0MB
+*** Finished refinePlace (0:02:50 mem=12600.0M) ***
+*** Finished Initial Placement (cpu=0:02:17, real=0:00:33.0, mem=12587.0M) ***
+
+*** Start incrementalPlace ***
+No Views given, use default active views for adaptive view pruning
+SKP will enable view:
+  setup_view
+[NR-eGR] Num Prerouted Nets = 0  Num Prerouted Wires = 0
+[NR-eGR] Read 12464 nets ( ignored 0 )
+[NR-eGR] There are 1 clock nets ( 0 with NDR ).
+[NR-eGR] Layer group 1: route 12464 net(s) in layer range [2, 11]
+[NR-eGR] Early Global Route overflow of layer group 1: 0.00% H + 0.00% V. EstWL: 2.091980e+05um
+[NR-eGR] Overflow after Early Global Route 0.00% H + 0.00% V
+Early Global Route congestion estimation runtime: 0.40 seconds, mem = 12594.2M
+Local HotSpot Analysis: normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+Skipped repairing congestion.
+[NR-eGR]                  Length (um)    Vias 
+[NR-eGR] -------------------------------------
+[NR-eGR]  Metal1   (1H)             0   46057 
+[NR-eGR]  Metal2   (2V)         67616   66436 
+[NR-eGR]  Metal3   (3H)         87810    7847 
+[NR-eGR]  Metal4   (4V)         33254    3340 
+[NR-eGR]  Metal5   (5H)         26350     385 
+[NR-eGR]  Metal6   (6V)          3865     111 
+[NR-eGR]  Metal7   (7H)          2259      17 
+[NR-eGR]  Metal8   (8V)           273       0 
+[NR-eGR]  Metal9   (9H)             0       0 
+[NR-eGR]  Metal10  (10V)            0       0 
+[NR-eGR]  Metal11  (11H)            0       0 
+[NR-eGR] -------------------------------------
+[NR-eGR]           Total       221425  124193 
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total half perimeter of net bounding box: 182691um
+[NR-eGR] Total length: 221425um, number of vias: 124193
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total eGR-routed clock nets wire length: 6186um, number of vias: 5139
+[NR-eGR] --------------------------------------------------------------------------
+Early Global Route wiring runtime: 0.15 seconds, mem = 12609.2M
+0 delay mode for cte disabled.
+
+*** Finished incrementalPlace (cpu=0:00:01.7, real=0:00:00.0)***
+***** Total cpu  0:2:24
+***** Total real time  0:0:37
+Tdgp not successfully inited but do clear! skip clearing
+**placeDesign ... cpu = 0: 2:24, real = 0: 0:37, mem = 10290.1M **
+innovus 1> *** GlobalPlace #1 [finish] (place_opt_design #1) : cpu/real = 0:02:24.2/0:00:37.3 (3.9), totSession cpu/real = 0:02:51.5/0:01:07.3 (2.5), mem = 10290.1M
+Enable CTE adjustment.
+**optDesign ... cpu = 0:00:00, real = 0:00:00, mem = 1484.2M, totSessionCpu=0:02:52 **
+GigaOpt running with 8 threads.
+*** InitOpt #1 [begin] (place_opt_design #1) : totSession cpu/real = 0:02:51.5/0:01:07.4 (2.5), mem = 10290.1M
+**INFO: setDesignMode -flowEffort standard -> setting 'setOptMode -allEndPoints true' for the duration of this command.
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+AAE DB initialization (MEM=10298.2 CPU=0:00:00.0 REAL=0:00:00.0) 
+Setting timing_disable_library_data_to_data_checks to 'true'.
+Setting timing_disable_user_data_to_data_checks to 'true'.
+**optDesign ... cpu = 0:00:02, real = 0:00:02, mem = 1496.1M, totSessionCpu=0:02:53 **
+*** optDesign -preCTS ***
+DRC Margin: user margin 0.0; extra margin 0.2
+Setup Target Slack: user slack 0; extra slack 0.0
+Hold Target Slack: user slack 0
+**WARN: (IMPOPT-3195):	Analysis mode has changed.
+Type 'man IMPOPT-3195' for more detail.
+Multi-VT timing optimization disabled based on library information.
+[NR-eGR] Started Early Global Route kernel ( Curr Mem: 10298.17 MB )
+[NR-eGR] Num Prerouted Nets = 0  Num Prerouted Wires = 0
+[NR-eGR] Read 12464 nets ( ignored 0 )
+[NR-eGR] There are 1 clock nets ( 0 with NDR ).
+[NR-eGR] Layer group 1: route 12464 net(s) in layer range [2, 11]
+[NR-eGR] Early Global Route overflow of layer group 1: 0.00% H + 0.00% V. EstWL: 2.104822e+05um
+[NR-eGR] Overflow after Early Global Route 0.00% H + 0.00% V
+[NR-eGR]                  Length (um)    Vias 
+[NR-eGR] -------------------------------------
+[NR-eGR]  Metal1   (1H)             0   46057 
+[NR-eGR]  Metal2   (2V)         67763   66442 
+[NR-eGR]  Metal3   (3H)         88006    7951 
+[NR-eGR]  Metal4   (4V)         33329    3508 
+[NR-eGR]  Metal5   (5H)         27368     429 
+[NR-eGR]  Metal6   (6V)          3760     111 
+[NR-eGR]  Metal7   (7H)          2138      10 
+[NR-eGR]  Metal8   (8V)           385       0 
+[NR-eGR]  Metal9   (9H)             0       0 
+[NR-eGR]  Metal10  (10V)            0       0 
+[NR-eGR]  Metal11  (11H)            0       0 
+[NR-eGR] -------------------------------------
+[NR-eGR]           Total       222749  124508 
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total half perimeter of net bounding box: 182691um
+[NR-eGR] Total length: 222749um, number of vias: 124508
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total eGR-routed clock nets wire length: 6493um, number of vias: 5147
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Finished Early Global Route kernel ( CPU: 1.70 sec, Real: 0.58 sec, Curr Mem: 10324.34 MB )
+Extraction called for design 'gpu' of instances=13838 and nets=12546 using extraction engine 'preRoute' .
+PreRoute RC Extraction called for design gpu.
+RC Extraction called in multi-corner(1) mode.
+RCMode: PreRoute
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 0.90000
+PreRoute extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+Using capacitance table file ...
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+PreRoute RC Extraction DONE (CPU Time: 0:00:00.6  Real Time: 0:00:00.0  MEM: 10317.340M)
+Starting delay calculation for Setup views
+AAE_INFO: opIsDesignInPostRouteState() is 0
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: gpu
+# Design Mode: 45nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Start delay calculation (fullDC) (8 T). (MEM=10417.6)
+Total number of fetched objects 12468
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+Total number of fetched objects 12468
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+End delay calculation. (MEM=10966.2 CPU=0:00:02.2 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=10806.8 CPU=0:00:03.0 REAL=0:00:00.0)
+*** Done Building Timing Graph (cpu=0:00:04.8 real=0:00:02.0 totSessionCpu=0:03:01 mem=10814.8M)
+
+------------------------------------------------------------------
+             Initial Summary
+------------------------------------------------------------------
+
+Setup views included:
+ setup_view 
+
++--------------------+---------+
+|     Setup mode     |   all   |
++--------------------+---------+
+|           WNS (ns):| -7.092  |
+|           TNS (ns):| -7323.1 |
+|    Violating Paths:|  1752   |
+|          All Paths:|  1830   |
++--------------------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |      0 (0)       |   0.000    |      0 (0)       |
+|   max_tran     |   1942 (14729)   |   -5.311   |   1942 (14729)   |
+|   max_fanout   |     95 (95)      |    -197    |     96 (96)      |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 62.818%
+------------------------------------------------------------------
+**optDesign ... cpu = 0:00:10, real = 0:00:06, mem = 1748.1M, totSessionCpu=0:03:02 **
+*** InitOpt #1 [finish] (place_opt_design #1) : cpu/real = 0:00:10.4/0:00:05.6 (1.9), totSession cpu/real = 0:03:02.0/0:01:12.9 (2.5), mem = 10599.8M
+** INFO : this run is activating medium effort placeOptDesign flow
+*** Starting optimizing excluded clock nets MEM= 10567.8M) ***
+*info: No excluded clock nets to be optimized.
+*** Finished optimizing excluded clock nets (CPU Time= 0:00:00.0  MEM= 10567.8M) ***
+GigaOpt Checkpoint: Internal congRefineRouteType -preCTS -congThreshold 0.001 -rescheduleForCongestion -numThreads 8 -aggressiveCongestionMode  -resetVeryShortNets -resetShortNets -useSpineBased -rescheduleForAdherence 
+Begin: GigaOpt Route Type Constraints Refinement
+*** CongRefineRouteType #1 [begin] (place_opt_design #1) : totSession cpu/real = 0:03:02.3/0:01:13.1 (2.5), mem = 10567.8M
+Updated routing constraints on 0 nets.
+Bottom Preferred Layer:
+    None
+Via Pillar Rule:
+    None
+*** CongRefineRouteType #1 [finish] (place_opt_design #1) : cpu/real = 0:00:00.3/0:00:00.3 (1.1), totSession cpu/real = 0:03:02.6/0:01:13.4 (2.5), mem = 10764.7M
+End: GigaOpt Route Type Constraints Refinement
+The useful skew maximum allowed delay is: 0.3
+Activate 1st preCTS DRV-based MLT
+Begin: GigaOpt high fanout net optimization
+GigaOpt HFN: use maxLocalDensity 1.2
+GigaOpt Checkpoint: Internal optDRV -useLevelizedBufferTreeOnly -auxMaxFanoutCountLimit 500 -largeScaleFixing -maxIter 1 -maxLocalDensity 1.2 -numThreads 8 -preCTS -preRouteDontEndWithRefinePlaceIncrSteinerRouteDC
+*** DrvOpt #1 [begin] (place_opt_design #1) : totSession cpu/real = 0:03:03.2/0:01:13.8 (2.5), mem = 10764.7M
+Info: 1 clock net  excluded from IPO operation.
+
+Footprint cell information for calculating maxBufDist
+*info: There are 10 candidate Buffer cells
+*info: There are 12 candidate Inverter cells
+
+*** DrvOpt #1 [finish] (place_opt_design #1) : cpu/real = 0:00:02.2/0:00:01.5 (1.4), totSession cpu/real = 0:03:05.4/0:01:15.3 (2.5), mem = 10683.2M
+GigaOpt HFN: restore maxLocalDensity to 0.98
+End: GigaOpt high fanout net optimization
+Begin: GigaOpt DRV Optimization
+GigaOpt Checkpoint: Internal optDRV -max_tran -max_cap -maxLocalDensity 1.2 -numThreads 8 -largeScaleFixing -maxIter 2 -max_fanout -max_len -preCTS -preRouteDontEndWithRefinePlaceIncrSteinerRouteDC
+*** DrvOpt #2 [begin] (place_opt_design #1) : totSession cpu/real = 0:03:05.4/0:01:15.3 (2.5), mem = 10683.2M
+Info: 1 clock net  excluded from IPO operation.
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        max-tran       |        max-cap        |  max-fanout |  max-length |       setup       |        |        |        |       |          |         |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| nets | terms|  wViol  | nets | terms|  wViol  | nets | terms| nets | terms|   WNS   |   TNS   |  #Buf  |  #Inv  | #Resize|Density|   Real   |   Mem   |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|  2649| 16954|    -5.37|     2|     2|    -0.03|    95|    95|     0|     0|    -7.09| -7323.06|       0|       0|       0| 62.82%|          |         |
+|    21|    60|    -0.05|     0|     0|     0.00|     0|     0|     0|     0|    -1.72|  -466.49|    1495|     231|     523| 70.09%| 0:00:04.0| 11440.8M|
+|     6|    12|    -0.05|     0|     0|     0.00|     0|     0|     0|     0|    -1.72|  -466.88|      11|       0|      10| 70.14%| 0:00:00.0| 11440.8M|
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+Bottom Preferred Layer:
+    None
+Via Pillar Rule:
+    None
+
+
+=======================================================================
+                Reasons for remaining drv violations
+=======================================================================
+*info: Total 6 net(s) were new nets created by previous iteration of DRV buffering. Further DRV fixing might remove some violations.
+
+
+*** Finish DRV Fixing (cpu=0:00:16.1 real=0:00:04.0 mem=11440.8M) ***
+
+*** DrvOpt #2 [finish] (place_opt_design #1) : cpu/real = 0:00:17.2/0:00:04.4 (3.9), totSession cpu/real = 0:03:22.6/0:01:19.7 (2.5), mem = 10842.9M
+End: GigaOpt DRV Optimization
+GigaOpt DRV: restore maxLocalDensity to 0.98
+**optDesign ... cpu = 0:00:31, real = 0:00:13, mem = 1919.9M, totSessionCpu=0:03:23 **
+Deactivate 1st preCTS DRV-based MLT
+
+Active setup views:
+ setup_view
+  Dominating endpoints: 0
+  Dominating TNS: -0.000
+
+Activate optFanout-based MLT
+Begin: GigaOpt Global Optimization
+*info: use new DP (enabled)
+GigaOpt Checkpoint: Internal globalOpt -maxLocalDensity 1.2 -numThreads 8 -preCTS -rebufferAll -preRouteDontEndWithRefinePlaceIncrSteinerRouteDC -enableHighLayerOpt -maxIter 50 -maxIterForLEPG 50
+Info: 1 clock net  excluded from IPO operation.
+*** GlobalOpt #1 [begin] (place_opt_design #1) : totSession cpu/real = 0:03:22.8/0:01:19.9 (2.5), mem = 11046.6M
+*info: 1 clock net excluded
+*info: 76 no-driver nets excluded.
+** GigaOpt Global Opt WNS Slack -1.725  TNS Slack -466.876 
++--------+--------+---------+------------+--------+----------+---------+----------------------------------------------------+
+|  WNS   |  TNS   | Density |    Real    |  Mem   |Worst View|Pathgroup|                     End Point                      |
++--------+--------+---------+------------+--------+----------+---------+----------------------------------------------------+
+|  -1.725|-466.876|   70.14%|   0:00:00.0|11266.7M|setup_view|  default| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.455|-160.800|   70.39%|   0:00:01.0|11533.7M|setup_view|  default| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.455|-160.800|   70.39%|   0:00:00.0|11536.2M|setup_view|  default| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.455|-160.800|   70.39%|   0:00:00.0|11536.2M|setup_view|  default| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.227| -69.455|   70.77%|   0:00:01.0|11544.9M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.218| -48.852|   70.91%|   0:00:02.0|11551.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.218| -48.852|   70.91%|   0:00:00.0|11551.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.218| -48.852|   70.91%|   0:00:00.0|11551.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.124| -40.067|   71.06%|   0:00:00.0|11551.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.124| -38.449|   71.14%|   0:00:01.0|11551.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.124| -38.449|   71.14%|   0:00:00.0|11551.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.124| -38.449|   71.14%|   0:00:00.0|11551.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.105| -35.446|   71.24%|   0:00:00.0|11551.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.102| -34.794|   71.29%|   0:00:01.0|11551.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.102| -34.794|   71.29%|   0:00:00.0|11551.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.102| -34.794|   71.29%|   0:00:00.0|11551.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.070| -29.992|   71.42%|   0:00:00.0|11551.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.070| -30.947|   71.48%|   0:00:01.0|11551.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.070| -30.947|   71.48%|   0:00:00.0|11551.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.070| -30.947|   71.48%|   0:00:00.0|11551.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.024| -28.841|   71.64%|   0:00:00.0|11551.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.024| -28.711|   71.64%|   0:00:01.0|11552.7M|setup_view|  default| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |        |         |            |        |          |         | _out_reg[0]/D                                      |
++--------+--------+---------+------------+--------+----------+---------+----------------------------------------------------+
+
+*** Finish pre-CTS Global Setup Fixing (cpu=0:00:40.0 real=0:00:08.0 mem=11552.7M) ***
+
+*** Finish pre-CTS Setup Fixing (cpu=0:00:40.0 real=0:00:08.0 mem=11552.7M) ***
+Bottom Preferred Layer:
+    None
+Via Pillar Rule:
+    None
+** GigaOpt Global Opt End WNS Slack -1.024  TNS Slack -28.711 
+*** GlobalOpt #1 [finish] (place_opt_design #1) : cpu/real = 0:00:42.1/0:00:09.7 (4.3), totSession cpu/real = 0:04:04.9/0:01:29.6 (2.7), mem = 10932.8M
+End: GigaOpt Global Optimization
+Deactivate optFanout-based MLT
+*** Timing NOT met, worst failing slack is -1.024
+*** Check timing (0:00:00.0)
+GigaOpt Checkpoint: Internal reclaim -numThreads 8 -preCTS -force -doRemoveUselessTerm -tgtSlackMult 3 -routeType -noRouteTypeResizePolish -noViewPrune -weedwhack -nonLegal -nativePathGroupFlow
+Info: 1 clock net  excluded from IPO operation.
+Begin: Area Reclaim Optimization
+*** AreaOpt #1 [begin] (place_opt_design #1) : totSession cpu/real = 0:04:05.2/0:01:29.8 (2.7), mem = 11318.4M
+Reclaim Optimization WNS Slack -1.024  TNS Slack -28.711 Density 71.64
++---------+---------+--------+--------+------------+--------+
+| Density | Commits |  WNS   |  TNS   |    Real    |  Mem   |
++---------+---------+--------+--------+------------+--------+
+|   71.64%|        -|  -1.024| -28.711|   0:00:00.0|11320.4M|
+|   71.64%|        0|  -1.024| -28.711|   0:00:00.0|11363.0M|
+|   71.64%|        0|  -1.024| -28.711|   0:00:00.0|11363.0M|
+|   71.50%|       49|  -1.024| -28.711|   0:00:01.0|11509.2M|
+|   71.14%|      333|  -1.018| -28.648|   0:00:03.0|11509.2M|
+|   71.13%|        9|  -1.018| -28.643|   0:00:00.0|11509.2M|
+|   71.13%|        0|  -1.018| -28.643|   0:00:00.0|11509.2M|
+|   71.13%|        0|  -1.018| -28.643|   0:00:00.0|11509.2M|
++---------+---------+--------+--------+------------+--------+
+Reclaim Optimization End WNS Slack -1.018  TNS Slack -28.643 Density 71.13
+Bottom Preferred Layer:
+    None
+Via Pillar Rule:
+    None
+
+Number of times islegalLocAvaiable called = 0 skipped = 0, called in commitmove = 0, skipped in commitmove = 0
+End: Core Area Reclaim Optimization (cpu = 0:00:14.0) (real = 0:00:05.0) **
+*** AreaOpt #1 [finish] (place_opt_design #1) : cpu/real = 0:00:14.0/0:00:05.1 (2.8), totSession cpu/real = 0:04:19.3/0:01:34.9 (2.7), mem = 11509.2M
+Executing incremental physical updates
+Executing incremental physical updates
+End: Area Reclaim Optimization (cpu=0:00:14, real=0:00:05, mem=10938.29M, totSessionCpu=0:04:19).
+*** IncrReplace #1 [begin] (place_opt_design #1) : totSession cpu/real = 0:04:19.7/0:01:35.2 (2.7), mem = 10938.3M
+
+*** Start incrementalPlace ***
+No Views given, use default active views for adaptive view pruning
+SKP will enable view:
+  setup_view
+[NR-eGR] Num Prerouted Nets = 0  Num Prerouted Wires = 0
+[NR-eGR] Read 14214 nets ( ignored 0 )
+[NR-eGR] There are 1 clock nets ( 0 with NDR ).
+[NR-eGR] Layer group 1: route 14213 net(s) in layer range [2, 11]
+[NR-eGR] Early Global Route overflow of layer group 1: 0.00% H + 0.00% V. EstWL: 2.129001e+05um
+[NR-eGR] Overflow after Early Global Route 0.00% H + 0.00% V
+Early Global Route congestion estimation runtime: 0.44 seconds, mem = 10946.9M
+Local HotSpot Analysis: normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+
+=== incrementalPlace Internal Loop 1 ===
+*** Finished SKP initialization (cpu=0:00:03.5, real=0:00:01.0)***
+Iteration  6: Total net bbox = 1.806e+05 (1.02e+05 7.87e+04)
+              Est.  stn bbox = 2.137e+05 (1.22e+05 9.14e+04)
+              cpu = 0:00:08.8 real = 0:00:02.0 mem = 16220.1M
+Iteration  7: Total net bbox = 1.863e+05 (1.06e+05 8.08e+04)
+              Est.  stn bbox = 2.208e+05 (1.27e+05 9.40e+04)
+              cpu = 0:00:19.0 real = 0:00:04.0 mem = 16208.1M
+Iteration  8: Total net bbox = 1.854e+05 (1.05e+05 8.09e+04)
+              Est.  stn bbox = 2.203e+05 (1.26e+05 9.45e+04)
+              cpu = 0:00:26.5 real = 0:00:04.0 mem = 16202.1M
+Iteration  9: Total net bbox = 1.890e+05 (1.05e+05 8.36e+04)
+              Est.  stn bbox = 2.235e+05 (1.26e+05 9.72e+04)
+              cpu = 0:01:26 real = 0:00:13.0 mem = 16204.3M
+Iteration 10: Total net bbox = 1.863e+05 (1.03e+05 8.30e+04)
+              Est.  stn bbox = 2.196e+05 (1.23e+05 9.63e+04)
+              cpu = 0:00:08.6 real = 0:00:02.0 mem = 16204.3M
+Move report: Timing Driven Placement moves 13838 insts, mean move: 7.44 um, max move: 69.79 um 
+	Max move on inst (FE_OFC2315_cores_0__core_instance_n_52356): (174.20, 165.68) --> (111.26, 172.52)
+
+Finished Incremental Placement (cpu=0:02:35, real=0:00:28.0, mem=14172.2M)
+**WARN: (IMPSP-9025):	No scan chain specified/traced.
+Type 'man IMPSP-9025' for more detail.
+*** Starting refinePlace (0:06:57 mem=14172.2M) ***
+Total net bbox length = 1.897e+05 (1.050e+05 8.471e+04) (ext = 1.141e+04)
+*** Checked 2 GNC rules.
+*** Applying global-net connections...
+*** Applied 2 GNC rules (cpu = 0:00:00.0)
+Move report: Detail placement moves 13837 insts, mean move: 0.64 um, max move: 22.58 um 
+	Max move on inst (FE_OFC1298_n_1743): (73.00, 68.18) --> (76.80, 49.40)
+	Runtime: CPU: 0:00:02.0 REAL: 0:00:01.0 MEM: 14193.6MB
+Summary Report:
+Instances move: 13837 (out of 13838 movable)
+Instances flipped: 1
+Mean displacement: 0.64 um
+Max displacement: 22.58 um (Instance: FE_OFC1298_n_1743) (73.0015, 68.1795) -> (76.8, 49.4)
+	Length: 5 sites, height: 1 rows, site name: CoreSiteDouble, cell type: BUFX2
+Total net bbox length = 1.936e+05 (1.066e+05 8.700e+04) (ext = 1.141e+04)
+Runtime: CPU: 0:00:02.1 REAL: 0:00:01.0 MEM: 14193.6MB
+*** Finished refinePlace (0:06:59 mem=14193.6M) ***
+[NR-eGR] Num Prerouted Nets = 0  Num Prerouted Wires = 0
+[NR-eGR] Read 14214 nets ( ignored 0 )
+[NR-eGR] There are 1 clock nets ( 0 with NDR ).
+[NR-eGR] Layer group 1: route 14214 net(s) in layer range [2, 11]
+[NR-eGR] Early Global Route overflow of layer group 1: 0.00% H + 0.00% V. EstWL: 2.149949e+05um
+[NR-eGR] Overflow after Early Global Route 0.00% H + 0.01% V
+Early Global Route congestion estimation runtime: 0.43 seconds, mem = 14161.7M
+Local HotSpot Analysis: normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+[NR-eGR]                  Length (um)    Vias 
+[NR-eGR] -------------------------------------
+[NR-eGR]  Metal1   (1H)             0   49557 
+[NR-eGR]  Metal2   (2V)         67564   70086 
+[NR-eGR]  Metal3   (3H)         89105    8796 
+[NR-eGR]  Metal4   (4V)         36296    3723 
+[NR-eGR]  Metal5   (5H)         28298     481 
+[NR-eGR]  Metal6   (6V)          3908     150 
+[NR-eGR]  Metal7   (7H)          2712       6 
+[NR-eGR]  Metal8   (8V)           205       0 
+[NR-eGR]  Metal9   (9H)             0       0 
+[NR-eGR]  Metal10  (10V)            0       0 
+[NR-eGR]  Metal11  (11H)            0       0 
+[NR-eGR] -------------------------------------
+[NR-eGR]           Total       228088  132799 
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total half perimeter of net bounding box: 193578um
+[NR-eGR] Total length: 228088um, number of vias: 132799
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total eGR-routed clock nets wire length: 6360um, number of vias: 5122
+[NR-eGR] --------------------------------------------------------------------------
+Early Global Route wiring runtime: 0.24 seconds, mem = 14157.7M
+0 delay mode for cte disabled.
+
+*** Finished incrementalPlace (cpu=0:02:42, real=0:00:31.0)***
+Start to check current routing status for nets...
+All nets are already routed correctly.
+End to check current routing status for nets (mem=11840.6M)
+Extraction called for design 'gpu' of instances=15588 and nets=14296 using extraction engine 'preRoute' .
+PreRoute RC Extraction called for design gpu.
+RC Extraction called in multi-corner(1) mode.
+RCMode: PreRoute
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 0.90000
+PreRoute extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+Using capacitance table file ...
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+PreRoute RC Extraction DONE (CPU Time: 0:00:00.7  Real Time: 0:00:00.0  MEM: 11840.645M)
+Compute RC Scale Done ...
+**optDesign ... cpu = 0:04:11, real = 0:01:00, mem = 1834.7M, totSessionCpu=0:07:03 **
+AAE_INFO: opIsDesignInPostRouteState() is 0
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: gpu
+# Design Mode: 45nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Start delay calculation (fullDC) (8 T). (MEM=11820.4)
+Total number of fetched objects 14218
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+Total number of fetched objects 14218
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+End delay calculation. (MEM=12201.7 CPU=0:00:02.4 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=12201.7 CPU=0:00:03.0 REAL=0:00:01.0)
+*** IncrReplace #1 [finish] (place_opt_design #1) : cpu/real = 0:02:48.0/0:00:32.9 (5.1), totSession cpu/real = 0:07:07.6/0:02:08.1 (3.3), mem = 12209.7M
+Activate 2nd preCTS DRV-based MLT
+Begin: GigaOpt DRV Optimization
+GigaOpt Checkpoint: Internal optDRV -max_tran -max_cap -maxLocalDensity 1.2 -numThreads 8 -smallScaleFixing -maxIter 3 -setupTNSCostFactor 3.0 -max_fanout -max_len -preCTS
+*** DrvOpt #3 [begin] (place_opt_design #1) : totSession cpu/real = 0:07:08.4/0:02:08.6 (3.3), mem = 12209.7M
+Info: 1 clock net  excluded from IPO operation.
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        max-tran       |        max-cap        |  max-fanout |  max-length |       setup       |        |        |        |       |          |         |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| nets | terms|  wViol  | nets | terms|  wViol  | nets | terms| nets | terms|   WNS   |   TNS   |  #Buf  |  #Inv  | #Resize|Density|   Real   |   Mem   |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   490|  1257|    -0.58|     0|     0|     0.00|     0|     0|     0|     0|    -1.20|  -302.57|       0|       0|       0| 71.13%|          |         |
+|    18|    38|    -0.06|     0|     0|     0.00|     0|     0|     0|     0|    -1.10|  -176.48|     312|      12|     231| 72.82%| 0:00:01.0| 12566.1M|
+|     2|     4|    -0.02|     0|     0|     0.00|     0|     0|     0|     0|    -1.10|  -175.49|       5|       0|      15| 72.85%| 0:00:00.0| 12566.1M|
+|     1|     2|    -0.01|     0|     0|     0.00|     0|     0|     0|     0|    -1.10|  -175.45|       0|       0|       2| 72.85%| 0:00:00.0| 12566.1M|
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+Bottom Preferred Layer:
+    None
+Via Pillar Rule:
+    None
+
+
+=======================================================================
+                Reasons for remaining drv violations
+=======================================================================
+*info: Total 1 net(s) were new nets created by previous iteration of DRV buffering. Further DRV fixing might remove some violations.
+
+
+*** Finish DRV Fixing (cpu=0:00:06.7 real=0:00:01.0 mem=12566.1M) ***
+
+*** Starting refinePlace (0:07:17 mem=12562.1M) ***
+Total net bbox length = 1.942e+05 (1.069e+05 8.726e+04) (ext = 1.141e+04)
+Move report: Detail placement moves 1779 insts, mean move: 2.67 um, max move: 27.04 um 
+	Max move on inst (FE_OFC2481_n_2076): (72.60, 39.14) --> (92.80, 45.98)
+	Runtime: CPU: 0:00:01.3 REAL: 0:00:01.0 MEM: 12605.5MB
+Summary Report:
+Instances move: 1779 (out of 14167 movable)
+Instances flipped: 0
+Mean displacement: 2.67 um
+Max displacement: 27.04 um (Instance: FE_OFC2481_n_2076) (72.6, 39.14) -> (92.8, 45.98)
+	Length: 5 sites, height: 1 rows, site name: CoreSiteDouble, cell type: BUFX2
+Total net bbox length = 1.992e+05 (1.101e+05 8.916e+04) (ext = 1.141e+04)
+Runtime: CPU: 0:00:01.3 REAL: 0:00:01.0 MEM: 12605.5MB
+*** Finished refinePlace (0:07:18 mem=12605.5M) ***
+*** maximum move = 27.04 um ***
+*** Finished re-routing un-routed nets (12570.5M) ***
+
+*** Finish Physical Update (cpu=0:00:02.1 real=0:00:01.0 mem=12570.5M) ***
+*** DrvOpt #3 [finish] (place_opt_design #1) : cpu/real = 0:00:11.0/0:00:04.0 (2.8), totSession cpu/real = 0:07:19.4/0:02:12.5 (3.3), mem = 11967.6M
+End: GigaOpt DRV Optimization
+GigaOpt DRV: restore maxLocalDensity to 0.98
+
+------------------------------------------------------------------
+     Summary (cpu=0.18min real=0.07min mem=11967.6M)
+------------------------------------------------------------------
+
+Setup views included:
+ setup_view 
+
++--------------------+---------+---------+---------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | in2reg  | reg2out | in2out  | default |
++--------------------+---------+---------+---------+---------+---------+---------+
+|           WNS (ns):| -1.105  | -1.105  |  0.295  |  0.990  |   N/A   |  0.000  |
+|           TNS (ns):|-267.294 |-267.294 |  0.000  |  0.000  |   N/A   |  0.000  |
+|    Violating Paths:|  1077   |  1077   |    0    |    0    |   N/A   |    0    |
+|          All Paths:|  1830   |  1829   |   184   |    1    |   N/A   |    0    |
++--------------------+---------+---------+---------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |      0 (0)       |   0.000    |      0 (0)       |
+|   max_tran     |     53 (106)     |   -0.647   |     53 (106)     |
+|   max_fanout   |      0 (0)       |     0      |      1 (1)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 72.851%
+Routing Overflow: 0.00% H and 0.01% V
+------------------------------------------------------------------
+**optDesign ... cpu = 0:04:29, real = 0:01:06, mem = 1984.0M, totSessionCpu=0:07:20 **
+Deactivate 2nd preCTS DRV-based MLT
+*** Timing NOT met, worst failing slack is -1.105
+*** Check timing (0:00:00.0)
+Activate preCTS OCP-based MLT
+Begin: GigaOpt Optimization in WNS mode
+GigaOpt Checkpoint: Internal optTiming -maxLocalDensity 1.0 -maxLocalDensityForHardenOpt 0.92 -numThreads 8 -preCTS -wtns -integratedAreaOpt -pgMode all -ipoTgtSlackCoef 1.5 -effTgtSlackCoef 1 -nativePathGroupFlow -NDROptEffortAuto -nonLegalPlaceEcoBumpRecoveryInWNSOpt
+Info: 1 clock net  excluded from IPO operation.
+*** WnsOpt #1 [begin] (place_opt_design #1) : totSession cpu/real = 0:07:20.2/0:02:13.0 (3.3), mem = 12000.6M
+*info: 1 clock net excluded
+*info: 76 no-driver nets excluded.
+** GigaOpt Optimizer WNS Slack -1.105 TNS Slack -267.293 Density 72.85
+OptDebug: Start of Optimizer WNS Pass 0:
++----------+------+--------+
+|Path Group|   WNS|     TNS|
++----------+------+--------+
+|default   | 0.000|   0.000|
+|in2out    | 0.000|   0.000|
+|in2reg    | 0.295|   0.000|
+|reg2out   | 0.990|   0.000|
+|reg2reg   |-1.105|-267.293|
+|HEPG      |-1.105|-267.293|
+|All Paths |-1.105|-267.293|
++----------+------+--------+
+
+Active Path Group: in2reg reg2out reg2reg  
++--------+---------+--------+---------+---------+------------+--------+----------+---------+----------------------------------------------------+
+|  WNS   | All WNS |  TNS   | All TNS | Density |    Real    |  Mem   |Worst View|Pathgroup|                     End Point                      |
++--------+---------+--------+---------+---------+------------+--------+----------+---------+----------------------------------------------------+
+|  -1.105|   -1.105|-267.293| -267.293|   72.85%|   0:00:00.0|12361.2M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.028|   -1.028|-266.966| -266.966|   72.87%|   0:00:00.0|12583.5M|setup_view|  reg2reg| cores[0].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -1.002|   -1.002|-266.871| -266.871|   72.93%|   0:00:01.0|12620.8M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.982|   -0.982|-257.449| -257.449|   72.94%|   0:00:00.0|12634.8M|setup_view|  reg2reg| cores[1].core_instance_threads[1].register_instanc |
+|        |         |        |         |         |            |        |          |         | e_regfile_reg[10][5]/D                             |
+|  -0.967|   -0.967|-248.084| -248.084|   72.98%|   0:00:00.0|12659.9M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.943|   -0.943|-247.738| -247.738|   73.01%|   0:00:00.0|12665.0M|setup_view|  reg2reg| cores[0].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.938|   -0.938|-247.597| -247.597|   73.10%|   0:00:00.0|12665.0M|setup_view|  reg2reg| cores[1].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.915|   -0.915|-247.094| -247.094|   73.13%|   0:00:01.0|12665.0M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.902|   -0.902|-238.152| -238.152|   73.17%|   0:00:00.0|12665.0M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.888|   -0.888|-237.836| -237.836|   73.24%|   0:00:00.0|12666.0M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.882|   -0.882|-237.487| -237.487|   73.29%|   0:00:00.0|12666.0M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.865|   -0.865|-237.406| -237.406|   73.31%|   0:00:00.0|12666.0M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.858|   -0.858|-237.002| -237.002|   73.38%|   0:00:01.0|12666.0M|setup_view|  reg2reg| cores[1].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.838|   -0.838|-236.767| -236.767|   73.41%|   0:00:00.0|12666.0M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.818|   -0.818|-235.881| -235.881|   73.50%|   0:00:00.0|12666.0M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.805|   -0.805|-225.582| -225.582|   73.62%|   0:00:00.0|12666.0M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.793|   -0.793|-217.519| -217.519|   73.65%|   0:00:00.0|12666.0M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.781|   -0.781|-216.740| -216.740|   73.76%|   0:00:01.0|12666.0M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.762|   -0.762|-213.458| -213.458|   73.87%|   0:00:00.0|12666.0M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.748|   -0.748|-213.184| -213.184|   73.99%|   0:00:00.0|12666.0M|setup_view|  reg2reg| cores[0].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.738|   -0.738|-212.880| -212.880|   74.12%|   0:00:00.0|12666.0M|setup_view|  reg2reg| cores[1].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.730|   -0.730|-212.619| -212.619|   74.23%|   0:00:01.0|12666.0M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.711|   -0.711|-212.381| -212.381|   74.27%|   0:00:00.0|12666.0M|setup_view|  reg2reg| cores[1].core_instance_threads[0].register_instanc |
+|        |         |        |         |         |            |        |          |         | e_regfile_reg[5][4]/D                              |
+|  -0.709|   -0.709|-206.677| -206.677|   74.44%|   0:00:00.0|12666.0M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.704|   -0.704|-206.531| -206.531|   74.47%|   0:00:01.0|12666.0M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.703|   -0.703|-206.446| -206.446|   74.49%|   0:00:00.0|12666.0M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.688|   -0.688|-206.413| -206.413|   74.51%|   0:00:00.0|12669.0M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.681|   -0.681|-206.214| -206.214|   74.65%|   0:00:00.0|12669.0M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.675|   -0.675|-206.068| -206.068|   74.71%|   0:00:01.0|12670.0M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.671|   -0.671|-206.009| -206.009|   74.79%|   0:00:00.0|12671.0M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.659|   -0.659|-204.149| -204.149|   74.84%|   0:00:00.0|12671.0M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.659|   -0.659|-189.193| -189.193|   74.98%|   0:00:01.0|12677.0M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[1]/D                                      |
+|  -0.656|   -0.656|-189.144| -189.144|   75.01%|   0:00:00.0|12677.0M|setup_view|  reg2reg| cores[0].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.652|   -0.652|-189.113| -189.113|   75.04%|   0:00:00.0|12677.0M|setup_view|  reg2reg| cores[0].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.645|   -0.645|-189.017| -189.017|   75.07%|   0:00:00.0|12677.0M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[1]/D                                      |
+|  -0.637|   -0.637|-188.918| -188.918|   75.13%|   0:00:01.0|12677.0M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.631|   -0.631|-188.735| -188.735|   75.21%|   0:00:00.0|12677.0M|setup_view|  reg2reg| cores[0].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.626|   -0.626|-185.432| -185.432|   75.32%|   0:00:01.0|12678.0M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.621|   -0.621|-184.311| -184.311|   75.42%|   0:00:00.0|12678.0M|setup_view|  reg2reg| cores[1].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.614|   -0.614|-184.184| -184.184|   75.47%|   0:00:00.0|12678.0M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.603|   -0.603|-183.264| -183.264|   75.56%|   0:00:00.0|12679.0M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.600|   -0.600|-183.042| -183.042|   75.72%|   0:00:01.0|12679.0M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.598|   -0.598|-176.814| -176.814|   75.78%|   0:00:00.0|12679.0M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.586|   -0.586|-176.778| -176.778|   75.80%|   0:00:00.0|12679.0M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.582|   -0.582|-172.164| -172.164|   75.97%|   0:00:01.0|12679.0M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.577|   -0.577|-172.086| -172.086|   76.02%|   0:00:00.0|12679.0M|setup_view|  reg2reg| cores[0].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.573|   -0.573|-167.622| -167.622|   76.08%|   0:00:00.0|12679.0M|setup_view|  reg2reg| cores[0].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.570|   -0.570|-167.591| -167.591|   76.11%|   0:00:00.0|12679.0M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.566|   -0.566|-167.402| -167.402|   76.16%|   0:00:01.0|12679.0M|setup_view|  reg2reg| cores[1].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.555|   -0.555|-167.302| -167.302|   76.30%|   0:00:00.0|12679.0M|setup_view|  reg2reg| cores[0].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.552|   -0.552|-162.983| -162.983|   76.42%|   0:00:00.0|12683.0M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.544|   -0.544|-162.859| -162.859|   76.51%|   0:00:01.0|12684.0M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.541|   -0.541|-159.067| -159.067|   76.64%|   0:00:00.0|12684.0M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.538|   -0.538|-159.038| -159.038|   76.73%|   0:00:01.0|12684.0M|setup_view|  reg2reg| cores[0].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.535|   -0.535|-158.978| -158.978|   76.76%|   0:00:00.0|12684.0M|setup_view|  reg2reg| cores[0].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.529|   -0.529|-158.732| -158.732|   76.82%|   0:00:00.0|12684.0M|setup_view|  reg2reg| cores[0].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.527|   -0.527|-155.158| -155.158|   76.99%|   0:00:01.0|12684.0M|setup_view|  reg2reg| cores[0].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.522|   -0.522|-150.037| -150.037|   77.05%|   0:00:00.0|12684.0M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.524|   -0.524|-149.426| -149.426|   77.14%|   0:00:01.0|12684.0M|setup_view|  reg2reg| cores[0].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.518|   -0.518|-149.388| -149.388|   77.16%|   0:00:00.0|12684.0M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.508|   -0.508|-149.303| -149.303|   77.25%|   0:00:00.0|12684.0M|setup_view|  reg2reg| cores[0].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.507|   -0.507|-143.804| -143.804|   77.36%|   0:00:00.0|12684.0M|setup_view|  reg2reg| cores[0].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.504|   -0.504|-141.779| -141.779|   77.43%|   0:00:01.0|12684.0M|setup_view|  reg2reg| cores[1].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[1]/D                                      |
+|  -0.501|   -0.501|-141.381| -141.381|   77.51%|   0:00:00.0|12684.0M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.491|   -0.491|-141.168| -141.168|   77.55%|   0:00:00.0|12684.0M|setup_view|  reg2reg| cores[0].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.488|   -0.488|-141.164| -141.164|   77.62%|   0:00:01.0|12684.0M|setup_view|  reg2reg| cores[0].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.481|   -0.481|-141.075| -141.075|   77.70%|   0:00:00.0|12684.0M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.477|   -0.477|-140.949| -140.949|   77.76%|   0:00:01.0|12684.0M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.468|   -0.468|-140.708| -140.708|   77.83%|   0:00:00.0|12684.0M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.463|   -0.463|-140.709| -140.709|   77.91%|   0:00:00.0|12684.0M|setup_view|  reg2reg| cores[0].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.459|   -0.459|-138.323| -138.323|   78.02%|   0:00:01.0|12684.0M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.450|   -0.450|-138.223| -138.223|   78.12%|   0:00:00.0|12684.0M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.448|   -0.448|-131.301| -131.301|   78.22%|   0:00:01.0|12684.0M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.444|   -0.444|-128.885| -128.885|   78.31%|   0:00:01.0|12686.0M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.441|   -0.441|-128.827| -128.827|   78.37%|   0:00:00.0|12686.0M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.438|   -0.438|-128.727| -128.727|   78.44%|   0:00:00.0|12686.0M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.432|   -0.432|-128.013| -128.013|   78.59%|   0:00:01.0|12686.0M|setup_view|  reg2reg| cores[1].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.424|   -0.424|-127.927| -127.927|   78.89%|   0:00:00.0|12686.0M|setup_view|  reg2reg| cores[1].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.422|   -0.422|-128.015| -128.015|   79.06%|   0:00:01.0|12686.0M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.417|   -0.417|-127.212| -127.212|   79.16%|   0:00:00.0|12686.0M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.415|   -0.415|-123.437| -123.437|   79.26%|   0:00:00.0|12687.5M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[1]/D                                      |
+|  -0.410|   -0.410|-122.897| -122.897|   79.35%|   0:00:01.0|12687.5M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.403|   -0.403|-122.843| -122.843|   79.48%|   0:00:00.0|12687.5M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.396|   -0.396|-121.586| -121.586|   79.69%|   0:00:01.0|12687.5M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.393|   -0.393|-121.314| -121.314|   79.87%|   0:00:01.0|12692.5M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.391|   -0.391|-120.477| -120.477|   79.98%|   0:00:00.0|12692.5M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.388|   -0.388|-119.933| -119.933|   80.10%|   0:00:01.0|12692.5M|setup_view|  reg2reg| cores[1].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.386|   -0.386|-119.414| -119.414|   80.20%|   0:00:01.0|12692.5M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.386|   -0.386|-117.826| -117.826|   80.27%|   0:00:00.0|12692.5M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.382|   -0.382|-117.812| -117.812|   80.30%|   0:00:00.0|12692.5M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.379|   -0.379|-114.494| -114.494|   80.39%|   0:00:01.0|12692.5M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.384|   -0.384|-114.475| -114.475|   80.50%|   0:00:01.0|12692.5M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.380|   -0.380|-114.456| -114.456|   80.53%|   0:00:00.0|12692.5M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[1]/D                                      |
+|  -0.377|   -0.377|-114.443| -114.443|   80.53%|   0:00:00.0|12692.5M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.376|   -0.376|-114.409| -114.409|   80.60%|   0:00:00.0|12692.5M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[1]/D                                      |
+|  -0.372|   -0.372|-114.393| -114.393|   80.63%|   0:00:01.0|12692.5M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.370|   -0.370|-114.261| -114.261|   80.71%|   0:00:00.0|12692.5M|setup_view|  reg2reg| cores[1].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.368|   -0.368|-113.828| -113.828|   80.81%|   0:00:01.0|12692.5M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.365|   -0.365|-113.779| -113.779|   80.85%|   0:00:01.0|12692.5M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.362|   -0.362|-113.576| -113.576|   80.95%|   0:00:00.0|12692.5M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.357|   -0.357|-113.491| -113.491|   81.04%|   0:00:01.0|12692.5M|setup_view|  reg2reg| cores[1].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.355|   -0.355|-111.847| -111.847|   81.23%|   0:00:01.0|12692.5M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.351|   -0.351|-111.791| -111.791|   81.29%|   0:00:00.0|12692.5M|setup_view|  reg2reg| cores[0].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.350|   -0.350|-111.808| -111.808|   81.41%|   0:00:01.0|12712.6M|setup_view|  reg2reg| cores[0].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.347|   -0.347|-111.781| -111.781|   81.45%|   0:00:00.0|12712.6M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.346|   -0.346|-109.724| -109.724|   81.59%|   0:00:01.0|12712.6M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.343|   -0.343|-107.413| -107.413|   81.68%|   0:00:01.0|12712.6M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.341|   -0.341|-104.686| -104.686|   81.79%|   0:00:00.0|12712.6M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.344|   -0.344|-104.665| -104.665|   81.94%|   0:00:01.0|12712.6M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.345|   -0.345|-104.658| -104.658|   81.98%|   0:00:00.0|12712.6M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.340|   -0.340|-104.660| -104.660|   81.99%|   0:00:00.0|12712.6M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.340|   -0.340|-104.651| -104.651|   82.09%|   0:00:01.0|12712.6M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.337|   -0.337|-104.642| -104.642|   82.15%|   0:00:00.0|12712.6M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.337|   -0.337|-104.424| -104.424|   82.24%|   0:00:00.0|12712.6M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.337|   -0.337|-104.411| -104.411|   82.25%|   0:00:00.0|12712.6M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.338|   -0.338|-104.412| -104.412|   82.31%|   0:00:01.0|12712.6M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
++--------+---------+--------+---------+---------+------------+--------+----------+---------+----------------------------------------------------+
+
+*** Finish Core Optimize Step (cpu=0:03:22 real=0:00:43.0 mem=12712.6M) ***
+
+*** Finished Optimize Step Cumulative (cpu=0:03:22 real=0:00:43.0 mem=12712.6M) ***
+OptDebug: End of Optimizer WNS Pass 0:
++----------+------+--------+
+|Path Group|   WNS|     TNS|
++----------+------+--------+
+|default   | 0.000|   0.000|
+|in2out    | 0.000|   0.000|
+|in2reg    | 0.295|   0.000|
+|reg2out   | 0.990|   0.000|
+|reg2reg   |-0.338|-104.412|
+|HEPG      |-0.338|-104.412|
+|All Paths |-0.338|-104.412|
++----------+------+--------+
+
+** GigaOpt Optimizer WNS Slack -0.338 TNS Slack -104.412 Density 82.31
+Begin: Area Reclaim Optimization
+*** AreaOpt #2 [begin] (WnsOpt #1 / place_opt_design #1) : totSession cpu/real = 0:10:45.5/0:02:58.2 (3.6), mem = 12712.6M
+Reclaim Optimization WNS Slack -0.338  TNS Slack -104.412 Density 82.31
++---------+---------+--------+--------+------------+--------+
+| Density | Commits |  WNS   |  TNS   |    Real    |  Mem   |
++---------+---------+--------+--------+------------+--------+
+|   82.31%|        -|  -0.338|-104.412|   0:00:00.0|12712.6M|
+|   81.09%|      324|  -0.338| -63.863|   0:00:02.0|12712.6M|
+|   80.28%|      498|  -0.328| -63.716|   0:00:04.0|12712.6M|
+|   80.27%|        7|  -0.328| -63.774|   0:00:00.0|12712.6M|
+|   80.27%|        0|  -0.328| -63.774|   0:00:01.0|12712.6M|
++---------+---------+--------+--------+------------+--------+
+Reclaim Optimization End WNS Slack -0.328  TNS Slack -63.774 Density 80.27
+Bottom Preferred Layer:
++-----------------+------------+----------+
+|      Layer      |   OPT_LA   |   Rule   |
++-----------------+------------+----------+
+| Metal7 (z=7)    |         25 | default  |
+| Metal10 (z=10)  |          1 | default  |
++-----------------+------------+----------+
+Via Pillar Rule:
+    None
+
+Number of times islegalLocAvaiable called = 928 skipped = 0, called in commitmove = 507, skipped in commitmove = 0
+End: Core Area Reclaim Optimization (cpu = 0:00:18.8) (real = 0:00:07.0) **
+*** AreaOpt #2 [finish] (WnsOpt #1 / place_opt_design #1) : cpu/real = 0:00:18.8/0:00:06.3 (3.0), totSession cpu/real = 0:11:04.2/0:03:04.4 (3.6), mem = 12712.6M
+End: Area Reclaim Optimization (cpu=0:00:19, real=0:00:07, mem=12691.57M, totSessionCpu=0:11:04).
+*** Starting refinePlace (0:11:04 mem=12688.6M) ***
+Total net bbox length = 2.012e+05 (1.114e+05 8.983e+04) (ext = 1.142e+04)
+
+Starting Small incrNP...
+
+Move report: incrNP moves 10650 insts, mean move: 6.16 um, max move: 44.52 um 
+	Max move on inst (FE_OFC53_data_mem_write_data_31): (38.20, 160.55) --> (14.20, 181.07)
+Finished incrNP (cpu=0:00:12.7, real=0:00:02.0, mem=12721.0M)
+End of Small incrNP (cpu=0:00:12.7, real=0:00:02.0)
+Move report: Detail placement moves 2936 insts, mean move: 0.44 um, max move: 4.71 um 
+	Max move on inst (cores[1].core_instance_threads[1].register_instance_rs_reg[0]): (64.60, 95.57) --> (61.60, 97.28)
+	Runtime: CPU: 0:00:00.2 REAL: 0:00:00.0 MEM: 12721.0MB
+Summary Report:
+Instances move: 10844 (out of 14714 movable)
+Instances flipped: 54
+Mean displacement: 6.08 um
+Max displacement: 44.52 um (Instance: FE_OFC53_data_mem_write_data_31) (38.2, 160.55) -> (14.2, 181.07)
+	Length: 3 sites, height: 1 rows, site name: CoreSite, cell type: INVX2
+Total net bbox length = 2.017e+05 (1.112e+05 9.049e+04) (ext = 1.088e+04)
+Runtime: CPU: 0:00:12.9 REAL: 0:00:02.0 MEM: 12721.0MB
+*** Finished refinePlace (0:11:17 mem=12721.0M) ***
+*** maximum move = 44.52 um ***
+*** Finished re-routing un-routed nets (12697.0M) ***
+
+*** Finish Physical Update (cpu=0:00:15.0 real=0:00:03.0 mem=12697.0M) ***
+** GigaOpt Optimizer WNS Slack -0.610 TNS Slack -139.950 Density 80.27
+OptDebug: Start of Optimizer WNS Pass 1:
++----------+------+--------+
+|Path Group|   WNS|     TNS|
++----------+------+--------+
+|default   | 0.000|   0.000|
+|in2out    | 0.000|   0.000|
+|in2reg    | 0.339|   0.000|
+|reg2out   | 0.990|   0.000|
+|reg2reg   |-0.610|-139.950|
+|HEPG      |-0.610|-139.950|
+|All Paths |-0.610|-139.950|
++----------+------+--------+
+
+Active Path Group: in2reg reg2out reg2reg  
++--------+---------+--------+---------+---------+------------+--------+----------+---------+----------------------------------------------------+
+|  WNS   | All WNS |  TNS   | All TNS | Density |    Real    |  Mem   |Worst View|Pathgroup|                     End Point                      |
++--------+---------+--------+---------+---------+------------+--------+----------+---------+----------------------------------------------------+
+|  -0.610|   -0.610|-139.950| -139.950|   80.27%|   0:00:00.0|12697.0M|setup_view|  reg2reg| cores[0].core_instance_threads[2].register_instanc |
+|        |         |        |         |         |            |        |          |         | e_regfile_reg[12][3]/D                             |
+|  -0.535|   -0.535|-125.314| -125.314|   80.30%|   0:00:01.0|12716.0M|setup_view|  reg2reg| cores[0].core_instance_threads[2].register_instanc |
+|        |         |        |         |         |            |        |          |         | e_regfile_reg[10][6]/D                             |
+|  -0.504|   -0.504|-116.529| -116.529|   80.32%|   0:00:00.0|12735.1M|setup_view|  reg2reg| cores[1].core_instance_threads[1].register_instanc |
+|        |         |        |         |         |            |        |          |         | e_regfile_reg[1][2]/D                              |
+|  -0.458|   -0.458|-110.195| -110.195|   80.33%|   0:00:00.0|12735.1M|setup_view|  reg2reg| data_memory_controller_mem_write_data_reg[1]/D     |
+|  -0.438|   -0.438|-107.540| -107.540|   80.34%|   0:00:00.0|12735.1M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.417|   -0.417|-106.935| -106.935|   80.37%|   0:00:00.0|12735.1M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.408|   -0.408| -91.745|  -91.745|   80.46%|   0:00:00.0|12735.1M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.389|   -0.389| -91.692|  -91.692|   80.49%|   0:00:01.0|12735.1M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.378|   -0.378| -88.062|  -88.062|   80.59%|   0:00:00.0|12735.1M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.368|   -0.368| -87.756|  -87.756|   80.70%|   0:00:01.0|12735.1M|setup_view|  reg2reg| cores[0].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.362|   -0.362| -85.851|  -85.851|   80.81%|   0:00:01.0|12735.1M|setup_view|  reg2reg| cores[0].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.359|   -0.359| -85.507|  -85.507|   80.95%|   0:00:00.0|12735.1M|setup_view|  reg2reg| cores[0].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.340|   -0.340| -85.366|  -85.366|   81.00%|   0:00:00.0|12735.1M|setup_view|  reg2reg| cores[1].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.336|   -0.336| -82.103|  -82.103|   81.29%|   0:00:01.0|12735.1M|setup_view|  reg2reg| cores[1].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.329|   -0.329| -82.025|  -82.025|   81.46%|   0:00:01.0|12735.1M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.326|   -0.326| -81.955|  -81.955|   81.58%|   0:00:00.0|12735.1M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.322|   -0.322| -81.809|  -81.809|   81.65%|   0:00:01.0|12735.1M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.319|   -0.319| -79.216|  -79.216|   81.76%|   0:00:01.0|12735.1M|setup_view|  reg2reg| cores[0].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.316|   -0.316| -79.269|  -79.269|   81.86%|   0:00:01.0|12735.1M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.314|   -0.314| -79.234|  -79.234|   81.92%|   0:00:01.0|12735.1M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.312|   -0.312| -78.522|  -78.522|   81.99%|   0:00:00.0|12735.1M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.308|   -0.308| -78.525|  -78.525|   82.04%|   0:00:01.0|12735.1M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.308|   -0.308| -78.456|  -78.456|   82.10%|   0:00:01.0|12735.1M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.308|   -0.308| -78.451|  -78.451|   82.11%|   0:00:00.0|12735.1M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.308|   -0.308| -78.448|  -78.448|   82.19%|   0:00:01.0|12735.1M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.308|   -0.308| -78.448|  -78.448|   82.19%|   0:00:00.0|12735.1M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
++--------+---------+--------+---------+---------+------------+--------+----------+---------+----------------------------------------------------+
+
+*** Finish Core Optimize Step (cpu=0:01:08 real=0:00:13.0 mem=12735.1M) ***
+
+*** Finished Optimize Step Cumulative (cpu=0:01:08 real=0:00:13.0 mem=12735.1M) ***
+OptDebug: End of Optimizer WNS Pass 1:
++----------+------+-------+
+|Path Group|   WNS|    TNS|
++----------+------+-------+
+|default   | 0.000|  0.000|
+|in2out    | 0.000|  0.000|
+|in2reg    | 0.339|  0.000|
+|reg2out   | 0.990|  0.000|
+|reg2reg   |-0.308|-78.448|
+|HEPG      |-0.308|-78.448|
+|All Paths |-0.308|-78.448|
++----------+------+-------+
+
+** GigaOpt Optimizer WNS Slack -0.308 TNS Slack -78.448 Density 82.19
+Begin: Area Reclaim Optimization
+*** AreaOpt #3 [begin] (WnsOpt #1 / place_opt_design #1) : totSession cpu/real = 0:12:28.0/0:03:20.7 (3.7), mem = 12735.1M
+Reclaim Optimization WNS Slack -0.308  TNS Slack -78.448 Density 82.19
++---------+---------+--------+--------+------------+--------+
+| Density | Commits |  WNS   |  TNS   |    Real    |  Mem   |
++---------+---------+--------+--------+------------+--------+
+|   82.19%|        -|  -0.308| -78.448|   0:00:00.0|12735.1M|
+|   81.62%|      143|  -0.310| -73.687|   0:00:02.0|12735.1M|
+|   81.27%|      254|  -0.305| -72.947|   0:00:03.0|12735.1M|
+|   81.27%|        0|  -0.305| -72.947|   0:00:00.0|12735.1M|
++---------+---------+--------+--------+------------+--------+
+Reclaim Optimization End WNS Slack -0.305  TNS Slack -72.947 Density 81.27
+Bottom Preferred Layer:
++-----------------+------------+----------+
+|      Layer      |   OPT_LA   |   Rule   |
++-----------------+------------+----------+
+| Metal7 (z=7)    |         29 | default  |
+| Metal10 (z=10)  |          2 | default  |
++-----------------+------------+----------+
+Via Pillar Rule:
+    None
+
+Number of times islegalLocAvaiable called = 475 skipped = 0, called in commitmove = 254, skipped in commitmove = 0
+End: Core Area Reclaim Optimization (cpu = 0:00:14.4) (real = 0:00:05.0) **
+*** AreaOpt #3 [finish] (WnsOpt #1 / place_opt_design #1) : cpu/real = 0:00:14.4/0:00:04.9 (2.9), totSession cpu/real = 0:12:42.4/0:03:25.6 (3.7), mem = 12735.1M
+End: Area Reclaim Optimization (cpu=0:00:14, real=0:00:05, mem=12703.11M, totSessionCpu=0:12:42).
+*** Starting refinePlace (0:12:43 mem=12700.1M) ***
+Total net bbox length = 2.023e+05 (1.116e+05 9.075e+04) (ext = 1.088e+04)
+
+Starting Small incrNP...
+Skipped incrNP (cpu=0:00:00.0, real=0:00:00.0, mem=12700.1M)
+End of Small incrNP (cpu=0:00:00.0, real=0:00:00.0)
+Move report: Detail placement moves 3093 insts, mean move: 1.69 um, max move: 30.50 um 
+	Max move on inst (FE_OFC1119_cores_0__core_instance_n_49734): (144.60, 182.78) --> (158.00, 199.88)
+	Runtime: CPU: 0:00:01.3 REAL: 0:00:01.0 MEM: 12748.6MB
+Summary Report:
+Instances move: 3093 (out of 14773 movable)
+Instances flipped: 3965
+Mean displacement: 1.69 um
+Max displacement: 30.50 um (Instance: FE_OFC1119_cores_0__core_instance_n_49734) (144.6, 182.78) -> (158, 199.88)
+	Length: 5 sites, height: 1 rows, site name: CoreSiteDouble, cell type: BUFX2
+Total net bbox length = 2.063e+05 (1.134e+05 9.289e+04) (ext = 1.088e+04)
+Runtime: CPU: 0:00:01.4 REAL: 0:00:01.0 MEM: 12748.6MB
+*** Finished refinePlace (0:12:44 mem=12748.6M) ***
+*** maximum move = 30.50 um ***
+*** Finished re-routing un-routed nets (12700.6M) ***
+
+*** Finish Physical Update (cpu=0:00:02.4 real=0:00:01.0 mem=12700.6M) ***
+** GigaOpt Optimizer WNS Slack -0.705 TNS Slack -121.358 Density 81.27
+Active Path Group: in2reg reg2out reg2reg  
++--------+---------+--------+---------+---------+------------+--------+----------+---------+----------------------------------------------------+
+|  WNS   | All WNS |  TNS   | All TNS | Density |    Real    |  Mem   |Worst View|Pathgroup|                     End Point                      |
++--------+---------+--------+---------+---------+------------+--------+----------+---------+----------------------------------------------------+
+|  -0.705|   -0.705|-121.358| -121.358|   81.27%|   0:00:00.0|12700.6M|setup_view|  reg2reg| cores[0].core_instance_threads[1].register_instanc |
+|        |         |        |         |         |            |        |          |         | e_regfile_reg[12][0]/D                             |
+|  -0.646|   -0.646|-114.624| -114.624|   81.28%|   0:00:00.0|12721.2M|setup_view|  reg2reg| cores[0].core_instance_threads[1].register_instanc |
+|        |         |        |         |         |            |        |          |         | e_rs_reg[3]/D                                      |
+|  -0.521|   -0.521|-114.021| -114.021|   81.29%|   0:00:01.0|12721.2M|setup_view|  reg2reg| cores[0].core_instance_threads[2].register_instanc |
+|        |         |        |         |         |            |        |          |         | e_regfile_reg[9][5]/D                              |
+|  -0.495|   -0.495|-108.166| -108.166|   81.30%|   0:00:00.0|12740.3M|setup_view|  reg2reg| cores[0].core_instance_threads[2].register_instanc |
+|        |         |        |         |         |            |        |          |         | e_rt_reg[5]/D                                      |
+|  -0.473|   -0.473|-107.763| -107.763|   81.31%|   0:00:00.0|12740.3M|setup_view|  reg2reg| cores[0].core_instance_threads[0].register_instanc |
+|        |         |        |         |         |            |        |          |         | e_regfile_reg[5][4]/D                              |
+|  -0.411|   -0.411| -96.168|  -96.168|   81.34%|   0:00:00.0|12740.3M|setup_view|  reg2reg| cores[0].core_instance_threads[3].register_instanc |
+|        |         |        |         |         |            |        |          |         | e_regfile_reg[8][5]/D                              |
+|  -0.369|   -0.369| -86.349|  -86.349|   81.35%|   0:00:00.0|12740.3M|setup_view|  reg2reg| cores[0].core_instance_threads[2].register_instanc |
+|        |         |        |         |         |            |        |          |         | e_regfile_reg[6][7]/D                              |
+|  -0.337|   -0.337| -81.766|  -81.766|   81.38%|   0:00:00.0|12740.3M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.317|   -0.317| -77.490|  -77.490|   81.40%|   0:00:00.0|12740.3M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.316|   -0.316| -77.497|  -77.497|   81.58%|   0:00:02.0|12740.3M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.305|   -0.305| -77.416|  -77.416|   81.62%|   0:00:01.0|12740.3M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.302|   -0.302| -76.938|  -76.938|   81.82%|   0:00:01.0|12740.3M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.299|   -0.299| -76.617|  -76.617|   81.94%|   0:00:00.0|12740.3M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.296|   -0.296| -76.721|  -76.721|   82.03%|   0:00:01.0|12740.3M|setup_view|  reg2reg| cores[1].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.293|   -0.293| -76.637|  -76.637|   82.09%|   0:00:01.0|12740.3M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.291|   -0.291| -76.660|  -76.660|   82.20%|   0:00:01.0|12740.3M|setup_view|  reg2reg| cores[1].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[1]/D                                      |
+|  -0.289|   -0.289| -76.229|  -76.229|   82.31%|   0:00:01.0|12740.3M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.288|   -0.288| -75.740|  -75.740|   82.40%|   0:00:01.0|12740.3M|setup_view|  reg2reg| cores[0].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.287|   -0.287| -75.729|  -75.729|   82.43%|   0:00:00.0|12740.3M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.287|   -0.287| -75.726|  -75.726|   82.44%|   0:00:01.0|12740.3M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.288|   -0.288| -75.730|  -75.730|   82.55%|   0:00:01.0|12740.3M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
++--------+---------+--------+---------+---------+------------+--------+----------+---------+----------------------------------------------------+
+
+*** Finish Core Optimize Step (cpu=0:01:05 real=0:00:12.0 mem=12740.3M) ***
+
+*** Finished Optimize Step Cumulative (cpu=0:01:05 real=0:00:12.0 mem=12740.3M) ***
+*** Starting refinePlace (0:13:51 mem=12708.3M) ***
+Total net bbox length = 2.067e+05 (1.136e+05 9.306e+04) (ext = 1.088e+04)
+Move report: Detail placement moves 1410 insts, mean move: 2.76 um, max move: 28.20 um 
+	Max move on inst (FE_OFC1700_cores_0__core_instance_n_48032): (146.20, 182.78) --> (174.40, 182.78)
+	Runtime: CPU: 0:00:01.0 REAL: 0:00:00.0 MEM: 12755.8MB
+Summary Report:
+Instances move: 1410 (out of 14896 movable)
+Instances flipped: 0
+Mean displacement: 2.76 um
+Max displacement: 28.20 um (Instance: FE_OFC1700_cores_0__core_instance_n_48032) (146.2, 182.78) -> (174.4, 182.78)
+	Length: 5 sites, height: 1 rows, site name: CoreSiteDouble, cell type: BUFX2
+Total net bbox length = 2.108e+05 (1.157e+05 9.517e+04) (ext = 1.088e+04)
+Runtime: CPU: 0:00:01.0 REAL: 0:00:00.0 MEM: 12755.8MB
+*** Finished refinePlace (0:13:52 mem=12755.8M) ***
+*** maximum move = 28.20 um ***
+*** Finished re-routing un-routed nets (12707.8M) ***
+
+*** Finish Physical Update (cpu=0:00:02.1 real=0:00:01.0 mem=12707.8M) ***
+** GigaOpt Optimizer WNS Slack -0.757 TNS Slack -80.748 Density 82.55
+OptDebug: End of Setup Fixing:
++----------+------+-------+
+|Path Group|   WNS|    TNS|
++----------+------+-------+
+|default   | 0.000|  0.000|
+|in2out    | 0.000|  0.000|
+|in2reg    | 0.348|  0.000|
+|reg2out   | 0.990|  0.000|
+|reg2reg   |-0.757|-80.748|
+|HEPG      |-0.757|-80.748|
+|All Paths |-0.757|-80.748|
++----------+------+-------+
+
+Bottom Preferred Layer:
++-----------------+------------+----------+
+|      Layer      |   OPT_LA   |   Rule   |
++-----------------+------------+----------+
+| Metal7 (z=7)    |         44 | default  |
+| Metal10 (z=10)  |          2 | default  |
++-----------------+------------+----------+
+Via Pillar Rule:
+    None
+
+*** Finish pre-CTS Setup Fixing (cpu=0:06:31 real=0:01:26 mem=12707.8M) ***
+
+*** WnsOpt #1 [finish] (place_opt_design #1) : cpu/real = 0:06:32.7/0:01:27.0 (4.5), totSession cpu/real = 0:13:53.0/0:03:40.0 (3.8), mem = 12110.9M
+End: GigaOpt Optimization in WNS mode
+Deactivate preCTS OCP-based MLT
+Activate preCTS path group based MLT
+Deactivate preCTS path group based MLT
+*** Timing NOT met, worst failing slack is -0.757
+*** Check timing (0:00:00.0)
+Begin: GigaOpt Optimization in TNS mode
+GigaOpt Checkpoint: Internal optTiming -allEndPoints -maxLocalDensity 0.95 -maxLocalDensityForHardenOpt 0.92 -numThreads 8 -preCTS -pgMode all -nativePathGroupFlow -wtns -nonLegalPlaceEcoBumpRecoveryInTNSOpt -NDROptEffortAuto -ipoTgtSlackCoef 1.5 -effTgtSlackCoef 1
+Info: 1 clock net  excluded from IPO operation.
+*** TnsOpt #1 [begin] (place_opt_design #1) : totSession cpu/real = 0:13:53.1/0:03:40.2 (3.8), mem = 12110.9M
+*info: 1 clock net excluded
+*info: 76 no-driver nets excluded.
+** GigaOpt Optimizer WNS Slack -0.757 TNS Slack -80.748 Density 82.55
+OptDebug: Start of Optimizer TNS Pass:
++----------+------+-------+
+|Path Group|   WNS|    TNS|
++----------+------+-------+
+|default   | 0.000|  0.000|
+|in2out    | 0.000|  0.000|
+|in2reg    | 0.348|  0.000|
+|reg2out   | 0.990|  0.000|
+|reg2reg   |-0.757|-80.748|
+|HEPG      |-0.757|-80.748|
+|All Paths |-0.757|-80.748|
++----------+------+-------+
+
+Active Path Group: reg2reg  
++--------+---------+--------+---------+---------+------------+--------+----------+---------+----------------------------------------------------+
+|  WNS   | All WNS |  TNS   | All TNS | Density |    Real    |  Mem   |Worst View|Pathgroup|                     End Point                      |
++--------+---------+--------+---------+---------+------------+--------+----------+---------+----------------------------------------------------+
+|  -0.757|   -0.757| -80.748|  -80.748|   82.55%|   0:00:00.0|12498.5M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.634|   -0.634| -79.718|  -79.718|   82.57%|   0:00:00.0|12678.3M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.581|   -0.581| -79.612|  -79.612|   82.57%|   0:00:00.0|12688.9M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.566|   -0.566| -79.519|  -79.519|   82.58%|   0:00:00.0|12704.2M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.521|   -0.521| -79.332|  -79.332|   82.59%|   0:00:00.0|12704.2M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.452|   -0.452| -79.199|  -79.199|   82.60%|   0:00:00.0|12704.2M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.441|   -0.441| -78.654|  -78.654|   82.62%|   0:00:00.0|12708.7M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.407|   -0.407| -78.629|  -78.629|   82.63%|   0:00:00.0|12708.7M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.379|   -0.379| -78.521|  -78.521|   82.63%|   0:00:01.0|12714.7M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.380|   -0.380| -75.267|  -75.267|   82.66%|   0:00:00.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.379|   -0.379| -75.288|  -75.288|   82.66%|   0:00:00.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.356|   -0.356| -75.213|  -75.213|   82.69%|   0:00:00.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.343|   -0.343| -75.019|  -75.019|   82.72%|   0:00:01.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.331|   -0.331| -74.955|  -74.955|   82.73%|   0:00:00.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.330|   -0.330| -74.903|  -74.903|   82.78%|   0:00:00.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[0]/D                                      |
+|  -0.330|   -0.330| -69.025|  -69.025|   82.89%|   0:00:01.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[1]/D                                      |
+|  -0.330|   -0.330| -69.003|  -69.003|   82.92%|   0:00:01.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[1]/D                                      |
+|  -0.330|   -0.330| -59.991|  -59.991|   83.00%|   0:00:01.0|12733.8M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[1]/D                                      |
+|  -0.330|   -0.330| -58.540|  -58.540|   83.01%|   0:00:00.0|12733.8M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[1]/D                                      |
+|  -0.330|   -0.330| -56.829|  -56.829|   83.05%|   0:00:00.0|12733.8M|setup_view|  reg2reg| cores[0].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[1]/D                                      |
+|  -0.330|   -0.330| -41.306|  -41.306|   83.31%|   0:00:00.0|12733.8M|setup_view|  reg2reg| data_memory_controller_mem_write_data_reg[25]/D    |
+|  -0.330|   -0.330| -29.030|  -29.030|   83.50%|   0:00:01.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[7]/D                                      |
+|  -0.330|   -0.330| -20.899|  -20.899|   83.60%|   0:00:00.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[7]/D                                      |
+|  -0.330|   -0.330| -14.789|  -14.789|   83.80%|   0:00:00.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[7]/D                                      |
+|  -0.330|   -0.330| -11.985|  -11.985|   83.93%|   0:00:01.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[7]/D                                      |
+|  -0.330|   -0.330| -11.933|  -11.933|   84.02%|   0:00:00.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[7]/D                                      |
+|  -0.330|   -0.330|  -8.734|   -8.734|   84.19%|   0:00:00.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[1].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[7]/D                                      |
+|  -0.330|   -0.330|  -6.015|   -6.015|   84.45%|   0:00:01.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[7]/D                                      |
+|  -0.330|   -0.330|  -5.268|   -5.268|   84.65%|   0:00:02.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[7]/D                                      |
+|  -0.330|   -0.330|  -5.095|   -5.095|   84.80%|   0:00:01.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[3].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[7]/D                                      |
+|  -0.330|   -0.330|  -5.003|   -5.003|   84.90%|   0:00:00.0|12733.8M|setup_view|  reg2reg| data_memory_controller_mem_write_address_reg[19]/D |
+|  -0.330|   -0.330|  -4.952|   -4.952|   85.04%|   0:00:00.0|12733.8M|setup_view|  reg2reg| data_memory_controller_mem_write_address_reg[19]/D |
+|  -0.330|   -0.330|  -4.673|   -4.673|   85.05%|   0:00:01.0|12733.8M|setup_view|  reg2reg| data_memory_controller_mem_write_data_reg[25]/D    |
+|  -0.330|   -0.330|  -4.632|   -4.632|   85.13%|   0:00:00.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[7]/D                                      |
+|  -0.330|   -0.330|  -4.527|   -4.527|   85.21%|   0:00:00.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[7]/D                                      |
+|  -0.330|   -0.330|  -4.505|   -4.505|   85.30%|   0:00:01.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[7]/D                                      |
+|  -0.330|   -0.330|  -4.499|   -4.499|   85.38%|   0:00:01.0|12733.8M|setup_view|  reg2reg| cores[1].core_instance_threads[2].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[7]/D                                      |
+|  -0.330|   -0.330|  -4.483|   -4.483|   85.38%|   0:00:00.0|12733.8M|setup_view|  reg2reg| data_memory_controller_mem_write_data_reg[26]/D    |
+|  -0.330|   -0.330|  -4.420|   -4.420|   85.41%|   0:00:00.0|12733.8M|setup_view|  reg2reg| cores[0].core_instance_threads[0].alu_instance_alu |
+|        |         |        |         |         |            |        |          |         | _out_reg[7]/D                                      |
+|  -0.330|   -0.330|  -4.414|   -4.414|   85.54%|   0:00:00.0|12733.8M|setup_view|  reg2reg| data_memory_controller_mem_write_data_reg[26]/D    |
