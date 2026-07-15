@@ -52,7 +52,7 @@ Cadence Genus 21.18 was used to synthesize the RTL into a gate-level netlist whi
 Cadence Conformal LEC was used to verify equivalence between the RTL and synthesized netlist.
 
 <p align="center">
-  <img src="docs/images/LEC.jpg" width="750">
+  <img src="docs/images/LEC.png" width="750">
 </p>
 
 ### Physical Design
@@ -85,13 +85,13 @@ Cadence Pegasus was used to perform DRC, LVS, connectivity, and antenna verifica
 ### Placement
 
 <p align="center">
-  <img src="docs/images/placement.jpg" width="750">
+  <img src="docs/images/placement.png" width="750">
 </p>
 
 ### Clock Tree Synthesis
 
 <p align="center">
-  <img src="docs/images/postcts.jpg" width="750">
+  <img src="docs/images/postcts.png" width="750">
 </p>
 
 ### Clock Tree Structure
@@ -103,29 +103,29 @@ Cadence Pegasus was used to perform DRC, LVS, connectivity, and antenna verifica
 ### Routing
 
 <p align="center">
-  <img src="docs/images/post_routing.jpg" width="750">
+  <img src="docs/images/post_routing.png" width="750">
 </p>
 
 <p align="center">
-  <img src="docs/images/preeco_timing.jpg" width="750">
+  <img src="docs/images/preeco_timing.png" width="750">
 </p>
 
 <p align="center">
-  <img src="docs/images/celldensity_route.jpg" width="750">
+  <img src="docs/images/celldensity_route.png" width="750">
 </p>
 
 ### Static Timing Analysis
 
 <p align="center">
-  <img src="docs/images/time_design1.jpg" width="750">
+  <img src="docs/images/time_design1.png" width="750">
 </p>
 
 <p align="center">
-  <img src="docs/images/time_design2.jpg" width="750">
+  <img src="docs/images/time_design2.png" width="750">
 </p>
 
 <p align="center">
-  <img src="docs/images/time_designlast.jpg" width="750">
+  <img src="docs/images/time_designlast.png" width="750">
 </p>
 
 ### Metal Stack Visualization
