@@ -35,9 +35,25 @@ The Tiny GPU was developed in Verilog and consists of compute, memory, and contr
 
 Cadence Genus 21.18 was used to synthesize the RTL into a gate-level netlist while meeting a target clock period of 4.5 ns.
 
+<p align="center">
+  <img src="docs/images/synthesis1.jpg" width="750">
+</p>
+
+<p align="center">
+  <img src="docs/images/synthesis2.jpg" width="750">
+</p>
+
+<p align="center">
+  <img src="docs/images/synthesis3.jpg" width="750">
+</p>
+
 ### Logical Equivalence Checking
 
 Cadence Conformal LEC was used to verify equivalence between the RTL and synthesized netlist.
+
+<p align="center">
+  <img src="docs/images/LEC.jpg" width="750">
+</p>
 
 ### Physical Design
 
@@ -66,10 +82,50 @@ Cadence Pegasus was used to perform DRC, LVS, connectivity, and antenna verifica
   <img src="docs/images/floorplan.jpg" width="750">
 </p>
 
+### Placement
+
+<p align="center">
+  <img src="docs/images/placement.jpg" width="750">
+</p>
+
+### Clock Tree Synthesis
+
+<p align="center">
+  <img src="docs/images/postcts.jpg" width="750">
+</p>
+
 ### Clock Tree Structure
 
 <p align="center">
   <img src="docs/images/ctd_win.jpg" width="750">
+</p>
+
+### Routing
+
+<p align="center">
+  <img src="docs/images/post_routing.jpg" width="750">
+</p>
+
+<p align="center">
+  <img src="docs/images/preeco_timing.jpg" width="750">
+</p>
+
+<p align="center">
+  <img src="docs/images/celldensity_route.jpg" width="750">
+</p>
+
+### Static Timing Analysis
+
+<p align="center">
+  <img src="docs/images/time_design1.jpg" width="750">
+</p>
+
+<p align="center">
+  <img src="docs/images/time_design2.jpg" width="750">
+</p>
+
+<p align="center">
+  <img src="docs/images/time_designlast.jpg" width="750">
 </p>
 
 ### Metal Stack Visualization
